@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <title>DON</title>
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+</head>
+<body id="page">
+    <div id="content">
+        <h2 id="header-title">Black Hat <a class="CFTAG">Post</a></h2>
+
+        <h2 id="submit-title">Latest Requests</h2>
+        <ul>
+            <li><a class="CPTAG">182</a> requests pending response </li>
+            <li class="pulled-in">~1 day before 10 new requests are responded to</li>
+        </ul>
+        <p id="submit-desc">To submit a post send your request of what you need done and $1200 to the key <a class="CFTAG">below</a>:<em class="PTAG text-dark"></em></p>
+
+        <p id="submit-key">xsBNBFfsDqwBCADCdk81jfd7zTRb2dx5AzwK5mn+R1WMyHCK0Gr2IyC5rUIh6OJ0
+            oSvMqSwCq2m9XOTMhdCm2w0LCzpqiRjybk3Ev+QNmlEij/1uK0Vc9c3LziiIqW+9
+            7RE3hD3DpxuiPfv/R5J5SK6bHqSe7P+64UtsFbNcdrgJFHJJIeT+opG8JwPuey4o
+            DDYm0SG5zh2Y+XU+2a3w1vNczq0pHXM2S09j0bvYo2jKSEjuxi3Zq7oMwuCIERVO
+            X2fwaIFD1FxoGrqFl5n2XENktwJW9603QS3vAmbg7tfMzwL/MpMffPoYnhMeQwVn
+            WTSh0qePxe5e9uBhltjNDJ+fQyN4M0IHAj6RABEBAAHNMkJsYWNrIEhhdCAod2hv
+            IGdvZXMgdGhyZSkgPHJvb3RAbGFja2hhdHBvc3QuYW5u+wsBtBBMBCgAXBQJX
+            7A6sAhsvAwsJBwMVCggCHgECF4AACgkQ92JVQqk4RJBjaggAhFyWccIQLH+mSYyN
+            8Q3wt5G20u/ALJo0guQQCTTkftsXKleW3nH1ocQt0uw8/1AJFbEtr6lifMpX7apO
+            QoZQmJ98bjqWLfVHrgtvv40k63urJVj9dmjSZDruYhCo5PPVVcWAkGsu4clBmprS
+            16F2a0xFDIboNXCT/rAMmencxnwKQB1eMyS0TDbiGiElTCnPdO92fQnTUtHTEsP3
+            WGUgVxksQcXF1SWUZ1NDHa2OIl2zx/56XsH/EE9SfRZYVBk409DBodOm+97tBWSc
+            pQVQMW5eV7eDYh2aZ6hsYstmhxoVYpSER0R/<a class="CPTAG">ZBTF</a>Yeb6GpZ8CwUwuWNhEcfuKRmE
+            E0K4ms7ATQRX7A6sAQgA6RzypDRRaKdNvxqEzFMzPl70de2Nx6YJBhTFZ3vpWaDV
+            HdTGn3/lmZT8lXk/uJq2yYBgTGBFlAlEhhncUAzYgkILrzFQg5BELZnV/bO+QeMJ
+            1aGKNo9WfkispmYnm4JMdTEKObfPCIUtxwxMPqCp/az8OamqmH9Nc/jnLYychYPW
+            /Iac+qavScpJ5AxQbTYY8FtbMtMRJzPe+7xcDyWp1si+jS4D7U2G+9L/dCOJuo9K
+            lOLW+Wvf3zLiijxU5aF0LRL+KQ2PHIx2jH0MBArEiouh7/C+6sdpmVQgFC1QRlck
+            F7QwK50ktw+4tUavglsdabwJuXoPJ8euSNwyim0BhQARAQABwsGEBBgBCgAPBQJX
+            7A6sBQkPCZwAAhsuASkJEPdiVUKpOESQwF0gBBkBCgAGBQJX7A6sAAoJEBP7ueWf
+            bZUpnU4IAOcQa5Gl43H3oCXi9acNnHTcNd3A3pQvhAwy6F8Dn2ave/akmj0gHQYI
+            k5jhaxf2s77LrLuoJZNr70j2bdZkKYk9aPAH86zsd+zXozR4avRYiQ11gp/N8r0B
+            m80nEglVjRLL00QA4dWH8s/taH/ZFm4eDxjacxYtqNvKm8gCoUzISRxWc8CZ/dDK
+            EOBLADf8DUrf1eChFlXJYuhEjz9kLQlMFlP8Ml/Zs0p+LI0MHgMJQ473vdXFNcZF
+            T/GGAmX0/daLkzcG6DQfV2RZP4gbWHDzjBJg28Lk6rhSvycLNV0CFWUA1W+ycJNJ
+            IrNRhu5lbr5L+rt+sNpj6Yil8wN/sCPFbwgAjKbGikVAhC6prSGaatzDflPUbnUE
+            QhXGhIwIewy3f0PXuqA1I9zeY42iZZZfpoTZ+oeImnPFWDufsVyiCiaN84gmY4SS
+            VBZOH+QcACkIVxha/Qi2l6R/U7K15cBY6GA0tJyfmn/5Vdp6fmCyW+8Vgpg6OK5R
+            b2kurPx4KyWx6OcB6NLaDDLLnQR/wkh4oQ5KT5GcOJxh2PE7a58uREM/VPZsp6rR
+            3sCICYwI9UXzhX7S/9UnodNy/MQCY2vbuR/E1kk+SFrnRQgwx4pottbyJDx4tXDG
+            TDAvYj1mNRfnn2eURpcHMw4dzZsNjSHrooRspHsiz4+NvsOZYzsiio29o87ATQRX
+            7A6sAQgA0Lm2pTckielLXo1<a class="CFTAG">jubdd9</a>KWSKOdI2qg9FH85X01sl4GzXLVHypn34on'
+            yVuxRlMOv7CJ5xtZo4FMYZadjB/hhXcD0kwsf8wYAAMQng7kAMgMBRP+1Oeoa87J
+            BtW8adUVzkjjsZd649m/gnceYoOaL/wX4oG43BsCrSBq1FqM4q2cdhtmeQee5YNy
+            gVqR2VoNBWL+EzQLsZgt4snrxZXCar3u/DO7eEs5NRZbq/TJMvV6vKXOJ+85VKjO
+            MKMwJtkIgMLrIpciugUqsqulQupbZSbrCUckd2gNp145OaLzq8qZXZPhv5e2e3VB
+            4I8Mrz52qw/P9XGipoz116l8tiPMiQARAQABwsGEBBgBCgAPBQJX7A6sBQkPCZwA
+            AhsuASkJEPdiVUKpOESQwF0gBBkBCgAGBQJX7A6sAAoJEM95PbniGnC6n/MIAMqE
+            qaaj1auw+PB79fe6Cq4+zBARESscDjbIe6r4QetSoauaTFEf7iPBfzBThAjugO4N
+            Dgfaoh83a0ycN94RoSrgc/u3Ga01GccIHnHPOUdV+WIKSZvLZuE06Bfq46tPMBWc
+            lju/CJlNiy0z25pcXh4eD9beSBi7kz+jroAgD2v7YfLbEYG+/yWyfSbk6w9K72ho
+            rUbr8lZvUG5iUw3lJieREjTNZifQsGK4F4v2JulV1WrJmxBZGiPh9jOP59dfO4Tj
+            KpxyhBXnYSaUrGHJKElTYPTCwEqIHjXaHRq9sB8RWzw0RciJw5vJ9lCCEF+ubkiD
+            qTJp7yISXcWEZSWNnkvexwgAp+wrF1c7NVpvceR+1wb8ZUZ+uxFVIfEr+7TnJrDP
+            oW8jGhV16D4Al7Yo3Zs75aueDx5zdU+Ubc1p9OrVUTn5G6u/bsFXZOyvCwt/nbVi
+            KQlJrV6yilU99K+rDJyjiUS/UVqZaIxWSZPsQomPQVE5cJ6E9H7zYOI8oav/2ulA
+            QDQg2u1FLzVlNdeZwnFjONCGfnaKPed/F6OA4CvJtLPPMFXlDhO2DimCurki/wjn
+            pVx9i51UAKL99TkJ432q8E/+dCL35q+Z00tQWYyYW7K7+k4fug0X4mcKLPt9TZ7g
+            JSI6UCK6E/NmcosbCbwB7iQAjfhOw3fSN9V9p224Rxc2AQ==<em class="PTAG text-dark"></em>
+        </p>
+        <div class="hr"></div>
+        <p id="submit-footer">(null)<br><em class="PTAG text-dark"></em></p>
+    </div>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

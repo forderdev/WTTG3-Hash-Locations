@@ -1,0 +1,406 @@
+/* Epilogue-Bold */
+@font-face {
+  font-family: "EpilogueBold";
+  src: url("fonts/Epilogue-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Epilogue-Regular */
+@font-face {
+  font-family: "EpilogueRegular";
+  src: url("fonts/Epilogue-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Epilogue-SemiBold */
+@font-face {
+  font-family: "EpilogueSemiBold";
+  src: url("fonts/Epilogue-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  font-family: "EpilogueRegular", sans-serif;
+  background-color: #272727;
+  color: #efd09e;
+  padding-bottom: 50px;
+}
+
+#container {
+  margin: 0 auto;
+  margin-top: 30px;
+  max-width: 1200px;
+  width: 786px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  float: left;
+  width: 200px;
+  overflow-wrap: break-word;
+}
+
+.nav {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.smaller {
+  font-size: 20px;
+}
+
+.nav-list {
+  margin-left: 70px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.nav-list a {
+  text-transform: uppercase;
+  padding-left: 35px;
+  font-size: 24px;
+}
+
+#content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+h1 {
+  padding-top: 70px;
+  width: 100%;
+  font-family: "EpilogueBold", sans-serif;
+  font-size: 40px;
+  text-align: center;
+}
+
+#savings {
+  font-size: 32px;
+}
+
+#navBtn {
+  margin-top: 30px;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: #90a9b7;
+  color: #272727;
+  font-family: "EpilogueBold", sans-serif;
+  text-transform: uppercase;
+  font-size: 40px;
+  width: 170px;
+  height: 56px;
+  text-align: center;
+}
+
+.favBox {
+  margin-top: 30px;
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.favBox>div {
+  display: flex;
+  flex-basis: calc(50% - 40px);
+  justify-content: center;
+  flex-direction: column;
+}
+
+.favBox>div>div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.box .title {
+  font-size: 24px;
+  margin-bottom: 35px;
+}
+
+.description {
+  font-size: 20px;
+}
+
+.box p {
+  width: 220px;
+  overflow-wrap: break-word;
+  margin: 0 auto;
+}
+
+.box {
+  margin: 20px;
+  text-align: center;
+}
+
+em {
+  color: #5c5c5c;
+  font-size: 9px;
+}
+
+#card {
+  margin-top: 100px;
+  background-color: #d2d8b3;
+  width: 900px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-top: 70px;
+}
+
+#card>div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #272727;
+  width: 100%;
+}
+
+#card>div>h2 {
+  font-family: "EpilogueBold", sans-serif;
+  font-size: 32px;
+  display: block;
+  text-align: center;
+  line-height: 2;
+  justify-content: center;
+  grid-auto-rows: 100px;
+}
+
+#card>div {
+  margin-top: -100px;
+}
+
+#orderCard {
+  background-color: #d2d8b3;
+  width: 900px;
+  height: 100%;
+  color: #272727;
+  font-family: "EpilogueBold", sans-serif;
+  font-size: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#orderCard h2 {
+  font-family: "EpilogueBold", sans-serif;
+  font-size: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+.pb50 {
+  padding-bottom: 50px;
+  padding-left: 4px;
+}
+
+table td {
+  width: 50%;
+  border: 1px solid #272727;
+  padding: 2px;
+}
+
+hr,
+#contact-input {
+  border-bottom: 1px solid #272727;
+  width: 40%;
+}
+
+table tr td:nth-child(1) {
+  border-top: 0;
+}
+
+table tr:first-child td {
+  border-bottom: 0;
+}
+
+table tr:nth-child(2) td {
+  border-top: 0;
+}
+
+table tr:last-child td {
+  padding-bottom: 80px;
+}
+
+#orderBtn {
+  display: block;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: #90a9b7;
+  color: #272727;
+  font-family: "EpilogueBold", sans-serif;
+  font-size: 40px;
+  width: 250px;
+  height: 56px;
+  text-align: center;
+}
+
+.orderText {
+  width: 100%;
+  margin: 40px 0px 40px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#thanks {
+  padding: 2%;
+  margin-top: 30px;
+  color: #272727;
+  font-family: "EpilogueBold", sans-serif;
+  font-size: 16px;
+}
+
+.menuCard {
+  margin-top: 30px;
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  color: #272727;
+  background-color: #90a9b7;
+  font-family: "EpilogueBold", sans-serif;
+  padding: 40px;
+}
+
+.menuBox {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.menuBox>div {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menuBox>div>div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.dishDescription {
+  font-family: "EpilogueSemiBold", sans-serif;
+  font-size: 18px;
+}
+
+.dishName {
+  font-size: 24px;
+}
+
+.dish {
+  margin-top: 30px;
+  padding: 1%;
+}
+
+.menuCard hr {
+  width: 99%;
+  margin: 20px 0 20px 0;
+  border-top: 2px solid #272727;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.menuCard h2 {
+  font-family: "EpilogueBold", sans-serif;
+  font-size: 32px;
+  text-align: center;
+  width: 100%;
+}
+
+#mealForTwo h2 {
+  font-family: "EpilogueBold", sans-serif;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#mealForTwo h3 {
+  font-family: "EpilogueBold", sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+#mealForTwo h4 {
+  font-family: "EpilogueBold", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.partsCard {
+  margin-top: 30px;
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  color: #272727;
+  background-color: #90a9b7;
+  font-family: "EpilogueBold", sans-serif;
+  font-size: 24px;
+  padding: 40px;
+}
+
+.partsBox {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.partsBox>div {
+  display: flex;
+  flex-basis: 40%;
+  align-content: space-between;
+  flex-direction: row;
+  padding: 2%;
+  margin-left: 10%;
+}
+
+td>input {
+  width: 100%;
+  text-align: right;
+}
+
+#contact-input {
+  padding-left: 5px;
+}
+
+#qty-met {
+  display: none;
+}
+
+#error-msg {
+  display: none;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.8em;
+  color: red;
+}
+
+.inline {
+  display: inline;
+}

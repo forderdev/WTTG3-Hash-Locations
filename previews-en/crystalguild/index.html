@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <script type="text/javascript" src="unhide.js"></script>
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>CrystalGuild</title>
+</head>
+<body>
+    <em class="PTAG text-dark" style="position: absolute; top: -400; right: -600; font-size: 0.8em; color: black;"></em>
+    <header>
+        <img src="img/logo.gif">
+    </header>
+    <main>
+        <section id="intro">
+            <p>Welcome Home, <span class="textYellow">pilgrim</span>. You don't need to <a class="CPTAG">worry</a> anymore, you are among the <span class="textYellow">future collective</span> of your dreams, and we are pleased to bring you into the <span class="textYellow">glimmering fold</span> once you have achieved the worthiness of <span class="textYellow">matriculation</span>.</p>
+            <p>In order to better assist your journey, we ask you a series of simple questions. Please, proceed to <a class="CPTAG">admittance.</a></p>
+        </section>
+        <form>
+            <table>
+                <tr>
+                    <td class="formLeft">
+                        <p>What color is the <a class="CFTAG">sky</a>?</p><br/>
+                        <label class="container textSmall"><input type="radio" name="q1" value="Blue"><span class="checkmark"></span>Blue</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q1" value="Red"><span class="checkmark"></span>Red</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q1" value="Ochre"><span class="checkmark"></span>Ochre</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q1" value="Verdant"><span class="checkmark"></span>Verdant</label><br/>
+                    </td>
+                    <td class="formRight">
+                        <img src="img/blackSea.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formLeft">
+                        <p>Where does your consciousness reside in slumber?</p><br/>
+                        <label class="container textSmall"><input type="radio" name="q2" value="In dreams"><span class="checkmark"></span>In <a class="CFTAG">dreams</a></label><br/>
+                        <label class="container textSmall"><input type="radio" name="q2" value="In limbo"><span class="checkmark"></span>In limbo</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q2" value="Atop the pinnacle"><span class="checkmark"></span>Atop the pinnacle</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q2" value="Within the Before and After"><span class="checkmark"></span>Within the Before and After</label>
+                    </td>
+                    <td class="formRight">
+                        <img src="img/faceless.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formLeft">
+                        <p>How many attempts does one need to succeed in transcendance?</p><br/>
+                        <label class="container textSmall"><input type="radio" name="q3" value="12"><span class="checkmark"></span>12</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q3" value="72,106"><span class="checkmark"></span>72,106</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q3" value="42"><span class="checkmark"></span>42</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q3" value="132,121"><span class="checkmark"></span>132,121</label>
+                    </td>
+                    <td class="formRight">
+                        <em class="PTAG text-dark" style="position: absolute; margin-top: 170px; margin-left: 5px; color: #ff7d7d;"></em>
+                        <img src="img/alienPlanet.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formLeft">
+                        <p>What voice does your <a class="CPTAG">soul</a> speak in?<em class="PTAG text-dark" style="margin-left: 5px; color: #54ba4c;"></em></p><br/>
+                        <label class="container textSmall"><input type="radio" name="q4" value="Silence"><span class="checkmark"></span>Silence</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q4" value="Chaos"><span class="checkmark"></span>Chaos</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q4" value="Reverberations"><span class="checkmark"></span>Reverberations</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q4" value="Frequencies"><span class="checkmark"></span>Frequencies</label>
+                    </td>
+                    <td class="formRight">
+                        <img src="img/balloons.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formLeft">
+                        <p>What secret message is carried within the charges of magnets?</p><br/>
+                        <label class="container textSmall"><input type="radio" name="q5" value="The Formula"><span class="checkmark"></span>The Formula</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q5" value="The "><span class="checkmark"></span>The Epiphany</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q5" value="The Ratio"><span class="checkmark"></span>The Ratio</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q5" value="The Balance"><span class="checkmark"></span>The Balance</label>
+                    </td>
+                    <td class="formRight">
+                        <img src="img/antenna.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formLeft">
+                        <p>How do we greet the One Who Sings?</p><br/>
+                        <label class="container textSmall"><input type="radio" name="q6" value="We sing"><span class="checkmark"></span>We sing</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q6" value="We die"><span class="checkmark"></span>We die</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q6" value="We cry"><span class="checkmark"></span>We cry</label><br/>
+                        <label class="container textSmall"><input type="radio" name="q6" value="We respire"><span class="checkmark"></span>We <a class="CFTAG">respire</a></label><br/>
+                    </td>
+                    <td class="formRight">
+                        <img src="img/natureTree.jpg">
+                    </td>
+                </tr>
+            </table>
+            <button type="button" class="purpleBG" id="submit" onclick="unhide();">
+                <span>S</span>
+                <span>U</span>
+                <span>B</span>
+                <span>M</span>
+                <span>I</span>
+                <span>T</span>
+            </button>
+        </form>
+        <section id="prompt">
+            <em class="PTAG text-dark" style="position: absolute; bottom: 0; left: 0; margin-bottom: 20px; font-size: 0.8em; rotate: 90deg; color: #284226;"></em>
+            <p>At last you've arrived upon the entrance gate.</p>
+            <p>It matters not how you answered, or if you answered at all. This was only a small trial to gauge interest and you, pilgrim, have passed.</p>
+            <p>Please come forth, the collective welcomes all inquisitive minds</p> <em class="PTAG text-dark"></em>
+            <a onClick="LinkClick('welcome.html')" class="active">PROCEED</a>
+        </section>
+    </main>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

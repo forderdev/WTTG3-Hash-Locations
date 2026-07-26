@@ -1,0 +1,185 @@
+@font-face {
+    font-family: Cardo-Regular;
+    src: url(font/Cardo-Regular.ttf);
+}
+@font-face {
+    font-family: Lato-Bold;
+    src: url(font/Lato-Bold.ttf);
+}
+@font-face {
+    font-family: Lato-Italic;
+    src: url(font/Lato-Italic.ttf);
+}
+@font-face {
+    font-family: Lato-Regular;
+    src: url(font/Lato-Regular.ttf);
+}
+*{
+    margin: 0;
+    font-family: Lato-Regular;
+}
+
+body{
+    background-color: #73819D;
+}
+
+header > img{
+    display: block;
+    height: 100px;
+}
+
+header{
+    display: flex;
+    width: 900px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+header > h1{
+    font-size: 3em;
+    font-family: Cardo-Regular;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+main{
+    display: block;
+    width: 820px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+p{
+    font-size: 1.1em;
+}
+
+#notice{
+    font-family: Lato-Italic;
+    background-color: white;
+    padding: 4px;
+    text-align: center;
+}
+
+h3{
+    margin-top: 40px;
+    font-family: Lato-Bold;
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: underline;
+}
+
+#themap{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    height: auto;
+    width: auto;
+}
+
+small{
+    display: block;
+    font-family: Lato-Italic;
+    margin-top: 20px;
+}
+
+.pads{
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    width: 650px;
+}
+
+.pads > small{
+    margin-top: 0;
+}
+
+.pads > h4{
+    font-family: Lato-Bold;
+}
+
+.pads > img, .pads > h4, .pads > small{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.2em;
+}
+.pads > h4{
+    margin-left: 10px;
+}
+.order{
+    display: block;
+    margin-left: 60px;
+    margin-top: 5px;
+}
+.pads > img{
+    float:left;
+}
+
+.pads > .order > label{
+    display: inline-block;
+    font-family: Lato-Italic;
+    margin-top: 5px;
+    font-size: 1.1em;
+}
+
+input[type=number]{
+    background: url(img/quantitySelection.png);
+    width: 60px;
+    height: 22px;
+    background-repeat: no-repeat;
+    display: inline;
+    text-align: right;
+    color: white;
+}
+hr {
+    display: inline-block;
+    width: 300px;
+    background: black;
+    height: 1px;
+    margin-left: 15px;
+    vertical-align: middle;
+    z-index: 1;
+}
+
+.order > a {
+    display: inline-block;
+    background: url(img/buyButton.png);
+    width: 82px;
+    height: 33px;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.proceedinfo{
+    zoom: 1.2;
+    display: flex;
+    margin: auto;
+    width: 800px;
+    height: 56px;
+    background-image: url(img/UserDetailsContainer.png);
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.proceedinfo > input {
+    background-image: url(img/contactInput.png);
+    height: 38px;
+    width: 240px;
+    font-family: Lato-Bold;
+    padding-left: 15px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+.proceedinfo > a{
+    background-image: url(img/proceedButton.png);
+    display: block;
+    width: 200px;
+    height: 40px;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    vertical-align: middle;
+}

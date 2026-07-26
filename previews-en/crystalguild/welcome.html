@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>CrystalGuild</title>
+</head>
+<body>
+    <header>
+        <img src="img/logo.gif">
+    </header>
+    <article>
+        <section id="intro">
+            <em class="PTAG text-dark" style="position: absolute; right: 0; margin-right: 5px; font-size: 0.7em; color: #54ba4c;"></em>
+            <h1>Welcome and Submit</h1>
+            <p>Soon, in the year of the <span class="textYellow">One Who Sings</span>, marks the hour we make our voice heard by those who created this world. Join us as we <span class="textYellow"><a class="CFTAG">magnify</a></span> our message to open up a line of communication to the <span class="textYellow">songbirds</span>.</p>
+        </section>
+    </article>
+    <div class="purpleBG" id="background">
+        <article>
+            <section class="pdb30">
+                <p class="textRegular textCenter" style="padding-top: 20px;"><span class="textBold"> Time Remaining:</span> <span id="timer"><span class="textYellow">000</span> years, <span class="textYellow">000</span> days, <span class="textYellow">00:00:00</span> hours</span></p>
+                <h1 class="textYellow textCenter" id="time">THE TIME <a class="CPTAG">HAS</a> COME</h1>
+                <p class="mt20">Activity on this site will be locked for <span class="textYellow" style="font-size: 1.3em;">72 hours</span> while we dedicate all our mental and physical energy to this mighty test. Join us!<em class="PTAG text-dark" style="margin-left: 5px;"></em></p>
+            </section>
+            
+            <section class="thread mt20">
+                <img src="img/lock.svg" class="lock" alt="lock">
+
+                <p><span class="textBold">Most Recent Active Users:</span> <span class="textSmall">Batmoonglade4, Rexxy132121, 56AscendedEyes, Skyflyerquatro, warmstarkeeper, Hold4tongues, <em class="PTAG text-dark" style="margin-right: 5px;"></em> Great_Monitor724, Grievingwhispers, SilurianGem, ShadyaDylight, AmarantheSong4444, Beatrice_sharpe, DrLeafsong</span></p>
+            </section>
+
+            <section class="thread mt20">
+                <img src="img/lock.svg" class="lock" alt="lock">
+
+                <p><span class="textBold">Pinned:</span><span class="textMid"> Welcome to the Crystal Guild, introduce yourself and receive a role</span></p>
+                <p class="textSmall">first posted by warmstarkeeper at 14:20 November 12, 2021, 156 replies</p>
+
+                <p class="mt20"><span class="textBold">Pinned:</span><span class="textMid"> Upcoming Focused Collective Mindwave Events 2XXX</span></p>
+                <p class="textSmall">first posted by warmstarkeeper at 04:01 April 30 2023, 28 replies</p>
+            </section>
+
+            <section class="thread mt20">
+                <img src="img/lock.svg" class="lock" alt="lock">
+
+                <h2>CG Tenets Discussion</h2>
+                <p class="textSmall">first posted by <a class="CFTAG">Great_Monitor</a> 724 at 22:56 February 16, 2022, 264 replies</p>
+
+                <h2 class="mt20">The Sacred contact with divine extraterrestrial beings</h2>
+                <p class="textSmall">first posted by SilurianGem at 09:10 March 3 2023, 96 replies</p>
+
+                <h2 class="mt20">The seven living iterations of the Amethystine Embodiment</h2>
+                <p class="textSmall">first posted by Batmoonglade4 at 17:37 August 09, 2023, 41 replies</p>
+                
+                <h2 class="mt20">Recipes to channel cosmic energy while feeding your family</h2>
+                <p class="textSmall">first posted by DrLeafsong at 10:14 June 08, 2023, 33 replies</p>
+                
+                <h2 class="mt20">Favorite places to make <a class="CPTAG">personal</a> contact with the galactic mind</h2>
+                <p class="textSmall">first posted by Grievingwhispers at 13:23 September 05, 2023, 68 replies</p>
+            </section>
+
+            <section class="thread mt20">
+                <img src="img/lock.svg" class="lock" alt="lock">
+
+                <h2><a class="CPTAG">share</a> your assigned lodestone subtype here!</h2>
+                <p class="textSmall">first posted by Beatrice Sharpe at 11:45 January 28, 2023, 77 replies</p>
+
+                <h2 class="mt20">what called you to the Crystal Guild? Let's talk predestined enlightenment</h2>
+                <p class="textSmall">first posted by Great_Monitor724 >JKOJIDbnidoaseqjwi1293jfd</p>
+                
+                <h2 class="mt20"><a class="CFTAG">Preparedness</a></h2>
+                <p class="textSmall">first posted by Mayraswish_22nd at 20:39 May 02, 2023, 82 replies</p><em class="PTAG text-dark" style="font-size: 0.8em;"></em>
+                
+                <h2 class="mt20">Crystal Guild resources and Information</h2>
+                <p class="textSmall">first posted by Batmoonglade4 at 12:50 April 19, 2023, 108 replies</p>
+            </section>
+        </article>
+    </div>
+    <em class="PTAG text-dark" style="position: absolute; bottom: 0; right: 0; margin-right: 5px; font-size: 0.8em; color: black;"></em>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

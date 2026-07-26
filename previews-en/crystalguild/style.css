@@ -1,0 +1,267 @@
+@font-face {
+    font-family: Anybody-Bold;
+    src: url(font/Anybody-Bold.ttf);
+  }
+  @font-face {
+    font-family: Anybody-Italic;
+    src: url(font/Anybody-Italic.ttf);
+  }
+  @font-face {
+    font-family: Anybody-Regular;
+    src: url(font/Anybody-Regular.ttf);
+  }
+  @font-face {
+    font-family: Anybody-SemiBold;
+    src: url(font/Anybody-SemiBold.ttf);
+  }
+  @font-face {
+    font-family: ShortStack-Regular;
+    src: url(font/ShortStack-Regular.ttf);
+  }
+
+* {
+    margin: auto;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+body {
+    position: relative;
+    font-family: ShortStack-Regular;
+    background-color: #487c44;
+    font-size: 1.2em;
+}
+
+main, article {
+    width: 800px;
+}
+
+article {
+    text-align: left;
+}
+
+.purpleBG {
+    background-color: #4a275f;
+}
+
+header {
+    display: flex;
+    align-content: center;
+    background-image: url(img/headBg.png);
+}
+
+#intro, #prompt {
+    font-size: 1.3em;
+    text-align: center;
+}
+
+#intro {
+    margin-bottom: 20px;
+}
+
+#background {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.thread {
+    background-color: #481b62;
+    font-family: Anybody-Regular;
+    padding: 15px;
+    border: 1px solid white;
+}
+
+.lock {
+    position: absolute;
+    width: 32px;
+    height: auto;
+    margin-left: -32px;
+    margin-top: -32px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.pdb30 {
+    padding-bottom: 30px;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#intro h1 {
+    text-decoration: underline 2px white;
+    text-underline-offset: 8px;
+}
+h2 {
+    font-family: Anybody-SemiBold;
+    font-size: 1.15em;
+}
+
+#time {
+    font-size: 2.5em;
+}
+
+#timer {
+    padding: 5px;
+    border: 2px solid white;
+}
+
+main p {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.textYellow {
+    color: #ffe404;
+}
+
+.textBold {
+    font-family: Anybody-SemiBold;
+    font-size: 1.25em;
+}
+
+.textRegular {
+    font-family: Anybody-Regular;
+    font-size: 1.25em;
+}
+
+.textMid {
+    font-family: Anybody-SemiBold;
+    font-size: 1em;
+}
+
+.textSmall {
+    font-size: 0.8em;
+}
+
+.textCenter {
+    text-align: center;
+}
+.formLeft {
+    width: 60%;
+    vertical-align: top;
+}
+
+.formRight {
+    width: 40%;
+    border-left: 1px solid #ffe404;
+    padding: 5px;
+}
+
+form, form img {
+    width: 100%;
+}
+
+label {
+    cursor: pointer;
+}
+
+button {
+    font-size: 1.1em;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #487c44;
+  }
+
+table {
+    font-family: Anybody-Regular;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+table tr {
+    border-top: 1px solid #ffe404;
+    border-bottom: 1px solid #ffe404;
+}
+
+table td {
+    height: 220px;
+    padding-bottom: 20px;
+}
+
+table p {
+    text-align: left;
+}
+
+#submit {
+    font-family: Anybody-Bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 1.5em;
+}
+
+#prompt {
+    display: none;
+    font-family: Anybody-Regular;
+}
+
+#prompt a {
+    display: flex;
+    width: fit-content;
+    align-self: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #ffe404;
+    font-size: 3em;
+    font-family: ShortStack-Regular;
+    text-decoration: underline 3px #ffe404;
+    text-underline-offset: 8px;
+}
+
+/* inputs */
+
+.container {
+    display: flex;
+    width: fit-content;
+    height: auto;
+    float: left;
+    clear: both;
+    position: relative;
+    padding-left: 25px;
+    padding-top: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  /* Hide the browser's default radio button */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On hover purple background color */
+  .container:hover input ~ .checkmark {
+    background-color: #4a275f;
+  }
+  
+  /* When the radio button is checked, add a yellow background */
+  .container input:checked ~ .checkmark {
+    background-color: #ffe404;
+  }

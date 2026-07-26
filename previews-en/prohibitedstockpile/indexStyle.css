@@ -1,0 +1,134 @@
+
+:root {
+    --base-color: #acacaa;
+    --border-color: #423435;
+}
+
+@font-face {
+	font-family: Cardo-Regular;
+	src: url("fonts/Cardo-Regular.ttf");
+}
+
+@font-face {
+    font-family: Cinzel-Regular;
+    src: url("fonts/Cinzel-Regular.ttf");
+}
+
+@font-face {
+    font-family: Anybody-Bold;
+    src: url("fonts/Anybody-Bold.ttf");
+}
+
+body {
+	background-color: black;
+	color: var(--base-color);
+	font-family: Cardo-Regular;
+}
+
+#top {
+    margin: auto;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+    width: 500px;
+}
+
+h1 {
+    display: block;
+    font-family: Cinzel-Regular;
+    font-style: normal;
+    font-size: 3em;
+}
+
+#top > h1:nth-child(2) {
+    display: block;
+    margin-top: -40px;
+}
+
+#top > p {
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+.set {
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: top;
+    justify-content: center;
+    text-align: center;
+    border: 3px solid var(--border-color);
+    border-radius: 30px;
+    width: 90%;
+    padding: 10px;
+}
+
+.category {
+    float: left;
+    left: 0;
+    margin-left: 120px;
+    margin-top: 27px;
+    text-align: left;
+    position: absolute;
+    background-color: black;
+    max-width: auto;
+    white-space: nowrap;
+    font-size: 1.1em;
+}
+
+.cell {
+    top: 0;
+    display: inline-block;
+    width: 25%;
+    margin-top: 20px;
+}
+.cell > img {
+    display: block;
+    margin: auto;
+}
+
+.cell > span {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+
+.cell-title {
+    margin-top: 40px;
+    line-height: 1.1;
+}
+
+.cell-title::after {
+    content: '\a';
+    white-space: pre;
+}
+
+.cell-content {
+    font-size: 0.8em;
+    line-height: 1.2;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.PTAG.last {
+    font-size: 0.8em;
+    color: #867274;
+    margin-left: 5%;
+}
+
+.CTAG {
+    text-decoration: none;
+}
+
+.PTAG.inbanner {
+    display: block;
+    margin-top: -14px;
+    margin-bottom: -10px;
+    font-size: 0.7em;
+    text-align: center;
+}

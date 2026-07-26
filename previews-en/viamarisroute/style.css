@@ -1,0 +1,278 @@
+@font-face {
+    font-family: SyneMono-Regular;
+    src: url(font/SyneMono-Regular.ttf);
+}
+
+@font-face {
+    font-family: VictorMono-Bold;
+    src: url(font/VictorMono-Bold.ttf);
+}
+
+@font-face {
+    font-family: VictorMono-SemiBold;
+    src: url(font/VictorMono-SemiBold.ttf);
+}
+
+* {
+    margin: 1pt;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    position: relative;
+    font-family: SyneMono-Regular;
+    background-color: #eeebdc;
+}
+
+table {
+    padding-top: 8pt;
+    width: 450pt;
+    table-layout: auto;
+    vertical-align: auto;
+}
+
+table td,
+table td * {
+    vertical-align: top;
+}
+
+table td {
+    border: 1.5pt solid #eeebdc;
+}
+
+div {
+    height: 100%;
+    display: inline-block;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+}
+
+.wrapper .sidebar {
+    width: 142pt;
+    height: 100%;
+    position: fixed;
+    overflow-y: auto;
+}
+
+.wrapper .mainContent {
+    width: 100%;
+    margin-left: 142pt;
+}
+
+.mainTitle {
+    color: #1c1216;
+    font-family: SyneMono-Regular;
+    font-size: 36pt;
+}
+
+#sidebarMenu {
+    overflow-y: auto;
+}
+
+#sidebarMenu a {
+    color: #1c1216;
+    font-family: SyneMono-Regular;
+    font-size: 18pt;
+}
+
+.headerInfo {
+    font-family: VictorMono-Bold;
+    color: #e8e3e5;
+    background-color: #1c1216;
+    padding: 0.5em;
+    font-size: 16pt;
+    min-width: 570pt;
+    max-width: 570pt;
+}
+
+.itemBackground {
+    background-color: #6f7160;
+}
+
+.productImage {
+    padding: 0pt;
+    width: 220pt;
+    max-width: 220pt;
+}
+
+.productMainInfo {
+    height: 105pt;
+}
+
+.productInfoTitle {
+    color: #1c1216;
+    font-family: VictorMono-Bold;
+    font-size: 18pt;
+    padding-left: 3pt;
+}
+
+.productInfoDetails {
+    color: #1c1216;
+    font-family: VictorMono-Bold;
+    font-size: 14pt;
+    padding-left: 3pt;
+    padding-top: 5pt;
+    display: inline-block;
+    max-width: 200pt;
+}
+
+.productInfoDetailsComment {
+    color: #1c1216;
+    font-family: VictorMono-Bold;
+    font-size: 10pt;
+    display: inline-block;
+}
+
+.productOffers {
+    padding-left: 3pt;
+    line-height: 12pt;
+    height: 160pt;
+    max-width: 210pt;
+}
+
+.productInfoCost {
+    color: #1c1216;
+    font-family: VictorMono-Bold;
+    font-size: 14pt;
+    display: inline-block;
+}
+
+.productInfoQuantity {
+    color: #1c1216;
+    font-family: VictorMono-SemiBold;
+    font-size: 12pt;
+    display: inline-block;
+}
+
+.productInfoCostRatio {
+    color: #1c1216;
+    font-family: VictorMono-SemiBold;
+    font-size: 10pt;
+}
+
+.productRatingData {
+    height: 50pt;
+    line-height: 12pt;
+}
+
+.productInfoSeller {
+    font-family: VictorMono-SemiBold;
+    font-size: 12pt;
+    display: inline-block;
+    padding-left: 5pt;
+}
+
+.productRatingImage {
+    padding-left: 5pt;
+    width: 100pt;
+}
+
+.productInfoRatings {
+    font-family: VictorMono-SemiBold;
+    font-size: 12pt;
+    display: inline-block;
+    padding-left: 5pt;
+}
+
+.orderButton {
+    font-family: VictorMono-Bold;
+    font-size: 18pt;
+    color: #1c1216;
+    background-color: #737184;
+    padding: 2pt 35pt 2pt 8pt;
+    border: solid #1c1216 1pt;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.buttonDiv {
+    padding-left: 3pt;
+    padding-bottom: 8pt;
+    padding-top: 20pt;
+}
+
+.navigationTable {
+    width: 675pt;
+}
+
+.navigationBarTableData {
+    text-align: center;
+}
+
+.navigationBar {
+    padding-top: 10pt;
+    font-family: VictorMono-Bold;
+}
+
+#navigationBarPage a {
+    font-size: 16pt;
+    color: #1c1216;
+    padding-left: 5pt;
+    padding-right: 5pt;
+}
+
+.errorInfo {
+    font-family: VictorMono-Bold;
+    font-size: 20pt;
+    color: #1c1216;
+    display: inline-block;
+    max-width: 550pt;
+    padding-top: 180pt;
+    padding-left: 50pt;
+}
+
+.img-container {
+    position: relative;
+}
+
+.img-container>.CTAG-1 {
+    position: absolute;
+    width: 20%;
+    height: 30%;
+    right: 29%;
+    top: 30%;
+}
+
+.img-container>.CTAG-2 {
+    position: absolute;
+    width: 25%;
+    height: 30%;
+    right: 49%;
+    top: 30%;
+}
+
+.img-container>.CTAG-3 {
+    position: absolute;
+    width: 70%;
+    height: 50%;
+    left: 30%;
+    top: 40%;
+}
+
+.img-container>.CTAG-4 {
+    position: absolute;
+    width: 22%;
+    height: 28%;
+    left: 18%;
+    top: 45%;
+}
+
+.img-container>.CTAG-5 {
+    position: absolute;
+    width: 28%;
+    height: 42%;
+    left: 28%;
+    top: 50%;
+}
+
+/* Hi bill */
+/* Uncomment this to display all ctags */
+/* .CTAG {
+    background-color: rgba(255, 0, 0, 0.548);
+} */

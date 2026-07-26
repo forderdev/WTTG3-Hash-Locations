@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Overnight Success</title>
+</head>
+<body>
+    <br><br>
+    <div class="main-text">
+        <div class="bg-text comment-01">"I've been raving about their service to everyone I know!"</div>
+        <div class="bg-text comment-02">“the service was truly exceptional, exceeding my every expectation.”</div>
+        <div class="bg-text comment-03">“PHENOMENAL”</div>
+        TAKE DOWN THE COMPETITION. RUIN YOUR RIVALS. BECOME…<br>AN….
+        <span class="underlined-text">OVERNIGHT SUCCESS</span>
+        <img src="img/PremiumSeal.png" class="bg-icon right-icon-2">
+        <img src="img/FiveStar.png" class="bg-icon left-icon-2">
+    </div>
+    <br><br><br>
+    <div class="info-border">
+        <p>With Overnight Success’ ruthless methods and merciful prices, you too can be top dog! In today’s cut-throat commerce climate of a free-for-all battle royale between countless retail companies, starting a new online business can be a real dud.</p><br>
+        <p>When your brain child’s already been stolen, copied or just plain worse than some other jerk offs, it’s nearly impossible to offer a unique and desirable product to consumers. BUMMER! </p><br>
+        <p>How are you, a pioneer of the marketing field, supposed to get ahead? Who has time to slowly and organically build a social media presence and rack up the followers? <a class="CFTAG">NO ONE!</a> What start-up business has the resources to hit the ground running and engender trust between dumbass consumers fast enough to make those profit margins? NO ONE!</p><br>
+        <p>… but now, all that’s standing between you, your dream, and reality is just a click away!</p>
+    </div>
+    <div class="main-text">
+        <div class="bg-text comment-04">“Outstanding attention to detail sets them apart form the competition.”</div>
+        <div class="bg-text comment-05">“Unbeatable”<em class="PTAG text-dark" style="color: #4f4513; padding-left: 10px;"></em></div>
+        <div class="bg-text comment-06">“Their five star rating is well deserved. I’d give them 6 stars if it’d let me.”</div>
+        <img src="img/Ribbon.png" class="bg-icon left-icon">
+        <img src="img/Satisfaction100.png" class="bg-icon right-icon">
+        <a onClick="LinkClick('purchase.html')" class="active">
+        <span class="underlined-text-2">PURCHASE THE<br> MOGEL PACKAGE!</span>
+        </a>
+    </div>
+    <br><br>
+    <div class="small-text">Now YOU can join thousands of other satisfied entrepreneurs and become an <span class="bold-text-element">Overnight Success!</span></div>
+    <div class="main-text">HOW DO WE DO IT?! HERE’S HOW!</div>
+    <div class="info-border">
+        <p>The stakes have never been higher. It’s not enough to sell innovative or well-crafted products anymore (even shit has its mark up), customers want credibility. <a class="CPTAG">INSANE</a>, right? But, Overnight Success makes it faster and easier to gain that sweet, sweet credibility than ever before. We offer consumer-board verifiable bulk addresses and confirmation of receipt of shipments… all without costing you a single item of inventory, or a single dime in shipping.</p><br>
+        <p>On paper, the sales are as real as any, so those pesky auditors won’t know the difference, and neither will consumers. It’s that simple! Just kick back, and watch your business grow as the verified sale numbers add up. Of course, no actual sales take place, the seller will not receive payment for goods that weren’t sent and don’t exist, but the sales numbers and verified customers will pass investigatory scrutiny! It’s a risk-free investment for the future of your capitalism <a class="CFTAG">baby</a>.</p>
+    </div>
+    <div class="main-text">
+        <img src="img/4.89_Stars.png" class="bg-icon left-icon-3">
+        <div class="bg-text comment-07">"Unforgettable magical experience I’ll hold<br>dear to my heart till the end of time."<em class="PTAG text-dark" style="color: #4f4513; padding-left: 5px;"></em></div>
+        <div class="bg-text comment-08">"The customer service representative was patient and<br> knowledgeable, guiding me through the solution step by step.<br> I'm impressed with their professionalism and expertise."</div>
+        <div class="bg-text comment-09">"I highly recommend trying the Chef’s Special on any night –<br> it's consistently been a true culinary delight for the seven<br> times I’ve gone!"</div>
+        <div class="bg-text comment-10">"4.89/5"</div>
+        Package Tiers
+    </div>
+    <div class="info-border">
+        <p> <a onClick="LinkClick('purchase.html')" class="active"><span class="big-plus">+ </span><span class="big-element-title">Hobbyist Package</span></a> - <span style = "font-family: Lato-Italic; text-decoration: underline;"> at $0.50 per address up to 500 (min. 100)</span>, All of our packages at Hobbyist tier and higher include the following services:
+            Stand - $1,000: Verified sales numbers for selected products plus 5-star* ratings from verified buyers (*98% 5-star ratings and 2% 4-star ratings for believability)
+            Boutique - $2,500: All in the previous tier plus indicator of which product was purchased<em class="PTAG text-dark" style="color: #4f4513; padding-left: 20px;"></em></p>
+        <p> <a onClick="LinkClick('purchase.html')" class="active"><span class="big-plus">+ </span><span class="big-element-title">CEO Package</span></a> - <span style = "font-family: Lato-Italic; text-decoration: underline;">$0.40 per address up to 5,000 (min. 1,000)</span>, for the more ambitious sellers only!<br>
+            Franchise - $4,500: All in previous tiers, plus 3 multiple choice answers “Are you satisfied with the product you received?” “Would you shop here again?” “Would you recommend this shop to others?” <br> Mass Merchant - $7,450 : All in previous tiers plus short and varied written product and service reviews. </p>
+        <p> <a onClick="LinkClick('purchase.html')" class="active"><span class="big-plus">+ </span><span class="big-element-title">Mogul Package</span></a> - <span style = "font-family: Lato-Italic; text-decoration: underline;">$0.30 per address up to 50,000(min. 10,000)</span> to completely destroy the competition <br>
+            Empire - $10,500: All in previous tiers plus longer, harder and more detailed written reviews, and included product photos (ALL YOU GOTTA DO IS SEND US SOME SAMPLES AND YOU’RE GOOD!)</p>
+        <p> <a onClick="LinkClick('purchase.html')" class="active"><span class="big-plus">+ </span><span class="big-element-title">Smear campaign add-ons</span></a> - if positive reviews and verified purchasers aren’t enough, the Smear Campaign add-on can be added to any package level to not only boost YOUR business but obliterate the competition (WE’RE TALKING SCORCHED EARTH, MOTHERFUCKER)  with negative reviews and 1-to-2-star ratings.<br>
+            Slander - $3.00 per negative rating<br>
+            Libel - <a class="CPTAG">$5.50</a> per negative review and rating</p>
+    </div>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+        <meta charset="UTF-8">
+        <title>MamaBruguglio</title>
+        <link rel="stylesheet" href="../Global/reset.css"/>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script type="text/javascript" src="../Global/Basic.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="image-block">
+                <em class="PTAG inside"></em>
+                <img src="imgs/MamaBruguglio-pfp.png" alt="Mama-pfp">
+            </div>
+            <p>Mama says, "Reward helpful hands with the first slice."</p>
+        </header>
+        <main>
+            <div class="title-cake">
+                <h1 class="title">POUND CAKE</h1>
+                <p class="subtitle">by Mama Bruguglio</p>
+            </div>
+            <p class="ingredients-title">(Makes 9” x 5” loaf)</p>
+            <div class="ingredients">
+                <div class="left">
+                    <p>3 cups white sugar<br>
+                        1 & 1/2 cups of margarine (softened)<br>
+                        5 eggs<br>
+                        1 tsp. vanilla extract<br>
+                        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<br>
+                        1 tsp. lemon juice (optional)
+                    </p>
+                </div>
+                <div class="right">
+                    <p>3 cups all-purpose flour<br>
+                        1 & 1/2 tsp. baking powder<br>
+                        30mL <a class="CFTAG">tetramethylenedisulfotetramine</a><br>
+                        (optional)<br>
+                        1 tsp. salt<br>
+                        1 cup evaporated milk<br>
+                    </p>
+                </div>
+            </div>
+            <div class="recipes">
+                <div class="instruction">
+                    <h2 class="step">PREHEAT</h2>
+                    <p class="dot">· · · · · · · ·</p>
+                    <p class="instruction">the oven to 325 degrees F (165 degrees C).</p>
+                </div>
+                <div class="instruction">
+                    <h2 class="step">GREASE</h2>
+                    <p class="dot">· · · · · · · · ·</p>
+                    <p class="instruction">up then flour your loaf pan or baking pan equivalent.</p>
+                </div>
+                <div class="instruction">
+                    <h2 class="step">WHISK</h2>
+                    <p class="dot">· · · · · · · · · ·</p>
+                    <p class="instruction">together sugar and margarine until smooth. Check<br>
+                        consistency before continuing, all sugar should be <br>
+                        dissolved into margarine.</p>
+                </div>
+                <div class="instruction">
+                    <h2 class="step"><a class="CPTAG">BEAT</a></h2>
+                    <p class="dot">· · · · · · · · · · · ·</p>
+                    <p class="instruction">eggs into mixture one at a time, then stir in vanilla<br>
+                         extract and lemon juice.</p>
+
+                </div>
+                <div class="instruction">
+                    <h2 class="step">MIX</h2>
+                    <p class="dot">· · · · · · · · · · · · ·</p>
+                    <p class="instruction">flour, baking powder, and salt together and slowly<br>
+                        mix into bowl, taking breaks to incorporate condensed <br>
+                        milk into mixture.
+                    </p>
+                </div>
+                <div class="instruction">
+                    <h2 class="step">POUR</h2>
+                    <p class="dot">· · · · · · · · · · ·</p>
+                    <p class="instruction">contents into prepared loaf pan.</p>
+                    <em class="PTAG text-dark"></em>
+                </div>
+                <div class="instruction">
+                    <h2 class="step">BAKE</h2>
+                    <p class="dot">· · · · · · · · · · · </p>
+                    <p class="instruction">for 1 hour and 8 minutes, or until a <a class="CFTAG">knife</a> <br>
+                        inserted into the pound cake comes out clean.</p>
+                </div>
+                <div class="instruction">
+                    <h2 class="step">REMOVE</h2>
+                    <p class="dot">· · · · · · · ·</p>
+                    <p class="instruction">from oven and let cool for at least 15 minutes<br>
+                        before extracting from loaf pan. Once cooled <br>
+                        completely <a class="CPTAG">enjoy</a>. Your guests won’t be able to <br>
+                        help themselves from grabbing a second slice, <br>
+                        yum yum yum.</p>
+                </div>
+                <div class="instruction">
+                    <h2 class="step">(OPTIONAL)</h2>
+                    <p class="dot">· <a class = "CFTAG">·</a> · · ·</p>
+                    <p class="instruction">just before serving, slice loaf into pre-cut sections.<br>
+                        Remove each slice you wish to taint and with <br>
+                        an eye dropper place 20-30 drops of <br>
+                        tetramethylenedisulfotetramine throughout the slice.<br>
+                        This will have no effect on the smell or taste of the<br>
+                        delicious pound cake. <a class="CPTAG">One</a> slice should do the trick,<br>
+                        but provide two to be sure.</p>
+                </div>
+            </div>
+        </main>
+        <em class="PTAG shadow"></em>
+    
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

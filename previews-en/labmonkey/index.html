@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <title>Lab Monkey</title>
+    <link rel="stylesheet" href="../Global/reset.css" />
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+</head>
+<body>
+    <div id="logo">
+        <span id="logo1">L</span>
+        <span id="logo2">A</span>
+        <span id="logo3">B</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span id="logo4">M</span>
+        <span id="logo5">O</span>
+        <span id="logo6">N</span>
+        <span id="logo7">K</span>
+        <span id="logo8">E</span>
+        <span id="logo9">Y</span>
+    </div>
+
+    <nav>
+        <table>
+            <tr>
+                <td style="width: 15%;"><a onClick="LinkClick('index.html')" class="active">HOME</a></td>
+                <td style="width: 22%;"><a onClick="LinkClick('sign-in.html')" class="active">PURCHASE</a></td>
+                <td style="width: 23%; word-wrap: break-word;"><a onClick="LinkClick('error.html')"
+                        class="active">DOCUMENTA<br>TION</a></td>
+                <td style="width: 22%; word-wrap:break-word;"><a onClick="LinkClick('catalog.html')"
+                        class="active">MEDICATION<br>S</a></td>
+                <td style="width: 26%;"><a onClick="LinkClick('sign-in.html')" class="active">SIGN-IN</a></td>
+            </tr>
+        </table>
+    </nav>
+
+    <main>
+        <p class="italic">
+            Be the first to gain access to hundreds of cutting-edge medications whose approval is still pending at the
+            federal level. You'll find medicines with a high clinical success rate for various <em
+                class="PTAG text-dark"></em> conditions before the pharmaceutical industry limits public access behind
+            high-cost hurdles, <a class="CPTAG italic">red tape</a>, and unnecessary bureaucratic regulation.
+        </p>
+        <h2 class="bold">Our Process</h2>
+        <p>
+            <a onClick="LinkClick('error.html')" class="active bold underlined">Register now</a> with your complete
+            information to gain access.
+        </p>
+        <br>
+        <p>
+            Lab Monkey requires official documentation from a licensed medical doctor clearly indicating a diagnosis for
+            the disease or condition to be treated by the chosen medications. Prices listed are as close to cost as
+            possible while still being able to support operations for this service. <em class="PTAG text-dark"></em>
+            However, all users have the opportunity to receive a partial refund of up to 50% of the cost in return for
+            detailed and thorough documentation of all reactions and effects and for providing regular checkup results
+            from a licensed testing facility.
+        </p><br>
+
+        <p>Treatment forms and diaries are provided in the documentation menu category.</p><br>
+
+        <p>Lab Monkey additionally has a policy of partial compensation for the cost of testing during treatment should
+            the full prescribed <em class="PTAG text-dark"></em> regimen be completed.</p>
+
+        <h2 class="bolditalic left" style="margin-left: 10px;">Recently Added Medicines:</h2>
+        <div class="medicine left bg_black" style="margin-top: 10px;">
+            <h3 class="bold">Adynofergen Halcizone</h3>
+            <p>Description: Medium-sized, round, violet pills</p>
+            <p>Method: take 1-3 tablets a day as prescribed</p>
+            <p>Known Effects/Side Effects: calming reaction and <em class="PTAG text-dark"></em> pre-sleep anxiety with
+                potential negative side effects of insomnia, anxiety, depression, dizziness, mood elevation</p>
+            <p>Cost: <a class="CFTAG">$203</a> for one month</p>
+        </div>
+        <div class="medicine left bg_gray">
+            <h3 class="bold">Amapryl</h3>
+            <p>Description: Tiny, pentagonal, white pills</p>
+            <p>Method: 1 capsule 2-3 times a day as prescribed</p>
+            <p>Known Effects/Side Effects: Effective treatment for narcolepsy and related sleep disorders with potential
+                negative side effects of nausea, giddiness, hyperactivity</p>
+            <p>Cost: $470 for three months</p>
+        </div>
+        <div class="medicine left bg_black">
+            <h3 class="bold">Beclotonin Cafezyme</h3>
+            <p>Description: Fine, pale green powder</p>
+            <p>Method: Dissolve in water at the prescribed dosage and frequency</p>
+            <p>Known Effects/Side Effects: Increased mental acuity and focus with potential negative side effects of
+                elevated blood pressure, headaches, tunnel vision</p>
+            <p>Cost: $167 for one month</p>
+        </div>
+        <div class="medicine left bg_gray">
+            <h3 class="bold">Enaxane Oxymocerol</h3>
+            <p>Description: Medium-sized, octagonal, golden pills</p>
+            <p>Method: Take one tablet every other day at the prescribed dosage</p>
+            <p>Known Effects/Side Effects: Regaining cognitive function after memory loss due to various degenerative
+                brain disorders with potential negative side effects of tingling in extremities, mood swings,
+                shallowness of breath</p>
+            <p>Cost: $537 for one round of treatment up to six months</p>
+        </div>
+        <div class="medicine left bg_black">
+            <h3 class="bold">Olmeban</h3>
+            <p>Description: Large, square, white pills</p>
+            <p>Method: Crush tablets and sprinkle them on the morning meal</p>
+            <p>Known Effects/Side Effects: Slows metabolism and increases bodily immune response with potential <a
+                    class="CPTAG">negative</a>
+                side effects of impulsivity, panic attacks, hallucinations</p>
+            <p>Cost: $288 per month</p>
+        </div>
+        <div class="medicine left bg_gray">
+            <em class="PTAG text-dark" style="position: absolute; margin-left: 700px; font-size: 0.8em;"></em>
+            <h3 class="bold">Pantopril</h3>
+            <p>Description: Medium-sized blue capsules</p>
+            <p>Method: Take with food</p>
+            <p>Known Effects/Side Effects: For effective treatment of dementia and other degenerative age-related
+                neurological disorders with potential negative side effects of drowsiness, lethargy, reduced heartrate
+            </p>
+            <p>Cost: $146 per two months</p>
+        </div>
+        <div class="medicine left bg_black">
+            <h3 class="bold">Ramipex</h3>
+            <p>Description: Medium-sized, triangular, gray pills</p>
+            <p>Method: Take at bedtime</p>
+            <p>Known Effects/Side Effects: For treatment of sleep apnea and weight loss with potential negative side
+                effects of loss of appetite, reduced <a class="CFTAG">energy</a> during the day, migraines</p>
+            <p>Cost: $316 per month</p>
+        </div>
+        <div class="medicine left bg_gray">
+            <h3 class="bold"><a class="CPTAG bold">Zannase</a></h3>
+            <p>Description: Sachet of white powder with a consistency similar to sugar.</p>
+            <p>Method: Mix with water and apply to affected areas as a paste</p>
+            <p>Known Effects/Side Effects: For treating chronic pain with potential side effects of hair loss, hives,
+                and acne at the point of skin friction</p>
+            <p>Cost: <a class = "CFTAG">$383</a> per month</p>
+        </div>
+
+        <a onClick="LinkClick('catalog.html')" class="active">
+            <h3 class="bold underlined" style="margin-top: 30px;">View Full Catalog</h3>
+        </a>
+
+        <a onClick="LinkClick('sign-in.html')" class="active">
+            <h2 class="bold underlined" style="margin-top: 30px;">BUY NOW</h2>
+        </a>
+    </main>
+    <br><br><br>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,388 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0 auto;
+  background: url("./assets/background.webp");
+  background-size: 1442px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #0b0706;
+}
+
+.lowWhite {
+  color: white;
+  opacity: 75%;
+}
+
+.titleTag {
+  position: absolute;
+  top: 5.25vh;
+  right: 5vw;
+  color: white;
+  opacity: 30%;
+}
+
+.container {
+  width: 85vw;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.newContainer {
+  width: 85vw;
+  max-width: 1080px;
+  margin: 0 auto;
+  font-family: 'gothicLight';
+}
+
+.header-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-top: 40px;
+  text-align: right;
+  position: relative;
+}
+
+.snap {
+  font-family: "baby";
+  color: white;
+  font-size: 60px;
+  filter: drop-shadow(0 0 10px black);
+  margin: 0;
+}
+
+.menu {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  font-family: "gothicMedium";
+  margin-top: 600px;
+  margin-bottom: 2vw;
+}
+
+.menu a {
+  font-size: 36px;
+  text-transform: uppercase;
+  margin: 0 52px;
+  cursor: pointer;
+}
+
+p {
+  color: white;
+  font-size: 24px;
+  font-family: "gothicLight";
+  margin: 30px auto;
+}
+
+.gift {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin-bottom: 75px;
+}
+
+.giftDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  color: white;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.giftDescription h2 {
+  font-size: 46px;
+  font-family: "gothicMedium";
+}
+
+.giftDescription p {
+  width: 100%;
+}
+
+.centered {
+  text-align: center;
+}
+
+.eye {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  margin-top: 112px;
+  margin-left: 177px;
+  cursor: pointer;
+  color: red;
+}
+
+.knob {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  margin-top: 380px;
+  margin-left: 55px;
+  cursor: pointer;
+  color: red;
+}
+
+.hero {
+  width: 2.5vw;
+  height: 2.5vw;
+  position: absolute;
+  top: 12.5vw;
+  left: 37vw;
+  cursor: pointer;
+  color: red;
+}
+
+#sel {
+  text-decoration: underline;
+}
+
+@font-face {
+  font-family: "baby";
+  src: url("./typography/baby.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "gothicLight";
+  src: url("./typography/gothicLight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "gothicMedium";
+  src: url("./typography/gothicMedium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.transparent-img {
+  width: 1442px;
+  opacity: 0.5;
+  display: block;
+  margin: 0 auto;
+}
+
+.info-section {
+  display: flex;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+  align-items: flex-start;
+}
+
+.doll-image {
+  max-height: 600px;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+
+.info-background {
+  flex: 1;
+  height: 500px;
+  background-image: url('img/doily.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  color: white;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+  min-height: 0;
+  align-items: center;
+}
+
+.info-background-2 {
+  flex: 1;
+  height: 500px;
+  background-image: url('img/doily-alt.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  color: white;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+  min-height: 0;
+  align-items: center;
+}
+
+.info-text {
+  max-width: 60%;
+  max-height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.title {
+  background-color: black;
+  color: white;
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 36px;
+  filter: none;
+  border-radius: 12px;
+  min-width: 80%;
+  max-width: 80%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: 'gothicMedium';
+}
+
+.description {
+  color: black;
+  filter: none;
+  font-size: 18px;
+  line-height: 1.4;
+  max-width: 75%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+.order-container {
+  display: flex;
+  max-width: 1080px;
+  margin: 50px auto;
+  gap: 40px;
+  align-items: center;
+}
+
+.order-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: white;
+}
+
+.order-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.row label {
+  min-width: 140px;
+}
+
+input, select {
+  padding: 16px;
+  font-size: 22px;
+  color: black;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  font-family: 'gothicMedium';
+  text-align: center;
+  min-width: 350px;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+input::placeholder {
+  color: grey;
+}
+
+.price-inline {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+  color: white;
+  padding-left: 30px;
+  padding-top: 16px;
+}
+
+.currency-icon {
+  width: 32px;
+  height: 32px;
+  align-items: center;
+}
+
+.order-bottom {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+#place-order {
+  padding: 20px 30px;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: black;
+  border: none;
+  font-family: 'gothicMedium';
+}
+
+#place-order:hover {
+  background-color: #666;
+}
+
+.total-price {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+  color: white;
+}
+
+.product-image img {
+  max-height: 800px;
+  width: auto;
+}
+
+#gift-price
+{
+  font-size: 30px;
+}
+
+#shipping-price
+{
+  font-size: 30px;
+}
+
+#total
+{
+  font-size: 30px;
+}
+
+.error-message {
+  color: white;
+  font-size: 30px;
+  font-family: 'gothicLight';
+  color: white;
+  display: none;
+}
+
+#total-message {
+  font-size: 30px;
+  max-width: 200px;
+}

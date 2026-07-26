@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000000;
+}
+
+.background-images {
+    position: relative;
+    width: 100vw;
+}
+
+.background-images img {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.overlay-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+
+.overlay-images img {
+    pointer-events: auto;
+    margin-bottom: 20px;
+}

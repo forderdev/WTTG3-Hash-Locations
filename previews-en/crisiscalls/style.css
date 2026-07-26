@@ -1,0 +1,951 @@
+@font-face {
+  font-family: 'Marcellus-Regular';
+  src: url('font/Marcellus-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Merriweather-Regular';
+  src: url('font/Merriweather-Regular.ttf')
+}
+
+@font-face {
+  font-family: 'Merriweather-Bold';
+  src: url('font/Merriweather-Bold.ttf')
+}
+
+@font-face {
+  font-family: 'Merriweather-Italic';
+  src: url('font/Merriweather-Italic.ttf')
+}
+
+
+/* Style the buttons */
+
+.btn {
+  display: inline-block;
+  border-radius: 8px;
+  outline: none;
+  padding: 10px 8px;
+  background-color: #26272f;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+/* Style the active class (and buttons on mouse-over) */
+.active, .btn:hover {
+  background-color: #182bc3;
+  color: white;
+}
+
+.active:disabled {
+  background-color: #182bc3;
+  opacity: 1;
+}
+
+label {
+  color: white;
+}
+
+
+button:disabled {
+  opacity: 0.3;
+}
+
+ul {
+  font-size: 15px;
+  color: white;
+  font-family: Arial;
+  padding-left: 20px;
+  list-style-type: square;
+}
+
+h2 {
+  color: white;
+  font-size: 20px;
+  font-family: Arial;
+}
+
+hr {
+  height: 2px;
+  width: 400px;
+  background-color: black;
+}
+
+#betInput {
+  background-color: white;
+  padding: 8px 8px;
+  font-size: 18px;
+  width: 50px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:disabled {
+
+}
+
+#finalize {
+  color: white;
+  height: 60px;
+  width: 100px;
+  padding-top: 10px;
+  margin: left;
+  text-align: center;
+}
+
+#wheelButtonPreview {
+  background-color: grey;
+  padding: 10px 10px 10px;
+  cursor: pointer;
+}
+
+#categoryMult {
+  font-size: 20pt;
+  font-family: Arial, sans-serif;
+  color: yellow;
+  text-shadow: 1px 1px 3px black;
+}
+
+/* MAIN PAGE NEW CLASSES */
+/* -------------------------------------- */
+.crisis-calls-main {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  background-image: none;
+  color: #fff;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.crisis-calls-main .banner-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.crisis-calls-main .banner-crop {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.crisis-calls-main .banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.crisis-calls-main .banner-text {
+  position: absolute;
+  top: 7%;
+  left: 1%;
+  color: white;
+  font-size: 34px;
+  font-family: 'Marcellus-Regular', sans-serif;
+}
+
+.crisis-calls-main .betting-container {
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+}
+
+.crisis-calls-main .interested-section {
+  max-width: 1080px;
+  margin: 20px auto 20px auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.crisis-calls-main .interested-text {
+  color: white;
+  font-size: 20px;
+  font-family: 'Mercellus', serif;
+}
+
+.crisis-calls-main .interested-button {
+  background-color: #182bc3;
+  color: white;
+  padding: 12px 8px;
+  font-size: 16px;
+  font-family: 'Marcellus-Regular', serif;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.crisis-calls-main .interested-button:hover {
+  background-color: #1f38ff;
+  color: white;
+}
+
+.crisis-calls-main .content-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #d4d5de;
+  font-family: 'Merriweather-Regular', serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.crisis-calls-main .betting-window-info {
+  max-width: 800px;
+  font-family: 'Merriweather', serif;
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  line-height: 1.2;
+  margin: 20px auto 0px;
+}
+
+.crisis-calls-main .rebroadcast-section {
+  max-width: 700px;
+  height: 300px;
+  margin: 10px auto;
+  background-image: url('img/radioScannerBlur.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: 'Merriweather', serif;
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 5px 5px 2px rgba(0,0,0,1);
+  user-select: none;
+}
+
+.crisis-calls-main .closed-captions-container {
+  max-width: 700px;
+  margin: 10px auto;
+  font-family: 'Merriweather', serif;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.crisis-calls-main .toggle-button {
+  background-color: #161616;
+  color: white;
+  padding: 6px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 8px;
+  border: none;
+  white-space: nowrap;
+  margin-bottom: 0;
+  font-family: 'Merriweather-Bold', serif;
+}
+
+.crisis-calls-main .captions-content {
+  background-color: #232323;
+  color: white;
+  padding: 12px;
+  min-height: 150px;
+  width: 100%;
+  text-align: left;
+  border-radius: 0;
+  display: none;
+  font-size: 16px;
+  font-family: 'Merriweather-Regular', serif;
+}
+
+.crisis-calls-main .main-wrapper {
+  position: relative;
+  width: 1080px;
+  height: 30px;
+  background: #0a0a0a;
+  margin: 0 auto 35px;
+}
+
+.crisis-calls-main .selection-text {
+  position: absolute;
+  top: 8px;
+  left: 140px;
+  color: white;
+  font-family: 'Merriweather-Regular', serif;
+  max-width: 500px;
+  font-size: 20px;
+}
+
+.crisis-calls-main .multiplier-image {
+  width: 90px;
+  height: auto;
+}
+
+.crisis-calls-main .multiplier-image-2 {
+  width: 60px;
+  height: auto;
+}
+
+.crisis-calls-main .reset-bet-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.crisis-calls-main .reset-bet-button img {
+  width: 150px;
+  height: auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.crisis-calls-main .reset-bet-button:active img {
+  transform: scale(0.8);
+}
+
+.crisis-calls-main .parlay-container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  gap: 0;
+  border: 3px solid grey;
+  border-radius: 4px;
+}
+
+.crisis-calls-main .parlay-section {
+  color: white;
+}
+
+.crisis-calls-main .section-1 {
+  background-color: #151414;
+  padding: 5px;
+  border-bottom: 3px solid grey;
+  font-family: 'Merriweather-Bold';
+  color: white;
+  font-size: 24px;
+}
+
+.crisis-calls-main .section-2 {
+  background-color: #2d2b2b;
+  padding: 5px;
+  border-bottom: 3px solid white;
+  color: white;
+  font-family: 'Merriweather-Regular';
+  font-size: 14px;
+}
+
+.crisis-calls-main .section-3 {
+  background-color: #2d2b2b;
+  padding: 5px;
+  border-bottom: 3px solid white;
+  color: white;
+  font-family: 'Merriweather-Bold';
+  font-size: 18px;
+}
+
+.crisis-calls-main .section-4 {
+  background-color: #2d2b2b;
+  padding: 5px;
+  color: white;
+  font-family: 'Merriweather-Bold';
+  font-size: 18px;
+}
+
+.crisis-calls-main .section-1 h2 {
+  margin: 0;
+  font-size: 26px;
+  color: white;
+  padding: 0px;
+  font-family: 'Merriweather-Bold';
+}
+
+.crisis-calls-main .section-2 ul {
+  list-style-type: disc;
+  margin-left: 10px;
+  min-height: 40px;
+  color: white;
+}
+
+.crisis-calls-main #betInput {
+  background-color: #484847;
+  color: white;
+}
+
+.crisis-calls-main #sendWager {
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+  padding-top: 5px;
+}
+
+.crisis-calls-main .submit-bet-button img {
+  max-width: 100%;
+  width: 100%;
+}
+
+.crisis-calls-main .submit-row {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.crisis-calls-main #sendWager {
+  cursor: pointer;
+}
+
+.crisis-calls-main #verifyStatus {
+  color: white;
+  font-size: 1rem;
+}
+
+.crisis-calls-main .bonus-section {
+  max-width: 900px;
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+.crisis-calls-main .bonus-image {
+  width: 450px;
+  height: auto;
+  display: block;
+  margin: 0px auto 25px;
+}
+
+.crisis-calls-main .bonus-description {
+  font-size: 1rem;
+  font-family: 'Merriweather-Italic';
+  margin: 0px 0 5px;
+}
+
+.crisis-calls-main #theWheel {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 10px;
+  color: white;
+  text-align: center;
+}
+
+.crisis-calls-main .wheel-image-wrapper {
+  position: relative;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.crisis-calls-main .wheel-visual {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.crisis-calls-main #wheel-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.crisis-calls-main #wheel-trim {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.crisis-calls-main #wheelButtonPreview {
+  position: absolute;
+  top: 50px;
+  right: 610px;
+  background-color: #434343;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 3;
+  font-family: 'Merriweather-Regular';
+}
+
+.crisis-calls-main .real-spin-section {
+  max-width: 900px;
+  margin: 20px auto;
+  text-align: center;
+  color: white;
+}
+
+.crisis-calls-main .real-spin-image {
+  max-width: 100%;
+  width: 450px;
+  height: auto;
+  cursor: pointer;
+}
+
+.crisis-calls-main .real-spin-caption {
+  margin-top: 2px;
+  font-size: 12px;
+  font-family: 'Merriweather-Italic';
+  color: #f7f7f7;
+}
+
+.crisis-calls-main #bonusWheel {
+  border: 2px solid #555555;
+  background-color: #252424;
+  max-width: 900px;
+  font-size: 16px;
+  color: white;
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 100px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.crisis-calls-main #bonusWheel h2 {
+  color: white;
+  font-size: 18px;
+  padding-top: 5px;
+  font-family: 'Merriweather-Bold';
+}
+
+.crisis-calls-main #wheelResult {
+  color: white;
+  text-shadow: 0 0 10px red, 0 0 20px red;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: 'Merriweather-Regular';
+}
+
+.crisis-calls-main #bonusPotential,
+.crisis-calls-main #wheelPotential {
+  color: white;
+  font-size: 16px;
+  padding-bottom: 10px;
+  font-family: 'Merriweather-Regular';
+}
+
+.crisis-calls-main .margin-for-info {
+  margin-bottom: 700px;
+}
+
+.crisis-calls-main .how-to-title {
+  font-size: 28px;
+  margin: 0;
+  color: white;
+}
+
+.crisis-calls-main .how-to-play-section {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+  background: transparent;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.crisis-calls-main .how-to-play-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.crisis-calls-main .how-to-title {
+  margin: 0 0 15px 0;
+  font-size: 28px;
+  font-family: 'Merriweather-Regular';
+}
+
+.crisis-calls-main .how-to-text p {
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+  font-size: 16px;
+  font-family: 'Merriweather-Regular';
+  padding-bottom: 5px;
+}
+
+.crisis-calls-main .how-to-icon {
+  object-fit: contain;
+  position: absolute;
+  top: -76px;
+  left: 10px;
+  width: 130px;
+  height: 130px;
+  pointer-events: none;
+}
+
+.crisis-calls-main .background-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.crisis-calls-main .background-image-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1080px;
+  pointer-events: none;
+}
+
+.crisis-calls-main .background-image {
+  width: 100%;
+  height: auto;
+}
+
+.crisis-calls-main #bg-1 {
+  top: -2900px;
+  z-index: -2;
+}
+.crisis-calls-main #bg-2 {
+  top: -1200px;
+  z-index: -2;
+}
+.crisis-calls-main #bg-line {
+  top: -1200px;
+  z-index: -1;
+}
+
+/* -------------------------------------- */
+
+
+
+
+
+
+
+
+/* CREATE ACCOUNT CLASSES */
+/* -------------------------------------- */
+
+.create-account {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  background-image: none;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.create-account .banner-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.create-account .banner-crop {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.create-account .banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.create-account .banner-text {
+  position: absolute;
+  top: 7%;
+  left: 1%;
+  color: white;
+  font-size: 34px;
+  font-family: 'Marcellus-Regular', sans-serif;
+}
+
+.create-account .container {
+  max-width: 1080px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.create-account .error-bar {
+  width: 100%;
+  background-color: #e4e4e4;
+  color: black;
+  font-size: 16px;
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+
+  font-family: 'Marcellus-Regular', serif;
+}
+
+.create-account .reset-password-text {
+  font-size: 32px;
+  margin-top: 30px;
+  font-family: 'Merriweather-Bold', serif;
+}
+
+.create-account .info-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+  max-width: 500px;
+  line-height: 1.4;
+  font-family: 'Merriweather-Regular', serif;
+}
+
+.create-account .input-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+  width: 500px;
+}
+
+.create-account .input-wrapper input {
+  width: 100%;
+  padding: 16px;
+  font-size: 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: #0a0a0a;
+  color: #fff;
+  outline: none;
+  font-family: 'Merriweather-Regular', serif;
+}
+
+.create-account .input-wrapper label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background: #0a0a0a;
+  padding: 0 5px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  pointer-events: none;
+  font-family: 'Merriweather', serif;
+}
+
+.create-account .log-in-button {
+  width: 500px;
+  background-color: #0d1629;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  font-family: 'Merriweather-Bold', serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.create-account .log-in-button:hover {
+  background-color: #2a4784;
+}
+
+.create-account .forgot-password-text {
+  text-align: right;
+  color: #2559c8;
+  margin-top: 8px;
+  font-family: 'Merriweather';
+}
+
+.create-account .info-box {
+  text-align: center;
+  color: white;
+  font-family: 'Merriweather-Regular';
+}
+
+.create-account .info-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+.create-account .info-left {
+  font-size: 16px;
+}
+
+.create-account .info-right {
+  font-size: 16px;
+  color: #2559c8;
+}
+
+.create-account .info-bottom {
+  font-size: 13px;
+  width: 300px;
+}
+
+/* -------------------------------------- */
+
+/* RESET PASSWORD CLASSES */
+
+.reset-password {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  background-image: none;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.reset-password .banner-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.reset-password .banner-crop {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.reset-password .banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.reset-password .banner-text {
+  position: absolute;
+  top: 7%;
+  left: 1%;
+  color: white;
+  font-size: 34px;
+  font-family: 'Marcellus-Regular', sans-serif;
+}
+
+.reset-password .container {
+  max-width: 1080px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.reset-password .error-bar {
+  width: 100%;
+  background-color: #e4e4e4;
+  color: black;
+  font-size: 16px;
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+
+  font-family: 'Marcellus-Regular', serif;
+}
+
+.reset-password .reset-password-text {
+  font-size: 32px;
+  margin-top: 30px;
+  font-family: 'Merriweather-Bold', serif;
+}
+
+.reset-password .info-text {
+  font-size: 20px;
+  margin-bottom: 20px;
+  max-width: 500px;
+  line-height: 1.4;
+  font-family: 'Merriweather-Regular', serif;
+}
+
+.reset-password .input-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+  width: 500px;
+}
+
+.reset-password .input-wrapper input {
+  width: 100%;
+  padding: 16px;
+  font-size: 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: #0a0a0a;
+  color: #fff;
+  outline: none;
+  font-family: 'Merriweather-Regular', serif;
+}
+
+.reset-password .input-wrapper label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background: #0a0a0a;
+  padding: 0 5px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  pointer-events: none;
+  font-family: 'Merriweather', serif;
+}
+
+.reset-password .send-reset-password-button {
+  width: 500px;
+  background-color: #0d1629;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  font-family: 'Merriweather-Bold', serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.reset-password .send-reset-password-button:hover {
+  background-color: #2a4784;
+}
+
+.reset-password .return-link {
+  color: #2559c8;
+  background-color: #0a0a0a;
+  cursor: pointer;
+  display: block;
+  font-family: 'Merriweather', serif;
+}
+
+/* -------------------------------------- */

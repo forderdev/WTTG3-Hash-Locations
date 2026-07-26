@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <link rel="stylesheet" href="../Global/reset.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>ViaMarisRoute</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <img src="img/Well.png"><br>
+            <span class="mainTitle">Via<br>Maris<br>Route</span><br><br>
+            <section id="sidebarMenu">
+                <ul>
+                    <li><a href="#Ecstasy" class="active">Ecstasy</a></li><br>
+                    <li><a href="#Hydromorphone" class="active">Hydromorphone</a></li><br>
+                    <li><a href="#Speed" class="active">Speed</a><em class="PTAG text-dark"
+                            style="color: #949c56; padding-left: 10px;"></em></li><br>
+                    <li><a href="#Heroin" class="active">Heroin</a></li><br>
+                    <li><a href="#HashShatter" class="active">Hash Shatter</a></li><br>
+                    <li><a href="#Psilocybin" class="active">Psilocybin</a></li><br>
+                    <li><a onClick="LinkClick('secondpage.html')" class="active">DMT</a></li><br>
+                    <li><a onClick="LinkClick('secondpage.html')" class="active">Marijuana</a></li><br>
+                    <li><a onClick="LinkClick('secondpage.html')" class="active">Benzos</a></li><br>
+                    <li><a onClick="LinkClick('secondpage.html')" class="active">Cocaine</a></li><br>
+                    <li><a onClick="LinkClick('secondpage.html')" class="active">Oxys</a></li><br>
+                    <li><a onClick="LinkClick('thirdpage.html')" class="active">Ketamine</a></li><br>
+                    <li><a onClick="LinkClick('thirdpage.html')" class="active">LSD</a></li><br>
+                </ul>
+            </section>
+        </div>
+        <div class="mainContent">
+            <div class="headerInfo">
+                Worldwide delivery with tracking - All transactions are handled by a secure escrow agent - We only
+                accept DOSCoin - Convert your currency for a 2.8% conversion <a class="CPTAG">fee</a> here:
+                7DEcM3o8w9sn0undPgQXljhrpu8oCQ.ann
+                <br>
+                <br>
+                Can't find what you're looking for? Link up with dealers and view their inventory instantly over at #VelvetRoad on ACRS
+            </div>
+            <em class="PTAG text-dark"
+                style="color: #3A3227; position: absolute; margin-top: 150pt; rotate: 90deg; z-index: 999"></em>
+            <table>
+                <tr>
+                    <td class="itemBackground" id="Ecstasy">
+                        <img class="productImage" src="img/ecstasy.png"><br>
+                        <div class="productMainInfo">
+                            <span class="productInfoTitle">Ecstasy - 20mg</span>
+                            <span class="productInfoDetails">Order now and try high grade Ecstasy pills.</span>
+                        </div>
+                        <div class="productOffers">
+                            <span class="productInfoCost">30 DOSCoin</span><br>
+                            <span class="productInfoQuantity">20 PILLS
+                                <label class="productInfoCostRatio">(1.5 DOSCoin/PILL)</label>
+                            </span>
+                            <br><br>
+                            <span class="productInfoCost">45 DOSCoin</span><br>
+                            <span class="productInfoQuantity">45 PILLS
+                                <label class="productInfoCostRatio">(1 DOSCoin/PILL)</label>
+                            </span>
+                            <br><br>
+                            <span class="productInfoCost">70 DOSCoin</span><br>
+                            <span class="productInfoQuantity">100 PILLS
+                                <label class="productInfoCostRatio">(0.7 DOSCoin/PILL)</label>
+                            </span>
+                        </div>
+                        <div class="productRatingData">
+                            <span class="productInfoSeller">seller: Jacob94</span><br>
+                            <img class="productRatingImage" src="img/4stars.png"><br>
+                            <span class="productInfoRatings">average of 139 ratings</span>
+                        </div>
+                        <div class="buttonDiv">
+                            <a onClick="LinkClick('order.html')" class="active">
+                                <button class="orderButton">ORDER</button>
+                            </a>
+                        </div>
+                    </td>
+                    <td class="itemBackground" id="Hydromorphone">
+                        <img class="productImage" src="img/hydromorphone.png"><br>
+                        <div class="productMainInfo">
+                            <span class="productInfoTitle">Hydromorphone - 5ml</span>
+                            <span class="productInfoDetails">Order high strength opioid ampoule.
+                                <label class="productInfoDetailsComment">(All purchases come with filter screens and
+                                    syringes)</label>
+                            </span>
+                        </div>
+                        <div class="productOffers">
+                            <span class="productInfoCost">18 DOSCoin</span><br>
+                            <span class="productInfoQuantity">5 AMPOULES
+                                <label class="productInfoCostRatio">(3.6 DOSCoin/AMPOULE)</label>
+                            </span>
+                            <br><br>
+                            <span class="productInfoCost">59 DOSCoin</span><br>
+                            <span class="productInfoQuantity">20 AMPOULES
+                                <label class="productInfoCostRatio">(2.95 DOSCoin/AMPOULE)</label>
+                            </span>
+                            <br><br>
+                            <span class="productInfoCost">90 DOSCoin</span><br>
+                            <span class="productInfoQuantity">40 AMPOULES
+                                <label class="productInfoCostRatio">(2.25 DOSCoin/AMPOULE)</label>
+                            </span>
+                        </div>
+                        <div class="productRatingData">
+                            <span class="productInfoSeller">seller: Dr. FIX</span><br>
+                            <img class="productRatingImage" src="img/5stars.png">
+                            <span class="productInfoRatings">average of 905 ratings</span>
+                        </div>
+                        <div class="buttonDiv">
+                            <a onClick="LinkClick('order.html')" class="active">
+                                <button class="orderButton">ORDER</button>
+                            </a>
+                        </div>
+                    </td>
+                    <td class="itemBackground" id="Speed">
+                        <div class="img-container">
+                            <img class="productImage" src="img/speed.png">
+                            <a class="CFTAG"></a>
+                            <br>
+
+                        </div>
+                        <div class="productMainInfo">
+                            <span class="productInfoTitle">Speed - 30g/bottle</span>
+                            <span class="productInfoDetails">Buy high purity speed online, fast and secure
+                                delivery.</span>
+                        </div>
+                        <div class="productOffers">
+                            <span class="productInfoCost">27 DOSCoin</span><br>
+                            <span class="productInfoQuantity">3 BOTTLES
+                                <label class="productInfoCostRatio">(9 DOSCoin/BOTTLE)</label>
+                            </span>
+                            <br><br>
+                            <span class="productInfoCost">48 DOSCoin</span><br>
+                            <span class="productInfoQuantity">6 BOTTLES
+                                <label class="productInfoCostRatio">(8 DOSCoin/BOTTLE)</label>
+                            </span>
+                            <br><br>
+                            <span class="productInfoCost">63 DOSCoin</span><br>
+                            <span class="productInfoQuantity">9 BOTTLES
+                                <label class="productInfoCostRatio">(7 DOSCoin/BOTTLE)</label>
+                            </span>
+                        </div>
+                        <div class="productRatingData">
+                            <span class="productInfoSeller">seller: krankyether</span><br>
+                            <img class="productRatingImage" src="img/3stars.png">
+                            <span class="productInfoRatings">average of 19 ratings</span>
+                        </div>
+                        <div class="buttonDiv">
+                            <a onClick="LinkClick('order.html')" class="active">
+                                <button class="orderButton">ORDER</button>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="itemBackground" id="Heroin">
+                        <img class="productImage" src="img/heroin.png"><br>
+                        <div class="productMainInfo">
+                            <span class="productInfoTitle">Heroin - 8g/bottle</span>
+                            <span class="productInfoDetails">Buy Heroin online. Pure not cut</span>
+                        </div>
+                        <div class="productOffers">
+                            <span class="productInfoCost">18 DOSCoin</span><br>
+                            <span class="productInfoQuantity">4 BOTTLES
+                                <label class="productInfoCostRatio">(4.5 DOSCoin/BOTTLE)</label>
+                            </span>
+                            <br><br>
+                            <span class="productInfoCost">40 DOSCoin</span><br>
+                            <span class="productInfoQuantity">10 BOTTLES
+                                <label class="productInfoCostRatio">(4 DOSCoin/BOTTLE)</label>
+                            </span>
+                            <br><br>
+                            <span class="productInfoCost">185 DOSCoin</span><br>
+                            <span class="productInfoQuantity">60 BOTTLES
+                                <label class="productInfoCostRatio">(3.08 DOSCoin/BOTTLE)</label>
+                            </span>
+                        </div>
+                        <div class="productRatingData">
+                            <span class="productInfoSeller">seller: Y3LLOWTOP</span><br>
+                            <img class="productRatingImage" src="img/4stars.png">
+                            <span class="productInfoRatings">average of 40 ratings</span>
+                        </div>
+                        <div class="buttonDiv">
+                            <a onClick="LinkClick('order.html')" class="active">
+                                <button class="orderButton">ORDER</button>
+                            </a>
+                        </div>
+                    </td>
+                    <td class="itemBackground" id="HashShatter">
+                        <img class="productImage" src="img/hashShatter.png"><br>
+                        <div class="productMainInfo">
+                            <span class="productInfoTitle">Hash Shatter</span>
+                            <span class="productInfoDetails">Purchase fresh made Butane Hash Shatter.</span>
+                        </div>
+                        <div class="productOffers">
+                            <span class="productInfoCost">10 DOSCoin</span><br>
+                            <span class="productInfoQuantity">10 g
+                                <label class="productInfoCostRatio">(1 DOSCoin/GRAM)</label>
+                            </span>
+                            <br><br>
+                            <span class="productInfoCost">22 DOSCoin</span><br>
+                            <span class="productInfoQuantity">26 g
+                                <label class="productInfoCostRatio">(0.84 DOSCoin/GRAM)</label>
+                            </span>
+                            <br><br>
+                            <span class="productInfoCost">51 DOSCoin</span><br>
+                            <span class="productInfoQuantity">78 g
+                                <label class="productInfoCostRatio">(0.65 DOSCoin/GRAM)</label>
+                            </span>
+                        </div>
+                        <div class="productRatingData">
+                            <span class="productInfoSeller">seller: YjBG5rbJW</span><br>
+                            <img class="productRatingImage" src="img/5stars.png">
+                            <span class="productInfoRatings">average of 227 ratings</span>
+                        </div>
+                        <div class="buttonDiv">
+                            <a onClick="LinkClick('order.html')" class="active">
+                                <button class="orderButton">ORDER</button>
+                            </a>
+                        </div>
+                    </td>
+                    <td class="itemBackground" id="Psilocybin">
+                        <img class="productImage" src="img/psilocybin.png"><br>
+                        <div class="productMainInfo">
+                            <span class="productInfoTitle">Psilocybin</span>
+                            <span class="productInfoDetails">Buy Psilocybin Mushrooms online.</span>
+                            <br>
+                            <em class="PTAG text-dark" style="color: #8d9553; font-size: 10pt; text-wrap: nowrap;"></em>
+                        </div>
+                        <div class="productOffers">
+                            <span class="productInfoCost"><a class = "CFTAG">19</a> DOSCoin</span><br>
+                            <span class="productInfoQuantity">6 g
+                                <label class="productInfoCostRatio">(3.16 DOSCoin/GRAM)</label>
+                            </span>
+                            <br><br>
+                            <span class="productInfoCost">44 DOSCoin</span><br>
+                            <span class="productInfoQuantity">15 g
+                                <label class="productInfoCostRatio">(2.93 DOSCoin/GRAM)</label>
+                            </span>
+                            <br><br>
+                            <span class="productInfoCost">99 DOSCoin</span><br>
+                            <span class="productInfoQuantity">40 g
+                                <label class="productInfoCostRatio">(2.48 DOSCoin/GRAM)</label>
+                            </span>
+                        </div>
+                        <div class="productRatingData">
+                            <span class="productInfoSeller">seller: DirtGobby</span><br>
+                            <img class="productRatingImage" src="img/3stars.png">
+                            <span class="productInfoRatings">average of <a class="CPTAG">227</a> ratings</span>
+                        </div>
+                        <div class="buttonDiv">
+                            <a onClick="LinkClick('order.html')" class="active">
+                                <button class="orderButton">ORDER</button>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="navigationTable">
+                <tr>
+                    <td class="navigationBarTableData">
+                        <div class="navigationBar">
+                            <section id="navigationBarPage">
+                                <a onClick="LinkClick('index.html')" class="active">
+                                    <img src="img/arrowLeft.png">
+                                </a>
+                                <a onClick="LinkClick('index.html')" class="active">1</a>
+                                <a onClick="LinkClick('secondpage.html')" class="active">2</a>
+                                <a onClick="LinkClick('thirdpage.html')" class="active">3</a>
+                                <a onClick="LinkClick('secondpage.html')" class="active">
+                                    <img src="img/arrowRight.png">
+                                </a>
+                            </section>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

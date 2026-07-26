@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BuildingAFuture</title>
+        <link rel="stylesheet" href="../Global/reset.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script type="text/javascript" src="../Global/Basic.js"></script>
+    </head>
+    <body>
+        <main class="flow py-8">
+            <section id="navbar" class="wrapper flex flow">
+                <article id="navbar-image" class="flex gap-400 items-end">
+                    <figure>
+                        <img src="imgs/Skyscraper.png" alt="" />
+                    </figure>
+                    <header>
+                        <h1 class="uppercase">
+                            <span class="color-black"><a class="CFTAG">Building</a></span> <a class="CPTAG">A</a> Future
+                        </h1>
+                    </header>
+                </article>
+                <nav class="flex items-end">
+                    <ul class="flex gap-500">
+                        <li class="border-b-1 px-2">
+                            <a onClick="LinkClick('index.html')"
+                                ><h4>MAIN</h4></a
+                            >
+                        </li>
+                        <li class="border-b-1 px-2">
+                            <a onClick="LinkClick('invest.html')"
+                                ><h4>INVEST</h4></a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section
+                class="wrapper flex bg-primary rounded-40 gap-500 items-center py-8"
+            >
+                <div class="nose">
+                    <em class="PTAG boop"></em>
+                    <div id="face-link"></div>
+                    <a class="CFTAG"><img src="imgs/face.png" alt="" /></a>
+                </div>
+                <article class="flow color-light-blue flex-50">
+                    <h3 class="bold">Your money matters</h3>
+                    <p>
+                        We like to keep you abreast to the current happenings
+                        during the time your investment is growing. Projects
+                        span many weeks before completion and while we are paid
+                        throughout the construction process in small sums as
+                        progression is made, you will only receive a return when
+                        the full project is complete. These <a class="CPTAG">updates</a> help create
+                        insight as to how your investment is doing and offers a
+                        rough estimate of the timeline before your large return
+                        is sent. <em class="PTAG"></em><br /><br />
+                        Waiting until the end allows us to offer the <a class="CFTAG">greatest</a>
+                        return possible on your initial investment, but also
+                        keeps both parties safe from investigation. Siphoning
+                        funds constantly is not something we can do. If that is
+                        a deal breaker we hope you reconsider and invest at a
+                        future time. Putting your <a class="CPTAG">trust</a> in us there will result
+                        in a net gain, there is no question about it. The only
+                        question you have to ask yourself is will you be one of
+                        the lucky few to invest before the opportunity has
+                        vanished?
+                    </p>
+                </article>
+            </section>
+
+            <section class="wrapper">
+                <article
+                    class="flow rounded-30 bg-light-blue color-grey px-12 py-8"
+                >
+                    <h3 class="bold text-center">Available Candidates</h3>
+                    <section class="flex gap-500 fs-20">
+                        <section class="flex flex-column gap-400">
+                            <p>Number</p>
+                            <p>#4405</p>
+                            <p>#4473</p>
+                            <p>#4006</p>
+                            <p><a class="CPTAG">#4162</a></p>
+                            <p>#4411</p>
+                        </section>
+                        <section class="flex flex-column gap-400">
+                            <p>Initial Investment</p>
+                            <p>640 DOSCoin</p>
+                            <p>350 DOSCoin</p>
+                            <p>180 DOSCoin</p>
+                            <p>220 DOSCoin</p>
+                            <p>850 DOSCoin</p>
+                        </section>
+                        <section class="flex flex-column gap-400">
+                            <p>Age</p>
+                            <p>24</p>
+                            <p>49</p>
+                            <p>19</p>
+                            <p>33</p>
+                            <p>20</p>
+                        </section>
+                        <section class="flex flex-column gap-400">
+                            <p>*Expected Return</p>
+                            <p>10x</p>
+                            <p>2x</p>
+                            <p>2x</p>
+                            <p>2x <em class="PTAG" id="text-tag"></em></p>
+                            <p>5x</p>
+                        </section>
+                    </section>
+                    <section class="fs-16">
+                        <p>
+                            *Expected return is just an estimate based on
+                            health, physical attributes, and type of contract.
+                            Higher <em class="PTAG"></em> return multipliers are
+                            almost always also associated with projects that
+                            have an elevated risk assessment.
+                        </p>
+                    </section>
+                    section
+                </article>
+            </section>
+
+            <section class="wrapper">
+                <article
+                    class="flow bg-secondary rounded-30 color-grey px-12 py-8"
+                >
+                    <h3 class="bold">Contact</h3>
+                    <p>
+                        Send an email to<br />
+                        mc1mn85H81RT9iNwBGIpl8feSQdf6g@shadowmail.ann<br /><br />
+                        Format the email subject as follows: “Investment
+                        opportunity &lt;candidate number&gt;” without quotes.<br /><br />
+                        Do not include anything else in the email subject. If
+                        you fail to do so the email will not be read.<br /><br />
+                        In the case that the selected candidate is still
+                        available you’ll receive a response <em class="PTAG"></em> directing you to a 
+                        wallet address where investment can be sent. Upon
+                        successful transfer they will be removed from the
+                        available candidate list on this site shortly
+                        thereafter.
+                    </p>
+                </article>
+            </section>
+        </main>
+    
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

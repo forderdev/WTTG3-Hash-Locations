@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<title>Kill for Me</title>
+	<script type="text/javascript" src="../Global/Basic.js"></script>
+	<link rel="stylesheet" href="../Global/reset.css"/>
+	<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+	<div class="header">
+		<div class="logo1 pull-left">
+			<img src="images/TopBanner.png">
+		</div>
+		<div class="logo2 pull-right">
+			<img src="images/KillForMe.png">
+		</div><em class="PTAG pull-right"></em>
+	</div>
+	<div class="main-menu">
+		<ul>
+			<li>
+				<a onClick="LinkClick('index.html')">HOME</a>
+			</li>
+			<li class="hidden">&nbsp;</li>
+			<li>|</li>
+			<li>
+				<a onClick="LinkClick('targets.html')">TARGETS</a>
+			</li>
+			<li>|</li>
+			<li>
+				<a onClick="LinkClick('instructions.html')">INSTRUCTIONS</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div style="margin-bottom: 40px;">
+	</div>
+
+	<div class="target-container">
+		<div class="target-element">
+			<img src="images/target1.jpg">
+			<div class="target-info">
+				<p><span class="kill-price">$17,000</span> on kill</p>
+				<p><span class="label">Name:</span>Leanne <span class="redacted">????????????</span></p>
+				<p><span class="label">Age:</span>50's</p>
+				<p><span class="label">Height:</span>5' 4" - 5' 8"</p>
+				<p><span class="label">Location:</span><span class="redacted">???</span> <span class="redacted">??????</span>, Iowa</p>
+				<p><span class="label">Occupation:</span>Clinical Nurse Specialist</p>
+				<p><span class="label">Kill Note:</span>Stabbing</p>
+				<p><span class="label">Additional Information:</span>There are no active surveillance cameras in the sub levels of the parking garage. That's where you should do it. <em class="PTAG"></em></p>
+				<br>
+				<p><span class="Label">FULL DETAILS AVAILABLE UPON CONTACT</span></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="target-container">
+		<div class="target-element">
+			<a class="CPTAG"><img src="images/target2.jpg"></a>
+			<div class="target-info">
+				<p><span class="kill-price">$39,000</span> on kill</p>
+				<p><span class="label">Name:</span><span class="redacted">???</span> <span class="redacted">?????????</span></p>
+				<p><span class="label">Age:</span>50's</p>
+				<p><span class="label">Height:</span>5' 7" - 5' 11"</p>
+				<p><span class="label">Location:</span><span class="redacted">???????????</span>, <span class="redacted">?????????????</span></p>
+				<p><span class="label">Occupation:</span>Actuarial Manager</p>
+				<p><span class="label">Kill Note:</span>Car crash</p>
+				<p><span class="label">Additional Information:</span>Very <a class="CFTAG">particular</a> about his vehicle. However coordination can be made to compromise a rental car.</p>
+				<br>
+				<p><span class="Label">FULL DETAILS AVAILABLE UPON <em class="PTAG"></em> CONTACT</span></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="target-container">
+		<div class="target-element">
+			<img src="images/target3.jpg">
+			<div class="target-info">
+				<p><span class="kill-price">$11,500</span> on kill</p>
+				<p><span class="label">Name:</span>Leo <span class="redacted">?????????</span></p>
+				<p><span class="label">Age:</span>30's</p>
+				<p><span class="label">Height:</span>5' 11" - 6' 3"</p>
+				<p><span class="label">Location:</span><span class="redacted">??????????</span>, <span class="redacted">?????</span></p>
+				<p><span class="label"><a class="CPTAG">Occupation:</a></span>B2B Sales</p>
+				<p><span class="label">Kill Note:</span>Death must happen while he's at work.</p>
+				<p><span class="label">Additional Information:</span>Goes for long walks during lunch break. Wears noise cancelling headphones frequently.</p>
+				<br>
+				<p><span class="Label">FULL DETAILS AVAILABLE UPON CONTACT</span></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="target-container">
+		<div class="target-element">
+			<a class="CPTAG"><img src="images/target4.jpg"></a>
+			<div class="target-info">
+				<p><span class="kill-price">$23,300</span> on kill</p>
+				<p><span class="label">Name:</span>Eliza <span class="redacted">???????</span></p>
+				<p><span class="label">Age:</span><a class="CFTAG">30's</a></p>
+				<p><span class="label">Height:</span>5' 5" - 5' 9"</p>
+				<p><span class="label">Location:</span><span class="redacted">???????????</span>, New Mexico</p>
+				<p><span class="label">Occupation:</span><span class="redacted">?????????</span></p>
+				<p><span class="label">Kill Note:</span>Carbon Monoxide <a class="CPTAG">inhalation</a> death in sleep</p>
+				<p><span class="label">Additional Information:</span>She takes on a bunch of double shifts towards the end of the month, best time to do it would be <a class="CFTAG">around</a> then.</p>
+				<br>
+				<p><span class="Label">FULL DETAILS AVAILABLE UPON CONTACT</span></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="target-container">
+		<div class="target-element">
+			<img src="images/target5.jpg">
+			<div class="target-info">
+				<p><span class="kill-price">$8,000</span> on kill</p>
+				<p><span class="label">Name:</span>Autumn <span class="redacted">???????</span></p>
+				<p><span class="label">Age:</span>20's</p>
+				<p><span class="label">Height:</span>5' 1" - 5' 5"</p>
+				<p><span class="label">Location:</span> <span class="redacted">???????</span>, Vermont</p>
+				<p><span class="label">Occupation:</span><a class="CFTAG">Perinatal</a> Quality Liaison</p>
+				<p><span class="label">Kill Note:</span>Drown/Suffocate</p>
+				<p><span class="label">Additional Information:</span>Look up her social profile <em class="PTAG"></em> after accepting and you should be able to easily track her down from whatever flavor of the month boyfriend she's posting about.</p>
+				<br>
+				<p><span class="Label">FULL DETAILS AVAILABLE UPON CONTACT</span></p>
+			</div>
+		</div>
+	</div>
+	
+	</div>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>
+

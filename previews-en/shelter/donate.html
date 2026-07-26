@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <link rel="stylesheet" href="../Global/reset.css" />
+        <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="minutesCheck()">
+    <div class="header">
+      <em class="PTAG text2"></em>
+      <div class="logo">
+        <a onClick="LinkClick('index.html')" class="active">shelter</a>
+      </div>
+      <div class="navbar">
+        <a onClick="LinkClick('donate.html')" class="active">donate/subscribe</a>
+        <a onClick="LinkClick('events.html')" class="active">events</a>
+      </div>
+    </div>
+    <div class="bodyText">
+      <span>
+        Donations can be made to decrease/increase the family’s <a class = "CFTAG">timer</a>. Subscribe
+        to access all available media on the events page AND increase the
+        family’s <a class="CPTAG">timer</a> by a small amount.
+      </span>
+      <br /><br /><br />
+      <span class="donateTitle">READ BEFORE SENDING FUNDS</span>
+      <span>
+        <br />- Conversion is
+        <span style="font-family: 'Goldman'"><a class="CFTAG">6 DOSCoin</a> per minute.</span>
+        <br /><br />
+        - The timer cannot exceed
+        <span style="font-family: 'Goldman'">9999 minutes. </span
+        ><em class="PTAG"></em><br />
+        &nbsp;&nbsp;&nbsp;- Current time left is:
+        <span id="minutesLeft">?</span> (updated a few moments ago) <br /><br />
+        - Time shown to family is updated the following day at
+        <span style="font-family: 'Goldman'">
+          180 minutes, 360 minutes, and 540 minutes
+        </span>
+        into the recording. <em class="PTAG"></em> <br /><br />
+        - Subscriber access code is only valid until refresh. Next refresh will
+        occur:
+        <span style="font-family: 'Goldman'">tomorrow at 0600 ZULU</span>.
+      </span>
+
+      <div class="donation">
+        <span class="donationTitle">Modify The Family’s remaining time</span>
+        <br /><br />
+
+        <div class="segmented-container">
+          <div class="segmented-button" onclick="handleClick(1)">Decrease</div>
+          <div
+            class="segmented-button active"
+            style="border-right: 1px solid black"
+            onclick="handleClick(2)"
+          >
+            Increase
+          </div>
+        </div>
+        <br />
+        <span>Amount to donate:</span>
+        <br />
+        <div class="donateOpt">
+          <form name="donateSelect">
+          <label><input class="option" type="radio" id="60" value="0"/>60 </label>
+          <label><input class="option" type="radio" id="80" value="1"/>80</label>
+          <label><input class="option" type="radio" id="100" value="2"/>100</label>
+          <label><input class="option" type="radio" id="120" value="3"/>120</label>
+          <label><input class="option" type="radio" id="140" value="4"/>140</label>
+          <label><input class="option" type="radio" id="Other" value="5"/>Other</label>
+          <input disabled id="other" class="other" type="text" autocomplete="off"/> DOSCoin<em class="PTAG"></em>
+        </form>
+        </div>
+        <br />
+        <button class="btnDonate" onclick="location.href = 'donate.html'">DONATE</button>
+      </div>
+
+      <div class="subscribe">
+        <span class="subsTitle"><a class="CPTAG">Subscribe</a></span>
+        <br /><br />
+        <span class="subsDesc">
+          Subscribers get access <em class="PTAG text-blend"></em> to the events page
+          videos until a refresh happens. All funds raised from subscribers go
+          towards INCREASING the timer by 5 minutes. <br /><br />
+          <form name="subscribeSelect">
+          WALLET ADDRESS: <input type="text" name="wallet" autocomplete="off" /> <br />
+          EMAIL ADDRESS: &nbsp;<input type="text" name="wallet" autocomplete="off" /> <br /><br />
+          </form>
+          <a class="CFTAG">Cost:</a> <a class = "CPTAG">28</a> DOSCoin
+        </span>
+        <br /><br />
+        <button class="btnDonate" onclick="location.href = 'donate.html'">
+          SUBSCRIBE
+        </button>
+      </div>
+      <br /><br />
+      <span class="footer">
+        Choose wisely as there are no refunds, nor can you change how the
+        donation affects the timer after transaction is complete.
+      </span>
+      <br /><br />
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+  
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

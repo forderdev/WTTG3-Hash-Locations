@@ -5,6 +5,14 @@ import { fileURLToPath } from "node:url";
 const toolsDir = path.dirname(fileURLToPath(import.meta.url));
 const projectDir = path.resolve(toolsDir, "..");
 const gameDir = path.resolve(projectDir, "..");
+const localeArgument = process.argv.find((argument) =>
+  argument.startsWith("--locale="),
+);
+const locale = localeArgument?.split("=", 2)[1] ?? "tr";
+if (!["tr", "en"].includes(locale)) {
+  throw new Error(`Desteklenmeyen dil: ${locale}`);
+}
+const isEnglish = locale === "en";
 const sourceDir = path.join(
   gameDir,
   "WTTGSD",
@@ -12,8 +20,10 @@ const sourceDir = path.join(
   "RawFiles",
   "WebSites",
 );
-const previewDir = path.join(projectDir, "previews");
-const dataFile = path.join(projectDir, "data.js");
+const previewRoot = isEnglish ? "previews-en" : "previews";
+const previewDir = path.join(projectDir, previewRoot);
+const dataFile = path.join(projectDir, isEnglish ? "data-en.js" : "data.js");
+const dataGlobal = isEnglish ? "HASH_ATLAS_DATA_EN" : "HASH_ATLAS_DATA";
 const processedDependencies = new Set();
 
 const canonicalNames = {
@@ -70,7 +80,7 @@ const canonicalNames = {
   youthere: "You There?",
 };
 
-const pageNames = {
+const pageNamesTr = {
   index: "Ana sayfa",
   about: "Hakkında",
   account: "Hesap",
@@ -141,6 +151,95 @@ const pageNames = {
   welcome: "Karşılama",
   yes: "Evet",
 };
+
+const pageNamesEn = {
+  index: "Home",
+  about: "About",
+  account: "Account",
+  answer: "Answer",
+  catalog: "Catalog",
+  checkout: "Checkout",
+  connected: "Connected",
+  contact: "Contact",
+  creepy: "Creepy",
+  donate: "Donate",
+  error: "Error",
+  events: "Events",
+  evident: "Evident",
+  fakemain: "Fake main page",
+  faq: "FAQ",
+  gateopen: "Open gate",
+  getmoney: "Get Money",
+  gifts: "Gifts",
+  hire: "Hire",
+  holdit: "Hold It",
+  inanis: "Inanis",
+  instructions: "Instructions",
+  invest: "Invest",
+  join: "Join",
+  jolly: "Jolly",
+  latus: "Latus",
+  live: "Live",
+  locations: "Locations",
+  login: "Login",
+  menu: "Menu",
+  myfriends: "My Friends",
+  no: "No",
+  nocontent: "No content",
+  occasionally: "Occasionally",
+  order: "Order",
+  ordersent: "Order sent",
+  packages: "Packages",
+  page2: "Page 2",
+  payment: "Payment",
+  plug: "Plug",
+  portal: "Portal",
+  post1: "Post 1",
+  post2: "Post 2",
+  post4: "Post 4",
+  post6: "Post 6",
+  purchase: "Purchase",
+  questions: "Questions",
+  resetpassword: "Reset password",
+  results: "Results",
+  samples: "Samples",
+  saved: "Saved",
+  secret: "Secret page",
+  secondpage: "Page 2",
+  sendlinks: "Send links",
+  signin: "Sign in",
+  sleeptalk: "Sleep Talk",
+  slide2: "Slide 2",
+  smile: "Smile",
+  submit: "Submit",
+  succulentmeal: "Succulent Meal",
+  targets: "Targets",
+  testimonials: "Testimonials",
+  thesearch: "The Search",
+  thirdpage: "Page 3",
+  ulike: "U Like",
+  vision: "Vision",
+  watch: "Watch",
+  welcome: "Welcome",
+  yes: "Yes",
+};
+
+const pageNames = isEnglish ? pageNamesEn : pageNamesTr;
+const markerCopy = isEnglish
+  ? {
+      title: "HASH MARKERS",
+      direct: "visible hash",
+      clickable: "correct click",
+      decoy: "decoy click",
+      mixed: "shared candidate",
+    }
+  : {
+      title: "HASH İŞARETLERİ",
+      direct: "görünür hash",
+      clickable: "doğru tıklama",
+      decoy: "sahte tıklama",
+      mixed: "ortak aday",
+    };
 
 const markerStyle = `
 <style id="hash-guide-style">
@@ -245,17 +344,32 @@ const markerScript = `
   const legend = document.createElement("aside");
   legend.id = "hash-guide-legend";
   legend.innerHTML =
-    "<b>HASH İŞARETLERİ</b>" +
-    "<span><i style='--dot:var(--guide-direct)'></i>P · görünür hash</span>" +
-    "<span><i style='--dot:var(--guide-click)'></i>C · doğru tıklama</span>" +
-    "<span><i style='--dot:var(--guide-decoy)'></i>F · sahte tıklama</span>" +
-    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · ortak aday</span>" : "");
+    "<b>${markerCopy.title}</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · ${markerCopy.direct}</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · ${markerCopy.clickable}</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · ${markerCopy.decoy}</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · ${markerCopy.mixed}</span>" : "");
   document.body.appendChild(legend);
 })();
 </script>`;
 
 if (!fs.existsSync(sourceDir)) {
   throw new Error(`Oyun site klasörü bulunamadı: ${sourceDir}`);
+}
+
+const languageProbePath = path.join(
+  sourceDir,
+  "buildingafuture",
+  "index.html",
+);
+const languageProbe = fs.readFileSync(languageProbePath, "utf8");
+const expectedProbe = isEnglish
+  ? "Invest in the future"
+  : "Geleceğe yatırım yap";
+if (!languageProbe.includes(expectedProbe)) {
+  throw new Error(
+    `${locale.toUpperCase()} üretimi durduruldu: aktif oyun sitesi beklenen dilde değil.`,
+  );
 }
 
 fs.rmSync(previewDir, { recursive: true, force: true });
@@ -306,7 +420,7 @@ for (const siteEntry of fs.readdirSync(sourceDir, { withFileTypes: true })) {
       pageId,
       pageName,
       source: `WTTGSD/Content/RawFiles/WebSites/${siteEntry.name}/${entry.name}`,
-      preview: `previews/${siteId}/${outputName}`,
+      preview: `${previewRoot}/${siteId}/${outputName}`,
       direct,
       clickable,
       decoy,
@@ -318,7 +432,11 @@ for (const siteEntry of fs.readdirSync(sourceDir, { withFileTypes: true })) {
 
 pages.sort((a, b) =>
   a.siteName.localeCompare(b.siteName, "en") ||
-  (a.pageId === "index" ? -1 : b.pageId === "index" ? 1 : a.pageName.localeCompare(b.pageName, "tr")),
+  (a.pageId === "index"
+    ? -1
+    : b.pageId === "index"
+      ? 1
+      : a.pageName.localeCompare(b.pageName, locale)),
 );
 
 const sites = [...new Map(pages.map((page) => [page.siteId, {
@@ -339,6 +457,7 @@ const sites = [...new Map(pages.map((page) => [page.siteId, {
 const data = {
   generatedAt: new Date().toISOString(),
   gameBuild: "24383809",
+  locale,
   sourceRoot: "WTTGSD/Content/RawFiles/WebSites",
   stats: {
     siteCount: sites.length,
@@ -355,7 +474,7 @@ const data = {
 
 fs.writeFileSync(
   dataFile,
-  `window.HASH_ATLAS_DATA = ${JSON.stringify(data, null, 2)};\n`,
+  `window.${dataGlobal} = ${JSON.stringify(data, null, 2)};\n`,
   "utf8",
 );
 

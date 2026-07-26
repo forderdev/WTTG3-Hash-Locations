@@ -1,14 +1,135 @@
 (() => {
   document.documentElement.classList.add("has-js");
 
-  const data = window.HASH_ATLAS_DATA;
-  if (!data) {
+  const DATA_BY_LANGUAGE = {
+    tr: window.HASH_ATLAS_DATA,
+    en: window.HASH_ATLAS_DATA_EN,
+  };
+
+  if (!DATA_BY_LANGUAGE.tr || !DATA_BY_LANGUAGE.en) {
     document.body.innerHTML =
-      '<main style="padding:40px;font-family:sans-serif"><h1>data.js bulunamadı</h1><p><code>tools/generate.mjs</code> dosyasını çalıştır.</p></main>';
+      '<main style="padding:40px;font-family:sans-serif"><h1>Veri dosyaları bulunamadı</h1><p><code>tools/generate.mjs</code> dosyasını iki dil için çalıştır.</p></main>';
     return;
   }
 
+  const COPY = {
+    tr: {
+      documentTitle: "WTTG III | Hash Bulma",
+      description: "hash bulma",
+      homeAria: "Başa dön",
+      wordmark: "Hash Bulma",
+      language: "Dil",
+      archiveLink: "Arşive git",
+      heroTitle: "WTTG3 hash bulma işi",
+      heroLede: "hash bulun",
+      statsAria: "Veri kapsamı",
+      statsTitle: "Siteler:",
+      siteUnit: "site",
+      pageUnit: "sayfa",
+      markerUnit: "işaret",
+      legendTitle: "önemli",
+      legendIntro: "her renk farklı bir hash konumu tipini gösterir.",
+      directTitle: "Görünür konum",
+      directDescription: "Hash metninin doğrudan yazılabileceği boş alan.",
+      clickableTitle: "Tıklanabilir konum",
+      clickableDescription:
+        "İmleç değiştiğinde hash verebilen doğru tıklama adayı.",
+      decoyTitle: "Sahte konum",
+      decoyDescription: "Doğru adayın ipucunu taklit edebilen tuzak nokta.",
+      atlasTitle: "Site ve sayfalar",
+      atlasDescription:
+        "Bir siteyi açarak sayfalarını ve işaret türlerini incele.",
+      progress: "İlerleme",
+      searchLabel: "Site veya sayfa ara",
+      searchPlaceholder: "Örnek: Shadow Web",
+      typeLabel: "Konum türü",
+      typeFilterAria: "Konum türü filtresi",
+      filterAll: "Tümü",
+      filterDirect: "Görünür",
+      filterClickable: "Tıklanabilir",
+      filterDecoy: "Tuzaklı",
+      hideChecked: "Bakılanları gizle",
+      loading: "Veriler hazırlanıyor.",
+      empty: "Bu filtrelerle eşleşen sayfa bulunamadı.",
+      footer: "Oyun dosyalarından yerel olarak üretildi. Resmî değildir.",
+      reset: "İlerlemeyi sıfırla",
+      openNewTab: "Yeni sekmede aç",
+      close: "Kapat",
+      iframeTitle: "İşaretlenmiş oyun sayfası",
+      markReviewed: "Bakıldı olarak işaretle",
+      previewAction: "Ön izle",
+      resetConfirm: "Bakıldı işaretlerinin tümü silinsin mi?",
+      reviewed: "bakıldı",
+      pageSingular: "sayfa",
+      pagePlural: "sayfa",
+      directVerbose: "görünür konum",
+      clickableVerbose: "doğru tıklama",
+      decoyVerbose: "sahte tıklama",
+    },
+    en: {
+      documentTitle: "WTTG III | Hash Finder",
+      description:
+        "Find every hash location in Welcome to the Game III.",
+      homeAria: "Back to top",
+      wordmark: "Hash Finder",
+      language: "Language",
+      archiveLink: "Browse archive",
+      heroTitle: "WTTG3 hash finder",
+      heroLede: "find every hash location",
+      statsAria: "Archive coverage",
+      statsTitle: "Archive:",
+      siteUnit: "sites",
+      pageUnit: "pages",
+      markerUnit: "markers",
+      legendTitle: "important",
+      legendIntro: "each color represents a different hash location type.",
+      directTitle: "Visible location",
+      directDescription: "An empty field where the hash can appear directly.",
+      clickableTitle: "Clickable location",
+      clickableDescription:
+        "A valid click target that may reveal a hash when the cursor changes.",
+      decoyTitle: "Decoy location",
+      decoyDescription:
+        "A decoy point that can mimic the hint of a valid target.",
+      atlasTitle: "Sites and pages",
+      atlasDescription:
+        "Open a site to inspect its pages and marker types.",
+      progress: "Progress",
+      searchLabel: "Search sites or pages",
+      searchPlaceholder: "Example: Shadow Web",
+      typeLabel: "Location type",
+      typeFilterAria: "Location type filter",
+      filterAll: "All",
+      filterDirect: "Visible",
+      filterClickable: "Clickable",
+      filterDecoy: "Decoys",
+      hideChecked: "Hide reviewed",
+      loading: "Preparing archive.",
+      empty: "No pages match these filters.",
+      footer: "Generated locally from the original game files. Unofficial.",
+      reset: "Reset progress",
+      openNewTab: "Open in new tab",
+      close: "Close",
+      iframeTitle: "Marked game page",
+      markReviewed: "Mark as reviewed",
+      previewAction: "Preview",
+      resetConfirm: "Clear every reviewed marker?",
+      reviewed: "reviewed",
+      pageSingular: "page",
+      pagePlural: "pages",
+      directVerbose: "visible location",
+      clickableVerbose: "correct click",
+      decoyVerbose: "decoy click",
+    },
+  };
+
   const STORAGE_KEY = "wttg3-hash-atlas-progress-v1";
+  const LANGUAGE_KEY = "wttg3-hash-atlas-language-v1";
+  const savedLanguage = localStorage.getItem(LANGUAGE_KEY);
+  let currentLanguage = savedLanguage === "en" ? "en" : "tr";
+  let data = DATA_BY_LANGUAGE[currentLanguage];
+  let activeFilter = "all";
+
   const siteList = document.querySelector("#site-list");
   const siteTemplate = document.querySelector("#site-template");
   const pageTemplate = document.querySelector("#page-template");
@@ -23,13 +144,9 @@
   const previewBadges = document.querySelector("#preview-badges");
   const previewOpen = document.querySelector("#preview-open");
   const checkedPages = new Set(loadProgress());
-  let activeFilter = "all";
 
-  document.querySelector("#site-count").textContent = data.stats.siteCount;
-  document.querySelector("#page-count").textContent = data.stats.pageCount;
-  document.querySelector("#marker-count").textContent =
-    data.stats.uniqueMarkers.toLocaleString("tr-TR");
-
+  applyTranslations();
+  updateStats();
   renderSites();
   updateProgress();
   setupReveals();
@@ -42,6 +159,23 @@
       document.querySelector(".filter.is-active")?.classList.remove("is-active");
       button.classList.add("is-active");
       activeFilter = button.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  document.querySelectorAll("[data-language]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const language = button.dataset.language;
+      if (!DATA_BY_LANGUAGE[language] || language === currentLanguage) return;
+
+      closePreview();
+      currentLanguage = language;
+      data = DATA_BY_LANGUAGE[currentLanguage];
+      localStorage.setItem(LANGUAGE_KEY, currentLanguage);
+      applyTranslations();
+      updateStats();
+      renderSites();
+      updateProgress();
       applyFilters();
     });
   });
@@ -67,7 +201,7 @@
 
   document.querySelector("#reset-progress").addEventListener("click", () => {
     if (!checkedPages.size) return;
-    if (!window.confirm("Bakıldı işaretlerinin tümü silinsin mi?")) return;
+    if (!window.confirm(t("resetConfirm"))) return;
     checkedPages.clear();
     saveProgress();
     document.querySelectorAll(".page-check input").forEach((input) => {
@@ -76,6 +210,48 @@
     updateProgress();
     applyFilters();
   });
+
+  function applyTranslations() {
+    document.documentElement.lang = currentLanguage;
+    document.title = t("documentTitle");
+    document
+      .querySelector("#meta-description")
+      .setAttribute("content", t("description"));
+
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      element.textContent = t(element.dataset.i18n);
+    });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+      element.setAttribute(
+        "placeholder",
+        t(element.dataset.i18nPlaceholder),
+      );
+    });
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+      element.setAttribute(
+        "aria-label",
+        t(element.dataset.i18nAriaLabel),
+      );
+    });
+    document.querySelectorAll("[data-i18n-title]").forEach((element) => {
+      element.setAttribute("title", t(element.dataset.i18nTitle));
+    });
+    document.querySelectorAll("[data-language]").forEach((button) => {
+      button.setAttribute(
+        "aria-pressed",
+        String(button.dataset.language === currentLanguage),
+      );
+    });
+  }
+
+  function updateStats() {
+    document.querySelector("#site-count").textContent =
+      data.stats.siteCount.toLocaleString(numberLocale());
+    document.querySelector("#page-count").textContent =
+      data.stats.pageCount.toLocaleString(numberLocale());
+    document.querySelector("#marker-count").textContent =
+      data.stats.uniqueMarkers.toLocaleString(numberLocale());
+  }
 
   function renderSites() {
     siteList.replaceChildren();
@@ -102,7 +278,7 @@
       siteFragment.querySelector(".site-card__identity strong").textContent =
         site.name;
       siteFragment.querySelector(".site-card__identity small").textContent =
-        `${site.pageCount} sayfa`;
+        pageCountLabel(site.pageCount);
       siteFragment.querySelector(".site-card__counts").textContent =
         `${site.direct} P / ${site.clickable} C / ${site.decoy} F`;
 
@@ -118,7 +294,9 @@
         const openButton = pageFragment.querySelector(".page-row__open");
 
         row.dataset.pageId = page.id;
-        row.dataset.search = normalize(`${site.name} ${page.pageName} ${page.pageId}`);
+        row.dataset.search = normalize(
+          `${site.name} ${page.pageName} ${page.pageId}`,
+        );
         row.dataset.direct = String(page.direct > 0);
         row.dataset.clickable = String(page.clickable > 0);
         row.dataset.decoy = String(page.decoy > 0);
@@ -129,6 +307,10 @@
         pageFragment.querySelector(".marker-badges").append(
           ...createBadges(page),
         );
+        pageFragment.querySelector(".sr-only").textContent =
+          t("markReviewed");
+        pageFragment.querySelector(".page-row__action").textContent =
+          t("previewAction");
 
         checkbox.checked = checkedPages.has(page.id);
         checkbox.addEventListener("change", () => {
@@ -199,7 +381,9 @@
       badges.push(
         badge(
           "direct",
-          verbose ? `${page.direct} görünür konum` : `${page.direct} P`,
+          verbose
+            ? verboseCount(page.direct, "directVerbose")
+            : `${page.direct} P`,
         ),
       );
     }
@@ -207,7 +391,9 @@
       badges.push(
         badge(
           "clickable",
-          verbose ? `${page.clickable} doğru tıklama` : `${page.clickable} C`,
+          verbose
+            ? verboseCount(page.clickable, "clickableVerbose")
+            : `${page.clickable} C`,
         ),
       );
     }
@@ -215,7 +401,9 @@
       badges.push(
         badge(
           "decoy",
-          verbose ? `${page.decoy} sahte tıklama` : `${page.decoy} F`,
+          verbose
+            ? verboseCount(page.decoy, "decoyVerbose")
+            : `${page.decoy} F`,
         ),
       );
     }
@@ -233,7 +421,18 @@
     const complete = checkedPages.size;
     const total = data.stats.pageCount;
     document.querySelector("#progress-label").textContent =
-      `${complete} / ${total} bakıldı`;
+      `${complete} / ${total} ${t("reviewed")}`;
+  }
+
+  function pageCountLabel(count) {
+    const unit = count === 1 ? t("pageSingular") : t("pagePlural");
+    return `${count} ${unit}`;
+  }
+
+  function verboseCount(count, key) {
+    const label = t(key);
+    if (currentLanguage === "en" && count !== 1) return `${count} ${label}s`;
+    return `${count} ${label}`;
   }
 
   function setupReveals() {
@@ -263,9 +462,14 @@
 
   function loadProgress() {
     try {
+      const knownPageIds = new Set(
+        Object.values(DATA_BY_LANGUAGE).flatMap((entry) =>
+          entry.pages.map((page) => page.id),
+        ),
+      );
       const value = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "[]");
       return Array.isArray(value)
-        ? value.filter((id) => data.pages.some((page) => page.id === id))
+        ? value.filter((id) => knownPageIds.has(id))
         : [];
     } catch {
       return [];
@@ -276,9 +480,17 @@
     localStorage.setItem(STORAGE_KEY, JSON.stringify([...checkedPages]));
   }
 
+  function t(key) {
+    return COPY[currentLanguage][key] ?? COPY.tr[key] ?? key;
+  }
+
+  function numberLocale() {
+    return currentLanguage === "tr" ? "tr-TR" : "en-US";
+  }
+
   function normalize(value) {
     return String(value)
-      .toLocaleLowerCase("tr-TR")
+      .toLocaleLowerCase(numberLocale())
       .normalize("NFD")
       .replace(/\p{Diacritic}/gu, "")
       .replaceAll("ı", "i");

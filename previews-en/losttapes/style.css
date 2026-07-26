@@ -1,0 +1,139 @@
+@font-face {
+    font-family: BarlowR;
+    src: url(font/Barlow-Regular.ttf);
+}
+
+@font-face {
+    font-family: BarlowI;
+    src: url(font/Barlow-Italic.ttf);
+}
+
+@font-face {
+    font-family: BarlowB;
+    src: url(font/Barlow-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: BarlowBI;
+    src: url(font/Barlow-SemiBoldItalic.ttf);
+}
+
+:root {
+    --gold: #b0a475;
+    --blackg: #171717;
+    --grey: #c6c6c6;
+}
+
+.buyTextBox {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 95px;
+}
+
+.widthFit {
+    width: fit-content;
+}
+
+.width90 {
+    width: 90%;
+}
+
+.fsize80 {
+    font-size: 80%;
+}
+
+.marginTB20 {
+    margin: 20px 0;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+
+* {
+    font-family: BarlowR;
+}
+
+main {
+    position: relative;
+    height: fit-content;
+    min-height: 100vh;
+    margin: auto;
+    width: 100%;
+    background-image: url(img/background.png);
+    background-size: cover;
+    padding-bottom: 25px;
+}
+
+main img {
+    width: 100%;
+    max-height: 150px;
+}
+
+h1 {
+    margin-bottom: 12px;
+}
+
+form input {
+    background-color: black;
+    color: white;
+    width: 100%;
+    margin-bottom: 2px;
+    padding: 10px 5px;
+}
+
+.buyBTN {
+    cursor: pointer;
+    text-align: center;
+    background-color: var(--blackg);
+    color: var(--grey);
+}
+
+.container {
+    zoom: 150%;
+    background-color: var(--gold);
+    border-radius: 5px;
+    padding: 25px;
+    padding-top: 10px;
+    margin: 25px auto;
+}
+
+.mainCont {
+    padding: 5px;
+    zoom: 250%;
+    margin: 15px;
+    margin-bottom: 25px;
+}
+
+.mainCont * {
+    margin: auto;
+}
+
+#pgArrow {
+    zoom: 130%;
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    cursor: pointer;
+    margin: 60px auto;
+}
+
+.footerCont {
+    margin: auto;
+    width: 60%;
+}
+
+.footerCont h1 {
+    font-size: 150%;
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+    margin: auto;
+}
+
+h1, h1 *, .textBold, .textBold *{
+    font-family: BarlowB;
+}

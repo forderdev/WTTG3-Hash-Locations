@@ -5,107 +5,169 @@ import { fileURLToPath } from "node:url";
 const toolsDir = path.dirname(fileURLToPath(import.meta.url));
 const projectDir = path.resolve(toolsDir, "..");
 const gameDir = path.resolve(projectDir, "..");
-const dataPath = path.join(projectDir, "data.js");
 const errors = [];
 const checkedStylesheets = new Set();
+const datasets = new Map();
+const expectedStats = {
+  siteCount: 51,
+  pageCount: 132,
+  direct: 481,
+  clickable: 371,
+  decoy: 340,
+  mixed: 36,
+  uniqueMarkers: 1156,
+};
+const localeConfigs = [
+  {
+    locale: "tr",
+    file: "data.js",
+    globalName: "HASH_ATLAS_DATA",
+    previewRoot: "previews",
+    markerTitle: "HASH İŞARETLERİ",
+  },
+  {
+    locale: "en",
+    file: "data-en.js",
+    globalName: "HASH_ATLAS_DATA_EN",
+    previewRoot: "previews-en",
+    markerTitle: "HASH MARKERS",
+  },
+];
 
 for (const required of [
   "index.html",
   "styles.css",
   "app.js",
   "data.js",
+  "data-en.js",
   "baslat.bat",
   "README.md",
+  "previews",
+  "previews-en",
 ]) {
   if (!fs.existsSync(path.join(projectDir, required))) {
-    errors.push(`Eksik dosya: ${required}`);
+    errors.push(`Eksik dosya veya klasör: ${required}`);
   }
 }
 
-let data;
-try {
-  const source = fs.readFileSync(dataPath, "utf8");
-  data = JSON.parse(
-    source
-      .replace(/^window\.HASH_ATLAS_DATA\s*=\s*/, "")
-      .replace(/;\s*$/, ""),
-  );
-} catch (error) {
-  errors.push(`data.js okunamadı: ${error.message}`);
+for (const config of localeConfigs) {
+  const data = readData(config);
+  if (!data) continue;
+  datasets.set(config.locale, data);
+  verifyData(config, data);
 }
 
-if (data) {
-  const expected = {
-    siteCount: 51,
-    pageCount: 132,
-    direct: 481,
-    clickable: 371,
-    decoy: 340,
-    mixed: 36,
-    uniqueMarkers: 1156,
-  };
+if (datasets.size === localeConfigs.length) {
+  const trIds = datasets.get("tr").pages.map((page) => page.id).sort();
+  const enIds = datasets.get("en").pages.map((page) => page.id).sort();
+  if (JSON.stringify(trIds) !== JSON.stringify(enIds)) {
+    errors.push("TR ve EN sayfa kimlikleri eşleşmiyor.");
+  }
+}
 
-  for (const [key, value] of Object.entries(expected)) {
+const report = {
+  green: errors.length === 0,
+  locales: Object.fromEntries(
+    [...datasets].map(([locale, data]) => [
+      locale,
+      {
+        sites: data.sites.length,
+        pages: data.pages.length,
+        markers: data.stats.uniqueMarkers,
+      },
+    ]),
+  ),
+  errors,
+};
+
+console.log(JSON.stringify(report, null, 2));
+if (errors.length) process.exitCode = 1;
+
+function readData(config) {
+  try {
+    const source = fs.readFileSync(path.join(projectDir, config.file), "utf8");
+    const prefix = new RegExp(
+      `^window\\.${config.globalName}\\s*=\\s*`,
+    );
+    return JSON.parse(
+      source.replace(prefix, "").replace(/;\s*$/, ""),
+    );
+  } catch (error) {
+    errors.push(`${config.file} okunamadı: ${error.message}`);
+    return null;
+  }
+}
+
+function verifyData(config, data) {
+  const label = config.locale.toUpperCase();
+
+  for (const [key, value] of Object.entries(expectedStats)) {
     if (data.stats[key] !== value) {
-      errors.push(`stats.${key}: ${data.stats[key]} (beklenen ${value})`);
+      errors.push(
+        `${label} stats.${key}: ${data.stats[key]} (beklenen ${value})`,
+      );
     }
+  }
+
+  if (config.locale === "en" && data.locale !== "en") {
+    errors.push(`EN veri dili yanlış: ${data.locale ?? "tanımsız"}`);
   }
 
   const pageIds = new Set();
   const knownSites = new Set(data.sites.map((site) => site.id));
   for (const page of data.pages) {
-    if (pageIds.has(page.id)) errors.push(`Tekrarlanan sayfa kimliği: ${page.id}`);
+    if (pageIds.has(page.id)) {
+      errors.push(`${label} tekrarlanan sayfa kimliği: ${page.id}`);
+    }
     pageIds.add(page.id);
 
     if (!knownSites.has(page.siteId)) {
-      errors.push(`Sitesiz sayfa: ${page.id}`);
+      errors.push(`${label} sitesiz sayfa: ${page.id}`);
     }
     if (page.uniqueMarkers <= 0) {
-      errors.push(`İşaretsiz sayfa: ${page.id}`);
+      errors.push(`${label} işaretsiz sayfa: ${page.id}`);
+    }
+    if (!page.preview.startsWith(`${config.previewRoot}/`)) {
+      errors.push(
+        `${label} yanlış ön izleme kökü: ${page.id} -> ${page.preview}`,
+      );
     }
 
     const sourcePath = path.join(gameDir, ...page.source.split("/"));
     const previewPath = path.join(projectDir, ...page.preview.split("/"));
     if (!fs.existsSync(sourcePath)) {
-      errors.push(`Kaynak bulunamadı: ${page.source}`);
+      errors.push(`${label} kaynak bulunamadı: ${page.source}`);
     }
     if (!fs.existsSync(previewPath)) {
-      errors.push(`Ön izleme bulunamadı: ${page.preview}`);
+      errors.push(`${label} ön izleme bulunamadı: ${page.preview}`);
       continue;
     }
 
     const preview = fs.readFileSync(previewPath, "utf8");
     if (!preview.includes('id="hash-guide-style"')) {
-      errors.push(`İşaret stili eksik: ${page.preview}`);
+      errors.push(`${label} işaret stili eksik: ${page.preview}`);
     }
     if (!preview.includes('id="hash-guide-script"')) {
-      errors.push(`İşaret betiği eksik: ${page.preview}`);
+      errors.push(`${label} işaret betiği eksik: ${page.preview}`);
+    }
+    if (!preview.includes(config.markerTitle)) {
+      errors.push(`${label} işaret açıklaması yanlış: ${page.preview}`);
     }
     if (/<base\b/i.test(preview)) {
-      errors.push(`Haricî base yolu bulundu: ${page.preview}`);
+      errors.push(`${label} haricî base yolu bulundu: ${page.preview}`);
     }
-    checkHtmlAssets(previewPath, preview, page.preview);
+    checkHtmlAssets(previewPath, preview, `${label} ${page.preview}`);
   }
 
   for (const site of data.sites) {
     const actual = data.pages.filter((page) => page.siteId === site.id).length;
     if (actual !== site.pageCount) {
       errors.push(
-        `${site.id} sayfa sayısı: ${actual} (kayıtlı ${site.pageCount})`,
+        `${label} ${site.id} sayfa sayısı: ${actual} (kayıtlı ${site.pageCount})`,
       );
     }
   }
 }
-
-const report = {
-  green: errors.length === 0,
-  checkedSites: data?.sites.length ?? 0,
-  checkedPages: data?.pages.length ?? 0,
-  errors,
-};
-
-console.log(JSON.stringify(report, null, 2));
-if (errors.length) process.exitCode = 1;
 
 function checkHtmlAssets(filePath, html, label) {
   const tagPattern = /<(?:link|script|img|source|video|audio)\b[^>]*>/gi;
@@ -170,7 +232,9 @@ function checkAssetReference(fromFile, rawReference, label) {
 
   const caseMismatch = findCaseMismatch(assetPath);
   if (caseMismatch) {
-    errors.push(`Asset harf uyumsuzluğu: ${label} -> ${reference} (${caseMismatch})`);
+    errors.push(
+      `Asset harf uyumsuzluğu: ${label} -> ${reference} (${caseMismatch})`,
+    );
     return;
   }
 
@@ -195,7 +259,8 @@ function findCaseMismatch(filePath) {
     const entries = fs.readdirSync(currentPath);
     if (!entries.includes(segment)) {
       const actual = entries.find(
-        (entry) => entry.toLocaleLowerCase("en") === segment.toLocaleLowerCase("en"),
+        (entry) =>
+          entry.toLocaleLowerCase("en") === segment.toLocaleLowerCase("en"),
       );
       if (actual) return `${segment} yerine ${actual}`;
       return "";

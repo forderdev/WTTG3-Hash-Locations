@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    font-family: Sarabun-Regular;
+}
+
+/* logo letters */
+#logo>span,
+#logo>a {
+    font-size: 6em;
+    letter-spacing: -5px;
+}
+
+#logo1 {
+    font-family: GloriaHallelujah-Regular;
+}
+
+#logo2 {
+    font-family: Courgette-Regular;
+}
+
+#logo3 {
+    font-family: RockSalt-Regular;
+}
+
+#logo4 {
+    font-family: Anton-Regular;
+}
+
+#logo5 {
+    font-family: GlassAntiqua-Regular;
+}
+
+#logo6 {
+    font-family: LuckiestGuy-Regular;
+}
+
+#logo7 {
+    font-family: Pangolin-Regular;
+}
+
+#logo8 {
+    font-family: PermamentMarker-Regular;
+}
+
+#logo9 {
+    font-family: Lumanosimo-Regular;
+}
+
+#logo {
+    display: block;
+    margin: auto;
+    width: 650px;
+    text-align: center;
+    color: white;
+    line-height: 120px;
+}
+
+/* --- */
+
+body {
+    background-color: #015C3D;
+}
+
+nav {
+    zoom: 1.2;
+    display: block;
+    margin: auto;
+    color: white;
+    font-family: Sarabun-Bold;
+    background-image: url(img/Navbar.png);
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 675px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+nav>table {
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+td {
+    vertical-align: middle;
+    height: 80px;
+}
+
+table>tr>td>a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    display: block;
+    width: 800px;
+    margin: auto;
+    margin-top: 30px;
+    color: white;
+    text-align: center;
+}
+
+.italic {
+    font-family: Sarabun-Italic;
+}
+
+.bold {
+    font-family: Sarabun-Bold;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+.extrabold {
+    font-family: Sarabun-ExtraBold;
+}
+
+.bolditalic {
+    font-family: Sarabun-BoldItalic;
+}
+
+h2 {
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+.left {
+    text-align: left;
+}
+
+.medicine {
+    width: 100%;
+    color: white;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+.bg_black {
+    background-color: #171717;
+}
+
+.bg_gray {
+    background-color: #7D7D7D;
+}
+
+.list {
+    padding-left: 50px;
+    font-size: 1.2em;
+}
+
+h1 {
+    font-size: 10em;
+    margin-top: 40px;
+}
+
+#login {
+    display: block;
+    margin: auto;
+    vertical-align: middle;
+    color: black;
+    background-image: url(img/loginContainer.png);
+    width: 628px;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+}
+
+#username {
+    text-align: left;
+    padding-left: 70px;
+    width: 440px;
+    background-repeat: no-repeat;
+    height: 45px;
+    background-image: url(img/usernameInput.png);
+    margin-top: 30px;
+}
+
+#password {
+    text-align: left;
+    padding-left: 70px;
+    width: 440px;
+    background-repeat: no-repeat;
+    height: 45px;
+    margin-top: 30px;
+    background-image: url(img/passwordInput.png);
+}
+
+#login>#signinbtn {
+    display: block;
+    background-image: url(img/signInButton.png);
+    width: 500px;
+    margin: auto;
+    height: 50px;
+    margin-top: 30px;
+    cursor: pointer;
+}

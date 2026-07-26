@@ -1,0 +1,371 @@
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Crisis Calls</title>
+    
+<body class="crisis-calls-main">
+
+    <div class="banner-wrapper">
+        <div class="banner-crop">
+            <img src="img/Header.png" class="banner-img"/>
+        </div>
+        <div class="banner-text">CRISIS<br>CALLS</div>
+    </div>
+    <div class="interested-section">
+        <span class="interested-text">Interested?</span>
+        <a onclick="LinkClick('account.html')" class="active">
+            <button class="interested-button no-disable">LOG IN | SIGN UP</button>
+        </a>
+    </div>
+    
+    <div class="content-inner">
+        <p>
+            Multiple crimes occur every minute inside the USA. Violent, non-violent, property, where there are people there is crime. Knowing that you’d likely bet there would be more crime in the future, no? How about putting your money on the table and wagering EXACTLY what crimes would happen on a specific night?
+        </p>
+        <br>
+        <p>
+            CrisisCalls travels all over the USA and taps into local police frequencies <a class = "CFTAG">rebroadcasting</a> all transmissions. On the last Friday of every month our betting doors open for the weekend and players can make parlay bets for a limited time after rebroadcasting begins on this site.
+        </p>
+        <br>
+        <p>
+            Every sent bet is active <em class="PTAG text-dark" style="color: lightblue;"></em> for that night only, a night countdown is shown when rebroadcasting is active. Any user on this site can listen along or view the closed captions from our AI software.
+        </p>
+        <br>
+        <p>
+            In time those paying attention will be able to discern the transmitting origin location, so expect the later weekend nights to welcome more crime when those playing ensure their bets hit.
+        </p>
+    </div>
+
+    <div class="betting-window-info">
+        Next betting <a class="CPTAG">window</a> opens in 19 days
+    </div>
+    
+    <div class="rebroadcast-section">
+        REBROADCAST<br>STOPPED
+    </div>
+    
+    <div class="closed-captions-container">
+        <button id="toggle-captions" class="toggle-button no-disable">+ Closed Captions</button>
+        <div id="captions-content" class="captions-content">
+            <p>Could not fetch transmission. Rebroadcast is stopped.</p>
+        </div>
+    </div>
+    
+    <div class="main-wrapper">
+        <div class="interested-section" style="margin-bottom: 40px;">
+            <span class="interested-text">Want to <a class="CPTAG">bet?</a></span>
+            <a onclick="LinkClick('account.html')" class="active">
+                <button class="interested-button no-disable">LOG IN | SIGN UP</button>
+            </a>
+        </div>
+        <div class="selection-text">
+            <p>Make a selection</p>
+            <p style="font-size: 15px; font-family: 'Merriweather-Italic'">Total bet multiplier must reach AT LEAST x5 <em class="PTAG text-dark" style="color: lightblue;"></em> to submit a bet.</p>
+            <p style="font-size: 15px; font-family: 'Merriweather-Italic'">All selections made must occur on the night of your bet.
+        </div>
+    </div>
+
+    <div class="betting-container">
+        <br />
+        <div id="container">
+            <div id="categoryNonViolent">
+                <img class="multiplier-image" src="img/+x0.2.png">
+              <div id="nonViolent">
+                  <button type="button" class="btn" id="opt1" value="Felony Drug Possession">Felony Drug Possession</button>
+                  <button type="button" class="btn" id="opt2" value="Prostitution">Prostitution</button>
+                  <button type="button" class="btn" id="opt3" value="DWI/DUI">DWI/DUI</button>
+                </div>
+              </div>
+            <br>
+            <div id="categoryProperty">
+                <img class="multiplier-image" src="img/+x0.5.png">
+              <div id="property">
+                  <button type="button" class="btn" id="opt4" value="Burglary">Burglary</button>
+                  <button type="button" class="btn" id="opt5" value="Grand Larceny-theft">Grand Larceny-theft</button>
+                  <button type="button" class="btn" id="opt6" value="Motor Vehicle Theft">Motor Vehicle Theft</button>
+                  <button type="button" class="btn" id="opt7" value="Destruction/Damage/Vandalism of Property">Destruction/Damage/Vandalism of Property</button>
+                  <button type="button" class="btn" id="opt8" value="Arson">Arson</button>
+                </div>
+              </div>
+            <br>
+            <div id="categoryLessViolent">
+                <img class="multiplier-image" src="img/+x0.75.png">
+              <div id="lessViolent">
+                  <button type="button" class="btn" id="opt9" value="Domestic Dispute/Situation">Domestic Dispute/Situation</button>
+                  <button type="button" class="btn" id="opt10" value="Attempted Suicide/Suicide">Attempted Suicide/Suicide</button>
+                  <button type="button" class="btn" id="opt11" value="Evading Police">Evading Police</button>
+                  <button type="button" class="btn" id="opt12" value="Person with a Gun">Person with a Gun</button>
+                </div>
+              </div>
+            <br>
+            <div id="categoryMoreViolent">
+                <img class="multiplier-image" src="img/+x0.95.png">
+              <div id="commonViolent">
+                  <button type="button" class="btn" id="opt13" value="Aggravated Assault">Aggravated Assault</button>
+                  <button type="button" class="btn" id="opt14" value="Robbery">Robbery</button>
+                  <button type="button" class="btn" id="opt15" value="Shooting/Shots Fired">Shooting/Shots Fired</button>
+                  <button type="button" class="btn" id="opt16" value="Assault with a Deadly Weapon">Assault with a Deadly Weapon</button>
+                  <button type="button" class="btn" id="opt17" value="Vehicle Hit & Run">Vehicle Hit & Run</button>
+                  <button type="button" class="btn" id="opt18" value="Aggravated Sexual Assault">Aggravated Sexual Assault</button>
+                </div>
+            <br>
+                <img class="multiplier-image-2" src="img/+x2.png">
+              <div id="rareViolent">
+                  <button type="button" class="btn" id="opt19" value="Homicide">Homicide</button>
+                  <button type="button" class="btn" id="opt20" value="Kidnapping/Abduction">Kidnapping/Abduction</button>
+                </div>
+              </div>
+        </div>
+        
+        <br>
+        <button id="clearBet" class="reset-bet-button no-disable" onclick="resetBet()">
+            <img src="img/ResetBetButton.png" alt="Reset Bet">
+        </button>
+        <br>
+        <br>
+        
+        <div class="parlay-container">
+            <div class="parlay-section section-1">
+                <h2> Your Parlay <a class = "CFTAG">Bet</a></h2>
+                <p style="font-family: 'Merriweather-Regular'; font-size: 15px;"> (<img class="dos-coin-image" src="img/DOSCoinSymbol.png">25 minimum / <img class="dos-coin-image" src="img/DOSCoinSymbol.png">400 max bet <em class="PTAG text-dark" style="color: lightblue;"></em>) </p>
+            </div>
+
+            <div class="parlay-section section-2">
+                <ul id="betsChosen">
+                </ul>
+            </div>
+
+            <div class="parlay-section section-3">
+                <label for="placeBet"> Wager amount</label>
+                <input disabled autocomplete="off" type="number" min="0" max="400" name="wagered" id="betInput" oninput="(!validity.rangeOverflow||(value=400)) && (!validity.rangeUnderflow||(value=0)) && (!validity.stepMismatch||(value=parseInt(this.value)));">
+                <label id="betMultiplier" for="multiplier"></label>
+            </div>
+            
+            <div class="parlay-section section-4">
+                <label>Total Potential Win:
+                    <label id="potentialWin"></label>
+                </label>
+            </div>
+        </div>
+        
+        <div class="submit-row">
+            <img src="img/SubmitBetButton.png" id="sendWager" onclick="verifyWager()" alt="Submit Bet">
+            <label id="verifyStatus"></label>
+        </div>
+
+        
+        <div class="bonus-section">
+            <a class="CPTAG"><img src="img/BONUS-WHEEL-SPIN.png" alt="Bonus Wheel Spin" class="bonus-image"></a>
+            <p class="bonus-description">
+                The wheel can only be spun one time, and only after your bet is submitted.<br>
+                A spin adds one random crime to your parlay, plus the potential for a...
+            </p>
+            <img src="img/x5MEGA-MULTIPLIER.png" alt="x5 Mega Multiplier" class="bonus-image" style="margin-bottom: -5px;">
+        </div>
+        
+        <div id="theWheel">
+            <div id="preview-Wheel">
+
+            </div>
+
+            <div class="wheel-image-wrapper">
+                <label id="wheelButtonPreview" onclick="spinPreview()">Preview Spin</label>
+                
+                <div class="wheel-visual">
+                    <img src="img/staticWheel.png" id="wheel-image" alt="Bonus Wheel">
+                    <img src="img/WheelTrim.png" id="wheel-trim" alt="Wheel Frame Overlay">
+                </div>
+            </div>
+
+
+        </div>
+        
+        <div class="real-spin-section">
+            <img src="img/RealWheelSpinButton.png" alt="Real Wheel Spin Button" class="real-spin-image">
+            <p class="real-spin-caption">(only active after submitting bet)</p>
+        </div>
+        
+        <div id="bonusWheel">
+            <h2>Preview Spin Result (does not apply to bet):</h2>
+            <h3 id="wheelResult"></h3>
+            <label id="wheelPotential"></label>
+            <label id="bonusPotential"></label>
+        </div>
+        
+    </div>
+    
+    <div class="margin-for-info">
+    </div>
+
+    <div class="how-to-play-section">
+        <div class="how-to-play-content">
+            <h2 class="how-to-title">How to play</h2>
+            <div class="how-to-text">
+                <p>
+                    To play users must select crimes from the categories above until a x5 multiplier is reached. This can be done with as small as a 4 crime parlay or as large as a 11 crime parlay depending on what is chosen.
+                </p>
+                <p>
+                    With your selection made a wager amount must be entered. The current minimum is 25 DOSCoin and current maximum is <a class = "CFTAG">400</a> DOSCoin. If you’d like to see that maximum number increase continue to make bets.
+                </p>
+                <p>
+                    The submit bet button will become available once transmissions have begun to be rebroadcasted. This button will remain active for 1 hour, then betting doors will close for the rest of the night. The same schedule follows for each weekend night (Friday, Saturday, and Sunday).
+                </p>
+            </div>
+        </div>
+        <img src="img/radioBulletPoint.png" alt="Icon" class="how-to-icon">
+    </div>
+    <br><br>
+    <div class="how-to-play-section">
+        <div class="how-to-play-content">
+            <h2 class="how-to-title"><a class="CPTAG">FAQ</a></h2>
+            <div class="how-to-text">
+                <p>- The ten code, plain language, or abbreviation can be said on radio (i.e. 10-16, Domestic Dispute, ADW (Assault with a Deadly Weapon)) to validate a bet. <br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- Discretion is applied to this rule. If you aren’t pleased with our system go to a regulated casino instead.</p>
+
+                <p>- All radioed crime must be confirmed, meaning those responding to the call must confirm and proceed with SOP for said crime to validate a bet selection.</p>
+
+                <p>- The feed is monitored by multiple persons and three AI auto-closed captioned softwares to make note of all transmissions.</p>
+
+                <p>- Payouts are distributed <em class="PTAG text-dark" style="color: lightblue;"></em> to the betting wallet address used 72 hours after betting is closed.</p>
+
+                <p>- If a frequency is compromised from an unauthorized person’s transmissions, they will NOT count towards bets made.</p>
+
+                <p>- We’re aware that a location will eventually be found after multiple transmissions are aired. This is why every location visited is randomly chosen and only available for a limited time.</p>
+
+                <p>- If a random crime is added to your parlay that you’ve already selected, that crime must occur TWICE.</p>
+            </div>
+        </div>
+        <img src="img/radioBulletPoint.png" alt="Icon" class="how-to-icon">
+    </div>
+    
+    <div class="background-wrapper">
+        <div class="background-image-wrapper" id="bg-1">
+            <img src="img/cherryNberry2.gif" class="background-image" />
+        </div>
+        <div class="background-image-wrapper" id="bg-2">
+            <img src="img/textBackground.png" class="background-image" />
+        </div>
+        <div class="background-image-wrapper" id="bg-line">
+            <img src="img/lineBreak.png" class="background-image" />
+        </div>
+    </div>
+    <script type="text/javascript" src="goBet.js">
+    </script>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

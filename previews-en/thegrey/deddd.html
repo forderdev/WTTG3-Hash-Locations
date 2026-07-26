@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Samples</title>
+</head>
+<body>
+<div class="container">
+    <h1>Sample Brides<br />JOIN TODAY!!<a class="CPTAG">!!!!</a>!! Inspect photos, chat <em class="PTAG"></em>, and MORE!!!!!!</h1>
+    <div class="samples">
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Emilia</h5>
+                <h5>Age: <a class="CFTAG">21</a></h5>
+                <h5>Nationality: Czechia</h5>
+                <h5>Skills: dancing, cooking</h5>
+                <h5>Price: $6,400</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Nada</h5>
+                <h5>Age: 21</h5>
+                <h5>Nationality: Venezuela</h5>
+                <h5>Skills: <a class="CFTAG">gymnastics</a>, fishing</h5>
+                <h5>Price: $4,500</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Katarzyna</h5>
+                <h5>Age: 28</h5>
+                <h5>Nationality: Poland</h5>
+                <h5>Skills: <a class="CPTAG">photography</a>, driving</h5>
+                <h5>Price: $4,260</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Susie</h5>
+                <h5>Age: 27</h5>
+                <h5>Nationality: Turkey</h5>
+                <h5>Skills: sewing, knitting</h5>
+                <h5>Price: $3,500</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: <em class="PTAG"></em>YuanYuan</h5>
+                <h5>Age: 32</h5>
+                <h5>Nationality: N. Korea</h5>
+                <h5>Skills: hospitality, charisma</h5>
+                <h5>Price: $3,130</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Efe</h5>
+                <h5>Age: 21</h5>
+                <h5>Nationality: Somalia</h5>
+                <h5>Skills: dancing, massage</h5>
+                <h5>Price: $5,790</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Dora</h5>
+                <h5><a class="CPTAG">Age: 23</a></h5>
+                <h5>Nationality: Taiwan</h5>
+                <h5>Skills: cooking, ballet</h5>
+                <h5>Price: $4,300</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Erika</h5>
+                <h5>Age: 24</h5>
+                <h5>Nationality: Latvia</h5>
+                <h5>Skills: crochet, cleaning</h5>
+                <h5>Price: $5,100</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Zhanna</h5>
+                <h5>Age: 21</h5>
+                <h5>Nationality: Russia</h5>
+                <h5>Skills: massage, cleaning</h5>
+                <h5>Price: <a class="CPTAG">$6,500</a></h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Kimberly</h5>
+                <h5>Age: 21</h5>
+                <h5>Nationality: S. Korea</h5>
+                <h5>Skills: cleaning, dancing</h5>
+                <h5>Price: $4,470</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Magda</h5>
+                <h5>Age: 22</h5>
+                <h5>Nationality: Romania</h5>
+                <h5><a class="CPTAG">Skills</a>: massage, piano</h5>
+                <h5>Price: $6,030</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Mayra</h5>
+                <h5>Age: 22</h5>
+                <h5>Nationality: Columbia</h5>
+                <h5>Skills: flute, dancing</h5>
+                <h5>Price: $4,900</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Eeva</h5>
+                <h5>Age: 25</h5>
+                <h5>Nationality: Estonia</h5>
+                <h5>Skills: laundry, cooking</h5>
+                <h5><em class="PTAG"></em>Price: $4,970</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Hana</h5>
+                <h5>Age: 29</h5>
+                <h5>Nationality: Bosnia</h5>
+                <h5>Skills: athleticism, dancing</h5>
+                <h5>Price: $3,800</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: <a class="CPTAG">Chi</a></h5>
+                <h5>Age: 29</h5>
+                <h5>Nationality: Vietnam</h5>
+                <h5>Skills: serving, sewing</h5>
+                <h5>Price: $3,500</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Lalita</h5>
+                <h5>Age: 23</h5>
+                <h5>Nationality: Thailand</h5>
+                <h5>Skills: entertaining, singing</h5>
+                <h5>Price: $6,150</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Meera</h5>
+                <h5>Age: 21</h5>
+                <h5>Nationality: India</h5>
+                <h5>Skills: gardening, hostessing</h5>
+                <h5>Price: $4,200</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Ama</h5>
+                <h5>Age: 25</h5>
+                <h5>Nationality: Ghana</h5>
+                <h5>Skills: cooking, singing</h5>
+                <h5>Price: $5,300</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <div class="sample-description">
+                <h5>Name: Gertruda</h5>
+                <h5>Age: 26</h5>
+                <h5>Nationality: Poland</h5>
+                <h5>Skills: makeup, gymnastics</h5>
+                <h5>Price: $5,150</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+            <em class="PTAG image-tag"></em>
+            <div class="sample-description">
+                <h5>Name: Zdislava</h5>
+                <h5>Age: 24</h5>
+                <h5>Nationality: Poland</h5>
+                <h5>Skills: cleaning, cooking</h5>
+                <h5>Price: $6,200</h5>
+            </div>
+        </div>
+
+        <div class="sample-card">
+            <a class="CFTAG"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" /></a>
+            <div class="sample-description">
+                <h5>Name: Nydia</h5>
+                <h5>Age: 23</h5>
+                <h5>Nationality: Ecuador</h5>
+                <h5>Skills: dancing, soccer</h5>
+                <h5>Price: $4,140</h5>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="underlined"><a onClick="LinkClick('join.html')" class="active">JOIN TODAY!</a></h3>
+</div>
+<footer>*membership fee does not cover the cost of the bride; each bride has a value assigned according to <a class="CPTAG">desirability</a> and demand</footer>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

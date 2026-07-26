@@ -1,0 +1,163 @@
+@font-face {
+    font-family: Nunito-ExtraBold;
+    src: url(font/Nunito-ExtraBold.ttf);
+}
+@font-face {
+    font-family: Nunito-ExtraBoldItalic;
+    src: url(font/Nunito-ExtraBoldItalic.ttf);
+}
+@font-face {
+    font-family: Nunito-Italic;
+    src: url(font/Nunito-Italic.ttf);
+}
+@font-face {
+    font-family: Nunito-Regular;
+    src: url(font/Nunito-Regular.ttf);
+}
+
+:root{
+    --bg-color: #cdfde2;
+    --font-color: #344e40;
+}
+
+*{
+    margin: 0;
+    font-family: Nunito-Regular;
+}
+
+body{
+    background-color: var(--bg-color);
+    zoom: 1.1;
+}
+
+.font-extrabold{
+    font-family: Nunito-ExtraBold;
+}
+
+.font-italic{
+    font-family: Nunito-Italic;
+}
+
+.font-extrabolditalic{
+    font-family: Nunito-ExtraBoldItalic;
+}
+
+.font-regular{
+    font-family: Nunito-Regular;
+}
+
+header{
+    min-height: 140px;
+}
+
+header > img{
+    display: block;
+    margin: 50px auto;
+    width: auto;
+    height: auto;
+}
+
+header > h1{
+    display: block;
+    position: relative;
+    margin-top: -160px;
+    font-size: 2.6em;
+    text-align: center;
+}
+
+header > span{
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-top: -7px;
+    font-size: 1.1em;
+}
+
+article{
+    display: block;
+    margin: auto;
+    width: 560px;
+}
+
+button{
+    width: 155px;
+    height: 58px;
+    text-align: center;
+    margin: 30px auto;
+    display: block;
+    position: relative;
+    border: none;
+    background-image: url('img/OrderBox.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+
+p{
+    font-size: 1.15em;
+    color: var(--font-color);
+}
+
+article > img{
+    display: block;
+    margin: auto;
+}
+
+article > span{
+    display: block;
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: 5px;
+    
+}
+
+#images{
+    margin-left: -44px;
+    width: auto;
+    justify-self: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+section{
+    margin: auto;
+    width: 620px;
+}
+
+section > .tests{
+    display: flex;
+    gap: 30px;
+}
+
+section > .tests > img{
+    display: block;
+    max-height: auto;
+}
+
+.tests > span{
+    margin-top: 6px;
+    font-size: 1.05em;
+    color: var(--font-color);
+
+}
+
+.tests > span > p {
+    font-size: 1.05em; 
+    text-align: center;
+}
+
+small{
+    display: block;
+    margin: auto;
+    width: 750px;
+    color:#4b6656;
+    font-size: 0.76em;
+}
+
+b{
+    font-size: 1.4em;
+    text-align: center;
+    display: block;
+    margin: auto;
+}

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <title>Eat My Shit - FAQ</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <link rel="stylesheet" href="meyerreset.css" />
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+</head>
+  <body style="margin: 0; background: #8a6039">
+    <input type="hidden" id="anPageName" name="page" value="faq" />
+    <div class="faq screen">
+      <div class="navbar">
+        <img class="nav-line" src="img/navline.svg" alt="NavLine" />
+        <div class="buttons">
+          <div class="apply">
+            <div class="btn"></div>
+            <div class="txt">
+              <a onClick="LinkClick('questions.html')">Apply</a>
+            </div>
+          </div>
+          <div class="faq-btn">
+            <div class="btn"></div>
+            <div class="txt"><a onClick="LinkClick('faq.html')">F.A.Q</a></div>
+          </div>
+          <div class="home">
+            <div class="btn"></div>
+            <div class="txt"><a onClick="LinkClick('index.html')">Home</a></div>
+          </div>
+        </div>
+        <div class="logo">
+          <img src="img/poopicon-1@2x.png" alt="poopicon 1" />
+          <div>EAT-MY-SHIT</div>
+        </div>
+      </div>
+      <div>
+        <p class="page-header">Commonly Asked Questions:</p>
+      </div>
+      <div class="q1">
+        <div class="q1 rect">
+          <p class="text">
+            <span>Q: </span><span>How much do you pay per dump? <br /></span
+            ><span><br />A: </span>
+            <span>
+              Fair question, but tough to precisely answer. Many factors decide
+              the worth of your logs, some of which include: <a class="CFTAG">quantity</a>,
+              consistency, smell, flavor profile, buyer, etc. It's common for
+              two shipments from the same producer to differ in value. At the
+              minimum you can expect to make about 2 poo points per shipment
+              after your probationary period (4-6 weeks) has passed. During your
+              probationary period it is possible that the poo point rewards can
+              be below the minimum. <em class="PTAG"></em>
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="q2">
+        <div class="q2 rect2">
+          <p class="text">
+            <span>Q: </span><span>What is a <a class="CPTAG">poo point</a> worth?<br /></span
+            ><span><br />A: </span
+            ><span
+              >Great question! Poo points change in value depending on the
+              supply and demand for that quarter. We try our hardest to keep
+              you, the producers, up to date with the foreseeable future that is
+              this business, and providing a quarterly lock on poo point
+              valuation is fair and just in our opinion. <br /><br />
+              Current: 1 poo point = 140 DOSCoin <em class="PTAG"></em>
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="q3">
+        <div class="q3 rect"></div>
+        <p class="text">
+          <span>Q: </span>
+          <span>Can I get in trouble for shipping poop?<br /></span>
+          <span><br />A:</span>
+          <span>
+            We have a special system setup to ensure that there are no issues in
+            shipping your droppings to us. This process is further explained
+            when your application is <a class="CPTAG">accepted.</a> Remember we’ll never make you do
+            anything, and after a few packages are delivered you’ll be more than
+            comfortable continuing to help produce for us.
+          </span>
+        </p>
+      </div>
+      <div class="q4">
+        <div class="q4 rect2"></div>
+        <p class="text">
+          <span>Q: </span><span>What's so special about my poop?<br /></span
+          ><span><br />A: </span
+          ><span>
+            <em class="PTAG"></em>
+            There's many different people in this world with different diets,
+            <a class="CFTAG">lifestyles</a>, health, and most importantly stool! Even the smallest
+            seemingly insignificant elements can play a large role in how your
+            chocolate factory works. Our clientele has wants they need help
+            fulfilling and we do just that. By casting a net far and wide we can
+            help grant their wishes for something more, and most importantly
+            regularly. Our producers are just as important if not more than the
+            relationships we've built with our buyers. In rewarding them with
+            poo points they stick around and ensure the heart of this business
+            keeps on <a class="CPTAG">ticking!</a></span
+          >
+        </p>
+      </div>
+      <div class="q5">
+        <div class="q5 rect"></div>
+        <p class="text">
+          <span>Q: </span
+          ><span
+            >Isn’t there DNA in my poop? Can’t you figure out who I am if you
+            have my DNA?</span
+          ><span> <br /><br />A: </span
+          ><span
+            >Yes there is DNA in feces. Cells from the digestive tract are
+            inside your turds and contain DNA. It’s also possible for some blood
+            to be in your stool, which too has your DNA. While we will never ask
+            you to disclose who you are, your poop tells a story, one that
+            reveals your location at the least, and in some cases more than
+            that. Wastewater is tracked in many areas and unique, cross
+            referencing the brown that you send us to that database we can
+            roughly locate where it came from. We’d have
+            a tough time tracking down exactly who sent us the log(s), and it
+            doesn’t provide us any worth to extract that information. This site
+            aims to create a partnership between you, the poo producer, and us,
+            the facilitator who turns that brown into green for the both of
+            us.</span
+          >
+        </p>
+      </div>
+      <div class="q2">
+        <div class="q2 rect2"></div>
+        <p class="text">
+          <span>Q: </span
+          ><span
+            >Do I need to send my poop, or can I send poop from someone else?<br /></span
+          ><span><br />A: </span
+          ><span
+            >We only accept logs from your fudge factory. Over time we’ve found
+            that turds tend to receive the highest ratings when the source stays
+            consistent and follows our notes. Creating another middleman between
+            the dookie and <em class="PTAG"></em> buyer only complicates things.
+            We do have a referral program that validated producers can share for
+            a substantial poo point bonus if those who are referred complete the
+            validation process successfully.</span
+          >
+        </p>
+      </div>
+      <div class="q6">
+        <div class="q6 rect"></div>
+        <p class="text">
+          <span>Q: </span
+          ><span
+            >Can I be paid in regular currency that I can use and not poo
+            points?<br /><br /></span
+          ><span>A: </span><span>No.</span>
+        </p>
+      </div>
+      <div class="q7">
+        <div class="q7 rect2"></div>
+        <p class="text">
+          <span>Q: </span
+          ><span
+            >I want to buy poop from you, is that something I can do?<br /></span
+          ><span><br />A: </span
+          ><span
+            >Unfortunately not, we only serve as a distributor between 
+            <a class="CFTAG">buyers</a>
+            and producers. It's not difficult to find sellers and more often
+            than not the logs pass through our hands before reaching them.
+            <em class="PTAG"></em
+          ></span>
+        </p>
+      </div>
+    </div>
+  
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

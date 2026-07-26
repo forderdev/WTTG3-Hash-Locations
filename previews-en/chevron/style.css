@@ -1,0 +1,70 @@
+body {
+	background-color: #1b1e01;
+
+}
+
+@font-face {
+	font-family: MPLUS1Code;
+	src: url("font/MPLUS1Code-Regular.ttf");
+}
+
+.t888JOLO {
+	background-image: url("encoded.png");
+	background-repeat: no-repeat;
+	width: 1162px;
+	height: 3021px;
+	margin: auto;
+
+}
+p {
+	padding-top: 25px;
+	padding-left: 50px;
+	font-family: MPLUS1Code;
+	color: #fbfede;
+	font-size: 13pt;
+	position: static;
+	margin: 0;
+
+}
+
+mark {
+	color:	#14f50d;
+}
+
+.PTAG.one {
+	font-size: 13pt;
+	font-family: MPLUS1Code;
+}
+
+.PTAG.two {
+	color: lightgray;
+	font-size: 38pt;
+	font-family: sans-serif;
+	opacity: 0.6;
+	padding-left: 50%;
+	text-shadow: 2px 3px 13px #919191;
+}
+
+.HewettJ{
+		transform: skew(20deg,20deg);
+}
+
+@keyframes VISION {
+	from {color: white;}
+	to {color: #999999;}
+}
+
+.PTAG.plain {
+	color: white;
+	font-size: 13pt;
+	font-family: MPLUS1Code;
+	padding-top: 1430px;
+	padding-left: 92px;
+	text-wrap: nowrap;
+	position: absolute;
+	writing-mode: vertical-rl;
+	animation-name: VISION;
+	animation-duration: 10s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}

@@ -1,0 +1,161 @@
+:root {
+    --primary-color: #5c5308;
+    --secondary-color: #c4715f;
+    --title-size: 72pt;
+    --subtitle-size: 24pt;
+}
+
+body {
+    position: relative;
+    background-image: url("imgs/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 20px;
+}
+
+header {
+    text-align: center;
+    margin-top: 60px;
+}
+
+header .image-block {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+
+}
+
+header img {
+    vertical-align: middle;
+    max-width: 120px;
+}
+
+header p {
+    vertical-align: middle;
+    font-family: "Poppins", sans-serif;
+    font-size: 18pt;
+    color: #c4715f;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+.title-cake {
+    margin:auto;
+}
+
+.title {
+    font-family: "McLaren", sans-serif;
+    font-size: var(--title-size);
+    font-weight: 300;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: -25px;
+}
+
+.subtitle {
+    font-family: "McLaren", sans-serif;
+    font-weight: 300;
+    font-size: var(--subtitle-size);
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 0;
+    margin-right: 340px;
+}
+
+.ingredients {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.ingredients .left,
+.ingredients .right {
+    flex: 1;
+    max-width: 375px;
+}
+
+.ingredients-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 22pt;
+    font-style: italic;
+    color: var(--secondary-color);
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: -10px;
+}
+
+.ingredients p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-align: left;
+}
+
+.recipes {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.instruction {
+    display: flex;
+    justify-content: center;
+}
+
+.instruction .step {
+    font-family: "Poppins", sans-serif;
+    font-size: 22pt;
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.instruction .dot {
+    font-family: "Poppins", sans-serif;
+    font-size: 22pt;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.instruction .instruction {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-size: 15pt;
+    font-weight: 500;
+    color: #454140;
+    margin-left: 5px;
+    padding-top: 8px;
+}
+
+.PTAG.inside {
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    color: #43423f;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85em;
+    font-weight: 600;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.PTAG.text-dark {
+    position: relative;
+    padding: 8px;
+    color: #433F3F;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.PTAG.shadow{
+    position: absolute;
+    bottom: 20px;
+    color: #C4B7A8;
+    right: 20px;
+    text-shadow: 2px 2px 2px #D4C4B2;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8em;
+}

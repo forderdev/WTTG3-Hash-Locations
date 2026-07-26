@@ -1,0 +1,298 @@
+@font-face {
+    font-family: Lato-Bold;
+    src: url(font/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: Lato-BoldItalic;
+    src: url(font/Lato-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: Lato-Italic;
+    src: url(font/Lato-Italic.ttf);
+}
+
+@font-face {
+    font-family: Lato-Regular;
+    src: url(font/Lato-Regular.ttf);
+}
+
+body {
+    font-family: Lato-Regular;
+    color: #201d06;
+    margin: 0;
+    padding: 40px 20px;
+    background-color: #dabf34;
+    text-align: center;
+    z-index: 1;
+}
+
+.main-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0 20px;
+    
+}
+
+.underlined-text {
+    text-decoration: underline;
+    font-size: 60px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.underlined-text-2 {
+    font-family: Lato-BoldItalic;
+    text-decoration: underline;
+    font-size: 60px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.main-text.underlined {
+    text-decoration: underline;
+}
+
+.small-text {
+    font-size: 18px;
+    margin: 10px 0 30px;
+    color: #333;
+}
+
+.info-border {
+    background-color: #19dc48;
+    padding: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 900px;
+    text-align: left;
+    box-shadow:
+            inset 0 0 15px rgba(255, 255, 255, 0.5),
+            0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.big-plus {
+    font-size:30px;
+    font-family: Lato-Bold;
+}
+
+.big-element-title{
+    font-size: 18px;
+    font-family: Lato-Bold;
+}
+
+.bold-text-element {
+    font-family: Lato-Bold
+}
+
+.underlined-text {
+    position: relative;
+    display: inline-block;
+}
+
+.main-text {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.bg-icon {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.left-icon {
+    left: -11.25rem;
+    transform: scale(1.3);
+}
+
+.right-icon {
+    right: -250px;
+    transform: scale(1);
+}
+
+.right-icon-2 {
+    right: -8.1rem;
+    transform: scale(1.4);
+}
+
+.left-icon-2 {
+    left: -12.5rem;
+    top: -3.1rem;
+    transform: scale(1);
+}
+
+.left-icon-3 {
+    left: -21.25rem;
+    top: -0.93rem;
+    transform: scale(1.3);
+    opacity: 0.35;
+}
+
+.bg-text {
+    font-family: "Lato Light";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: #201d06;
+    opacity: 35%;
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.comment-01 {
+    left: 20em;
+    top: -4em;
+    font-size: 15px;
+}
+
+.comment-02 {
+    left: -5.7143em;
+    top: 8.2143em;
+    font-size: 14px;
+}
+
+.comment-03 {
+    left: 37.5em;
+    top: 9.375em;
+    font-size: 16px;
+    font-family: Lato-Regular;
+}
+
+.comment-04 {
+    top: -0.8571em;
+    font-size: 14px;
+}
+
+.comment-05 {
+    left: -3.4375em;
+    top: 10.9375em;
+    font-size: 16px;
+}
+
+.comment-06 {
+    left: 25em;
+    top: 13.0769em;
+    font-size: 13px;
+}
+
+.comment-07 {
+    text-align: left;
+    font-size: 14px;
+    left: 19.2857em;
+    top: -0.2143em;
+}
+
+.comment-08 {
+    text-align: left;
+    font-size: 13px;
+    left: -27.6923em;
+    top: 40em;
+}
+
+.comment-09 {
+    text-align: left;
+    font-size: 13px;
+    left: 16.9231em;
+    top: 41.5385em;
+}
+
+.comment-10 {
+    font-size: 50px;
+    left: -8em;
+    font-family: "Lato Semibold";
+    opacity: 0.4;
+}
+
+
+
+.top-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 50px;
+}
+
+.absolute-image {
+    position: absolute;
+    top: 50px;
+    left: 800px;
+    width: 250px;
+    height: auto;
+    pointer-events: none; 
+    z-index: 0;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-text {
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: Lato-Regular;
+    font-size: 20px;
+}
+
+.left-image {
+    width: 300px;
+    height: auto;
+}
+
+.right-content {
+    flex: 1;
+    text-align: left;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.form-container {
+    margin-top: 10px;
+    width: 600px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-row label {
+    width: 120px;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.form-row input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #00000033;
+    background-color: #9db9a0;
+}
+
+.bottom-image-container {
+    text-align: center;
+}
+
+#hidden-text {
+    visibility: hidden;
+    font-family: Lato-BoldItalic;
+    font-size: 22px;
+    color: black;
+}
+
+#clickable-image {
+    cursor: pointer;
+    pointer-events: auto;
+}

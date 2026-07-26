@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <title>DON</title>
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+</head>
+<body id="page">
+    <div id="header">
+        <h2 id="header-title">Black Hat Post</h2>
+        <p id="header-desc">The rules here are simple.. you make a post requesting the service you need and pay a small fee. We will take care of the rest.. but there is a <a class="CFTAG">catch</a>.. everything you post is shared publicly on the home page. That information will remain there for at least 3 days, then new posts will replace its position if there are new requests in the queue. There will never be more than 10 posts on this page.<em class="PTAG text-dark"></em></p>
+        <p id="header-desc">Don't want to wait in queue? Limited hacking & doxxing services are for sale on #VelvetRoad. Requests through this format will still be posted for all to see when their time arrives.</p>
+    </div>
+
+    <div id="content">
+        <h2 id="content-title">Latest Requests</h2>
+
+        <!-- 1 -->
+        <div class="request">
+            <div class="req-type">REQ></div>
+            <div class="req-msg multiline">Locate my estranged daughter. I'm worried about her. My ex-wife isn't getting any help from the cops, wish I could give my tax dollars to y'all instead.
+
+	Here's all the info we can share:
+	NAME - Elizabeth Weaver
+	HT - 5-04
+	EYES - BR
+	HAIR COLOR - Brown - Light Brown
+	OLD ADDRESS - 767 Natalie Plaza Samanthamouth, AL 42673 
+	LAST KNOWN LOCATION ON findMyCelly - ('-6.91806', '106.92667', 'Sukabumi', 'ID', 'Asia/Jakarta')</div>
+        </div>
+        
+        <div class="request">
+            <div class="req-type">RES></div>
+            <div class="req-msg req-res">
+                <div class="multiline">Located your daughter. She's been staying at a hotel with her husband of 3 years for the past 2 months.
+	This is the address: 316 Scott Heights Suite 478 Morseland, DE 77674
+                </div>
+            </div>
+        </div>
+
+        <div class="req-footer">
+            <p class="req-time">Posted 2 days ago</p>
+            <p>#128438</p>
+        </div>
+
+        <div class="hr"></div>
+
+        <!-- 2 -->
+        <div class="request">
+            <div class="req-type">REQ></div>
+            <div class="req-msg multiline">I want you to call in a bomb threat to my school on April fools day. 
+	Telash High School
+	174 Mills Road
+	North Amber, MA 01322
+
+	Sometime after 3rd or 4th period would be good. <br><img class="req-img" src="./images/post-128439.jpg"></div>
+        </div>
+        
+        <div class="request">
+            <div class="req-type">RES></div>
+            <div class="req-msg req-res">
+                The school was closed at the time of fulfilling this request. Pay attention in class and learn the simple math needed to accurately time your next request.
+            </div>
+        </div>
+
+        <div class="req-footer">
+            <p class="req-time">Posted 2 days ago</p>
+            <p>#128439</p>
+        </div>
+
+        <div class="hr"></div>
+
+        <!-- 3 -->
+        <div class="request">
+            <div class="req-type">REQ></div>
+            <div class="req-msg">I want the scheduling information on this <a class="CFTAG">horse</a>, Golvanty. Who's going to be transporting the horse from one track to the next. I need the plate number and vehicle make/model of that transport. Also the living accomodations of that transport driver if possible.<br><img class="req-img" src="./images/post-128440.jpg"></div>
+        </div>
+        
+        <div class="request">
+            <div class="req-type">RES></div>
+            <div class="req-msg req-res">
+                <div class="multiline">Scheduling transport is as follows:
+Louisville, Kentucky -> Lexington, Kentucky -> Del Mar, California -> Arcadia, California -> Baltimore, Maryland.
+
+The same truck and trailer is expected to transport this horse across all scheduled stops. Truck's plate reads "BR33D". Trailer's plates reads "G4LLOP". Both Kentucky vanity plates. Truck is red in color with double wide rear tires. Model is a WAM 2500. VIN of that vehicle is CK4EUPMF51895KVWT. Trailer is white in color with a black flower livery across the sides and back.
+
+The driver is expected to be the same across all scheduled race stops. Name is Hunter May. Hunter May is White, 6' 5", Blonde hair, Green eyes.
+
+Living accomodations could not be found, likely staying with friends / family / at the track.
+                </div>
+            </div>
+        </div>
+
+        <div class="req-footer">
+            <p class="req-time">Posted 2 days ago</p>
+            <p>#128440</p>
+        </div>
+    
+        <div class="hr"></div>
+
+        <!-- 4 -->
+        <div class="request">
+            <div class="req-type">REQ></div>
+            <div class="req-msg">I want a virus to install on a piece of shit's computer. Something that will make it unusable.</div>
+        </div>
+        
+        <div class="request">
+            <div class="req-type">RES></div>
+            <div class="req-msg req-res">
+                You could've saved the post fee by just clicking on a handful of "Hot locals in your area" ads. Anyway here's your file. <span><a class="CPTAG">Domingo.exe</a></span>
+            </div>
+        </div>
+
+        <div class="req-footer">
+            <p class="req-time">Posted 2 days ago</p>
+            <p>#128441</p>
+        </div>
+    
+        <div class="hr"></div>
+
+        <!-- 5 -->
+        <div class="request">
+            <div class="req-type">REQ></div>
+            <div class="req-msg">Give me the information of some guy from America who's identity I can safely assume in a remote location. I'm 27 years old, 5ft 10in, caucasian, brown eyes, black hair.</div>
+        </div>
+        
+        <div class="request">
+            <div class="req-type">RES></div>
+            <div class="req-msg req-res">
+                <div class="multiline">Name: David Freeman
+
+    DOB: 12/19/1996
+
+    Address: 197 Kimberly Meadow
+    Barberchester, FL 76516
+
+    SSN: 101-02-0624 
+
+    Passport Number: S34365453
+
+    Status: Deceased
+                </div>
+            </div>
+        </div>
+
+        <div class="req-footer">
+            <p class="req-time">Posted 2 days ago</p>
+            <p>#128442</p>
+        </div>
+    
+        <div class="hr"></div>
+
+        <!-- 6 -->
+        <div class="request">
+            <div class="req-type">REQ></div>
+            <div class="req-msg">Find the log-in info for the dispatch servers who send out armored cash transportation schedules around the downtown area of Chicago.</div>
+        </div>
+        
+        <div class="request">
+            <div class="req-type">RES></div>
+            <div class="req-msg req-res">
+                <div class="multiline">Provider for that area is IntelliSendr. Currently there are four active dispatchers who handle that information. All user information gets changed on a bi-monthly basis for security purposes. Their login credentials are as follows.
+	USERNAME:  calvinsullivan 
+	PASSWORD:  ogre02GM5in#
+
+	USERNAME:  brittanydavidson 
+	PASSWORD:  Im90PURR!$$
+
+	USERNAME:  powellbrett 
+	PASSWORD:  &fFFlpk%311
+
+	USERNAME:  donaldmosley 
+	PASSWORD:  BRDS-aintR34L;)
+                </div>
+            </div>
+        </div>
+
+        <div class="req-footer">
+            <p class="req-time">Posted 2 days ago</p>
+            <p>#128443</p>
+        </div>
+    
+        <div class="hr"></div>
+
+        <!-- 7 -->
+        <div class="request">
+            <div class="req-type">REQ></div>
+            <div class="req-msg">Need to know where this guy lives as soon as possible. He's harrassing my mother. Only have the photo of his tattoos and the approximate location where he keeps appearing. She recalled seeing the abbreivation LW on a ledger he was holding. <br><img class="req-img" src="./images/post-128444.png"><br><em class="PTAG text-dark"></em>The address was around 1889 Mario Ville Grafton, WV 26354</div>
+        </div>
+        
+        <div class="request">
+            <div class="req-type">RES></div>
+            <div class="req-msg req-res">
+                His name is Leonard Wilkins. His home address is: 3149 Gordon Squares Apt. 203 Lewisburg, WV 24901.
+            </div>
+        </div>
+
+        <div class="req-footer">
+            <p class="req-time">Posted 2 days ago</p>
+            <p>#128444</p>
+        </div>
+    
+        <div class="hr"></div>
+
+        <!-- 8 -->
+        <div class="request">
+            <div class="req-type">REQ></div>
+            <div class="req-msg">Can you guys give me a bank login that has millions across the accounts? Just tryna show off I don't want to spend anything from it. Much appreciated</div>
+        </div>
+        
+        <div class="request">
+            <div class="req-type">RES></div>
+            <div class="req-msg req-res">
+                <div class="multiline">This information will satisfy your little trick.
+    <a class="CPTAG">BANK NAME</a>: FiStar Bank
+    USERNAME: TPalmer71
+    PASSWORD: gloryBEE2God
+                </div>
+            </div>
+        </div>
+
+        <div class="req-footer">
+            <p class="req-time">Posted 2 days ago</p>
+            <p>#128445</p>
+        </div>
+    
+        <div class="hr"></div>
+
+        <!-- 9 -->
+        <div class="request">
+            <div class="req-type">REQ></div>
+            <div class="req-msg">I'm looking for a bunch of non expired stolen credit card info to buy things for myself. Please give me at least 10 stolen cards</div>
+        </div>
+        
+        <div class="request">
+            <div class="req-type">RES></div>
+            <div class="req-msg req-res">
+                <div class="multiline">Here's ten
+    Stephanie Cooke | CC #: 3508634057722552 | EXP DATE: 10/29 | CCV CODE: 134
+    Connie Matthews MD | CC #: 30278565780729 | EXP DATE: 06/28 | CCV CODE: 550
+    Elizabeth Smith | CC #: 3554260821942129 | EXP DATE: 09/26 | CCV CODE: 993
+    Patrick Lane | CC #: 3555565996661828 | EXP DATE: 01/29 | CCV CODE: 757
+    Veronica Simmons | CC #: 2299790142299207 | EXP DATE: 06/27 | CCV CODE: 670
+    Holly Trevino | CC #: 180018290986912 | EXP DATE: 12/25 | CCV CODE: 700
+    Jeffrey Hill | CC #: 3549489361335547 | EXP DATE: 10/34 | CCV CODE: 500
+    Danielle Willis | CC #: 2258041904898656 | EXP DATE: 08/27 | CCV CODE: 187
+    Sean MacNamara | CC #: 30468505119951 | EXP DATE: 09/29 | CCV CODE: 597
+    Sandra Henry | CC #: 348141190048135 | EXP DATE: 05/27 | CCV CODE: 144
+                </div>
+            </div>
+        </div>
+
+        <div class="req-footer">
+            <p class="req-time">Posted 2 days ago</p>
+            <p>#128446</p>
+        </div>
+    
+        <div class="hr"></div>
+
+        <!-- 10 -->
+        <div class="request">
+            <div class="req-type">REQ></div>
+            <div class="req-msg">I want to know the exact latitude and longitude of this <a class="CFTAG">location</a> <br><img class="req-img" src="./images/post-128447.jpg"></div>
+        </div>
+        
+        <div class="request">
+            <div class="req-type">RES></div>
+            <div class="req-msg req-res">
+                14°05'14.6"S 75°45'47.5"W
+            </div>
+        </div>
+
+        <div class="req-footer">
+            <p class="req-time">Posted 2 days ago</p>
+            <p>#128447</p>
+        </div>
+    
+        <div class="hr"></div>
+    
+    </div>
+
+    <em class="PTAG text-dark pull-right"></em>
+    <div id="submit-div">
+        <a id="submit-post" onClick="LinkClick('submit.html')">SUBMIT A POST</a>
+    </div>
+
+
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

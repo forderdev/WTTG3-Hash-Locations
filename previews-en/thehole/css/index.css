@@ -1,0 +1,80 @@
+/* screen - index */
+@font-face {
+  font-family: 'Unbounded';
+  src: url("../font/Unbounded-Bold.ttf");
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+#video-block {
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+}
+
+#watch {
+  position: relative;
+  align-items: left;
+  max-width: 100vw;
+  height: auto;
+}
+
+#HOLE-TAG {
+  position: absolute;
+  width: 35%;
+  height: 80%;
+  top: 10%;
+  left: 12%;
+  z-index: 2;
+  border-radius: 70%;
+}
+
+#TEXT-TAG {
+  position: absolute;
+  width: 25%;
+  height: 10%;
+  top: 15%;
+  right: 11%;
+  z-index: 2;
+  border-radius: 20%;
+}
+
+#overlay {
+  position: relative;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  color: #f1f1f1;
+  width: 40%;
+  height: 40%;
+}
+
+.zoom-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Unbounded';
+  font-weight: bold;
+  color: #fff;
+  background-color: #737373;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Hover effect */
+.zoom-button:hover {
+  background-color: #8c8c8c;
+}
+
+/* Active effect */
+.zoom-button:active {
+  background-color: #404040;
+}
+
+

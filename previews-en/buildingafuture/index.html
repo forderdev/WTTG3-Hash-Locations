@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BuildingAFuture</title>
+        <link rel="stylesheet" href="../Global/reset.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script type="text/javascript" src="../Global/Basic.js"></script>
+    </head>
+    <body>
+        <main class="flow py-8">
+            <section id="navbar" class="wrapper flex flow">
+                <article id="navbar-image" class="flex gap-400 items-end">
+                    <a class="CPTAG">
+                        <figure>
+                            <img src="imgs/Skyscraper.png" alt="" />
+                        </figure>
+                    </a>
+                    <em class="PTAG" id="image-tag"></em>
+                    <header>
+                        <h1 class="uppercase">
+                            <span class="color-black">Building</span> <a class="CFTAG">A</a> Future
+                        </h1>
+                    </header>
+                </article>
+                <nav class="flex items-end">
+                    <ul class="flex gap-500">
+                        <li class="border-b-1 px-2">
+                            <a onClick="LinkClick('index.html')"
+                                ><h4>MAIN</h4></a
+                            >
+                        </li>
+                        <li class="border-b-1 px-2">
+                            <a onClick="LinkClick('invest.html')"
+                                ><h4>INVEST</h4></a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+                <em class="PTAG" id="navbar-tag"></em>
+            </section>
+
+            <section
+                class="wrapper flex bg-primary rounded-40 gap-400 items-center py-8"
+            >
+                <article class="flow color-light-blue">
+                    <h2 class="bold">Invest in the future</h2>
+                    <h4>
+                        Invest in a cause that will do more than <a class="CPTAG">just</a> thank you
+                        for contributing.
+                    </h4>
+                </article>
+                <a class="CFTAG"><img
+                    src="imgs/construction.jpg"
+                    width="322px"
+                    height="298px"
+                    alt=""
+                /></a>
+            </section>
+
+            <section class="wrapper">
+                <article class="flow bg-secondary rounded-30 color-grey px-12 py-8">
+                    <h3 class="bold">We recruit <em class="PTAG"></em> from all around the <a class="CFTAG">world</a></h3>
+                    <p>
+                        The funds you send us go towards employing team members
+                        across the globe to help in constructing some of the
+                        largest development projects. We prove how essential
+                        your contribution is by <a class="CPTAG">multiplying</a> your initial deposit
+                        by 2x, 5x, 10x, or more and returning it to you when the
+                        job is complete.<br /><br />
+                        This is all made possible by capitalizing on the weak.
+                        See a couple bucks is nothing to you or me, but to
+                        someone in a war ridden country living in poverty and
+                        squalor it's a gift from the gods above. It's easy to
+                        sell a hard job to someone who already has a tough life
+                        and is desperately clawing for a way out. We promise
+                        that way out with no real intention of helping them get
+                        there.<br /><br />
+                        Once they're working for us we confiscate their
+                        passport, all the money they have, and other <a class="CFTAG">personal</a>
+                        belongings. They can try and get help, but will have a
+                        hard time getting home without money or a passport in a
+                        country where they don't even speak the language. Coming
+                        to terms with their situation leads to the realization
+                        that the easier of the two options is to work for us.
+                    </p>
+                </article>
+            </section>
+        </main>
+    
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

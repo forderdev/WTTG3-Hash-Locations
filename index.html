@@ -4,75 +4,106 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
+      id="meta-description"
       name="description"
       content="hash bulma"
     />
     <title>WTTG III | Hash Bulma</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="data.js" defer></script>
+    <script src="data-en.js" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
     <header class="masthead">
-      <a class="wordmark" href="#" aria-label="Başa dön">
+      <a
+        class="wordmark"
+        href="#"
+        aria-label="Başa dön"
+        data-i18n-aria-label="homeAria"
+      >
         <strong>WTTG III</strong>
-        <span>Hash Bulma</span>
+        <span data-i18n="wordmark">Hash Bulma</span>
       </a>
-      <a class="masthead__link" href="#atlas-title">Arşive git</a>
+      <div class="masthead__actions">
+        <div
+          class="language-switch"
+          role="group"
+          aria-label="Dil"
+          data-i18n-aria-label="language"
+        >
+          <button type="button" data-language="tr" aria-pressed="true">TR</button>
+          <button type="button" data-language="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="masthead__link" href="#atlas-title" data-i18n="archiveLink">
+          Arşive git
+        </a>
+      </div>
     </header>
 
     <main>
       <section class="hero" aria-labelledby="page-title">
         <div class="hero__copy" data-reveal>
           <p class="eyebrow"></p>
-          <h1 id="page-title">WTTG3 hash bulma işi</h1>
-          <p class="hero__lede">
-            hash bulun
-          </p>
+          <h1 id="page-title" data-i18n="heroTitle">WTTG3 hash bulma işi</h1>
+          <p class="hero__lede" data-i18n="heroLede">hash bulun</p>
         </div>
 
-        <aside class="hero__stats" aria-label="Veri kapsamı" data-reveal>
-          <p class="hero__stats-title">Siteler:</p>
+        <aside
+          class="hero__stats"
+          aria-label="Veri kapsamı"
+          data-i18n-aria-label="statsAria"
+          data-reveal
+        >
+          <p class="hero__stats-title" data-i18n="statsTitle">Siteler:</p>
           <article>
             <strong id="site-count">0</strong>
-            <span>site</span>
+            <span data-i18n="siteUnit">site</span>
           </article>
           <article>
             <strong id="page-count">0</strong>
-            <span>sayfa</span>
+            <span data-i18n="pageUnit">sayfa</span>
           </article>
           <article>
             <strong id="marker-count">0</strong>
-            <span>işaret</span>
+            <span data-i18n="markerUnit">işaret</span>
           </article>
         </aside>
       </section>
 
       <section class="legend-panel" aria-labelledby="legend-title" data-reveal>
         <div class="legend-panel__intro">
-          <h2 id="legend-title">önemli</h2>
-          <p>her renk farklı bir hash konumu tipini gösterir.</p>
+          <h2 id="legend-title" data-i18n="legendTitle">önemli</h2>
+          <p data-i18n="legendIntro">
+            her renk farklı bir hash konumu tipini gösterir.
+          </p>
         </div>
         <div class="legend-list">
           <article>
             <span class="legend-key legend-key--direct" aria-hidden="true">P</span>
             <div>
-              <strong>Görünür konum</strong>
-              <p>Hash metninin doğrudan yazılabileceği boş alan.</p>
+              <strong data-i18n="directTitle">Görünür konum</strong>
+              <p data-i18n="directDescription">
+                Hash metninin doğrudan yazılabileceği boş alan.
+              </p>
             </div>
           </article>
           <article>
             <span class="legend-key legend-key--click" aria-hidden="true">C</span>
             <div>
-              <strong>Tıklanabilir konum</strong>
-              <p>İmleç değiştiğinde hash verebilen doğru tıklama adayı.</p>
+              <strong data-i18n="clickableTitle">Tıklanabilir konum</strong>
+              <p data-i18n="clickableDescription">
+                İmleç değiştiğinde hash verebilen doğru tıklama adayı.
+              </p>
             </div>
           </article>
           <article>
             <span class="legend-key legend-key--decoy" aria-hidden="true">F</span>
             <div>
-              <strong>Sahte konum</strong>
-              <p>Doğru adayın ipucunu taklit edebilen tuzak nokta.</p>
+              <strong data-i18n="decoyTitle">Sahte konum</strong>
+              <p data-i18n="decoyDescription">
+                Doğru adayın ipucunu taklit edebilen tuzak nokta.
+              </p>
             </div>
           </article>
         </div>
@@ -83,65 +114,83 @@
       <section class="atlas" aria-labelledby="atlas-title">
         <div class="atlas__head" data-reveal>
           <div>
-            <h2 id="atlas-title">Site ve sayfalar</h2>
-            <p>Bir siteyi açarak sayfalarını ve işaret türlerini incele.</p>
+            <h2 id="atlas-title" data-i18n="atlasTitle">Site ve sayfalar</h2>
+            <p data-i18n="atlasDescription">
+              Bir siteyi açarak sayfalarını ve işaret türlerini incele.
+            </p>
           </div>
           <div class="progress" aria-live="polite">
-            <span>İlerleme</span>
+            <span data-i18n="progress">İlerleme</span>
             <strong id="progress-label">0 / 0 bakıldı</strong>
           </div>
         </div>
 
         <div class="controls" data-reveal>
           <label class="search">
-            <span class="control-label">Site veya sayfa ara</span>
+            <span class="control-label" data-i18n="searchLabel">
+              Site veya sayfa ara
+            </span>
             <span class="search__field">
               <input
                 id="search-input"
                 type="search"
                 autocomplete="off"
                 placeholder="Örnek: Shadow Web"
+                data-i18n-placeholder="searchPlaceholder"
               />
               <kbd>/</kbd>
             </span>
           </label>
 
           <fieldset class="filter-group">
-            <legend class="control-label">Konum türü</legend>
-            <div class="filters" role="group" aria-label="Konum türü filtresi">
+            <legend class="control-label" data-i18n="typeLabel">
+              Konum türü
+            </legend>
+            <div
+              class="filters"
+              role="group"
+              aria-label="Konum türü filtresi"
+              data-i18n-aria-label="typeFilterAria"
+            >
               <button class="filter is-active" data-filter="all" type="button">
-                Tümü
+                <span data-i18n="filterAll">Tümü</span>
               </button>
               <button class="filter" data-filter="direct" type="button">
-                Görünür
+                <span data-i18n="filterDirect">Görünür</span>
               </button>
               <button class="filter" data-filter="clickable" type="button">
-                Tıklanabilir
+                <span data-i18n="filterClickable">Tıklanabilir</span>
               </button>
               <button class="filter" data-filter="decoy" type="button">
-                Tuzaklı
+                <span data-i18n="filterDecoy">Tuzaklı</span>
               </button>
             </div>
           </fieldset>
 
           <label class="hide-checked">
             <input id="hide-checked" type="checkbox" />
-            <span>Bakılanları gizle</span>
+            <span data-i18n="hideChecked">Bakılanları gizle</span>
           </label>
         </div>
 
         <div id="site-list" class="site-list" aria-live="polite">
-          <p class="loading-state">Veriler hazırlanıyor.</p>
+          <p class="loading-state" data-i18n="loading">
+            Veriler hazırlanıyor.
+          </p>
         </div>
-        <p id="empty-state" class="empty-state" hidden>
+        <p id="empty-state" class="empty-state" data-i18n="empty" hidden>
           Bu filtrelerle eşleşen sayfa bulunamadı.
         </p>
       </section>
     </main>
 
     <footer>
-      <p>Oyun dosyalarından yerel olarak üretildi. Resmî değildir.</p>
-      <button id="reset-progress" type="button">İlerlemeyi sıfırla</button>
+      <p data-i18n="footer">
+        Oyun dosyalarından yerel olarak üretildi. Resmî değildir.
+      </p>
+      <button id="reset-progress" type="button" data-i18n="reset">
+        İlerlemeyi sıfırla
+      </button>
     </footer>
 
     <dialog id="preview-dialog" class="preview-dialog">
@@ -153,9 +202,11 @@
           </div>
           <div class="preview-dialog__actions">
             <a id="preview-open" href="#" target="_blank" rel="noreferrer">
-              Yeni sekmede aç
+              <span data-i18n="openNewTab">Yeni sekmede aç</span>
             </a>
-            <button id="preview-close" type="button">Kapat</button>
+            <button id="preview-close" type="button" data-i18n="close">
+              Kapat
+            </button>
           </div>
         </header>
         <div id="preview-badges" class="marker-badges"></div>
@@ -164,7 +215,11 @@
             <span></span><span></span><span></span>
             <code id="preview-path"></code>
           </div>
-          <iframe id="preview-frame" title="İşaretlenmiş oyun sayfası"></iframe>
+          <iframe
+            id="preview-frame"
+            title="İşaretlenmiş oyun sayfası"
+            data-i18n-title="iframeTitle"
+          ></iframe>
         </div>
       </div>
     </dialog>

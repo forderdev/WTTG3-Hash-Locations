@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <title>Worldwide Workers</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <div id="content">
+        <header>
+            <img id="logo" src="img/logo.png" alt="logo">
+        </header>
+    
+        <main>
+            <nav>
+                <a onClick="LinkClick('index.html')" class="active" id="home"></a>
+                <a onClick="LinkClick('submit.html')" class="active" id="submit"></a>
+                <a onClick="LinkClick('about.html')" class="active" id="about"></a>
+            </nav>
+
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                All fields should meet the recommended minimum character count before a submission is made. This helps ensure enough detail has been provided, which speeds up processing on our end, and saves you from having to pay additional fees.
+            </p>
+            <br>
+            <p style="font-size: 0.9em;">
+                Refrain from <a class="CPTAG">mentioning</a> any personal details when answering these prompts. Only the key specifics are requested to validate WorldWide Workers can properly provide an accurate assessment of your submitted proposal.
+            </p>
+            <br><br>
+            <div id="submitForm">
+                <div id="locationInfo">
+                    <textarea type="text" id="locationInput" placeholder="Location(s) (Address, describe environment, level of security, other pertinent details)" maxlength="800"></textarea>
+                    <p class="bolditalic" style="font-size: 0.7em;"><span id="charlocationInput">0</span>/800 recommended minimum character count.</p>
+                </div>
+                <br>
+                <div id="targetInfo">
+                    <textarea type="text" id="tagetInput" placeholder="Target(s) (Person, object of interest, objective/goal)" maxlength="800"></textarea>
+                    <p class="bolditalic" style="font-size: 0.7em;"><span id="chartagetInput">0</span>/800 <em class="PTAG text-dark"></em> recommended minimum character count.</p>
+                </div>
+                <br>
+                <div id="crewInfo">
+                    <textarea type="text" id="crewInput" placeholder="Crew (Available crew, specialities or skills)" maxlength="800"></textarea>
+                    <p class="bolditalic" style="font-size: 0.7em;"><span id="charcrewInput">0</span>/800 recommended minimum character count.</p>
+                </div>
+                <br>
+                <div id="eqInfo">
+                    <textarea type="text" id="eqInput" placeholder="Equipment you intend to use (firearms, vehicles, available capital)" maxlength="800"></textarea>
+                    <p class="bolditalic" style="font-size: 0.7em;"><span id="chareqInput">0</span>/800 recommended minimum character count.</p>
+                </div>
+            </div>
+
+            <div id="disclosure">
+                <p>
+                    You will be charged an additional processing fee <span class="bold">(200 DOSCoin)</span> if any field does not include enough information to adequately fulfill our requirements.
+                </p>
+                <br>
+                <p>
+                    If a submission requires more than the <span class="bolditalic">three business day maximum</span> to process an <span class="bolditalic">additional 200 DOSCoin payment</span> will be required to continue. That fee will cover the next 2 business days. Proposals that demand more additional time <em class="PTAG text-dark"></em> will be charged <span class="bolditalic">125 DOSCoin per added business day</span> following the first 200 DOSCoin extension.
+                </p>
+                <br>
+                <p>
+                    There are no <a class="CFTAG">refunds</a> for proposals once submitted.
+                </p>
+                <br>
+                <p>
+                    Amendments on a proposal can be made up to a maximum of 24 hours after submission. Within this 24 hour <em class="PTAG text-dark"></em> period amendments should be sent to the contact email provided in your transaction confirmation. If the 24 hour period has lapsed you will be charged the additional processing fee <span class="bold">(200 DOSCoin)</span>.
+                </p>
+                <br>
+                <p>
+                    Failing to pay any additional fees incurred will result in your proposal being dropped by our team. Clients who are dropped will not receive any information from us about the work we had done up until that point in time and you will be blacklisted from using our services in the future.
+                </p>
+            </div>
+            
+            <div id="infoForm">
+                <input type="text" placeholder="Enter preferred contact email address">
+                <em class="PTAG text-dark" style="font-size: 0.7em; position: absolute; left: 230px; margin-top: 55px; font-family: NotoSans-Light;"></em>
+                <br>
+                <input type="text" placeholder="Enter linked wallet address">
+            </div>
+
+            <div id="conditions" class="bold">
+                <p>
+                    I accept the 550 DOSCoin charge to process this proposal. I have reviewed it to the best of my ability and believe it meets the expected level of detail requested from WorldWide Workers.
+                </p>
+                <br>
+                <p>
+                    I have been made aware of all additional fees I may incur and the refund <a class="CPTAG">policy</a>.
+                </p>
+                <br>
+                <p>
+                    By clicking the <a class = "CFTAG">submit</a> button below I am consenting to all above statements and any applicable terms made available on this site.
+                </p>
+            </div>
+            <br>
+            <span id="paymentFailedText" class="bold" style="color:#861313; display: block; text-align: center; font-size: 1.2em;">PAYMENT FAILED</span>
+            <a onClick="submitPayment()" id="submitFormBtn"></a>
+            <br><br>
+            <em class="PTAG text-dark" style="position: absolute; top: 5px; left: 5px; color: #0c400c; font-size: 0.6em;"></em>
+        </main>
+    </div>
+    <script>
+        document.getElementById("submitForm").addEventListener("input", characterCounter)
+
+        function characterCounter() {
+            let text = document.getElementById(event.target.id).value;
+            let counter = "char" + event.target.id;
+            console.log(counter)
+            document.getElementById(counter).innerHTML = text.length;
+        }
+    </script>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

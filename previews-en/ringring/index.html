@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>RINGRING</title>
+</head>
+<body>
+    <div id="blur"><!-- :) --></div>
+    <em style="font-size: 1.4em; display: block;" class="PTAG"></em>
+    <div id="main">
+        <h1>CALL NOW</h1>
+        <h2>NOT <a class = "CFTAG">SOLD</a> IN STORES</h2>
+        <span>Plus S&H</span>
+        <h3>YOU MUST BE 18 OR OLDER TO CALL<br><em style="font-size: 0.3em; display: block; margin-top: -11px; margin-left: 97px; font-style: normal; color: #7170d3" class="PTAG"></em></h3>
+        <span>Money Back Guarantee</span>
+        <h2>24 HOURS A DAY <br>7 DAYS A WEEK</h2>
+        <h1>CALL <a class="CPTAG">NOW!</a></h1>
+        <h4>RUSH DELIVERY AVAILABLE!</h4>
+        <span>Shipping and Handling NOT INCLUDED</span>
+        <h1>AVAILABLE WHILE<br>SUPPLIES LAST</h1>
+        <h2>MUST BE 18 OR OLDER TO CALL</h2>
+        <h1>14 EASY PAYMENTS</h1>
+        <h4>30 DAY MONEY BACK GUARANTEE</h4>
+        <h1>CALL TODAY</h1>
+        <h2>FREE SHIPPING</h2>
+        <h2>A $60 VALUE FOR ONLY $19.95</h2>
+        <h2>IF YOU ORDER NOW<br>WE'LL INCLUDE A FREE GIFT</h2>
+        <h2>LIMITED TIME OFFER</h2>
+        <span>Call for FREE!</span>
+        <h1>CALL</h1>
+        <h1><a class="CFTAG">CALL</a></h1>
+        <h1>CALL</h1>
+        <h2>30 Day Trial</h2>
+        <h1>MUST BE 18+</h1>
+        <h2>DOUBLE OFFER</h2>
+        <h4>THIS DEAL WON'T LAST LONG</h4>
+        <h2>WE'LL DOUBLE IT<br>FOR NO <a class="CPTAG">EXTRA</a> CHARGE</h2>
+        <h1>YOU MUST<br>CALL NOW</h1>
+        <h2>Satisfaction Guaranteed</h2>
+        <h4>HAVE YOUR CREDIT CARD READY<br>AND CALL TOLL FREE<br><em style="font-size: 0.3em; display: block; margin-top: -5px;" class="PTAG"></em></h4>
+        <a onClick="LinkClick('answer.html')" class="active"><img src="img/payphoneRing.gif" alt="payphonering"></a>
+        <em class="PTAG" style="position: absolute; bottom: 0; font-size: 0.7em;"></em>
+    </div>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

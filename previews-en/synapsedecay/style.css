@@ -1,0 +1,600 @@
+﻿/* FONTS */
+
+@font-face {
+    font-family: 'Azeret Mono';
+    src: url('font/AzeretMono-VariableFont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Azeret Mono';
+    src: url('font/AzeretMono-VariableFont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mirza';
+    src: url('font/Mirza-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mirza';
+    src: url('font/Mirza-Regular.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('font/Merriweather.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('font/Merriweather.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('font/Merriweather-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* INDEX */
+
+.page-index,
+.page-index html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.page-index {
+    background-image: url("img/Background.png");
+    background-size: cover;
+    background-repeat: repeat-y;
+    font-family: 'Azeret Mono', serif;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.page-index .title {
+    position: relative;
+    top: 35px;
+    left: 35px;
+    font-size: 28pt;
+    width: 80%;
+    color: white;
+    white-space: nowrap;
+}
+
+.page-index .bold {
+    font-weight: bold;
+}
+
+.page-index .baker {
+    position: relative;
+    top: 18vh;
+    width: 35vw;
+    z-index: 0;
+}
+
+.page-index .try {
+    display: flex;
+    flex-flow: column nowrap;
+    z-index: 5;
+    position: relative;
+    bottom: 25vh;
+    left: 35vw;
+    width: max-content;
+}
+
+.page-index .try h2 {
+    color: white;
+    font-size: 3vw;
+}
+
+.page-index .try div {
+    display: flex;
+    flex-flow: row nowrap;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.page-index .try div p {
+    padding-right: 20px;
+}
+
+.page-index .try div p:nth-child(2) {
+    font-size: 2vw;
+}
+
+.page-index .available {
+    color: white;
+    margin-left: 20px;
+}
+
+.page-index .try div p:first-child {
+    font-size: 3vw;
+}
+
+.page-index .try p:nth-child(4) {
+    font-size: 3vw;
+    padding-left: 20px;
+}
+
+.page-index .stuff {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-index .stuff img {
+    height: 35vw;
+    z-index: 1;
+    position: relative;
+    bottom: 75px;
+}
+
+.page-index .stuff h2 {
+    z-index: 5;
+}
+
+.page-index .getTreats {
+    font-size: 36pt;
+    color: white;
+    z-index: 5;
+}
+
+.page-index .getTreats .CPTAG, .page-index .getTreats .CFTAG {
+    padding: 0;
+}
+
+.page-index .chunk {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.page-index .chunk * {
+    padding: 0 10px;
+}
+
+.page-index .chunkyGuy {
+    position: relative;
+    width: 303px;
+    height: 342px;
+    z-index: 5;
+}
+
+.page-index .chonkers {
+    opacity: 0.55;
+}
+
+.page-index .chunkyGuy a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    position: absolute;
+}
+
+.page-index .overlayContainer {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    z-index: 3;
+}
+
+.page-index .overlay {
+    height: 100%;
+    width: 100vw;
+    object-fit: cover;
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.page-index .fingerPoint {
+    padding: 0;
+    margin: 0;
+    z-index: 6;
+    top: 0;
+    position: relative;
+}
+
+.page-index .PTAG {
+    color: rgb(66, 66, 87);
+    font-size: 12pt;
+    z-index: 5;
+}
+
+.page-index .PTAG.second {
+    color: rgb(59, 76, 161);
+    font-size: 12pt;
+    z-index: 5;
+}
+
+/* MY FRIENDS */
+
+.page-myfriends,
+.page-myfriends html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.page-myfriends {
+    background-image: url("img/eyesBlink.gif");
+    background-repeat: repeat;
+    background-size: 50%;
+}
+
+.page-myfriends .darken {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.page-myfriends h1 {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 48pt;
+    font-weight: bold;
+}
+
+.page-myfriends .title {
+    margin-left: 50px;
+    padding-top: 100px;
+}
+
+.page-myfriends .friends {
+    width: 400px;
+    margin: 130px 0 0 250px;
+    font-family: 'Azaret Mono', monospace;
+}
+
+.page-myfriends .friend {
+    font-size: 48pt;
+    font-family: 'Azaret Mono', monospace;
+    font-weight: bold;
+}
+
+.page-myfriends .footer {
+    text-align: center;
+    padding: 200px 0 400px 0;
+}
+
+.page-myfriends .container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.page-myfriends .container > a {
+    padding-right: 20px;
+}
+
+.page-myfriends em {
+    font-size: 12pt;
+    color: darkgray;
+}
+
+/* GET MONEY */
+
+.page-getmoney,
+.page-getmoney html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.page-getmoney {
+    background-image: url("img/Background2.png");
+    background-size: cover;
+    background-repeat: repeat-y;
+    font-family: 'Mirza', cursive;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.page-getmoney .title {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.page-getmoney .title h1 {
+    font-size: 60pt;
+    margin-bottom: 0;
+    line-height: 40pt;
+    white-space: nowrap;
+}
+
+.page-getmoney .title h2 {
+    font-size: 24pt;
+}
+
+.page-getmoney .bold {
+    font-weight: bold;
+}
+
+.page-getmoney .doYouLike {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(101, 237, 91, 0.75);
+    width: 960px;
+}
+
+.page-getmoney .rowWrap {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.page-getmoney .i p {
+    font-size: 48pt;
+}
+
+.page-getmoney .ii {
+    font-size: 40pt;
+    line-height: 30pt;
+}
+
+.page-getmoney .iii {
+    font-size: 30pt;
+}
+
+.page-getmoney .downloadArrow {
+    width: 85px;
+}
+
+.page-getmoney .serving {
+    width: 960px;
+    background-color: rgba(81, 162, 93, 0.75);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+    padding-top: 25px;
+    margin-bottom: 150px;
+}
+
+.page-getmoney .wowContainer {
+    position: static;
+}
+
+.page-getmoney .click {
+    margin-right: 150px;
+}
+
+.page-getmoney .currently,
+.page-getmoney .reserve {
+    font-size: 48pt;
+}
+
+.page-getmoney .waiting {
+    font-size: 30pt;
+}
+
+.page-getmoney .download {
+    font-size: 18pt;
+}
+
+.page-getmoney .footer p {
+    visibility: hidden;
+}
+
+.page-getmoney em {
+    font-weight: bold;
+    color: greenyellow;
+    font-size: 12pt;
+}
+
+/* SUCCULENT MEAL */
+
+.page-succulentmeal,
+.page-succulentmeal html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.page-succulentmeal {
+    background-image: url("img/Background3.png");
+    background-repeat: repeat;
+    background-size: cover;
+    font-family: 'Merriweather', serif;
+}
+
+.page-succulentmeal .rowData {
+    padding-top: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-succulentmeal .padBot {
+    padding-bottom: 40px;
+}
+
+.page-succulentmeal .rowData > img {
+    padding: 0 30px 0 30px;
+    height: 100px;
+}
+
+.page-succulentmeal .mediumText {
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.page-succulentmeal .title {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: left;
+    font-size: 4vw;
+    padding: 120px 0;
+    margin-left: 100px;
+    font-weight: normal;
+}
+
+.page-succulentmeal .title > h1 {
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.page-succulentmeal .bold {
+    font-weight: bold;
+}
+
+.page-succulentmeal .ital {
+    font-style: italic;
+}
+
+.page-succulentmeal .shiftLeft {
+    width: 70%;
+}
+
+.page-succulentmeal .cheers {
+    width: 100%;
+}
+
+.page-succulentmeal .recipe {
+    width: 88%;
+}
+
+.page-succulentmeal .textContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-succulentmeal .footer {
+    padding-bottom: 200px;
+}
+
+.page-succulentmeal .blurred {
+    filter: blur(4px);
+}
+
+.page-succulentmeal .occasionally {
+    font-size: 14pt;
+    text-decoration: underline;
+}
+
+.page-succulentmeal .unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.page-succulentmeal em {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* OCCASIONALLY */
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.page-occasionally {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    background-image: url("img/Background4.png");
+    background-repeat: repeat;
+    background-size: cover;
+    font-family: 'Merriweather', serif;
+    color: #e8b20f;
+}
+
+.page-occasionally .container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.page-occasionally h1 {
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.page-occasionally .pwField {
+    background-color: transparent;
+    width: 30%;
+    height: 2.5rem;
+    border: 2px solid #a09c9c;
+    font-size: 28pt;
+    color: #e8b20f;
+    margin-bottom: 30px;
+}
+
+.page-occasionally a {
+    padding: 10px 50px;
+    background-color: #a09c9c;
+}
+
+.page-occasionally .CPTAG, .page-occasionally .CFTAG{
+    padding: 0;
+    background-color: unset;
+}
+
+.page-occasionally .floating {
+    text-align: left;
+    position: relative;
+    left: -16%;
+}
+
+.page-occasionally .watching {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 30vw;
+}
+
+.page-occasionally em {
+    font-size: 12pt;
+    color: rgb(82, 82, 82);
+}

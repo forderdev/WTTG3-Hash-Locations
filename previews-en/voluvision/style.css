@@ -1,0 +1,247 @@
+@font-face{
+    font-family: 'Almarai';
+    src: url("fonts/Almarai-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face{
+    font-family: 'Almarai';
+    src: url("fonts/Almarai-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: 'Almarai';
+    src: url("fonts/Almarai-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face{
+    font-family: 'Almarai';
+    src: url("fonts/Almarai-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+}
+
+body{
+    background-image: url("img/Background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Almarai', sans-serif;
+    color: #131a76;
+}
+
+.container {
+    margin: 0 10%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap-middle {
+    width: 85%;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+header .bg {
+    width: 100%;
+    height: 45vh;
+}
+
+p {
+    font-size: 14pt;
+}
+
+.lineBreak {
+    padding: 0;
+    position: absolute;
+    top: 43vh;
+    left: 0;
+    width: 100%;
+}
+
+.title {
+    width: 45%;
+    position: absolute;
+    top: 38%;
+}
+
+nav ul {
+    margin-top: 5%;
+    text-transform: uppercase;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 32pt;
+}
+
+nav ul li {
+    padding: 0 15px;
+}
+
+.top {
+    margin-top: 5%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.top h5 {
+    width: 45%;
+    font-size: 16pt;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+.thin {
+    font-weight: lighter;
+}
+
+.pre-wrap {
+    white-space: pre-wrap;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.description {
+    width: 85%;
+}
+
+.description p {
+    margin: 30px 0;
+}
+
+.button {
+    font-size: 32pt;
+    padding: 35px;
+    background-image: url("img/PurchaseRect.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+ol li {
+    margin: 15px 0;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+.enlightenment-rules {
+    margin: 20px;
+    font-size: 18pt;
+}
+
+.cycle {
+    width: 50vw;
+}
+
+.freedom p {
+    margin: 30px 0;
+}
+
+.foot {
+    margin-bottom: 200px;
+}
+
+.testimonial-pics {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-pics img {
+    margin: 20px;
+}
+
+.break {
+    width: 70vw;
+    height: 30px;
+}
+
+.separator {
+    margin-top: 100px;
+}
+
+.purchase-text {
+    font-size: 18pt;
+}
+
+.notice {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+#notice-img {
+    padding: 5px;
+    min-width: fit-content;
+}
+
+#notice-text {
+    padding: 5px;
+}
+
+.target {
+    width: fit-content;
+    position: relative;
+}
+
+.target a {
+    background-color: transparent;
+    position: absolute;
+}
+
+.A a {
+    width: 25px;
+    height: 25px;
+    bottom: 83px;
+    right: 70px;
+}
+
+.B a {
+    width: 25px;
+    height: 25px;
+    top: 70px;
+    left: 95px;
+}
+
+.C a {
+    width: 40px;
+    height: 35px;
+    top: 80px;
+    left: 120px;
+}
+
+.PTAG {
+    color: #8b89c7;
+    white-space: nowrap;
+}

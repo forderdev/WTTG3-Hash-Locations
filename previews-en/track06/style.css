@@ -1,0 +1,174 @@
+@font-face {
+    font-family: Dosis Regular;
+    src: url(./font/Dosis-Regular.ttf);
+}
+
+@font-face {
+    font-family: Dosis Bold;
+    src: url(./font/Dosis-Bold.ttf);
+}
+
+@font-face {
+    font-family: Dosis SemiBold;
+    src: url(./font/Dosis-SemiBold.ttf);
+}
+
+#page {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow-x: hidden;
+}
+
+img {
+    pointer-events: none;
+    user-select: none;
+}
+
+#container {
+    width: 768px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#top {
+    position: relative;
+    width: 100%;
+    margin-bottom: -32px;
+}
+
+#top em {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    z-index: 3;
+}
+
+#top reflect-videoplayer {
+    position: absolute;
+    height: 500px;
+    z-index: 1;
+    margin-top: 250px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    box-sizing: initial;
+}
+
+#top img {
+    width: 100%;
+    position: inherit;
+    z-index: 2;
+}
+
+#top img:last-child {
+    position: absolute;
+    width: 100%;
+    bottom: -52px;
+    left: 0;
+}
+
+#bottom {
+    padding: 0 43px;
+}
+
+#bottom>img {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: -1;
+}
+
+#bottom p {
+    font-size: 18px;
+    font-family: 'Dosis Regular';
+    margin: 18px 0;
+}
+
+#firstSection {
+    padding-top: 235px;
+    text-align: center;
+}
+
+#firstSection h2 {
+    font-size: 28px;
+    font-family: 'Dosis Bold';
+    padding-bottom: 0;
+    margin: 0;
+}
+
+#firstSection image {
+    width: 100%;
+}
+
+#ratingSystem {
+    user-select: none;
+    padding-top: 30px;
+    padding-bottom: 64px;
+    position: relative;
+}
+
+#ratingSystem a {
+    padding: 5px 12px;
+    background: #931f1e;
+    font-size: 18px;
+    font-family: 'Dosis SemiBold';
+    margin: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#ratingSystem a:first-child {
+    padding: 5px 14px;
+}
+
+#ratingSystem p {
+    position: absolute;
+    width: 100%;
+    display: none;
+    user-select: text;
+}
+
+#secondSection {
+    padding: 23px 59px 45px 59px;
+}
+
+#helpNotice {
+    position: fixed;
+    bottom: 5px;
+    margin-left: 503px;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.help-container {
+    position: relative;
+}
+
+.help-container>.CTAG-1 {
+    position: absolute;
+    display: block;
+    width: 5%;
+    height: 10%;
+    right: 32.5%;
+    top: 5%;
+
+    z-index: 999;
+}
+
+.help-container>.CTAG-2 {
+    position: absolute;
+    display: block;
+    width: 5%;
+    height: 10%;
+    left: 29%;
+    top: 5%;
+
+    z-index: 999;
+}
+
+.shadow{
+    top: 1343px;
+    padding-left: 640px;
+    color: #1a1a1a;
+}

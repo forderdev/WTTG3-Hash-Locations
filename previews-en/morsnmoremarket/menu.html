@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+  <meta name="description" content="" />
+  <title>MORS n MORE MARKET</title>
+  <link rel="stylesheet" href="../Global/reset.css" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <script type="text/javascript" src="../Global/Basic.js"></script>
+</head>
+
+<body id="page">
+  <div id="container">
+    <div class="nav">
+      <div class="logo">MORS <span class="smaller">N<em class="PTAG"></em></span> MORE MARKET</div>
+      <div class="nav-list">
+        <a onClick="LinkClick('index.html')">Welcome</a>
+        <a onClick="LinkClick('menu.html')">Menu</a>
+        <a onClick="LinkClick('order.html')">Order now</a>
+      </div>
+    </div>
+    <div id="content">
+      <h1>MENU</h1><em class="PTAG"></em>
+      <div class="menuCard">
+        <h2>STARTERS</h2>
+        <div class="menuBox">
+          <div class="dish">
+            <p class="dishName">DEEP FRIED TRIMMINGS</p>
+            <p class="dishDescription">
+              The last bits <em class="PTAG"></em>deserve more than just being tossed. Snack on a
+              few of these crispy bits before the main course.
+            </p>
+          </div>
+          <div class="dish">
+            <p class="dishName">FAMILY CHILI</p>
+            <p class="dishDescription">
+              Customers have begged us for years to release this recipe. Give
+              it a taste and see if you <a class="CPTAG">feel</a> the same.
+            </p>
+          </div>
+          <div class="dish">
+            <p class="dishName">TONGUE AND CHEEK</p>
+            <p class="dishDescription">
+              Often overlooked, this grouping works well with a sweet and sour
+              sauce.
+            </p>
+          </div>
+          <div class="dish">
+            <p class="dishName">PIGGIES IN A BLANKET</p>
+            <p class="dishDescription">
+              Deboned fingers and toes wrapped up tight in individual flaky
+              filo dough blankets.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <h2>ENTREES</h2>
+        <div class="menuBox">
+          <div class="dish">
+            <p class="dishName">THE PRIME</p>
+            <p class="dishDescription">
+              A delicious <a class="CFTAG">cut</a> of succulent thigh locally sourced from a
+              resident.
+            </p>
+          </div>
+          <div class="dish">
+            <p class="dishName">HONEST MEAL</p>
+            <p class="dishDescription">
+              Nothing fancy, but<em class="PTAG"></em> very consistent meat. A fair price for a
+              fairly large portion.
+            </p>
+          </div>
+          <div class="dish">
+            <p class="dishName">HOME COOKING</p>
+            <p class="dishDescription">
+              Fresh meat processed, BBQ marinated and cooked inside a century
+              old charcoal pit.
+            </p>
+          </div>
+          <div class="dish">
+            <p class="dishName">TOP SHELF</p>
+            <p class="dishDescription">
+              Most expensive cut has the right to be when it’s this good.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div id="mealForTwo">
+          <h2>MOR’S MEAL FOR TWO</h2>
+          <h3>CHOOSE TWO STARTERS AND AN ENTREE</h3>
+          <h3>GET A <em class="PTAG"></em>DESERT ON US!</h3>
+          <h4>excludes Tongue and Cheek</h4>
+        </div>
+        <hr />
+        <h2>DESSERT</h2>
+        <div class="menuBox">
+          <div class="dish">
+            <p class="dishName">ANGEL FOOD CAKE</p>
+            <p class="dishDescription">
+              Sweet, intoxicating aroma, serves as a well placed cherry <a class="CPTAG">atop</a> a
+              memorable meal.
+            </p>
+          </div>
+          <div class="dish">
+            <p class="dishName">PUDDING</p>
+            <p class="dishDescription">
+              A delicate, flavorful skin contains a well balanced chocolate
+              surprise.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h1>A LA CARTE</h1>
+      <div class="partsCard">
+        <div class="partsBox">
+          <div class="bodyPart">ARM</div>
+          <div class="bodyPart">LIVER</div>
+          <div class="bodyPart">APPENDAGE</div>
+          <div class="bodyPart">KIDNEY</div>
+          <div class="bodyPart"><a class="CFTAG">LEG</a></div>
+          <div class="bodyPart">HEART</div>
+          <div class="bodyPart">SKIN</div>
+          <div class="bodyPart">STOMACH</div>
+          <div class="bodyPart"><em class="PTAG"></em>MEAT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+
+</html>

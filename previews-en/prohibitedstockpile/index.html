@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prohibited Stock Pile</title>
+    <link rel="stylesheet" href="../Global/reset.css">
+    <link rel="stylesheet" href="indexStyle.css">
+    <script src="../Global/Basic.js"></script>
+</head>
+<body>
+
+    <div id="top">
+        <h1>PROHIBITED</h1>
+        <em class="PTAG inbanner"></em>
+        <h1>STOCKPILE</h1>
+    
+        <p>DEEPWEBS MOST FREQUENTLY UPDATED LIBRARY OF BANNED VISUAL CONTENT</p>
+        <small>>>>>>>on hiatus of 6/14/2019<<<<<<<</small>
+        
+        <br>
+
+        <a onClick="LinkClick('noContent.html')">
+            <img src="img/TuneIn_Button.png" alt="Tune In Button">
+        </a>
+    </div>
+
+    <!-- Most viewed category -->
+    <span class="category">
+        Most <a class="CPTAG">Viewed</a>
+    </span>
+    <div class="set">
+        
+        <div class="cell">
+            <img src="img/strangeLights.png" alt="Strange Lights">
+            <br>
+            <span class="cell-title">
+                Strange Lights Over the Sky in Northern Mongolia
+            </span>
+            <span class="cell-content">
+                Jet planes don't move like this!
+                ((poor audio but gets clear at 2:05))
+            </span>
+        </div>
+
+        <div class="cell">
+            <img src="img/gunCartel.png" alt="Gun Cartel in Venezuela">
+            <br>
+            <span class="cell-title">
+                Venezuelan Gun Cartel Gunfight in the Streets
+            </span>
+            <span class="cell-content">
+                Some poor bastard caught this while hiding in his kitchen ((skip to 7:22 to see his window and door get blasted in by an IED))
+            </span>
+        </div>
+
+        <div class="cell">
+            <img src="img/simmerDown.png" alt="Simmer Down">
+            <br>
+            <span class="cell-title">
+                Simmer Down, Man
+            </span>
+            <span class="cell-content">
+                Man boiled down into soup
+                ((anonymous submission))
+            </span>
+        </div>
+
+        <div class="cell">
+            <img src="img/supermodelDiet.png" alt="Supermodel Diet">
+            <br>
+            <span class="cell-title">
+            The Supermodel Diet
+            </span>
+            <span class="cell-content">
+                See what they really get up to behind the curtain! ((not as sexy as you'd think))
+            </span>
+        </div>
+    </div>
+
+    <!-- Classics category -->
+    <span class="category">
+        Classics
+    </span>
+    <div class="set">
+        
+        <div class="cell">
+            <img src="img/BRAZIL.png" alt="Brazil Mayhem">
+            <br>
+            <span class="cell-title">
+                Brazil Mayhem #4
+            </span>
+            <span class="cell-content">
+                Dismemberment and Decapitation
+            </span>
+        </div>
+
+        <div class="cell">
+            <img src="img/paranormalFilm.png" alt="Unexplainable paranormal phenomena">
+            <br>
+            <span class="cell-title">
+                Unexplainable Paranormal Phenomena Caught on Film
+            </span>
+            <span class="cell-content">
+                REAL undoctored footage, proof of an afterlife or something else?
+                ((Keeps getting removed from other platforms, very suspicious, 4:11 makes my skin crawl))
+            </span>
+        </div>
+
+        <div class="cell">
+            <img src="img/trainHuman.png" alt="Train Versus Human Compilation">
+            <br>
+            <span class="cell-title">
+                Train Versus Human Compilation
+            </span>
+            <span class="cell-content">
+                Hint: the human loses every time. 
+                ((There were so many of these I just decided to put
+                <em class="PTAG"></em> them all in one
+                giga-compilation. You're welcome!!))
+            </span>
+        </div>
+
+        <div class="cell">
+            <img src="img/handHere.png" alt="Can i get a hand here">
+            <br>
+            <span class="cell-title">
+            Can I Get a Hand Here?
+            </span>
+            <span class="cell-content">
+                Gang member gets hand severed by rival gang, then gets inserted somewhere suprising
+                ((best moments @ 1:17, 1:45, 2:20, 5:50))
+            </span>
+        </div>
+    </div>
+
+    <!-- Recently added category -->
+    <span class="category">
+        Recently Added
+    </span>
+    <div class="set">
+        
+        <div class="cell">
+            <img src="img/meatGrinder.png" alt="Meat grinder">
+            <br>
+            <span class="cell-title">
+                Meat Grinder Incident
+            </span>
+            <span class="cell-content">
+                Man's hand caught in a meat grinder ((sausage anyone?))
+            </span>
+        </div>
+
+        <div class="cell">
+            <img src="img/creatureNight.png" alt="Night's Creature">
+            <br>
+            <span class="cell-title">
+                Creature at night
+            </span>
+            <span class="cell-content">
+                Definitely not human, so what is it?
+            </span>
+        </div>
+
+        <div class="cell">
+            <a class="CPTAG"><img src="img/powerlineThief.png" alt="Powerline thief"></a>
+            <br>
+            <span class="cell-title">
+                Powerline Thief
+            </span>
+            <span class="cell-content">
+                What happens when you try to scavenge scrap metal without testing the line first
+                ((imagine the smell))
+            </span>
+        </div>
+
+        <div class="cell">
+            <img src="img/halfNhalf.png" alt="Half and half">
+            <br>
+            <span class="cell-title">
+                Half n Half
+            </span>
+            <span class="cell-content">
+                Dramatic car accident footage
+                ((it gets <a class="CFTAG">juicy</a> @ 5:31, literally)?
+            </span>
+        </div>
+
+        <div class="cell">
+            <img src="img/mansBF.png" alt="Man's Best Friend">
+            <br>
+            <span class="cell-title">
+                Man's Best Friend
+            </span>
+            <span class="cell-content">
+                Man dies, gets partially eaten by stray dog
+            </span>
+        </div>
+
+        <div class="cell">
+            <img src="img/celebAuto.png" alt="Celebrity Autopsy">
+            <br>
+            <span class="cell-title">
+                Celebrity <a class="CFTAG">Autopsy</a>
+            </span>
+            <span class="cell-content">
+                Rock 'n Roll is dead. Long live the Legend. Evidence submitted by Memphis coroner
+                ((See his last meal at 12:32. Disgusting!))
+            </span>
+        </div>
+
+        <div class="cell">
+            <img src="img/botchedExec.png" alt="Botched Execution">
+            <br>
+            <span class="cell-title">
+                Botched Execution in Texas
+            </span>
+            <span class="cell-content">
+                Story of a fat man plus <a class="CFTAG">poorly</a> mixed injection
+            </span>
+        </div>
+    </div>
+
+    <footer>
+        <small>>>>>>>on <a class="CPTAG">hiatus</a> of 6/14/2019<<<<<<<</small>
+    </footer>
+    <em class="PTAG last"></em> 
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

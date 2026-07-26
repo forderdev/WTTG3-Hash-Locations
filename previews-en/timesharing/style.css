@@ -1,0 +1,353 @@
+@font-face {
+    font-family: 'Lexend';
+    src: url("fonts/Lexend-VariableFont_wght.ttf") format("truetype");
+}
+
+body {
+    background-color: #3a8a77;
+    font-family: 'Lexend', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+header {
+    color: #322c74;
+    white-space: nowrap;
+}
+
+.title-card {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-card-left {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin: 0 12px;
+}
+
+.title-card-left img {
+    width: 100px;
+    height: 100px;
+}
+
+.title {
+    font-size: 36pt;
+    margin: 24px 18px;
+}
+
+.header-text {
+    font-size: 24pt;
+}
+
+.float-text {
+    position: relative;
+    padding: 0 40px;
+}
+
+.nav-bar {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    justify-content: center;
+    background-color: #4bb8ab;
+    align-items: center;
+    height: 75px;
+}
+
+.nav-bar > a {
+    margin: 0 7%;
+    font-size: 24pt;
+}
+
+.page-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 35px;
+    color: white;
+}
+
+.pause {
+    margin-bottom: 80px;
+}
+
+h1 {
+    font-size: 32pt;
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20pt;
+    width: 60%;
+    text-align: left;
+    padding: 40px 0;
+}
+
+.page-content > p {
+    width: 60%;
+    font-size: 16pt;
+}
+
+.hotel-images {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.hotel-images img {
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+    max-height: 250px;
+    min-height: 100px;
+    margin: 0 20px;
+}
+
+.luxury-hotel {
+    min-height: 350px;
+    max-height: 350px;
+}
+
+.rhombus-hr {
+    position: relative;
+    border: none;
+    height: 5px;
+    background-color: white;
+    width: 70%;
+    margin: 0 auto;
+}
+  
+.rhombus-hr::before,
+.rhombus-hr::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    width: 10px;
+    height: 10px; 
+    background-color: white; 
+    transform: rotate(45deg);
+}
+  
+.rhombus-hr::before {
+    left: -5px;
+}
+  
+.rhombus-hr::after {
+    right: -5px;
+}
+
+.hr-margin {
+    margin: 30px 0;
+}
+
+section {
+    margin: 0 0 120px 0;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+.input-container {
+    height: 25px;
+    font-size: 25px;
+    width: 60%;
+    white-space: nowrap;
+    padding: 20px 0;
+}
+
+.input-container > p {
+    float: left;
+    width: 70px;
+    text-align: right;
+}
+
+input {
+    margin-left: 30px;
+    background-color: #61b09d;
+    border-radius: 4px;
+    width: 90%;
+}
+
+.dropdown-container {
+    height: 25px;
+    font-size: 25px;
+    width: 60%;
+    white-space: nowrap;
+    padding: 40px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-container > select {
+    background-color: #61b09d;
+    height: 45px;
+    margin: 0 25px;
+    padding: 10px 10px;
+    width: 250px;
+}
+
+.join-btn {
+    background-color: #5fc2ab;
+    padding: 8px 36px;
+    border-radius: 8px;
+}
+
+.enter-btn {
+    background-color: #5fc2ab;
+    margin: 8px 36px;
+    border-radius: 8px;
+    font-size: 20pt;
+}
+
+.promo-container {
+    width: 800px;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 50px;
+    padding: 50px;
+
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+}
+
+.i {
+    background-color: #00624b;
+}
+
+.ii {
+    background-color: #008867;
+}
+
+.iii {
+    background-color: #00b68a;
+}
+
+.promo-title { 
+    text-align: center;
+    padding: 10px 0;
+}
+
+.size-up {
+    font-size: 25pt;
+}
+
+.price-container {
+    position: relative;
+    /* Play with these values if you want to move the pricing (I assume you will see this if you want to change $ to DOS coin) */
+    left: -350px;
+    top: 80px;
+    transform: rotate(-30deg);
+    text-align: center;
+}
+
+.side-by-side {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.i ul {
+    padding: 0 100px;
+    text-align: left;
+}
+
+.i li {
+    padding: 25px 0;
+    width: 200px;
+    list-style: inside;
+    font-size: 16pt;
+}
+
+.vertical li {
+    width: 1080px;
+    padding: 25px 0;
+    list-style: inside;
+    font-size: 16pt;
+}
+
+.auth {
+    padding: 20px 0;
+    display: flex;
+    position: relative;
+    flex-flow: column nowrap;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #008867;
+    width: 480px;
+}
+
+.authPassword {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 20pt;
+}
+
+.auth a, .auth input {
+    height: 35px;
+    width: 240px;
+    text-align: center;
+}
+
+.tv {
+    padding: 50px 0;
+    width: 20%;
+}
+
+.title-underline {
+    padding: 0 5px;
+    border-bottom: 2px solid white;
+}
+
+.vip-title {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.vip-title img {
+    margin: 0 5px;
+    width: 25px;
+    height: 25px;
+}
+
+.PTAG {
+    font-size: 16pt;
+    color: #9fe0d0;
+}
+
+#FORM-TAG {
+    position: absolute;
+    bottom: 0;
+    left: 180px;
+}
+
+#NAV-BAR-TAG {
+    position: absolute;
+    top: 2px;
+    right: 30px;
+}
+
+#LOGO-TAG {
+    position: absolute;
+    top: -20px;
+    left: 40px;
+}

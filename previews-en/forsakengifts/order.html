@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../Global/reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <title>Forsaken Gifts - Order</title>
+  </head>
+  <body>
+    <div class="header-container">
+      <h1 class="snap">Forsaken <a class="CPTAG">Gifts</a></h1>
+    </div>
+    
+    <div class="menu container">
+      <a onClick="LinkClick('index.html')" class="active">home</a>
+      <a onClick="LinkClick('gifts.html')" class="active">gifts</a>
+      <a onClick="LinkClick('order.html')" class="active" id="sel">order</a>
+    </div>
+    
+    <div class="newContainer">
+      <p>
+        We offer flat rate shipping <a class="CFTAG">options</a> for all our gifts. 
+        Prices start <em class="PTAG lowWhite"></em> at 4 <a class="CPTAG">DOSCoin</a> for shipping and scale up to 22 DOSCoin 
+        for the fastest delivery choice.
+      </p>
+      <p>
+        When picking a delivery area note that <a class="CFTAG">we</a> will reach out to you with the
+        exact delivery location of the gift once it's in transit. The location
+        will be within driving distance of your <a class="CPTAG">selected</a> delivery area.
+      </p>
+      <p>
+        Choose a gift to see its price in-cart. <em class="PTAG lowWhite"></em>
+      </p>
+      <p>
+        DOSCoin is the only accepted <a class="CFTAG">currency</a>.
+      </p>
+    </div>
+
+    <div id="order-form" class="order-container newContainer">
+      <form class="order-form">
+        <div class="row">
+          <select id="gift-select">
+            <option value="" disabled selected hidden>GIFT</option>
+            <option value="0">Charlotte</option>
+            <option value="1">Ava</option>
+            <option value="2">Noah</option>
+            <option value="3">Jackson</option>
+            <option value="4">Sienna</option>
+          </select>
+          <div class="price-inline">
+            <img src="img/DOSCoinSymbol.png" class="currency-icon" />
+            <span id="gift-price">290</span>
+          </div>
+        </div>
+        <div class="row">
+          <select id="shipping-select">
+            <option value="" disabled selected hidden>SHIPPING</option>
+            <option value="0">Standard</option>
+            <option value="1">Express</option>
+            <option value="2">Overnight</option>
+          </select>
+          <div class="price-inline">
+            <img src="img/DOSCoinSymbol.png" class="currency-icon" />
+            <span id="shipping-price">4</span>
+          </div>
+        </div>
+        <input type="text" id="delivery-area" placeholder="Enter delivery area" />
+        <input type="email" id="contact-email" placeholder="Enter contact email" />
+        <div class="order-bottom">
+          <button type="button" id="place-order">Place Order</button>
+          <div id="total-output">
+            <div class="total-price" id="total-price">
+              Total:
+              <a class="CPTAG"><img src="img/DOSCoinSymbol.png" class="currency-icon" /></a>
+              <span id="total">0</span>
+            </div>
+            <div class="total-message" id="total-message">
+              No Gift/Shipping selected
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="product-image">
+        <img id="product-image" src="img/blankGift.png" />
+      </div>
+    </div>
+
+    <div id="error-message" class="error-message newContainer" style="display: none; color: #FF0000">
+        Could not complete order at this time.<br>
+        Please come back <a class="CFTAG">later</a> and try again.
+    </div>
+  
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+
+  <script type="text/javascript">
+      const giftSelect = document.getElementById("gift-select");
+      const shippingSelect = document.getElementById("shipping-select");
+      const giftPriceSpan = document.getElementById("gift-price");
+      const shippingPriceSpan = document.getElementById("shipping-price");
+      const totalPriceDiv = document.getElementById("total-price");
+      const totalMessageDiv = document.getElementById("total-message");
+      const totalSpan = document.getElementById("total");
+      const errorMessage = document.getElementById("error-message");
+      const orderForm = document.getElementById("order-form");
+
+      const prices = [290, 380, 610, 460, 515];
+      const shipping = [4, 12, 22];
+
+      let orderClicked = false;
+
+      function updatePrices() {
+          const giftIndex = giftSelect.value;
+          const shippingIndex = shippingSelect.value;
+
+          const giftPrice = giftIndex === "" ? 0 : prices[giftIndex];
+          const shippingPrice = shippingIndex === "" ? 0 : shipping[shippingIndex];
+
+          giftPriceSpan.textContent = giftPrice;
+          shippingPriceSpan.textContent = shippingPrice;
+
+          const productImage = document.getElementById("product-image");
+          if (giftIndex === "") {
+              productImage.src = "img/blankGift.png";
+          } else {
+              productImage.src = `img/puppet${giftIndex}.png`;
+          }
+
+          if (giftIndex !== "" && shippingIndex !== "") {
+              totalPriceDiv.style.display = "inline-flex";
+              totalMessageDiv.style.display = "none";
+              totalSpan.textContent = giftPrice + shippingPrice;
+          }else{
+              totalPriceDiv.style.display = "none";
+              totalMessageDiv.style.display = orderClicked ? "inline" : "none";
+          }
+
+          if (orderClicked && (giftIndex === "" || shippingIndex === "")) {
+              errorMessage.style.display = "none";
+          }
+      }
+
+      document.getElementById("place-order").addEventListener("click", function () {
+          const giftIndex = giftSelect.value;
+          const shippingIndex = shippingSelect.value;
+
+          orderClicked = true;
+
+          if(giftIndex !== "" && shippingIndex !== "") {
+              errorMessage.style.display = "block";
+              orderForm.style.display = "none";
+          }else{
+              errorMessage.style.display = "none";
+          }
+          updatePrices();
+      });
+
+      giftSelect.addEventListener("change", updatePrices);
+      shippingSelect.addEventListener("change", updatePrices);
+      document.addEventListener("DOMContentLoaded", updatePrices);
+</script>
+
+</html>

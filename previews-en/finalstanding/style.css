@@ -1,0 +1,93 @@
+@font-face {
+    font-family: BarlowR;
+    src: url(font/Barlow-Regular.ttf);
+}
+
+@font-face {
+    font-family: BarlowB;
+    src: url(font/Barlow-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: PatuaOneR;
+    src: url(font/PatuaOne-Regular.ttf);
+}
+
+:root {
+    --grey: #989898;
+    --Lgrey: #d5d5d5;
+    --Dgrey: #626262;
+}
+
+* {
+    font-family: BarlowR;
+    margin: auto;
+}
+
+body {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: rgb(33,21,41);
+    background: linear-gradient(90deg, rgba(33,21,41,1) 0%, rgba(40,22,52,1) 50%, rgba(33,21,41,1) 100%);
+}
+
+/*body {
+    width: 768px;
+    background-image: url("data:application/octet-stream;base64,");
+    background-repeat: no-repeat;
+}*/
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-family: PatuaOneR;
+    font-size: 500%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#chat {
+    height: 650px;
+    overflow-y: scroll;
+    padding: 15px;
+    line-height: 1.4;
+}
+
+main {
+    width: 80%;
+    margin-bottom: 30px;
+    background-color: var(--grey);
+}
+
+#chatInput {
+    background-color: var(--Dgrey);
+    width: 100%;
+}
+#chatInput > span {
+    display: block;
+    padding: 10px;
+}
+
+.nickname {
+    font-family: BarlowB;
+}
+
+/*Scrollbar*/
+
+  #chat::-webkit-scrollbar {
+    width: 32px;
+  }
+
+  #chat::-webkit-scrollbar-track {
+    background: var(--Lgrey);
+  }
+
+  #chat::-webkit-scrollbar-thumb {
+    background-color: var(--Dgrey);
+  }
+

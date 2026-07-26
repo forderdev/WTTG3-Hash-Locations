@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symphoros Chosen</title>
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-white" id="catalog">
+    <header class="flex-row align-items-center w-100 Syncopate-Regular">
+        <div id="logo" class="flex-col me-auto w-fit self-start Charm-Bold">
+            <p class="mt-0 mb-0 text-size-32">Symphoro's Chosen</p>
+            <p class="mt-0 mb-0 text-center">Red Room Hub</p>
+        </div>
+
+        <a class="text-bold text-size-24" href="#live">LIVE</a>
+        <a href="#upcoming">UPCOMING</a>
+        <a href="#expired">EXPIRED</a>
+    </header>
+
+    <div id="index-content" class="flex-col mt-5 MPLUS-Regular mx-auto">
+        <p class="text-size-71 MPLUS-SemiBold">WATCH <a class="CPTAG">RED</a> ROOMS LIVE</p>
+
+        <div class="relative-block">
+            <hr id="header-line" class="mt-1 w-18">
+            <em id="HR-TAG" class="PTAG"></em>
+        </div>
+
+        <p class="mt-3 w-75 text-size-24">Join others watching brutal Red Room content streaming live from curated sources. <em class="PTAG"></em></p>
+        <a onClick="LinkClick('live.html')" id="watch-btn" class="mt-2 MPLUS-SemiBold">WATCH NOW</a>
+        
+        <div id="live" class="mt-4 scroll-margin-top">
+            <p class="MPLUS-SemiBold text-size-24 text-yellow">Live now &gt;</p>
+
+            <div class="flex-row justify-content-center mt-2">
+                <div class="mx-1 relative-block">
+                    <img src="img/live1.png">
+                    <p id="watch-count" class="MPLUS-SemiBold text-size-18 text-center">452 <br> watching</p>
+
+                    <div class="description-block MPLUS-Medium">
+                        <p class="text-line-through text-grayed-out">link 1: here</p>
+                        <p class="text-line-through text-grayed-out">link 2: here</p>
+                        <p class="text-line-through text-grayed-out">backup mirror 1: here</p>
+                        <p>backup mirror 2: <a onClick="LinkClick('live.html')">here</a></p>
+                        <p class="mt-2">
+                            Description: 
+                            <span class="MPLUS-Regular text-size-14">
+                                special friend is eager to entertain
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mx-1 relative-block">
+                    <img src="img/NO-IMAGE.png">
+                    <a class="CFTAG">
+                        <div id="IMAGE-LINK"></div>
+                    </a>
+
+                    <div class="description-block MPLUS-Medium">
+                        <p class="text-line-through text-grayed-out">link 1: here</p>
+                        <p class="text-line-through text-grayed-out">backup mirror 1: here</p>
+                        <p class="mt-2">
+                            Description: 
+                            <span class="MPLUS-Regular text-size-14">
+                                open a strangers heart to new possibilities
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mx-1 relative-block">
+                    <img src="img/NO-IMAGE.png">
+                    <em id="LIVE-TAG" class="PTAG"></em>
+
+                    <div class="description-block MPLUS-Medium">
+                        <p class="text-line-through text-grayed-out">link 1: here</p>
+                        <p class="text-line-through text-grayed-out">backup mirror 1: here</p>
+                        <p class="text-line-through text-grayed-out">backup mirror 2: here</p>
+                        <p class="text-line-through text-grayed-out">backup mirror 3: here</p>
+                        <p class="mt-2">
+                            Description: 
+                            <span class="MPLUS-Regular text-size-14">
+                                skin-tight
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mx-1 relative-block">
+                    <img src="img/NO-IMAGE.png">
+
+                    <div class="description-block MPLUS-Medium">
+                        <p class="text-line-through text-grayed-out">link 1: here</p>
+                        <p class="mt-2">
+                            Description: 
+                            <span class="MPLUS-Regular text-size-14">
+                                bitch will die tonight
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="upcoming" class="mt-4 scroll-margin-top">
+            <p class="MPLUS-SemiBold text-size-24 text-yellow"><a class="CPTAG">Upcoming</a> &gt;</p>
+
+            <div class="flex-row justify-content-center mt-2">
+                <div class="mx-1 relative-block">
+                    <img src="img/upcomingRoom4444.png">
+                    <a class="CFTAG">
+                        <div id="UPCOMING-LINK"></div>
+                    </a>
+                    <p class="coming-soon-text text-center">COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON </p>
+
+                    <div class="description-block text-grayed-out MPLUS-Regular">
+                        <p>
+                            <span class="MPLUS-Medium">
+                                Description: 
+                            </span>
+                            <span class="text-size-14">
+                                The Pit beckons hungry feral hogs will eat
+                            </span>
+                        </p>
+                        <p class="MPLUS-Medium mt-2">
+                            Show Airs - in 8 days
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mx-1 relative-block">
+                    <img src="img/upcoming319.png">
+                    <em id="UPCOMING-TAG-1" class="PTAG"></em>
+                    <p class="coming-soon-text text-center">COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON </p>
+
+                    
+                    <div class="description-block text-grayed-out MPLUS-Regular">
+                        <p>
+                            <span class="MPLUS-Medium">
+                                Description: 
+                            </span>
+                            <span class="text-size-14">
+                                none
+                            </span>
+                        </p>
+                        <p class="MPLUS-Medium mt-2">
+                            Show Airs - in &lt;24 hours
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mx-1 relative-block">
+                    <img src="img/NO-IMAGE.png">
+
+                    <div class="description-block text-grayed-out MPLUS-Regular">
+                        <p>
+                            <span class="MPLUS-Medium">
+                                Description: 
+                            </span>
+                            <span class="text-size-14">
+                                coming soon
+                            </span>
+                        </p>
+                        <p class="MPLUS-Medium mt-2">
+                            Show Airs - TBA this week
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mx-1 relative-block">
+                    <img src="img/upcomingRoom1988.png">
+                    <em id="UPCOMING-TAG-2" class="PTAG"></em>
+                    <p class="coming-soon-text text-center">COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON COMING SOON </p>
+
+                    <div class="description-block text-grayed-out MPLUS-Regular">
+                        <p>
+                            <span class="MPLUS-Medium">
+                                Description: 
+                            </span>
+                            <span class="text-size-14">
+                                Vaccum sealed chamber pressurization experimentation
+                            </span>
+                        </p>
+                        <p class="MPLUS-Medium mt-2">
+                            Show Airs - in 18 days
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="expired" class="mt-4 scroll-margin-top">
+            <p class="MPLUS-SemiBold text-size-24 text-yellow">Expired <a class="CPTAG">&gt;</a></p>
+
+            <div class="flex-row justify-content-center mt-2">
+                <div class="mx-1 relative-block">
+                    <img src="img/expired1818.png">
+
+                    <div class="description-block MPLUS-Regular">
+                        <p class="text-grayed-out">
+                            <span class="MPLUS-Medium">
+                                Description: 
+                            </span>
+                            <span class="text-size-14">
+                                Abandoned farmer's shed provides a medley of tools to work with
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mx-1 relative-block">
+                    <img src="img/expired0007.png">
+
+                    <div class="description-block MPLUS-Regular">
+                        <p class="text-grayed-out">
+                            <span class="MPLUS-Medium">
+                                Description: 
+                            </span>
+                            <span class="text-size-14">
+                                how many falls down the stairs does it take to get to the center of a skull?
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mx-1 relative-block">
+                    <img src="img/expired321.png">
+
+                    <div class="description-block MPLUS-Regular">
+                        <p class="text-grayed-out">
+                            <span class="MPLUS-Medium">
+                                Description: 
+                            </span>
+                            <span class="text-size-14">
+                                special encore for those <em class="PTAG"></em> watching earlier in the day
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mx-1 relative-block">
+                    <img src="img/expired9-9.png">
+
+                    <div class="description-block MPLUS-Regular">
+                        <p class="text-grayed-out">
+                            <span class="MPLUS-Medium">
+                                Description: 
+                            </span>
+                            <span class="text-size-14">
+                                Rented slaughterhouse pen, fun times with cattle captive bolt <a class = "CFTAG">pistol</a> on human subject
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a onClick="LinkClick('sendlinks.html')" class="mt-4 pb-3 text-light-brown text-underline MPLUS-Medium">Submit a link, get paid for every admission sold</a>
+    </div>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

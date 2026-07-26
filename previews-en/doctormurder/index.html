@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <link rel="stylesheet" href="../Global/reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Doctor Murder</title>
+</head>
+<body>
+    <div id="main">
+        <div id="doctormurder">
+            Doctor Murder
+            <div id="logo">
+                <img src="img/doc.png" alt="Logo" id="logo">
+                <a class="CPTAG cross-l"></a>
+                <a class="CPTAG cross-u"></a>
+                <a class="CPTAG cross-r"></a>
+                <a class="CPTAG cross-b"></a>
+            </div>
+
+        </div>
+        <h5>Est. <a class="CFTAG">2012</a> - 2025</h5>
+        <div class="line">
+            <em class="PTAG online"></em>
+            <hr>
+        </div>
+        <div id="content"><span>Notice:</span> Out-of-network care is often advertised via #VelvetRoad at a deeply discounted rate by auxillary providers who are working to land under our umbrella. This discount is due to the advertised service's simplified nature. Patient exceptions apply to both out-of-network and in-network care.</div>
+        <p id="about">About</p>
+        <div id="content">
+            We're a group of doctors offering a lasting solution to what is likely not a temporary problem. We provide
+            death, <em class="PTAG"></em> and other treatments to elicit whatever outcome you are seeking. Be it the
+            aforementioned or something a little more specific. Some of our treatments we offer are:<br>
+            <ul>
+                <li><span>Death</span>: The patient of your choosing will be killed through a method
+                    that you select. This could be an injection, ingestion, reaction, trauma<em class="PTAG"></em>, or a
+                    toxin of some sort.
+                    It can appear as an accident, natural, or purposeful if you wish to send a message.
+                    The cost of this treatment ranges from $20,000 to $300,000 depending on the difficulty of the
+                    operation
+                    and the target.
+                </li>
+                <li><span>Torture</span>: If you don't want someone dead but do want them to suffer for whatever reason
+                    then we can offer services ranging from limb removal, kidnapping, nearly anything you can imagine
+                    can be instructed to occur with the patient. Whatever <em class="PTAG"></em> you can think up, we
+                    can make reality. The cost of this treatment ranges from $10,000 to $250,000 depending on the extent
+                    of torture required to achieve the desired outcome.
+                </li>
+                <li><span>Information</span>: Should you require confirmation or extrapolation on a topic
+                    then we have <em class="PTAG"></em> professionals who are <a class="CFTAG">extremely</a> skilled in carving out whatever
+                    it is you seek to know. Interrogation techniques are one of our most sought after services. The cost
+                    of this treatment ranges from $25,000 to $150,000 depending on the time required to treat the
+                    patient and obtain information. Information will be delivered via text means. No audio/video
+                    evidence of the information extraction will be supplied.
+                </li>
+            </ul>
+            We have doctors available in the United States, the EU, <a class="CPTAG">China</a>, and Russia. Should you be
+            outside of these
+            practicing regions then we are unable to assist<em class="PTAG"></em> you.<br>
+
+            <p id="contact">Contact</p>
+
+            We require a consultation first and foremost to determine if the patient is right for our care. Some
+            exceptions to our services include:
+
+            <ul>
+                <li>18 years old or younger</li>
+                <li><a class="CPTAG">Pregnant</a> women</li>
+                <li>Celebrities</li>
+                <li>Politicians</li>
+            </ul>
+
+            Contact us below to set up an appointment with one of our care providers. The consultation fee will cost
+            $10,100,
+            non-negotiable and will be paid prior to the consultation.<br><br>
+            <a class="CPTAG">contact</a>@28a539b6378517adc076309d929e73f6.ann
+
+        </div>
+    </div>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH MARKERS</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · visible hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · correct click</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · decoy click</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · shared candidate</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

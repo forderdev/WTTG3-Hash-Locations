@@ -1,0 +1,175 @@
+:root {
+    --lightPink: #eae5eb;
+    --darkPink: #7d5e73;
+    --lightGreen: #c7d3c5;
+    --darkGreen: #587461;
+}
+
+@font-face {
+    font-family: WSExtraBold;
+    src: url(font/WorkSans-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: WSSemiBold;
+    src: url(font/WorkSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: WSRegular;
+    src: url(font/WorkSans-Regular.ttf);
+}
+
+* {
+    margin: auto;
+    color: black;
+}
+
+body {
+    position: relative;
+    background-color: var(--darkPink);
+}
+
+header {
+    width: 100%;
+    min-width: 960px;
+    height: 100px;
+    background-color: var(--lightGreen);
+    background-image: url(img/Logo.png);
+    background-repeat: no-repeat;
+    line-height: 15px;
+}
+
+header h2 {
+    font-family: WSExtraBold;
+    font-size: 3em;
+    padding-top: 22px;
+    margin-left: 55px;
+}
+
+header p {
+    font-family: WSSemiBold;
+    font-size: 0.75em;
+    margin-top: 8px;
+    margin-left: 55px;
+}
+
+main {
+    font-family: WSRegular;
+    background-color: var(--lightPink);
+    width: 800px;
+    padding: 50px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    zoom: 1.2;
+}
+
+main h2 {
+    margin-left: 10px;
+}
+.columns {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    flex-direction: row;
+    align-content: flex-start;
+    padding-top: 20px;
+    gap: 40px;
+}
+
+.line {
+    display: block;
+    flex-shrink: 0;
+    min-width: 5px;
+    width: 5px;
+    height: 90px;
+    background-color: var(--darkPink);
+}
+
+.lineHor {
+    width: 100%;
+    height: 5px;
+    margin: 30px 0px;
+}
+
+.height870 {
+    height: 870px;
+}
+
+.width45 {
+    width: 45%;
+}
+
+.textCenter {
+    text-align: center;
+    margin: 30px 0px;
+}
+
+.textExtraBold {
+    font-family: WSExtraBold;
+}
+
+.textBold {
+    font-family: WSSemiBold;
+}
+
+b {
+    font-size: 110%;
+}
+
+.mainHeader {
+    font-family: WSSemiBold;
+}
+
+section {
+    margin-top: 0px;
+}
+
+section p{
+    margin-top: 20px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    align-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.button {
+    display: block;
+    width: 210px;
+    height: auto;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--darkGreen);
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.greenBlock {
+    display: block;
+    width: fit-content;
+    height: auto;
+    text-align: center;
+    background-color: var(--darkGreen);
+    padding: 10px 15px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.greenBlock p {
+    margin-top: 0;
+}
+
+footer a {
+    font-family: WSExtraBold;
+    font-size: 1.2em;
+    text-decoration: none;
+    text-align: center;
+}

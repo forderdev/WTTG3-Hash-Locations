@@ -1,0 +1,178 @@
+@font-face {
+    font-family: 'Ubuntu Mono';
+    src: url(UbuntuMono-Regular.ttf);
+}
+
+body {
+    background: black;
+    padding:  25px 0px 0px 70px;
+    width: 95%;
+}
+
+.hr {
+    background: #43c001;
+    width: 100%; height: 1px;
+    margin-bottom: 25px;
+}
+
+.multiline {
+    white-space: pre-wrap;
+}
+
+.req-footer {
+    display: flex;
+    justify-content: space-between;
+    color: #5aff00;
+    font-family: 'Ubuntu Mono', 'Times New Roman';
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+.req-time {
+    font-style: italic;
+}
+
+#header {
+
+}
+
+#header-title {
+    text-shadow: 0px 0px 5px rgba(48, 255, 0, 0.5);
+    
+    color: #5aff00;
+    font-size: 36px;
+    font-family: 'Ubuntu Mono', 'Times New Roman';
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+#header-desc { 
+    padding-bottom: 30px;
+    
+    color: #5aff00;
+    font-size: 18px;
+    font-family: 'Ubuntu Mono', 'Times New Roman';
+}
+
+#content-title {
+    padding-bottom: 15px;
+    
+    color: #5aff00;
+    font-size: 36px;
+    font-family: 'Ubuntu Mono', 'Times New Roman';
+    font-weight: bold;
+}
+
+.request {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.req-type {
+    color: #5aff00;
+    font-size: 18px;
+    font-family: 'Ubuntu Mono', 'Times New Roman';
+    padding-right: 20px;
+}
+
+.req-msg {
+    color: white;
+    font-size: 18px;
+    font-family: 'Ubuntu Mono', 'Times New Roman';
+}
+
+.req-img {
+    margin-top: 10px;
+    max-height: 400px;
+}
+
+.req-res {
+    font-family: 'Ubuntu Mono', 'Times New Roman';
+    font-style: italic;
+}
+
+#submit-div {
+    display: flex; justify-content: center; align-items: center;
+}
+
+#submit-post {
+    margin: 60px 0px 85px 0px;
+    
+    color: white;
+    font-size: 30px;
+    font-family: 'Ubuntu Mono', 'Times New Roman';
+    text-align: center;
+}
+
+#submit-post:hover {
+    color: #5aff00;
+}
+
+span > .CTAG{
+    text-decoration: underline;
+}
+
+/* SUBMIT PAGE */
+#submit-title {
+    padding-top: 20px;
+
+    color: #5aff00;
+    font-size: 36px;
+    font-family: 'Ubuntu Mono', 'Times New Roman';
+    font-weight: bold;
+}
+
+#submit-desc {
+    padding-top: 10px;
+
+    color: #5aff00;
+    font-size: 18px;
+    font-family: 'Ubuntu Mono', 'Times New Roman';
+    padding-bottom: 40px;
+}
+
+#submit-key {
+    color: #5aff00;
+    width: 40%;
+
+    padding-bottom: 30px;
+}
+
+#submit-footer {
+    padding-bottom: 50px;
+    width: 100%;
+    text-align: center;
+    
+    color: #5aff00;
+    font-size: 16px;
+    font-family: 'Ubuntu Mono', 'Times New Roman';
+}
+
+.text-dark {
+    color: #504d4d;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+ul {
+    color: #5aff00;
+    font-family: 'Ubuntu Mono', 'Times New Roman';
+    margin: 18px 0;
+}
+
+.pulled-in {
+    margin-left: 32px;
+    list-style: circle;
+}
+
+.pushed {
+    position: absolute;
+    left: 600px;
+
+}

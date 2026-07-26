@@ -7,6 +7,7 @@ const projectDir = path.resolve(toolsDir, "..");
 const gameDir = path.resolve(projectDir, "..");
 const dataPath = path.join(projectDir, "data.js");
 const errors = [];
+const checkedStylesheets = new Set();
 
 for (const required of [
   "index.html",
@@ -80,9 +81,10 @@ if (data) {
     if (!preview.includes('id="hash-guide-script"')) {
       errors.push(`İşaret betiği eksik: ${page.preview}`);
     }
-    if (!preview.includes("<base href=")) {
-      errors.push(`Kaynak yolu eksik: ${page.preview}`);
+    if (/<base\b/i.test(preview)) {
+      errors.push(`Haricî base yolu bulundu: ${page.preview}`);
     }
+    checkHtmlAssets(previewPath, preview, page.preview);
   }
 
   for (const site of data.sites) {
@@ -104,3 +106,102 @@ const report = {
 
 console.log(JSON.stringify(report, null, 2));
 if (errors.length) process.exitCode = 1;
+
+function checkHtmlAssets(filePath, html, label) {
+  const tagPattern = /<(?:link|script|img|source|video|audio)\b[^>]*>/gi;
+  const attributePattern = /\b(?:src|href|poster)\s*=\s*(["'])(.*?)\1/gi;
+
+  for (const tag of html.match(tagPattern) ?? []) {
+    for (const match of tag.matchAll(attributePattern)) {
+      checkAssetReference(filePath, match[2], label);
+    }
+  }
+
+  checkCssReferences(filePath, html, label);
+}
+
+function checkCssReferences(filePath, css, label) {
+  const urlPattern = /url\(\s*(["']?)(.*?)\1\s*\)/gi;
+  const importPattern = /@import\s+(?:url\(\s*)?(["'])(.*?)\1\s*\)?/gi;
+
+  for (const match of css.matchAll(urlPattern)) {
+    checkAssetReference(filePath, match[2], label);
+  }
+  for (const match of css.matchAll(importPattern)) {
+    checkAssetReference(filePath, match[2], label);
+  }
+}
+
+function checkAssetReference(fromFile, rawReference, label) {
+  const reference = rawReference.trim();
+  if (
+    !reference ||
+    reference.startsWith("#") ||
+    /^(?:data|blob|https?|mailto|tel|javascript):/i.test(reference) ||
+    reference.startsWith("//")
+  ) {
+    return;
+  }
+
+  const cleanReference = reference.split(/[?#]/, 1)[0];
+  if (!cleanReference) return;
+  if (cleanReference.startsWith("/")) {
+    errors.push(`Kökten başlayan asset yolu: ${label} -> ${reference}`);
+    return;
+  }
+
+  let decodedReference;
+  try {
+    decodedReference = decodeURIComponent(cleanReference);
+  } catch {
+    errors.push(`Geçersiz asset yolu: ${label} -> ${reference}`);
+    return;
+  }
+
+  const assetPath = path.resolve(path.dirname(fromFile), decodedReference);
+  if (!assetPath.startsWith(`${projectDir}${path.sep}`)) {
+    errors.push(`Proje dışına çıkan asset yolu: ${label} -> ${reference}`);
+    return;
+  }
+  if (!fs.existsSync(assetPath)) {
+    errors.push(`Eksik asset: ${label} -> ${reference}`);
+    return;
+  }
+
+  const caseMismatch = findCaseMismatch(assetPath);
+  if (caseMismatch) {
+    errors.push(`Asset harf uyumsuzluğu: ${label} -> ${reference} (${caseMismatch})`);
+    return;
+  }
+
+  if (
+    path.extname(assetPath).toLowerCase() === ".css" &&
+    !checkedStylesheets.has(assetPath)
+  ) {
+    checkedStylesheets.add(assetPath);
+    checkCssReferences(
+      assetPath,
+      fs.readFileSync(assetPath, "utf8"),
+      path.relative(projectDir, assetPath).replaceAll(path.sep, "/"),
+    );
+  }
+}
+
+function findCaseMismatch(filePath) {
+  const segments = path.relative(projectDir, filePath).split(path.sep);
+  let currentPath = projectDir;
+
+  for (const segment of segments) {
+    const entries = fs.readdirSync(currentPath);
+    if (!entries.includes(segment)) {
+      const actual = entries.find(
+        (entry) => entry.toLocaleLowerCase("en") === segment.toLocaleLowerCase("en"),
+      );
+      if (actual) return `${segment} yerine ${actual}`;
+      return "";
+    }
+    currentPath = path.join(currentPath, segment);
+  }
+
+  return "";
+}

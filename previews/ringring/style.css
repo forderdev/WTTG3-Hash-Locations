@@ -1,0 +1,323 @@
+@font-face {
+    font-family: Overpass-Bold;
+    src: url(font/Overpass-Bold.ttf);
+  }
+*{
+    font-family: Overpass-Bold;
+    overflow-x: hidden;
+}
+
+body{
+    margin: 0;
+    background-image: url(img/Background.png);
+    background-size: cover;
+}
+
+#blur{
+    position: absolute;
+    display: block;
+    user-select: none;
+    width: 100%;
+    height: 5800px;
+    z-index: 2;
+    background-image: url(img/Blur-Noise.png);
+}
+
+h1,h2,h3,h4,span{
+    position: relative;
+    margin:0;
+    z-index: 1;
+}
+
+h1{
+    font-size: 4.4em;
+}
+
+h2{
+    font-size: 3.1em;
+    color: #fff;
+}
+
+h3{
+    color: #fff;
+    font-size: 2.5em;
+}
+
+h4{
+    color: #fff;
+    font-size: 1.9em;
+}
+
+span{
+    font-size: 2.3em;
+}
+
+#main{
+    margin: auto;
+    width: 768px;
+    height: 4750px;
+    position: relative;
+    /*REMOVE BELOW TO BE A COLUMN (psd file) */
+    zoom: 1.2;
+}
+
+#main * {
+    user-select: none;
+    z-index: 4;
+}
+
+#main em {
+    user-select: text;
+}
+
+#main > :nth-child(1){
+    left:26px;
+    top: 120px;
+    color: #f7f41c;
+}
+
+#main > :nth-child(2){
+    left:230px;
+    top: 220px;
+}
+
+#main > :nth-child(3){
+    text-align: center;
+    display: block;
+    width: 100%;
+    color: #fff;
+    top: 352px;
+}
+
+#main > :nth-child(4){
+    display: block;
+    top: 410px;
+    left: 25px;
+}
+
+#main > :nth-child(5){
+    color: #fff;
+    top: 490px;
+    left: 250px
+
+}
+
+#main > :nth-child(6){
+    color: #fff;
+    top: 610px;
+    left: 180px;
+}
+
+#main > :nth-child(7){
+    color: #f7f41c;
+    top: 690px;
+    left: 360px;
+}
+
+#main > :nth-child(8){
+
+    top: 690px;
+    left: 30px;
+}
+
+#main > :nth-child(9){
+    color: #fff;
+    top: 750px;
+    left: 70px;
+}
+
+#main > :nth-child(10){
+    font-size: 3em;
+    text-align: center;
+    color: #f7f41c;
+    top: 850px;
+    left: -100px;
+}
+
+#main > :nth-child(11){
+    font-size: 3em;
+    color: #fff;
+    top: 990px;
+    left: 20px;
+}
+
+#main > :nth-child(12){
+    font-size: 3em;
+    color: #f7f41c;
+    top: 1110px;
+    left: 40px;
+}
+
+#main > :nth-child(13){
+    color: #fff;
+    font-size: 2.3em;
+    top: 1125px;
+    left: 80px;
+}
+
+#main > :nth-child(14){
+    color: #f7f41c;
+    top: 1155px;
+    width: 100%;
+    text-align: center;
+}
+
+#main > :nth-child(15){
+    color: #fff;
+    top: 1160px;
+    left: 95px;
+}
+
+#main > :nth-child(16){
+    color: #f7f41c;
+    font-size: 2.2em;
+    top: 1210px;
+    left: 30px;
+}
+
+#main > :nth-child(17){
+    color: #fff;
+    top: 1270px;
+    left: 30px;
+    text-align: center;
+}
+
+#main > :nth-child(18){
+    color: #f7f41c;
+    top: 1290px;
+    left: 110px;
+}
+
+#main > :nth-child(19){
+    color: #fff;
+    top: 1300px;
+    left: 360px;
+}
+
+#main > :nth-child(20){
+    color: #f7f41c;
+    top: 1320px;
+    left: 30px;
+}
+#main > :nth-child(21){
+    color: #f7f41c;
+    top: 1300px;
+    left: 180px;
+}
+#main > :nth-child(22){
+    color: #f7f41c;
+    top: 1275px;
+    left: 360px;
+}
+
+#main > :nth-child(23){
+    color: #fff;
+    top: 1280px;
+    left: 180px;
+}
+
+#main > :nth-child(24){
+    color: #f7f41c;
+    top: 1300px;
+    left: 240px;
+}
+
+#main > :nth-child(25){
+    color: #fff;
+    top: 1320px;
+    left: 300px;
+}
+
+#main > :nth-child(26){
+    color: #f7f41c;
+    top: 1390px;
+    left: 50px;
+    font-size: 2.2em;
+}
+
+#main > :nth-child(27){
+    color: #fff;
+    top: 1410px;
+    text-align: center;
+    left: 50px;
+}
+
+
+#main > :nth-child(28){
+    color: #f7f41c;
+    top: 1440px;
+    text-align: center;
+    left: 50px;
+}
+
+#main > :nth-child(29){
+    color: #fff;
+    top: 1470px;
+    left: 50px;
+}
+
+#main > :nth-child(30){
+    color: #f7f41c;
+    top: 1490px;
+    text-align: center;
+    font-size: 2.3em;
+    left: 30px;
+}
+
+
+#main > :nth-child(31) > img,
+#main > :nth-child(31) > .localized-payphone{
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    height: auto;
+    width: 350px;
+    left: 130px;
+    z-index: 3;
+}
+
+#main > :nth-child(31) > .localized-payphone {
+    height: 840px;
+    background-image: url("img/payphoneRing.gif");
+    background-repeat: no-repeat;
+    background-size: 350px 840px;
+}
+
+.localized-payphone > span {
+    position: absolute;
+    top: 94px;
+    left: 139px;
+    display: flex;
+    width: 140px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    background: #1f5a9b;
+    color: white;
+    font-family: Overpass-Bold;
+    font-size: 14px;
+    line-height: 1.05;
+    text-align: center;
+}
+
+.localized-payphone small {
+    font-size: 10px;
+}
+
+.PHONE-TAG-1 {
+    position: absolute;
+    top: 200px;
+    left: 348px;
+    width: 80px;
+    height: 80px;
+    border-radius: 30%;
+}
+
+.PHONE-TAG-2 {
+    position: absolute;
+    top: 548px;
+    left: 363px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

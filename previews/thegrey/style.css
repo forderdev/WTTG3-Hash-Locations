@@ -1,0 +1,324 @@
+@font-face {
+    font-family: "Lora-Regular";
+    src: url(font/Lora-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Lora-Bold";
+    src: url(font/Lora-Bold.ttf);
+}
+
+.lora-bold {
+    font-family: "Lora-Bold";
+}
+
+:root {
+    --latus: #464646;
+    --centrum: #2e2e2e;
+    --inanis: #1A1A1A;
+    --interius: #7c7c7c;
+}
+
+.background-stripes {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.stripe {
+    z-index: inherit;
+    width: 20%;
+    height: 100vh;
+    background-color: var(--grey);
+}
+
+.inanis {
+    background-color: var(--inanis);
+}
+
+.centrum {
+    background-color: var(--centrum);
+}
+
+.interius {
+    background-color: var(--interius);
+}
+
+.latus {
+    background-color: var(--latus);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#header img {
+    width: 252px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    vertical-align: middle;
+}
+
+body {
+    color: silver;
+    background-color: #6D6D6D;
+    font-family: "Lora-Regular";
+    font-size: 18px;
+    line-height: 20px;
+    word-spacing: 0.2em;
+}
+
+img {
+    max-width: 100%;
+}
+
+.p-hr {
+    height: 2px;
+    width: 20px;
+    background-color: #fff;
+}
+
+a,
+a:focus,
+a:visited,
+a:hover {
+    display: block;
+    color: white;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    display: inline !important;
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+h1 {
+    font-size: 48px;
+    padding-bottom: 15px;
+}
+
+div {
+    padding-bottom: 25px;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+section {
+    background-color: #666666;
+    padding: 25px 50px;
+}
+
+#container {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 70%;
+}
+
+.text-hidden {
+    color: rgba(192, 192, 192, 0.1);
+    user-select: none;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.pt {
+    padding-top: 20px;
+}
+
+.pb {
+    padding-bottom: 50px;
+}
+
+.pl {
+    padding-left: 40px;
+}
+
+.pr {
+    padding-right: 40px;
+}
+
+.mt {
+    margin-top: 40px;
+}
+
+.mts {
+    margin-top: 20px;
+}
+
+.mb {
+    margin-bottom: 40px;
+}
+
+.mb-1 {
+    margin-bottom: 10px;
+}
+
+.mb-2 {
+    margin-bottom: 20px;
+}
+
+.mbs {
+    margin-bottom: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-xlarge {
+    font-size: 48px;
+}
+
+.text-large {
+    font-size: 32px;
+}
+
+.text-medium {
+    font-size: 24px;
+}
+
+.text-normal {
+    font-size: 18px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.img-responsive {
+    width: 100%;
+    max-width: 100%;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#walls-links *{
+    margin: auto;
+    margin-bottom: 15px;
+    width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.25s ease-in-out;
+}
+
+#walls-links :nth-child(1):hover {
+    background-color: var(--latus);
+}
+
+#walls-links :nth-child(2):hover {
+    background-color: var(--centrum);
+}
+
+#walls-links :nth-child(3):hover {
+    background-color: var(--inanis);
+}
+
+.fadeout-top {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, #66666600, #666666);
+}
+
+.fadeout-bottom {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, #666666, #66666600);
+}
+
+#header .localized-title {
+    width: 720px;
+    margin: 0 auto 20px;
+    padding: 20px 10px;
+    border-top: 2px solid #aaa;
+    border-bottom: 2px solid #aaa;
+    color: #d5d5d5;
+    font-family: "Lora-Bold";
+    font-size: 43px;
+    line-height: 1.15;
+    letter-spacing: 6px;
+    text-align: center;
+    text-shadow: 3px 3px #252525;
+}
+
+#header .localized-title span {
+    font-size: 22px;
+    letter-spacing: 4px;
+}

@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Overpass-Bold;
+    src: url(font/Overpass-Bold.ttf);
+}
+*{
+    font-family: Overpass-Bold;
+    overflow-x: hidden;
+    margin: 0;
+}
+body{
+    height: 2988px;
+    position: relative;
+    background-image: url(img/AnswerBackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#main{
+    position: relative;
+    width: 768px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+#main > img{
+    display: block;
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+
+.PHONE-TAG-1 {
+    position: absolute;
+    top: 200px;
+    left: 348px;
+    width: 80px;
+    height: 80px;
+    border-radius: 30%;
+}
+
+.PHONE-TAG-2 {
+    position: absolute;
+    top: 548px;
+    left: 363px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

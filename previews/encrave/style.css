@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    color: white;
+    background-color: black;
+    font-size: 18px;
+    line-height: 40px;
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+a:focus,
+a:visited,
+a:hover {
+    color: grey;
+}
+
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+a.CTAG,
+a.CTAG:focus,
+a.CTAG:visited,
+a.CTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+h1 {
+    font-size: 32px;
+    padding-bottom: 15px;
+}
+
+div {
+    padding-bottom: 25px;
+}
+
+p {
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+#container {
+    background-color: black;
+    padding: 20px 10px;
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 80%;
+}
+
+.arialblack {
+    font-family: 'Arial Black';
+}
+
+.abs {
+    position: absolute;
+}
+
+.compact,
+.compact-md,
+.compact-sm {
+    margin: 0 auto;
+    max-width: 1130px;
+}
+
+.compact-md {
+    max-width: 720px;
+}
+
+.compact-sm {
+    max-width: 600px;
+}
+
+.w80 {
+    width: 80%;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.pt {
+    padding-top: 20px;
+}
+
+.pb {
+    padding-bottom: 50px;
+}
+
+.pl {
+    padding-left: 10px;
+}
+
+.pr {
+    padding-right: 10px;
+}
+
+.mt {
+    margin-top: 40px;
+}
+
+.mb {
+    margin-bottom: 80px;
+}
+
+.mblarge {
+    margin-bottom: 200px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-xlarge {
+    font-size: 48px;
+}
+
+.text-large {
+    font-size: 32px;
+}
+
+.text-medium {
+    font-size: 24px;
+}
+
+.text-normal {
+    font-size: 16px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-yellow {
+    color: yellow;
+}
+
+.text-red {
+    color: red;
+}
+
+.text-green {
+    color: #085102;
+}
+
+.text-grey {
+    color: grey;
+}
+
+.text-silver {
+    color: silver;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.img-responsive {
+    width: 100%;
+    max-width: 100%;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pulled-in {
+    margin-left: -20px;
+}
+
+.content {
+    max-width: 1600px;
+    width: 1600px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.background {
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 5;
+    left: 50%;
+    width: 1600px;
+    height: auto;
+    min-width: 1600px;
+    max-width: 1600px;
+    min-height: 900px;
+    max-height: 900px;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.corrupted {
+    position: relative; 
+    top: 3rem; 
+    right: 12rem;
+}
+
+.collage {
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.grid {
+    display: grid; 
+    grid-template-columns: 512px 256px 445px; 
+    gap: 16px;
+}
+
+.grid > .collage {
+    width: 256px; 
+    height: 256px;
+}
+
+.row1 {
+    display: flex; 
+    flex-direction: column; 
+    gap: 128px;
+}
+
+.gift {
+    width: 256px;
+}
+
+.gift p {
+    top: 28px;
+}
+
+.powerless p {
+    bottom: 10px;
+}
+
+.row2 {
+    display: flex; 
+    flex-direction: row; 
+    gap: 48px; 
+    position: relative; 
+    bottom: 32px;
+}
+
+.row2 > div {
+    width: fit-content; 
+    padding: 0;
+}
+
+.floating-text {
+    width: 512px; 
+    align-self: flex-end;
+}
+
+.cryptic-numbers {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    padding: 0; 
+    word-spacing: 24px;
+}
+
+.thoughts1 {
+    margin: 0 128px 0 0; 
+    position: absolute; 
+    top: -70px; 
+    right: 0; 
+    z-index: -1;
+}
+
+.thoughts3 {
+    z-index: -1;
+}
+
+.emphasized {
+    text-emphasis: "ҫ" white;
+}
+
+#evident {
+    display: flex;
+    align-self: center;
+}
+
+#evident p {
+    line-height: 1.2;
+}
+
+.PTAG.smallGreen {
+    font-size: 16pt;
+    font-weight: 400;
+    letter-spacing: 2px;
+}

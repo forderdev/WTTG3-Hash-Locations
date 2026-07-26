@@ -14,6 +14,7 @@ const sourceDir = path.join(
 );
 const previewDir = path.join(projectDir, "previews");
 const dataFile = path.join(projectDir, "data.js");
+const processedDependencies = new Set();
 
 const canonicalNames = {
   bizarrepropagation: "Bizarre Propagation",
@@ -293,10 +294,11 @@ for (const siteEntry of fs.readdirSync(sourceDir, { withFileTypes: true })) {
         .replace(/\b\w/g, (letter) => letter.toUpperCase());
     const outputName = `${pageId}.html`;
     const outputFile = path.join(outputSiteDir, outputName);
-    const baseHref = `../../../WTTGSD/Content/RawFiles/WebSites/${encodeURIComponent(siteEntry.name)}/`;
-    const preview = injectPreview(html, baseHref);
+    const portableHtml = rewriteMissingReferences(html, sourceFile, ".html");
+    const preview = injectPreview(portableHtml);
 
     fs.writeFileSync(outputFile, preview, "utf8");
+    copyReferencedAssets(sourceFile, outputFile, portableHtml);
     pages.push({
       id: `${siteId}/${pageId}`,
       siteId,
@@ -379,9 +381,9 @@ function countMixed(html) {
   return count;
 }
 
-function injectPreview(html, baseHref) {
+function injectPreview(html) {
   let output = html;
-  const headInsert = `<base href="${baseHref}">\n${markerStyle}`;
+  const headInsert = markerStyle;
   if (/<head[^>]*>/i.test(output)) {
     output = output.replace(/<head([^>]*)>/i, `<head$1>\n${headInsert}`);
   } else {
@@ -392,6 +394,184 @@ function injectPreview(html, baseHref) {
     return output.replace(/<\/body>/i, `${markerScript}\n</body>`);
   }
   return `${output}\n${markerScript}`;
+}
+
+function copyReferencedAssets(sourceFile, outputFile, content) {
+  const dependencyKey = `${sourceFile}\0${outputFile}`;
+  if (processedDependencies.has(dependencyKey)) return;
+  processedDependencies.add(dependencyKey);
+
+  for (const reference of extractReferences(content, path.extname(sourceFile))) {
+    const cleanReference = cleanLocalReference(reference);
+    if (!cleanReference) continue;
+
+    let decodedReference;
+    try {
+      decodedReference = decodeURIComponent(cleanReference);
+    } catch {
+      continue;
+    }
+
+    let dependencySource = path.resolve(path.dirname(sourceFile), decodedReference);
+    let dependencyOutput = path.resolve(path.dirname(outputFile), decodedReference);
+    if (
+      !dependencySource.startsWith(`${sourceDir}${path.sep}`) ||
+      !dependencyOutput.startsWith(`${previewDir}${path.sep}`) ||
+      !fs.existsSync(dependencySource)
+    ) {
+      continue;
+    }
+
+    const dependencyStat = fs.statSync(dependencySource);
+    if (dependencyStat.isDirectory()) {
+      dependencySource = path.join(dependencySource, "index.html");
+      dependencyOutput = path.join(dependencyOutput, "index.html");
+      if (!fs.existsSync(dependencySource)) continue;
+    }
+    if (!fs.statSync(dependencySource).isFile()) continue;
+
+    const childKey = `${dependencySource}\0${dependencyOutput}`;
+    if (processedDependencies.has(childKey)) continue;
+    const extension = path.extname(dependencySource).toLowerCase();
+    fs.mkdirSync(path.dirname(dependencyOutput), { recursive: true });
+    if ([".css", ".html", ".htm", ".js"].includes(extension)) {
+      const dependencyContent = rewriteMissingReferences(
+        fs.readFileSync(dependencySource, "utf8"),
+        dependencySource,
+        extension,
+      );
+      fs.writeFileSync(dependencyOutput, dependencyContent, "utf8");
+      copyReferencedAssets(
+        dependencySource,
+        dependencyOutput,
+        dependencyContent,
+      );
+    } else {
+      fs.copyFileSync(dependencySource, dependencyOutput);
+      processedDependencies.add(childKey);
+    }
+  }
+}
+
+function rewriteMissingReferences(content, sourceFile, extension) {
+  let output = content;
+
+  if ([".html", ".htm"].includes(extension)) {
+    output = output.replace(
+      /<(link|script|img|source|video|audio)\b[^>]*>/gi,
+      (tag, tagName) =>
+        tag.replace(
+          /\b(src|href|poster)\s*=\s*(["'])(.*?)\2/gi,
+          (attribute, attributeName, quote, reference) => {
+            if (localReferenceExists(sourceFile, reference)) return attribute;
+            return `${attributeName}=${quote}${fallbackForTag(tagName, attributeName)}${quote}`;
+          },
+        ),
+    );
+  }
+
+  if ([".css", ".html", ".htm"].includes(extension)) {
+    output = output.replace(
+      /url\(\s*(["']?)(.*?)\1\s*\)/gi,
+      (value, _quote, reference) =>
+        localReferenceExists(sourceFile, reference)
+          ? value
+          : 'url("data:application/octet-stream;base64,")',
+    );
+    output = output.replace(
+      /@import\s+(["'])(.*?)\1/gi,
+      (value, _quote, reference) =>
+        localReferenceExists(sourceFile, reference)
+          ? value
+          : '@import "data:text/css,"',
+    );
+  }
+
+  return output;
+}
+
+function localReferenceExists(sourceFile, reference) {
+  const cleanReference = cleanLocalReference(reference);
+  if (!cleanReference) return true;
+
+  let decodedReference;
+  try {
+    decodedReference = decodeURIComponent(cleanReference);
+  } catch {
+    return false;
+  }
+
+  const candidate = path.resolve(path.dirname(sourceFile), decodedReference);
+  return (
+    candidate.startsWith(`${sourceDir}${path.sep}`) &&
+    fs.existsSync(candidate)
+  );
+}
+
+function fallbackForTag(tagName, attributeName) {
+  if (attributeName.toLowerCase() === "poster") {
+    return "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
+  }
+
+  switch (tagName.toLowerCase()) {
+    case "script":
+      return "data:text/javascript,";
+    case "link":
+      return "data:text/css,";
+    case "audio":
+      return "data:audio/mpeg;base64,";
+    case "video":
+      return "data:video/webm;base64,";
+    default:
+      return "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
+  }
+}
+
+function extractReferences(content, extension) {
+  const references = new Set();
+  const attributePattern =
+    /\b(?:src|href|poster|action)\s*=\s*(["'])(.*?)\1/gi;
+  const srcsetPattern = /\bsrcset\s*=\s*(["'])(.*?)\1/gi;
+  const urlPattern = /url\(\s*(["']?)(.*?)\1\s*\)/gi;
+  const importPattern = /@import\s+(?:url\(\s*)?(["'])(.*?)\1\s*\)?/gi;
+
+  for (const match of content.matchAll(attributePattern)) {
+    references.add(match[2]);
+  }
+  for (const match of content.matchAll(srcsetPattern)) {
+    for (const candidate of match[2].split(",")) {
+      references.add(candidate.trim().split(/\s+/, 1)[0]);
+    }
+  }
+  for (const match of content.matchAll(urlPattern)) {
+    references.add(match[2]);
+  }
+  for (const match of content.matchAll(importPattern)) {
+    references.add(match[2]);
+  }
+
+  if (extension.toLowerCase() === ".js") {
+    const assetStringPattern =
+      /(["'])([^"'`]+\.(?:css|gif|html?|jpe?g|js|mp3|ogg|otf|png|svg|ttf|wav|webm|webp|woff2?)(?:[?#][^"'`]*)?)\1/gi;
+    for (const match of content.matchAll(assetStringPattern)) {
+      references.add(match[2]);
+    }
+  }
+
+  return references;
+}
+
+function cleanLocalReference(reference) {
+  const trimmed = reference.trim();
+  if (
+    !trimmed ||
+    trimmed.startsWith("#") ||
+    trimmed.startsWith("//") ||
+    /^(?:data|blob|file|https?|mailto|tel|javascript):/i.test(trimmed)
+  ) {
+    return "";
+  }
+  return trimmed.split(/[?#]/, 1)[0];
 }
 
 function sum(records, key) {

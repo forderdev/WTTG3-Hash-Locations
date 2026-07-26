@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000000;
+}
+
+.background-images {
+    position: relative;
+    width: 100vw;
+}
+
+.background-images img {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.warning-panel {
+    display: flex;
+    width: 100%;
+    aspect-ratio: 1079 / 583;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 70% 55%, rgba(93, 12, 7, 0.45), transparent 34%),
+        radial-gradient(circle at 20% 35%, rgba(73, 5, 4, 0.35), transparent 28%),
+        #020202;
+    color: rgba(242, 242, 242, 0.78);
+    box-sizing: border-box;
+}
+
+.warning-panel p {
+    width: 84%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: clamp(14px, 2.2vw, 36px);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 1px;
+    transform: rotate(4deg) skewX(-5deg);
+    text-shadow: 8px 6px 2px rgba(255, 255, 255, 0.08);
+}
+
+.warning-panel-2 p {
+    filter: blur(2px);
+    opacity: 0.72;
+    transform: rotate(-3deg) skewX(7deg);
+}
+
+.overlay-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+
+.overlay-images img {
+    pointer-events: auto;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,153 @@
+@font-face {
+    font-family: Philosopher-Bold;
+    src: url(font/Philosopher-Bold.ttf);
+}
+
+@font-face {
+    font-family: Philosopher-Regular;
+    src: url(font/Philosopher-Regular.ttf);
+}
+
+a,
+a:focus,
+a:visited,
+a:hover {
+    color: white;
+}
+
+a.CTAG,
+a.CPTAG, a.CFTAG,
+a.CPTAG:focus, a.CFTAG:focus,
+a.CPTAG:visited, a.CFTAG:visited,
+a.CPTAG:hover, a.CFTAG:hover {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: inherit !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: white;
+    font-family: 'Philosopher-Regular';
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    min-height: 100vh;
+    height: auto;
+}
+
+.text-box, .image-box, .line, .header {
+    position: absolute;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.line {
+    width: 100%;
+    height: 4px;
+    background: #dadada;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-box-1 {
+    width: 45.5%;
+}
+
+.image-box-2 {
+    width: 20%;
+    height: auto;
+}
+
+.image-box-3 {
+
+}
+
+.image-box-4 {
+    width: 30%;
+}
+
+.image-box-5 {
+
+}
+
+.image-box-6 {
+    width: 33%;
+}
+
+
+.text-box-1 {
+    color: #f53d40;
+    font-size: 89px;
+}
+
+.text-box-2 {
+    color: #f53d40;
+    font-size: 23px;
+    line-height: 25px;
+}
+
+.text-box-3 {
+    color: #dadada;
+    font-size: 23px;
+    line-height: 25px;
+}
+
+.text-box-4 {
+    color: #f53d40;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.text-box-5 {
+    color: #dadada;
+    font-size: 32px;
+    line-height: 35px;
+    text-align: right;
+}
+
+.text-box-6 {
+    color: #f53d40;
+    font-size: 17px;
+    line-height: 23px;
+    text-align: right;
+    rotate: -90deg;
+}
+
+.text-box-7 {
+    color: #dadada;
+    font-size: 25px;
+    line-height: 28px;
+}
+
+.text-box-8 {
+    color: #dadada;
+    font-size: 28px;
+    line-height: 25px;
+    border: 5px solid #f53d40;
+    font-family: Philosopher-Boldi;
+    font-weight: 600;
+    padding: 6px;
+}
+
+.text-box-9 {
+    color: #f53d40;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+}

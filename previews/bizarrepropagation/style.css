@@ -1,0 +1,195 @@
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("img/soundWave.png");
+  background-repeat: no-repeat;
+  background-size:  cover;
+  background-color: black;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  min-height: fit-content;
+}
+
+#header {
+  width: fit-content;
+  height: 100px;
+  margin: 50px;
+}
+
+#container {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  max-height: 600px;
+  height: 100%;
+  padding: 0 50px;
+}
+
+#container button {
+  position: absolute;
+  cursor: pointer;
+}
+
+p {
+  font-family: Arial;
+  color: white;
+  font-weight: 900;
+  font-size: 24px;
+  text-shadow: 3px 3px black;
+}
+
+button#play {
+  margin: 0 0 0 0;
+  border: 0;
+  background: inherit;
+  cursor: pointer;
+  outline: none;
+  background-image: url("img/play.png");
+  background-repeat: no-repeat;
+  width: 113px;
+  height: 65px;
+  border: none;
+  z-index: 2;
+}
+
+button#stop {
+  margin: 0 0 0 20px;
+  border: 0;
+  background: inherit;
+  cursor: pointer;
+  outline: none;
+  background-image: url("img/stop.png");
+  background-repeat: no-repeat;
+  width: 113px;
+  height: 65px;
+  border: none;
+  z-index: 2;
+}
+
+#bizAudio1 {
+  background-image: url("img/button1.png");
+  width: 45px;
+  height: 36px;
+  border: none;
+  top: 10%;
+  left: 35%;
+}
+
+#bizAudio99 {
+  background-image: url("img/button2.png");
+  width: 57px;
+  height: 46px;
+  border: none;
+  top: 13%;
+  left: 7%;
+}
+
+#bizAudio419 {
+  background-image: url("img/button3.png");
+  width: 38px;
+  height: 31px;
+  border: none;
+  top: 35%;
+  left: 7%;
+}
+
+#bizAudio8 {
+  background-image: url("img/button4.png");
+  width: 47px;
+  height: 38px;
+  border: none;
+  top: 30%;
+  left: 20%;
+}
+
+#bizAudio311 {
+  background-image: url("img/button5.png");
+  width: 47px;
+  height: 38px;
+  border: none;
+  top: 20%;
+  left: 50%;
+}
+
+#bizAudio76 {
+  background-image: url("img/button6.png");
+  width: 32px;
+  height: 26px;
+  border: none;
+  top: 33%;
+  left: 32%;
+}
+
+#bizAudio808 {
+  background-image: url("img/button7.png");
+  width: 50px;
+  height: 41px;
+  border: none;
+  bottom: 20%;
+  right: 40%;
+}
+
+#bizAudio000 {
+  background-image: url("img/button8.png");
+  width: 24px;
+  height: 20px;
+  border: none;
+  bottom: 15%;
+  left: 10%;
+}
+
+#bizAudio16 {
+  background-image: url("img/button9.png");
+  width: 23px;
+  height: 19px;
+  border: none;
+  bottom: 5%;
+  left: 55%;
+}
+
+#cross {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  top: 20%;
+  right: 20%;
+  position: absolute;
+}
+
+#wash {
+  position: absolute;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  top: 10px;
+  right: 50px;
+}
+
+#daisy {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  position: fixed;
+  bottom: 20px;
+  left: 15px;
+}
+
+.PTAG {
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-shadow: 5px 5px 5px #000;
+    white-space: nowrap;
+}
+
+#fake-button {
+  position: absolute;
+  background-image: url("img/button7.png");
+  background-size: cover;
+  width: 45px;
+  height: 37px;
+  border: none;
+  bottom: 35%;
+  right: 25%;
+}

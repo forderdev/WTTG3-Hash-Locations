@@ -126,7 +126,10 @@
   const STORAGE_KEY = "wttg3-hash-atlas-progress-v1";
   const LANGUAGE_KEY = "wttg3-hash-atlas-language-v1";
   const savedLanguage = localStorage.getItem(LANGUAGE_KEY);
-  let currentLanguage = savedLanguage === "en" ? "en" : "tr";
+  let currentLanguage =
+    savedLanguage === "tr" || savedLanguage === "en"
+      ? savedLanguage
+      : detectBrowserLanguage();
   let data = DATA_BY_LANGUAGE[currentLanguage];
   let activeFilter = "all";
 
@@ -486,6 +489,17 @@
 
   function numberLocale() {
     return currentLanguage === "tr" ? "tr-TR" : "en-US";
+  }
+
+  function detectBrowserLanguage() {
+    const languages = navigator.languages?.length
+      ? navigator.languages
+      : [navigator.language];
+    return languages.some((language) =>
+      String(language).toLocaleLowerCase("en-US").startsWith("tr"),
+    )
+      ? "tr"
+      : "en";
   }
 
   function normalize(value) {

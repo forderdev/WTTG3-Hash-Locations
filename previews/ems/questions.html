@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<base href="../../../WTTGSD/Content/RawFiles/WebSites/ems/">
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <title>Eat My Shit - Başvuru</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <link rel="stylesheet" href="meyerreset.css" />
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+</head>
+  <body style="margin: 0; background: #8a6039;">
+    <input type="hidden" id="anPageName" name="page" value="questions" />
+    <div class="questions screen">
+      <div class="navbar">
+        <img class="nav-line" src="img/navline.svg" alt="Gezinti Çizgisi" />
+        <div class="buttons">
+          <div class="apply">
+            <div class="btn"></div>
+            <div class="txt">
+              <a onClick="LinkClick('questions.html')">Başvur</a>
+            </div>
+          </div>
+          <div class="faq-btn">
+            <div class="btn"></div>
+            <div class="txt"><a onClick="LinkClick('faq.html')">S.S.S.</a></div>
+          </div>
+          <div class="home">
+            <div class="btn"></div>
+            <div class="txt"><a onClick="LinkClick('index.html')">Ana Sayfa</a></div>
+          </div>
+        </div>
+        <div class="logo">
+          <img src="img/poopicon-1@2x.png" alt="kaka simgesi 1" />
+          <div>BOKUMU-YE</div>
+        </div>
+      </div>
+      <form> <!--action="secret.html">-->
+        <div class="survey-question">
+          <p>
+            1: Tuvalette kakamı yaparken işimi olabildiğince çabuk bitirmeye çalışırım.
+          </p>
+          <br>
+          <div class="survey-scale">
+            <input type="radio" id="q1-a1" name="question1" value="strongly-agree" required/>
+            <label for="q1-a1">Kesinlikle Katılıyorum</label>
+            
+            <input type="radio" id="q1-a2" name="question1" value="agree" />
+            <label for="q1-a2">Katılıyorum</label>
+            
+            <input type="radio" id="q1-a3" name="question1" value="neutral" />
+            <label for="q1-a3">Kararsızım</label>
+            
+            <input type="radio" id="q1-a4" name="question1" value="disagree" />
+            <label for="q1-a4">Katılmıyorum</label>
+            
+            <input type="radio" id="q1-a5" name="question1" value="strongly-disagree" />
+            <label for="q1-a5">Kesinlikle Katılmıyorum</label>
+          </div>
+          <br>
+        </div>
+
+        <div class="survey-question">
+          <p>
+            2: Yarın yaklaşık ne zaman kaka yapacağımı sorsaydın bunu
+            <a class="CFTAG">doğru biçimde</a> tahmin edebilirdim. <em class="PTAG text-dark"></em>
+          </p>
+          <br>
+          <div class="survey-scale">
+            <input type="radio" id="q2-a1" name="question2" value="strongly-agree" required/>
+            <label for="q2-a1">Kesinlikle Katılıyorum</label>
+            
+            <input type="radio" id="q2-a2" name="question2" value="agree" />
+            <label for="q2-a2">Katılıyorum</label>
+            
+            <input type="radio" id="q2-a3" name="question2" value="neutral" />
+            <label for="q2-a3">Kararsızım</label>
+            
+            <input type="radio" id="q2-a4" name="question2" value="disagree" />
+            <label for="q2-a4">Katılmıyorum</label>
+            
+            <input type="radio" id="q2-a5" name="question2" value="strongly-disagree" />
+            <label for="q2-a5">Kesinlikle Katılmıyorum</label>
+          </div>
+          <br>
+        </div>
+
+        <div class="survey-question">
+          <p>
+            <em class="PTAG text-dark"></em> 3: Ne yersem yiyeyim çıkan her şey, önceki günkü kakamla aynı GÖRÜNÜR.
+          </p>
+          <br>
+          <div class="survey-scale">
+            <input type="radio" id="q3-a1" name="question3" value="strongly-agree" />
+            <label for="q3-a1">Kesinlikle Katılıyorum</label>
+        
+            <input type="radio" id="q3-a2" name="question3" value="agree" />
+            <label for="q3-a2">Katılıyorum</label>
+        
+            <input type="radio" id="q3-a3" name="question3" value="neutral" />
+            <label for="q3-a3">Kararsızım</label>
+        
+            <input type="radio" id="q3-a4" name="question3" value="disagree" />
+            <label for="q3-a4">Katılmıyorum</label>
+        
+            <input type="radio" id="q3-a5" name="question3" value="strongly-disagree" />
+            <label for="q3-a5">Kesinlikle Katılmıyorum</label>
+          </div>
+          <br>
+        </div>
+
+        <div class="survey-question">
+          <p>
+            4: Ne yersem yiyeyim çıkan her şey, önceki günküyle aynı KOKAR.
+          </p>
+          <br>
+          <div class="survey-scale">
+            <input type="radio" id="q4-a1" name="question4" value="strongly-agree" />
+            <label for="q4-a1">Kesinlikle Katılıyorum</label>
+
+            <input type="radio" id="q4-a2" name="question4" value="agree" />
+            <label for="q4-a2">Katılıyorum</label>
+
+            <input type="radio" id="q4-a3" name="question4" value="neutral" />
+            <label for="q4-a3">Kararsızım</label>
+
+            <input type="radio" id="q4-a4" name="question4" value="disagree" />
+            <label for="q4-a4">Katılmıyorum</label>
+
+            <input type="radio" id="q4-a5" name="question4" value="strongly-disagree" />
+            <label for="q4-a5">Kesinlikle Katılmıyorum</label>
+          </div>
+          <br>
+        </div>
+
+        <div class="survey-question">
+          <p>5: Bağırsaklarım üzerinde tam kontrolüm olduğunu hissederim.</p>
+          <br>
+          <div class="survey-scale">
+            <input type="radio" id="q5-a1" name="question5" value="strongly-agree" />
+            <label for="q5-a1">Kesinlikle Katılıyorum</label>
+
+            <input type="radio" id="q5-a2" name="question5" value="agree" />
+            <label for="q5-a2">Katılıyorum</label>
+
+            <input type="radio" id="q5-a3" name="question5" value="neutral" />
+            <label for="q5-a3">Kararsızım</label>
+
+            <input type="radio" id="q5-a4" name="question5" value="disagree" />
+            <label for="q5-a4">Katılmıyorum</label>
+
+            <input type="radio" id="q5-a5" name="question5" value="strongly-disagree" />
+            <label for="q5-a5">Kesinlikle Katılmıyorum</label>
+          </div>
+          <br>
+        </div>
+
+        <div class="survey-question">
+          <p>6: Tuvaleti tıkamam benim için <a class="CPTAG">şaşırtıcı</a> bir durum değildir.</p>
+          <br>
+          <div class="survey-scale">
+            <input type="radio" id="q6-a1" name="question6" value="strongly-agree" />
+            <label for="q6-a1">Kesinlikle Katılıyorum</label>
+
+            <input type="radio" id="q6-a2" name="question6" value="agree" />
+            <label for="q6-a2">Katılıyorum</label>
+
+            <input type="radio" id="q6-a3" name="question6" value="neutral" />
+            <label for="q6-a3">Kararsızım</label>
+
+            <input type="radio" id="q6-a4" name="question6" value="disagree" />
+            <label for="q6-a4">Katılmıyorum</label>
+
+            <input type="radio" id="q6-a5" name="question6" value="strongly-disagree" />
+            <label for="q6-a5">Kesinlikle Katılmıyorum</label>
+          </div>
+          <br>
+        </div>
+        
+        <div class="survey-question">
+          <p>
+            7: Daha fazla bok puanı kazanacaksam takviye almaya ve <a class="CFTAG">farklı</a> yiyecekler yemeye razı olurum. <em class="PTAG text-dark"></em>
+          </p>
+          <br>
+          <div class="survey-scale">
+            <input type="radio" id="q7-a1" name="question7" value="strongly-agree" />
+            <label for="q7-a1">Kesinlikle Katılıyorum</label>
+
+            <input type="radio" id="q7-a2" name="question7" value="agree" />
+            <label for="q7-a2">Katılıyorum</label>
+
+            <input type="radio" id="q7-a3" name="question7" value="neutral" />
+            <label for="q7-a3">Kararsızım</label>
+
+            <input type="radio" id="q7-a4" name="question7" value="disagree" />
+            <label for="q7-a4">Katılmıyorum</label>
+
+            <input type="radio" id="q7-a5" name="question7" value="strongly-disagree" />
+            <label for="q7-a5">Kesinlikle Katılmıyorum</label>
+          </div>
+          <br>
+        </div>
+
+        <div class="survey-question">
+          <p>8: Gerekirse komut <a class="CPTAG">üzerine kaka yapabilirim.</a></p>
+          <br>
+          <div class="survey-scale">
+            <input type="radio" id="q8-a1" name="question8" value="strongly-agree" />
+            <label for="q8-a1">Kesinlikle Katılıyorum</label>
+
+            <input type="radio" id="q8-a2" name="question8" value="agree" />
+            <label for="q8-a2">Katılıyorum</label>
+
+            <input type="radio" id="q8-a3" name="question8" value="neutral" />
+            <label for="q8-a3">Kararsızım</label>
+
+            <input type="radio" id="q8-a4" name="question8" value="disagree" />
+            <label for="q8-a4">Katılmıyorum</label>
+
+            <input type="radio" id="q8-a5" name="question8" value="strongly-disagree" />
+            <label for="q8-a5">Kesinlikle Katılmıyorum</label>
+          </div>
+          <br>
+        </div>
+
+        <div class="survey-question">
+          <p>
+            9: Arkadaşlarım, ailem ya da iş arkadaşlarım, kakamdan sonra tuvaletin hâline bakıp beni teşhis edebilir.
+          </p>
+          <br>
+          <div class="survey-scale">
+            <input type="radio" id="q9-a1" name="question9" value="strongly-agree" />
+            <label for="q9-a1">Kesinlikle Katılıyorum</label>
+
+            <input type="radio" id="q9-a2" name="question9" value="agree" />
+            <label for="q9-a2">Katılıyorum</label>
+
+            <input type="radio" id="q9-a3" name="question9" value="neutral" />
+            <label for="q9-a3">Kararsızım</label>
+
+            <input type="radio" id="q9-a4" name="question9" value="disagree" />
+            <label for="q9-a4">Katılmıyorum</label>
+
+            <input type="radio" id="q9-a5" name="question9" value="strongly-disagree" />
+            <label for="q9-a5">Kesinlikle Katılmıyorum</label>
+          </div>
+          <br>
+        </div>
+        
+        <div class="survey-question">
+          <p>10: Kaka konusunda biraz <a class="CPTAG">sıra dışıyımdır.</a>.</p>
+          <br>
+          <div class="survey-scale">
+            <input type="radio" id="q10-a1" name="question10" value="strongly-agree" />
+            <label for="q10-a1">Kesinlikle Katılıyorum</label>
+
+            <input type="radio" id="q10-a2" name="question10" value="agree" />
+            <label for="q10-a2">Katılıyorum</label>
+
+            <input type="radio" id="q10-a3" name="question10" value="neutral" />
+            <label for="q10-a3">Kararsızım</label>
+
+            <input type="radio" id="q10-a4" name="question10" value="disagree" />
+            <label for="q10-a4">Katılmıyorum</label>
+
+            <input type="radio" id="q10-a5" name="question10" value="strongly-disagree" />
+            <label for="q10-a5">Kesinlikle Katılmıyorum</label>
+          </div>
+          <br>
+        </div>
+
+        <div class="survey-question">
+          <p>
+            11: Rahatlamak için müshile, dışkı yumuşatıcıya, lif takviyesine ya da başka sağlık ürünlerine ihtiyaç duyarım.
+          </p>
+          <br>
+          <div class="survey-scale">
+            <input type="radio" id="q11-a1" name="question11" value="strongly-agree" />
+            <label for="q11-a1">Kesinlikle Katılıyorum</label>
+
+            <input type="radio" id="q11-a2" name="question11" value="agree" />
+            <label for="q11-a2">Katılıyorum</label>
+
+            <input type="radio" id="q11-a3" name="question11" value="neutral" />
+            <label for="q11-a3">Kararsızım</label>
+
+            <input type="radio" id="q11-a4" name="question11" value="disagree" />
+            <label for="q11-a4">Katılmıyorum</label>
+
+            <input type="radio" id="q11-a5" name="question11" value="strongly-disagree" />
+            <label for="q11-a5">Kesinlikle Katılmıyorum</label>
+          </div>
+          <br>
+        </div>
+        
+        <div class="survey-question">
+          <p>
+            12: Bu yıl dışkımın birkaç kez renk ya da ton değiştirmesini bekliyorum.
+          </p>
+          <br>
+          <div class="survey-scale">
+            <input type="radio" id="q12-a1" name="question12" value="strongly-agree"/>
+            <label for="q12-a1">Kesinlikle Katılıyorum</label>
+
+            <input type="radio" id="q12-a2" name="question12" value="agree"/>
+            <label for="q12-a2">Katılıyorum</label>
+
+            <input type="radio" id="q12-a3" name="question12" value="neutral"/>
+            <label for="q12-a3">Kararsızım</label>
+
+            <input type="radio" id="q12-a4" name="question12" value="disagree"/>
+            <label for="q12-a4">Katılmıyorum</label>
+
+            <input type="radio" id="q12-a5" name="question12" value="strongly-disagree"/>
+            <label for="q12-a5">Kesinlikle Katılmıyorum</label>
+          </div>
+          <br>
+        </div>
+        <br><br>
+
+        <div class="contact">
+          <label>Sana en kolay <a class="CPTAG">ulaşabileceğimiz</a> e-posta adresi: <em class="PTAG"></em></label>
+          <input class="email" type="text" />
+        </div>
+        
+        <div id="resultMessage">Verilen tüm soruları yanıtla ve ardından Gönder'e bas.</div>
+        
+        <br>
+        
+        <button id="submitBtn" type="button">Gönder</button>
+        
+        <br><br><br><br>
+        <em class="PTAG text-dark"></em>
+        
+        <span style="color: white;">
+         Anketle <a class="CFTAG">ilgili sorun mu yaşıyorsun?</a>?  <a style="text-underline-style: dash" onClick="LinkClick('secret.html')">Yardım almak için tıkla.</a>
+        </span>
+        
+      </form>
+    </div>
+    
+    <script>
+ 
+      document.getElementById('submitBtn').addEventListener('click', function() {
+        var br = document.createElement("BR");
+        const totalQuestions = 12;
+        const correctAnswers = {
+          question1: 'agree',
+          question2: 'neutral',
+          question3: 'strongly-agree',
+          question4: 'disagree',
+          question5: 'strongly-agree',
+          question6: 'agree',
+          question7: 'neutral',
+          question8: 'strongly-agree',
+          question9: 'disagree',
+          question10: 'strongly-agree',
+          question11: 'strongly-disagree',
+          question12: 'agree',
+        };
+  
+        let unanswered = [];
+        let correctCount = 0;
+  
+        for (let i = 1; i <= totalQuestions; i++) {
+          const questionName = 'question' + i;
+          const selected = document.querySelector(`input[name="${questionName}"]:checked`);
+  
+          if (!selected) {
+            unanswered.push(i);
+            continue;
+          }
+  
+          if (correctAnswers[questionName] === selected.value) {
+            correctCount++;
+          }
+        }
+  
+        const resultDiv = document.getElementById('resultMessage');
+  
+        if (unanswered.length > 0) {
+          resultDiv.style.color = 'white';
+          resultDiv.textContent = 'Önce bütün soruları yanıtla!';
+        } else {
+          resultDiv.style.color = 'white';
+          resultDiv.textContent = `Puanın: ${correctCount} / ${totalQuestions}.`
+          resultDiv.appendChild(br);
+          resultDiv.innerHTML += `8 veya üzeri puan aldıysan geçerli bir e-posta adresi girdiğinden emin ol!`;
+        }
+      });
+    </script>
+  
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH İŞARETLERİ</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · görünür hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · doğru tıklama</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · sahte tıklama</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · ortak aday</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<base href="../../../WTTGSD/Content/RawFiles/WebSites/worldwideworkers/">
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <title>World Wide Workers</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <div id="content">
+        <header>
+            <div id="logo">DÜNYA ÇAPINDA ÇALIŞANLAR</div>
+        </header>
+    
+        <main>
+            <nav>
+                <a onClick="LinkClick('index.html')" class="active" id="home">⌂ ANA SAYFA</a>
+                <a onClick="LinkClick('submit.html')" class="active" id="submit">GÖNDER</a>
+                <a onClick="LinkClick('about.html')" class="active" id="about">HAKKIMIZDA</a>
+            </nav>
+
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                Gönderim yapılmadan önce tüm alanlar önerilen asgari karakter sayısını karşılamalıdır. Bu, yeterli ayrıntının verilmesini sağlar; bizim tarafımızdaki işlemi hızlandırır ve seni ek ücret ödemekten kurtarır.
+            </p>
+            <br>
+            <p style="font-size: 0.9em;">
+                Bu soruları yanıtlarken <a class="CPTAG">herhangi bir kişisel</a> ayrıntıdan söz etme. Yalnızca World Wide Workers'ın gönderdiğin teklifi doğru biçimde değerlendirebilmesi için gereken temel özellikler istenir.
+            </p>
+            <br><br>
+            <div id="submitForm">
+                <div id="locationInfo">
+                    <textarea type="text" id="locationInput" placeholder="Konumlar (Adres, çevreyi, güvenlik düzeyini ve ilgili diğer ayrıntıları açıkla)" maxlength="800"></textarea>
+                    <p class="bolditalic" style="font-size: 0.7em;"><span id="charlocationInput">0</span>/800 önerilen asgari karakter sayısı.</p>
+                </div>
+                <br>
+                <div id="targetInfo">
+                    <textarea type="text" id="tagetInput" placeholder="Hedefler (Kişi, ilgi nesnesi, amaç/hedef)" maxlength="800"></textarea>
+                    <p class="bolditalic" style="font-size: 0.7em;"><span id="chartagetInput">0</span>/800 <em class="PTAG text-dark"></em> önerilen asgari karakter sayısı.</p>
+                </div>
+                <br>
+                <div id="crewInfo">
+                    <textarea type="text" id="crewInput" placeholder="Ekip (Mevcut ekip, uzmanlıklar veya beceriler)" maxlength="800"></textarea>
+                    <p class="bolditalic" style="font-size: 0.7em;"><span id="charcrewInput">0</span>/800 önerilen asgari karakter sayısı.</p>
+                </div>
+                <br>
+                <div id="eqInfo">
+                    <textarea type="text" id="eqInput" placeholder="Kullanmayı planladığın ekipman (ateşli silahlar, araçlar, mevcut sermaye)" maxlength="800"></textarea>
+                    <p class="bolditalic" style="font-size: 0.7em;"><span id="chareqInput">0</span>/800 önerilen asgari karakter sayısı.</p>
+                </div>
+            </div>
+
+            <div id="disclosure">
+                <p>
+                    Herhangi bir alan gereksinimlerimizi karşılamaya yetecek kadar bilgi içermiyorsa <span class="bold">(200 DOSCoin)</span> ek işlem ücreti alınır.
+                </p>
+                <br>
+                <p>
+                    Bir gönderinin işlenmesi en fazla <span class="bolditalic">üç iş gününü</span> aşarsa devam etmek için <span class="bolditalic">200 DOSCoin ek ödeme</span> gerekir. Bu ücret sonraki 2 iş gününü kapsar. Daha fazla ek süre gerektiren tekliflerden <em class="PTAG text-dark"></em>  <span class="bolditalic">ilk 200 DOSCoin'lik uzatmanın ardından ek iş günü başına 125 DOSCoin</span> alınır.
+                </p>
+                <br>
+                <p>
+                    Gönderilen teklifler için <a class="CFTAG">para iadesi</a> yoktur.
+                </p>
+                <br>
+                <p>
+                    Bir teklif, gönderildikten sonra en fazla 24 saat içinde değiştirilebilir. Bu 24 saatlik <em class="PTAG text-dark"></em> süre içinde değişiklikler işlem onayında verilen iletişim e-postasına gönderilmelidir. 24 saatlik süre dolmuşsa ek işlem ücreti alınır: <span class="bold">(200 DOSCoin)</span>.
+                </p>
+                <br>
+                <p>
+                    Oluşan ek ücretlerin ödenmemesi, teklifinin ekibimiz tarafından iptal edilmesine neden olur. İptal edilen müşteriler o ana kadar yaptığımız çalışmalar hakkında hiçbir bilgi alamaz ve gelecekte hizmetlerimizi kullanmaktan menedilir.
+                </p>
+            </div>
+            
+            <div id="infoForm">
+                <input type="text" placeholder="Tercih edilen iletişim e-posta adresini gir">
+                <em class="PTAG text-dark" style="font-size: 0.7em; position: absolute; left: 230px; margin-top: 55px; font-family: NotoSans-Light;"></em>
+                <br>
+                <input type="text" placeholder="Bağlı cüzdan adresini gir">
+            </div>
+
+            <div id="conditions" class="bold">
+                <p>
+                    Bu teklifin işlenmesi için 550 DOSCoin alınmasını kabul ediyorum. Teklifi elimden geldiğince gözden geçirdim ve World Wide Workers'ın istediği ayrıntı düzeyini karşıladığına inanıyorum.
+                </p>
+                <br>
+                <p>
+                    Karşılaşabileceğim tüm ek ücretler ve para iadesi <a class="CPTAG">politikası</a>.
+                </p>
+                <br>
+                <p>
+                    <a class = "CFTAG">Gönder</a> düğmesine tıklayarak yukarıdaki tüm beyanları ve bu sitede sunulan geçerli şartları kabul etmiş oluyorum.
+                </p>
+            </div>
+            <br>
+            <span id="paymentFailedText" class="bold" style="color:#861313; display: block; text-align: center; font-size: 1.2em;">ÖDEME BAŞARISIZ</span>
+            <a onClick="submitPayment()" id="submitFormBtn">GÖNDER</a>
+            <br><br>
+            <em class="PTAG text-dark" style="position: absolute; top: 5px; left: 5px; color: #0c400c; font-size: 0.6em;"></em>
+        </main>
+    </div>
+    <script>
+        document.getElementById("submitForm").addEventListener("input", characterCounter)
+
+        function characterCounter() {
+            let text = document.getElementById(event.target.id).value;
+            let counter = "char" + event.target.id;
+            console.log(counter)
+            document.getElementById(counter).innerHTML = text.length;
+        }
+    </script>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH İŞARETLERİ</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · görünür hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · doğru tıklama</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · sahte tıklama</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · ortak aday</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

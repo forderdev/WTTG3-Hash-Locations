@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<base href="../../../WTTGSD/Content/RawFiles/WebSites/drugtickets/">
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <title>Drug Tickets</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+</head>
+<body>
+    <header>
+        <img src="img/rXClipboard.png" alt="Logo">
+        <h1>Drug Tickets</h1>
+    </header>
+
+    <main>
+        <p>
+            Uyuşturucu ihtiyacın için iyi bir tedarikçinin peşinde koşmaktan bıktın mı? Stoklarını daha düzenli <a class="CFTAG">yenilemek</a> mi istiyorsun? Ya da güçlükle kazandığın paranın gerçekten istediğin şeye gittiğinden emin olmaya ne dersin?
+        </p><br>
+        <p>
+            Yukarıdakilerden herhangi birine evet dediysen <a class="CPTAG">aracıyı</a> <em class="PTAG text-dark"></em> ortadan kaldır ve ilaçlarını almak için doğrudan eczaneye git. İhtiyacın olan miktarı, kullanım sıklığına uygun aralıklarla al.
+        </p><br>
+        <p>
+            Daha fazlasını mı istiyorsun? Fazladan sipariş verip başkalarıyla paylaşabilir ya da <a class="CFTAG">kendin satıp</a> paranı hızla geri kazanabilirsin.
+        </p><br>
+        <p id="notice">
+            Yalnızca uyuşturucu mu sipariş edeceksin? ACRS'deki #VelvetRoad kanalından satıcılara ulaş. 7/24 erişim.
+        </p>
+        <h3>ABD <a class="CFTAG">eyaletlerine göre mevcut reçete koçanları</a></h3>
+        
+        <em class="PTAG text-dark" style="position: absolute; margin-left: 280px; margin-top: 107px; color: rgb(198, 198, 8)"></em>
+        <img id="themap" src="img/map.png" alt="harita">
+
+        <small>
+            Uyarı: Kontrollü maddeler bazı eyaletlerde daha katı yasalara tabidir. Bu yüzden siparişin gönderildiği eyalette yaşamıyorsan ve koçanı orada kullanmayı düşünüyorsan dikkatli ol.
+        </small>
+        <small>
+            Reçeteler yalnızca ABD ve ABD topraklarında geçerlidir (Porto <a class="CPTAG">Riko</a>, ABD Virjin Adaları, Amerikan Samoası, Guam, Kuzey Mariana Adaları)<em class="PTAG text-dark"></em>
+        </small>
+        <div class="pads">
+            <img src="img/pillBottle.png" alt="İlaç Şişesi">
+            <h4>Missouri</h4>
+            <small>(toplam 48 reçete koçanı mevcut)</small><br>
+            <div class="order">
+                <span>-Satılık 29 reçete koçanı | Her birinde 40 reçete sayfası | Koçan başına 84 DOSCoin</span><br>
+                <label for="numberSize">Adet:</label>
+                <input type="number" min="1" max="29" name="quantity" id="numberSize" oninput="(!validity.rangeOverflow||(value=29)) && (!validity.rangeUnderflow||(value=1)) &&
+                (!validity.stepMismatch||(value=parseInt(this.value)));" placeholder="# -----">
+                <hr>
+                <a onClick="if(document.getElementById('numberSize').value != 0) LinkClick('checkout.html')" class="active"></a><br>
+                <span>-Satılık 19 reçete koçanı | Her birinde 40 reçete sayfası | Koçan başına 77 DOSCoin</span><br>
+                <label for="numberSize1">Adet:</label>
+                <input type="number" min="1" max="19" name="quantity" id="numberSize1" oninput="(!validity.rangeOverflow||(value=19)) && (!validity.rangeUnderflow||(value=1)) &&
+                (!validity.stepMismatch||(value=parseInt(this.value)));" placeholder="# -----">
+                <hr>
+                <a onClick="if(document.getElementById('numberSize1').value != 0) LinkClick('checkout.html')" class="active"></a><br>
+            </div>
+        </div>
+
+        <div class="pads">
+            <img src="img/pillBottle.png" alt="İlaç Şişesi">
+            <h4>Wyoming</h4>
+            <small>(toplam 108 reçete koçanı mevcut)</small><br>
+            <div class="order">
+                <span>-Satılık 35 reçete koçanı | Her birinde 40 reçete sayfası | Koçan başına 44 DOSCoin</span><br>
+                <label for="numberSize2">Adet:</label>
+                <input type="number" min="1" max="35" name="quantity" id="numberSize2" oninput="(!validity.rangeOverflow||(value=35)) && (!validity.rangeUnderflow||(value=1)) &&
+                (!validity.stepMismatch||(value=parseInt(this.value)));" placeholder="# -----">
+                <hr>
+                <a onClick="if(document.getElementById('numberSize2').value != 0) LinkClick('checkout.html')" class="active"></a><br>
+                <span>-Satılık 52 reçete koçanı | Her birinde 40 reçete sayfası | Koçan başına 43 DOSCoin</span><br>
+                <label for="numberSize3">Adet:</label>
+                <input type="number" min="1" max="52" name="quantity" id="numberSize3" oninput="(!validity.rangeOverflow||(value=52)) && (!validity.rangeUnderflow||(value=1)) &&
+                (!validity.stepMismatch||(value=parseInt(this.value)));" placeholder="# -----">
+                <hr>
+                <a onClick="if(document.getElementById('numberSize3').value != 0) LinkClick('checkout.html')" class="active"></a><br>
+                <span>-Satılık 21 reçete koçanı | Her birinde 40 reçete sayfası | Koçan başına 37 DOSCoin</span><br>
+                <label for="numberSize4">Adet:</label>
+                <input type="number" min="1" max="21" name="quantity" id="numberSize4" oninput="(!validity.rangeOverflow||(value=21)) && (!validity.rangeUnderflow||(value=1)) &&
+                (!validity.stepMismatch||(value=parseInt(this.value)));" placeholder="# -----">
+                <hr>
+                <a onClick="if(document.getElementById('numberSize4').value != 0) LinkClick('checkout.html')" class="active"></a><br>
+            </div>
+        </div>
+        <div class="pads">
+            <img src="img/pillBottle.png" alt="İlaç Şişesi">
+            <h4>Georgia</h4>
+            <small>(toplam mevcut reçete koçanı: <a class="CPTAG">mevcut</a> 22)</small><br>
+            <div class="order">
+                <span>-Satılık 16 reçete koçanı | Her birinde 50 reçete sayfası | Koçan başına 91 DOSCoin</span><br>
+                <label for="numberSize5">Adet:</label>
+                <input type="number" min="1" max="16" name="quantity" id="numberSize5" oninput="(!validity.rangeOverflow||(value=16)) && (!validity.rangeUnderflow||(value=1)) &&
+                (!validity.stepMismatch||(value=parseInt(this.value)));" placeholder="# -----">
+                <hr>
+                <a onClick="if(document.getElementById('numberSize5').value != 0) LinkClick('checkout.html')" class="active"></a><br>
+                <span>-Satılık 6 reçete koçanı | Her birinde 50 reçete sayfası | Koçan başına 100 DOSCoin</span><br>
+                <label for="numberSize6">Adet:</label>
+                <input type="number" min="1" max="6" name="quantity" id="numberSize6" oninput="(!validity.rangeOverflow||(value=6)) && (!validity.rangeUnderflow||(value=1)) &&
+                (!validity.stepMismatch||(value=parseInt(this.value)));" placeholder="# -----">
+                <hr>
+                <a onClick="if(document.getElementById('numberSize6').value != 0) LinkClick('checkout.html')" class="active"></a><br>
+            </div>
+        </div>
+
+        <div class="pads">
+            <img src="img/pillBottle.png" alt="İlaç Şişesi">
+            <h4>Batı Virginia</h4>
+            <small>(toplam 94 reçete koçanı mevcut)</small><br>
+            <div class="order">
+                <span>-Satılık 94 reçete koçanı | Her birinde 30 reçete sayfası | Koçan başına 56 DOSCoin</span><br>
+                <label for="numberSize7">Adet:</label>
+                <input type="number" min="1" max="94" name="quantity" id="numberSize7" oninput="(!validity.rangeOverflow||(value=94)) && (!validity.rangeUnderflow||(value=1)) &&
+                (!validity.stepMismatch||(value=parseInt(this.value)));" placeholder="# -----">
+                <hr>
+                <a onClick="if(document.getElementById('numberSize7').value != 0) LinkClick('checkout.html')" class="active"></a><br><em class="PTAG text-dark" style="font-size: 0.8em; margin-top: -10px; position: absolute;"></em>
+            </div>
+        </div><br><br><br>
+    </main>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH İŞARETLERİ</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · görünür hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · doğru tıklama</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · sahte tıklama</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · ortak aday</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

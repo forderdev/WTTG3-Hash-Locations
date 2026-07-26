@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="../../../WTTGSD/Content/RawFiles/WebSites/redhanded/">
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedHanded</title>
+
+    <link rel="stylesheet" href="../Global/reset.css">
+    <script src="../Global/Basic.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="banner">
+        <em id="PTAG-in-banner" class="PTAG vertical absolute inbanner"></em>
+        <h1 class="logo-title">
+        RED
+        <img class="logo" src="img/KeyHoleLogo.png" alt="Anahtar Deliği Logosu">
+        HANDED
+    </h1>
+        <small class="motto">
+            1993'ten beri özgün <a class="CPTAG">cinayet</a> meraklıları forumu
+        </small>
+    </div>
+
+    <div id="index-main">
+
+        <div class="login-div">
+            <button class="login-btn" onClick="LinkClick('login.html')">
+                <span>GİRİŞ</span>
+                <br>
+                <span>tam erişim için</span>
+            </button>
+         </div>
+
+        <table class="posts">
+            <!-- Header -->
+             <thead>
+                <tr class="posts-header">
+                    <th>Gönderi</th>
+                    <th>Yanıtlar</th>
+                    <th>Saat</th>
+                    <th>Gönderen</th>
+                </tr>
+            </thead>
+            <!-- Content -->
+             <!-- Post 1 -->
+              <tbody>
+                <tr>
+                    <td>
+                        <a class="hoverable" onClick="LinkClick('post1.html')">Artıkları halka yedirmenin bir yolunu bulan oldu mu?</a>
+                    </td>
+                    <td>8</td>
+                    <td>18:37</td>
+                    <td>
+                        86994957<br>
+                        <em id="PTAG-table" class="PTAG"></em>
+                    </td>
+                </tr>
+                <!-- Post 2 -->
+                <tr>
+                    <td>
+                        <a class="hoverable" onClick="LinkClick('post2.html')">Dün 4.'yü indirdim</a>
+                    </td>
+                    <td>6</td>
+                    <td>18:54</td>
+                    <td>SammySamSam</td>
+                </tr>
+                <!-- Post 3 -->
+                <tr class="crossed">
+                    <td>
+                        Şu <a class="CFTAG">adamın</a> gözünü çit kazığıyla oydurttuğu polis dizisini hatırlayan var mı?
+                    </td>
+                    <td>0</td>
+                    <td>8:28</td>
+                    <td>LadyBlood91</td>
+                </tr>
+                <!-- Post 4 -->
+                <tr>
+                    <td>
+                        <a class="hoverable" onClick="LinkClick('post4.html')">İlk av!!!! Acayip iyi hissettiriyor</a>
+                    </td>
+                    <td>7</td>
+                    <td>17:24</td>
+                    <td><a class = "CFTAG">Meat70RP3D0</a></td>
+                </tr>
+                <!-- Post 5 -->
+                <tr class="crossed">
+                    <td>
+                        Domicile Depot'ta el testereleri yine indirime girmiş <br> <br>
+                    </td>
+                    <td>0</td>
+                    <td>16:07</td>
+                    <td>91288140</td>
+                </tr>
+                <!-- Post 6 -->
+                <tr>
+                    <td>
+                        <a class="hoverable" onClick="LinkClick('post6.html')">Onları sessiz tutmanın en sağlam, denenmiş yöntemi ne?</a>
+                    </td>
+                    <td>5</td>
+                    <td>11:16</td>
+                    <td>97775845</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="pageinator">
+            <img class="page-control" src="img/TriangleInactive.png" alt="Sol Üçgen">
+            <span class="page-text">Sayfa <a class="CPTAG">1</a> / 815</span>
+            <a class="page-control" onClick="LinkClick('login.html')"><img class="page-control" src="img/Triangle.png" alt="Sağ Üçgen"></a>
+        </div>
+        <em id="PTAG-down" class="PTAG"></em>
+    </div>
+    
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH İŞARETLERİ</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · görünür hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · doğru tıklama</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · sahte tıklama</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · ortak aday</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

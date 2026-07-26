@@ -1,0 +1,372 @@
+<base href="../../../WTTGSD/Content/RawFiles/WebSites/crisiscalls/">
+
+<style id="hash-guide-style">
+  :root {
+    --guide-direct: #2ec4b6;
+    --guide-click: #f4b942;
+    --guide-decoy: #ef665f;
+    --guide-mixed: #b897e8;
+  }
+  .hash-guide-target {
+    position: relative !important;
+    outline: 3px solid var(--guide-color) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.85), 0 0 18px color-mix(in srgb, var(--guide-color) 55%, transparent) !important;
+  }
+  .hash-guide-target::after {
+    content: attr(data-hash-guide);
+    position: absolute !important;
+    z-index: 2147483646 !important;
+    top: -22px !important;
+    left: -3px !important;
+    min-width: 20px !important;
+    padding: 3px 6px !important;
+    border: 1px solid rgba(0,0,0,.7) !important;
+    border-radius: 3px !important;
+    background: var(--guide-color) !important;
+    color: #101214 !important;
+    font: 700 11px/1.1 Consolas, monospace !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+  .hash-guide-direct { --guide-color: var(--guide-direct); }
+  .hash-guide-click { --guide-color: var(--guide-click); }
+  .hash-guide-decoy { --guide-color: var(--guide-decoy); }
+  .hash-guide-mixed { --guide-color: var(--guide-mixed); }
+  em.hash-guide-target:empty,
+  a.hash-guide-target:empty,
+  span.hash-guide-target:empty {
+    display: inline-block !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 16px !important;
+    min-height: 16px !important;
+    vertical-align: middle !important;
+    background: color-mix(in srgb, var(--guide-color) 22%, transparent) !important;
+  }
+  #hash-guide-legend {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 6px !important;
+    background: rgba(14,16,18,.92) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45) !important;
+    color: #f1eee6 !important;
+    font: 600 11px/1.35 Consolas, monospace !important;
+    pointer-events: none !important;
+  }
+  #hash-guide-legend b { color: #fff !important; font: inherit !important; }
+  #hash-guide-legend span { display: inline-flex !important; align-items: center !important; gap: 7px !important; }
+  #hash-guide-legend i { display: inline-block !important; width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--dot) !important; }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="../Global/Basic.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="../Global/reset.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Crisis Calls</title>
+    
+<body class="crisis-calls-main">
+
+    <div class="banner-wrapper">
+        <div class="banner-crop">
+            <img src="img/Header.png" class="banner-img"/>
+        </div>
+        <div class="banner-text">CRISIS<br>CALLS</div>
+    </div>
+    <div class="interested-section">
+        <span class="interested-text">İlgini çekti mi?</span>
+        <a onclick="LinkClick('account.html')" class="active">
+            <button class="interested-button no-disable">GİRİŞ YAP | KAYDOL</button>
+        </a>
+    </div>
+    
+    <div class="content-inner">
+        <p>
+            ABD'de her dakika birden fazla suç işleniyor. Şiddet içeren, içermeyen, mala karşı... İnsanların olduğu yerde suç vardır. Bunu bildiğine göre gelecekte daha fazla suç işleneceğine bahse girerdin, değil mi? Paranızı masaya koyup belirli bir gecede TAM OLARAK hangi suçların işleneceğine oynamaya ne dersin?
+        </p>
+        <br>
+        <p>
+            Crisis Calls ABD'nin dört bir yanını dolaşır, yerel polis frekanslarına bağlanır <a class = "CFTAG">ve</a> tüm yayınları yeniden aktarır. Her ayın son cuma günü bahis kapılarımız hafta sonu için açılır. Oyuncular, bu sitede yeniden yayın başladıktan sonra sınırlı bir süre boyunca kombine bahis yapabilir.
+        </p>
+        <br>
+        <p>
+            Gönderilen her bahis <em class="PTAG text-dark" style="color: lightblue;"></em> yalnızca o gece için geçerlidir. Yeniden yayın etkinken gece için bir geri sayım gösterilir. Bu sitedeki her kullanıcı yayını dinleyebilir ya da yapay zekâ yazılımımızın kapalı altyazılarını görüntüleyebilir.
+        </p>
+        <br>
+        <p>
+            Zamanla dikkat edenler yayının kaynak konumunu belirleyebilir. Bu yüzden bahis oynayanların kuponlarını tutturmak için harekete geçmesiyle hafta sonunun ilerleyen gecelerinde daha fazla suç bekleyin.
+        </p>
+    </div>
+
+    <div class="betting-window-info">
+        Sonraki bahis <a class="CPTAG">aralığı</a> 19 gün sonra açılıyor
+    </div>
+    
+    <div class="rebroadcast-section">
+        YENİDEN YAYIN<br>DURDURULDU
+    </div>
+    
+    <div class="closed-captions-container">
+        <button id="toggle-captions" class="toggle-button no-disable">+ Kapalı Altyazılar</button>
+        <div id="captions-content" class="captions-content">
+            <p>Yayın alınamadı. Yeniden yayın durduruldu.</p>
+        </div>
+    </div>
+    
+    <div class="main-wrapper">
+        <div class="interested-section" style="margin-bottom: 40px;">
+            <span class="interested-text">Bahis oynamak <a class="CPTAG">ister misin?</a></span>
+            <a onclick="LinkClick('account.html')" class="active">
+                <button class="interested-button no-disable">GİRİŞ YAP | KAYDOL</button>
+            </a>
+        </div>
+        <div class="selection-text">
+            <p>Seçim yap</p>
+            <p style="font-size: 15px; font-family: 'Merriweather-Italic'">Bahsin gönderilebilmesi için toplam çarpan EN AZ x5 <em class="PTAG text-dark" style="color: lightblue;"></em> olmalıdır.</p>
+            <p style="font-size: 15px; font-family: 'Merriweather-Italic'">Yapılan tüm seçimler bahis gecesinde gerçekleşmelidir.
+        </div>
+    </div>
+
+    <div class="betting-container">
+        <br />
+        <div id="container">
+            <div id="categoryNonViolent">
+                <img class="multiplier-image" src="img/+x0.2.png">
+              <div id="nonViolent">
+                  <button type="button" class="btn" id="opt1" value="Felony Drug Possession">Ağır Uyuşturucu Bulundurma Suçu</button>
+                  <button type="button" class="btn" id="opt2" value="Prostitution">Fuhuş</button>
+                  <button type="button" class="btn" id="opt3" value="DWI/DUI">Alkollü/Uyuşturucu Etkisinde Araç Kullanma</button>
+                </div>
+              </div>
+            <br>
+            <div id="categoryProperty">
+                <img class="multiplier-image" src="img/+x0.5.png">
+              <div id="property">
+                  <button type="button" class="btn" id="opt4" value="Burglary">Haneye Tecavüz</button>
+                  <button type="button" class="btn" id="opt5" value="Grand Larceny-theft">Nitelikli Hırsızlık</button>
+                  <button type="button" class="btn" id="opt6" value="Motor Vehicle Theft">Motorlu Taşıt Hırsızlığı</button>
+                  <button type="button" class="btn" id="opt7" value="Destruction/Damage/Vandalism of Property">Mala Zarar Verme/Tahrip/Vandalizm</button>
+                  <button type="button" class="btn" id="opt8" value="Arson">Kundaklama</button>
+                </div>
+              </div>
+            <br>
+            <div id="categoryLessViolent">
+                <img class="multiplier-image" src="img/+x0.75.png">
+              <div id="lessViolent">
+                  <button type="button" class="btn" id="opt9" value="Domestic Dispute/Situation">Aile İçi Kavga/Olay</button>
+                  <button type="button" class="btn" id="opt10" value="Attempted Suicide/Suicide">İntihar Girişimi/İntihar</button>
+                  <button type="button" class="btn" id="opt11" value="Evading Police">Polisten Kaçma</button>
+                  <button type="button" class="btn" id="opt12" value="Person with a Gun">Silahlı Şahıs</button>
+                </div>
+              </div>
+            <br>
+            <div id="categoryMoreViolent">
+                <img class="multiplier-image" src="img/+x0.95.png">
+              <div id="commonViolent">
+                  <button type="button" class="btn" id="opt13" value="Aggravated Assault">Nitelikli Saldırı</button>
+                  <button type="button" class="btn" id="opt14" value="Robbery">Soygun</button>
+                  <button type="button" class="btn" id="opt15" value="Shooting/Shots Fired">Silahlı Saldırı/Ateş Açılması</button>
+                  <button type="button" class="btn" id="opt16" value="Assault with a Deadly Weapon">Öldürücü Silahla Saldırı</button>
+                  <button type="button" class="btn" id="opt17" value="Vehicle Hit & Run">Araçla Vurup Kaçma</button>
+                  <button type="button" class="btn" id="opt18" value="Aggravated Sexual Assault">Nitelikli Cinsel Saldırı</button>
+                </div>
+            <br>
+                <img class="multiplier-image-2" src="img/+x2.png">
+              <div id="rareViolent">
+                  <button type="button" class="btn" id="opt19" value="Homicide">Cinayet</button>
+                  <button type="button" class="btn" id="opt20" value="Kidnapping/Abduction">Adam Kaçırma</button>
+                </div>
+              </div>
+        </div>
+        
+        <br>
+        <button id="clearBet" class="reset-bet-button no-disable" onclick="resetBet()">
+            <img src="img/ResetBetButton.png" alt="Bahsi Sıfırla">
+        </button>
+        <br>
+        <br>
+        
+        <div class="parlay-container">
+            <div class="parlay-section section-1">
+                <h2> Kombine Bahsin <a class = "CFTAG">Bahis</a></h2>
+                <p style="font-family: 'Merriweather-Regular'; font-size: 15px;"> (<img class="dos-coin-image" src="img/DOSCoinSymbol.png">en az 25 / <img class="dos-coin-image" src="img/DOSCoinSymbol.png">en fazla 400 <em class="PTAG text-dark" style="color: lightblue;"></em>) </p>
+            </div>
+
+            <div class="parlay-section section-2">
+                <ul id="betsChosen">
+                </ul>
+            </div>
+
+            <div class="parlay-section section-3">
+                <label for="placeBet"> Bahis tutarı</label>
+                <input disabled autocomplete="off" type="number" min="0" max="400" name="wagered" id="betInput" oninput="(!validity.rangeOverflow||(value=400)) && (!validity.rangeUnderflow||(value=0)) && (!validity.stepMismatch||(value=parseInt(this.value)));">
+                <label id="betMultiplier" for="multiplier"></label>
+            </div>
+            
+            <div class="parlay-section section-4">
+                <label>Olası Toplam Kazanç:
+                    <label id="potentialWin"></label>
+                </label>
+            </div>
+        </div>
+        
+        <div class="submit-row">
+            <img src="img/SubmitBetButton.png" id="sendWager" onclick="verifyWager()" alt="Bahsi Gönder">
+            <label id="verifyStatus"></label>
+        </div>
+
+        
+        <div class="bonus-section">
+            <a class="CPTAG"><img src="img/BONUS-WHEEL-SPIN.png" alt="Bonus Çark Dönüşü" class="bonus-image"></a>
+            <p class="bonus-description">
+                Çark yalnızca bir kez ve bahis gönderildikten sonra döndürülebilir.<br>
+                Çark, kombine bahis kuponuna rastgele bir suç ve şu olasılığı ekler:
+            </p>
+            <img src="img/x5MEGA-MULTIPLIER.png" alt="x5 Mega Çarpan" class="bonus-image" style="margin-bottom: -5px;">
+        </div>
+        
+        <div id="theWheel">
+            <div id="preview-Wheel">
+
+            </div>
+
+            <div class="wheel-image-wrapper">
+                <label id="wheelButtonPreview" onclick="spinPreview()">Deneme Dönüşü</label>
+                
+                <div class="wheel-visual">
+                    <img src="img/staticWheel.png" id="wheel-image" alt="Bonus Çark">
+                    <img src="img/WheelTrim.png" id="wheel-trim" alt="Çark Çerçevesi Katmanı">
+                </div>
+            </div>
+
+
+        </div>
+        
+        <div class="real-spin-section">
+            <img src="img/RealWheelSpinButton.png" alt="Gerçek Çark Döndürme Düğmesi" class="real-spin-image">
+            <p class="real-spin-caption">(yalnızca bahis gönderildikten sonra etkinleşir)</p>
+        </div>
+        
+        <div id="bonusWheel">
+            <h2>Deneme Dönüşü Sonucu (bahse uygulanmaz):</h2>
+            <h3 id="wheelResult"></h3>
+            <label id="wheelPotential"></label>
+            <label id="bonusPotential"></label>
+        </div>
+        
+    </div>
+    
+    <div class="margin-for-info">
+    </div>
+
+    <div class="how-to-play-section">
+        <div class="how-to-play-content">
+            <h2 class="how-to-title">Nasıl oynanır?</h2>
+            <div class="how-to-text">
+                <p>
+                    Oyuncular, x5 çarpanına ulaşana kadar yukarıdaki kategorilerden suç seçmelidir. Seçimlere bağlı olarak 4 suçluk ya da 11 suçluk bir kombine bahis yapılabilir.
+                </p>
+                <p>
+                    Seçimler yapıldıktan sonra bahis tutarı girilmelidir. Güncel alt sınır 25 DOSCoin, üst sınır ise <a class = "CFTAG">400</a> DOSCoin'dir. Bu üst sınırın artmasını istiyorsan bahis oynamaya devam et.
+                </p>
+                <p>
+                    Yayınlar yeniden aktarılmaya başladığında Bahsi Gönder düğmesi etkinleşir. Düğme 1 saat boyunca etkin kalır; ardından bahis kapıları gecenin geri kalanı için kapanır. Aynı program hafta sonunun her gecesinde (cuma, cumartesi ve pazar) uygulanır.
+                </p>
+            </div>
+        </div>
+        <img src="img/radioBulletPoint.png" alt="Simge" class="how-to-icon">
+    </div>
+    <br><br>
+    <div class="how-to-play-section">
+        <div class="how-to-play-content">
+            <h2 class="how-to-title"><a class="CPTAG">SSS</a></h2>
+            <div class="how-to-text">
+                <p>- Bir bahsin geçerli olması için telsizde on kodu, açık ifade ya da kısaltma söylenebilir (ör. 10-16, Aile İçi Kavga, ADW [Öldürücü Silahla Saldırı]). <br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- Bu kural duruma göre uygulanır. Sistemimizden memnun değilsen düzenlemeye tabi bir kumarhaneye git.</p>
+
+                <p>- Telsizden bildirilen tüm suçlar doğrulanmalıdır. Başka bir deyişle, çağrıya yanıt verenler suçu onaylamalı ve seçimin geçerli olması için ilgili standart prosedürü uygulamalıdır.</p>
+
+                <p>- Tüm yayınları kaydetmek için akış birden fazla kişi ve otomatik kapalı altyazı üreten üç yapay zekâ yazılımı tarafından izlenir.</p>
+
+                <p>- Kazançlar, bahis kapandıktan 72 saat sonra <em class="PTAG text-dark" style="color: lightblue;"></em> bahiste kullanılan cüzdan adresine gönderilir.</p>
+
+                <p>- Bir frekans yetkisiz bir kişinin yayınlarıyla ihlal edilirse bu yayınlar bahislere SAYILMAZ.</p>
+
+                <p>- Birden fazla yayın aktarıldıktan sonra konumun eninde sonunda bulunacağının farkındayız. Bu nedenle ziyaret edilen her konum rastgele seçilir ve yalnızca sınırlı süre kullanılır.</p>
+
+                <p>- Kombine kuponuna rastgele eklenen suçu zaten seçtiysen o suçun İKİ KEZ gerçekleşmesi gerekir.</p>
+            </div>
+        </div>
+        <img src="img/radioBulletPoint.png" alt="Simge" class="how-to-icon">
+    </div>
+    
+    <div class="background-wrapper">
+        <div class="background-image-wrapper" id="bg-1">
+            <img src="img/cherryNberry2.gif" class="background-image" />
+        </div>
+        <div class="background-image-wrapper" id="bg-2">
+            <img src="img/textBackground.png" class="background-image" />
+        </div>
+        <div class="background-image-wrapper" id="bg-line">
+            <img src="img/lineBreak.png" class="background-image" />
+        </div>
+    </div>
+    <script type="text/javascript" src="goBet.js">
+    </script>
+
+<script id="hash-guide-script">
+(() => {
+  const mark = (element, type, label) => {
+    element.classList.add("hash-guide-target", "hash-guide-" + type);
+    element.dataset.hashGuide = label;
+  };
+
+  let direct = 0;
+  let click = 0;
+  let decoy = 0;
+  let mixed = 0;
+
+  document.querySelectorAll(".PTAG").forEach((element) => {
+    direct += 1;
+    mark(element, "direct", "P" + direct);
+  });
+
+  document.querySelectorAll(".CPTAG, .CFTAG").forEach((element) => {
+    if (element.classList.contains("CPTAG") && element.classList.contains("CFTAG")) {
+      mixed += 1;
+      mark(element, "mixed", "C/F" + mixed);
+    } else if (element.classList.contains("CPTAG")) {
+      click += 1;
+      mark(element, "click", "C" + click);
+    } else {
+      decoy += 1;
+      mark(element, "decoy", "F" + decoy);
+    }
+  });
+
+  const legend = document.createElement("aside");
+  legend.id = "hash-guide-legend";
+  legend.innerHTML =
+    "<b>HASH İŞARETLERİ</b>" +
+    "<span><i style='--dot:var(--guide-direct)'></i>P · görünür hash</span>" +
+    "<span><i style='--dot:var(--guide-click)'></i>C · doğru tıklama</span>" +
+    "<span><i style='--dot:var(--guide-decoy)'></i>F · sahte tıklama</span>" +
+    (mixed ? "<span><i style='--dot:var(--guide-mixed)'></i>C/F · ortak aday</span>" : "");
+  document.body.appendChild(legend);
+})();
+</script>
+</body>
+</html>

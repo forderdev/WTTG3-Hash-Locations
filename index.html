@@ -9,9 +9,11 @@
       content="hash bulma"
     />
     <title>WTTG III | Hash Bulma</title>
+    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css" />
     <script src="data.js" defer></script>
     <script src="data-en.js" defer></script>
+    <script src="key-organizer-core.js" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -35,9 +37,18 @@
           <button type="button" data-language="tr" aria-pressed="true">TR</button>
           <button type="button" data-language="en" aria-pressed="false">EN</button>
         </div>
-        <a class="masthead__link" href="#atlas-title" data-i18n="archiveLink">
-          Arşive git
-        </a>
+        <nav class="masthead__links" aria-label="Sayfa bölümleri" data-i18n-aria-label="sectionNav">
+          <a
+            class="masthead__link"
+            href="#key-organizer-title"
+            data-i18n="keyOrganizerLink"
+          >
+            Anahtar düzenleyici
+          </a>
+          <a class="masthead__link" href="#atlas-title" data-i18n="archiveLink">
+            Arşive git
+          </a>
+        </nav>
       </div>
     </header>
 
@@ -109,6 +120,105 @@
         </div>
         <p class="legend-note">
         </p>
+      </section>
+
+      <section
+        id="key-organizer"
+        class="key-organizer"
+        aria-labelledby="key-organizer-title"
+      >
+        <div class="key-organizer__head" data-reveal>
+          <div>
+            <h2 id="key-organizer-title" data-i18n="keyOrganizerTitle">
+              Anahtar düzenleyici
+            </h2>
+            <p data-i18n="keyOrganizerDescription">
+              Bulduğun hashleri ve ajanlardan gelen çözülmüş parçaları indeks
+              sırasına yerleştir.
+            </p>
+          </div>
+          <div class="key-progress" aria-live="polite">
+            <span>
+              <small data-i18n="keyFoundProgress">Bulunan</small>
+              <strong id="key-found-count">0 / 8</strong>
+            </span>
+            <span>
+              <small data-i18n="keyDecryptedProgress">Çözülen</small>
+              <strong id="key-decrypted-count">0 / 8</strong>
+            </span>
+            <span>
+              <small data-i18n="keyWikiProgress">Wiki 1 / 2 / 3</small>
+              <strong id="key-wiki-counts">0 / 0 / 0</strong>
+            </span>
+          </div>
+        </div>
+
+        <div class="key-organizer__shell" data-reveal>
+          <div class="key-capture">
+            <label for="key-bulk-input">
+              <span data-i18n="keyPasteLabel">Hızlı ekle</span>
+              <small data-i18n="keyPasteHint">
+                Bir veya daha fazla indeksli anahtarı yapıştır.
+              </small>
+            </label>
+            <textarea
+              id="key-bulk-input"
+              rows="3"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              placeholder="1 - 2bfc88a4&#10;1 - a9f2"
+              data-i18n-placeholder="keyPastePlaceholder"
+            ></textarea>
+            <div class="key-capture__footer">
+              <button id="key-parse" class="primary-action" type="button">
+                <span data-i18n="keyParseAction">Anahtarları yerleştir</span>
+              </button>
+              <p id="key-parse-feedback" role="status" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div
+            class="key-table"
+            role="group"
+            aria-label="Sekiz anahtar yuvası"
+            data-i18n-aria-label="keyRowsAria"
+          >
+            <div class="key-table__head" aria-hidden="true">
+              <span>#</span>
+              <span data-i18n="keyEncryptedLabel">Bulunan hash</span>
+              <span data-i18n="keyDecryptedLabel">Çözülmüş parça</span>
+              <span data-i18n="keyWikiLabel">Wiki</span>
+              <span data-i18n="keyStatusLabel">Durum</span>
+            </div>
+            <div id="key-rows"></div>
+          </div>
+
+          <div class="master-key">
+            <div class="master-key__copy">
+              <span data-i18n="masterKeyLabel">Master key</span>
+              <small data-i18n="masterKeyHint">
+                Sekiz çözülmüş parça indeks sırasıyla otomatik birleşir.
+              </small>
+            </div>
+            <output id="master-key-output" for="key-rows">
+              ____ ____ ____ ____ ____ ____ ____ ____
+            </output>
+            <div class="master-key__actions">
+              <button id="copy-master-key" class="primary-action" type="button" disabled>
+                <span data-i18n="copyMasterKey">Master key'i kopyala</span>
+              </button>
+              <button id="reset-key-organizer" class="quiet-action" type="button">
+                <span data-i18n="resetKeys">Anahtarları sıfırla</span>
+              </button>
+            </div>
+          </div>
+
+          <p class="key-organizer__note" data-i18n="keyRandomNote">
+            Şifreli ve çözülmüş değerler her oyunda değişir. Kayıtlar yalnızca
+            bu tarayıcıda tutulur.
+          </p>
+        </div>
       </section>
 
       <section class="atlas" aria-labelledby="atlas-title">
@@ -254,6 +364,49 @@
           <span class="marker-badges"></span>
           <span class="page-row__action">Ön izle</span>
         </button>
+      </div>
+    </template>
+
+    <template id="key-row-template">
+      <div class="key-row">
+        <span class="key-row__index"></span>
+        <label class="key-field">
+          <span class="sr-only key-field__label"></span>
+          <span class="key-field__visual-label"></span>
+          <input
+            class="key-field__input key-field__input--encrypted"
+            type="text"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+            maxlength="160"
+            placeholder="2bfc88a4"
+          />
+        </label>
+        <label class="key-field">
+          <span class="sr-only key-field__label"></span>
+          <span class="key-field__visual-label"></span>
+          <input
+            class="key-field__input key-field__input--decrypted"
+            type="text"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+            maxlength="160"
+            placeholder="a9f2"
+          />
+        </label>
+        <label class="key-field key-field--wiki">
+          <span class="sr-only key-field__label"></span>
+          <span class="key-field__visual-label"></span>
+          <select class="key-field__select">
+            <option value="" data-i18n="keyWikiUnknown">Seçilmedi</option>
+            <option value="1">Wiki 1</option>
+            <option value="2">Wiki 2</option>
+            <option value="3">Wiki 3</option>
+          </select>
+        </label>
+        <span class="key-row__status"></span>
       </div>
     </template>
   </body>

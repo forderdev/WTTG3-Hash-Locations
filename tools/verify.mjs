@@ -1,10 +1,13 @@
 import fs from "node:fs";
+import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const toolsDir = path.dirname(fileURLToPath(import.meta.url));
+const require = createRequire(import.meta.url);
 const projectDir = path.resolve(toolsDir, "..");
 const gameDir = path.resolve(projectDir, "..");
+const keyCore = require(path.join(projectDir, "key-organizer-core.js"));
 const errors = [];
 const checkedStylesheets = new Set();
 const datasets = new Map();
@@ -38,17 +41,21 @@ for (const required of [
   "index.html",
   "styles.css",
   "app.js",
+  "key-organizer-core.js",
   "data.js",
   "data-en.js",
   "baslat.bat",
   "README.md",
   "previews",
   "previews-en",
+  "docs/key-organizer-research.md",
 ]) {
   if (!fs.existsSync(path.join(projectDir, required))) {
     errors.push(`Eksik dosya veya klasör: ${required}`);
   }
 }
+
+verifyKeyOrganizer();
 
 for (const config of localeConfigs) {
   const data = readData(config);
@@ -82,6 +89,101 @@ const report = {
 
 console.log(JSON.stringify(report, null, 2));
 if (errors.length) process.exitCode = 1;
+
+function verifyKeyOrganizer() {
+  const single = keyCore.parseIndexedFragments("1 - 2bfc88a4");
+  if (
+    single.entries.length !== 1 ||
+    single.entries[0].index !== 1 ||
+    single.entries[0].encrypted !== "2bfc88a4"
+  ) {
+    errors.push("Organizer indeksli hash'i ayrıştıramadı.");
+  }
+
+  const uppercase = keyCore.parseIndexedFragments("1-2BFC88A4");
+  if (uppercase.entries[0]?.encrypted !== "2bfc88a4") {
+    errors.push("Organizer büyük harfli hash'i normalize edemedi.");
+  }
+
+  const bulk = keyCore.parseIndexedFragments(
+    "3 - b2a23ff2\n1 - 1ef9d5b6\n3 - ff6b\n1 - 36EA",
+  );
+  if (
+    bulk.entries.length !== 2 ||
+    bulk.entries[0].index !== 1 ||
+    bulk.entries[0].decrypted !== "36ea" ||
+    bulk.entries[1].index !== 3 ||
+    bulk.entries[1].decrypted !== "ff6b"
+  ) {
+    errors.push("Organizer toplu girdiyi indeks sırasına yerleştiremedi.");
+  }
+
+  const rejected = keyCore.parseIndexedFragments(
+    "0 - 2bfc88a4\n9 - 2bfc88a4\n1 - 2bfc88a\n2 - 2bfc88a44",
+  );
+  if (rejected.entries.length || rejected.conflicts.length) {
+    errors.push("Organizer geçersiz indeks veya uzunluğu reddetmedi.");
+  }
+
+  const conflict = keyCore.parseIndexedFragments(
+    "1 - 2bfc88a4\n1 - 1ef9d5b6",
+  );
+  if (
+    conflict.conflicts.length !== 1 ||
+    conflict.entries.length !== 0
+  ) {
+    errors.push("Organizer aynı indeks çakışmasını yakalayamadı.");
+  }
+
+  const agentReply = keyCore.parseSingleHex(
+    "Decrypted key: 36EA",
+    keyCore.DECRYPTED_LENGTH,
+  );
+  if (agentReply.status !== "valid" || agentReply.value !== "36ea") {
+    errors.push("Organizer ajan yanıtındaki çözülmüş parçayı okuyamadı.");
+  }
+
+  const state = keyCore.createEmptyState();
+  const encrypted = [
+    "1ef9d5b6",
+    "2f45095a",
+    "b2a23ff2",
+    "ac4742d5",
+    "969a03ed",
+    "5dd6f03c",
+    "bbd6e8c6",
+    "e01fdd64",
+  ];
+  const decrypted = [
+    "36ea",
+    "84be",
+    "ff6b",
+    "7b6b",
+    "286d",
+    "052b",
+    "741f",
+    "f735",
+  ];
+  state.forEach((entry, index) => {
+    entry.encrypted = encrypted[index];
+    entry.decrypted = decrypted[index];
+    entry.wiki = (index % 3) + 1;
+  });
+
+  const expectedMasterKey = "36ea84beff6b7b6b286d052b741ff735";
+  if (keyCore.getMasterKey(state) !== expectedMasterKey) {
+    errors.push("Organizer 32 karakterlik master key'i yanlış oluşturdu.");
+  }
+  const progress = keyCore.getProgress(state);
+  if (progress.found !== 8 || progress.decrypted !== 8) {
+    errors.push("Organizer ilerleme sayacını yanlış hesapladı.");
+  }
+
+  state[7].decrypted = "";
+  if (keyCore.getMasterKey(state) !== "") {
+    errors.push("Organizer eksik çözülmüş parçayla master key üretti.");
+  }
+}
 
 function readData(config) {
   try {

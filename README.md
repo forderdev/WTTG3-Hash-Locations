@@ -10,7 +10,7 @@ Welcome to the Game III için koyu temalı TR/EN ikinci ekran yardımcısı.
 - Tarayıcıda otomatik kaydedilen run notları
 - Düşük, Hash ve Tam spoiler seviyeleri
 - Yalnızca tarayıcıda çalışan, hiçbir dosya yüklemeyen `.sav` okuyucu
-- Save ile doğrulanan `1 - 8hex` girdilerini `1 - 4hex` çıktısına dönüştüren hash çözümleyici
+- Bilinen doğrulanmış run'ları ve yerel save'i kullanarak `1 - 8hex` girdilerini `1 - 4hex` çıktısına dönüştüren hash çözümleyici
 - 8 şifreli hash ve 8 çözülmüş parçadan 32 karakterlik master key oluşturma
 - GitHub Pages ile tamamen statik çalışma
 

@@ -278,6 +278,38 @@ function verifyHelper() {
     errors.push("Hash çözümleyici eşleşmeyen değeri reddetmedi.");
   }
 
+  const screenshotInput = [
+    "1 - 1ef9d5b6",
+    "2 - 2f45095a",
+    "3 - b2a23ff2",
+    "4 - ac4742d5",
+    "5 - 969a03ed",
+    "6 - 5dd6f03c",
+    "7 - bbd6e8c6",
+    "8 - e01fdd64",
+  ].join("\n");
+  const screenshotExpected = [
+    "1 - 36ea",
+    "2 - 84be",
+    "3 - ff6b",
+    "4 - 7b6b",
+    "5 - 286d",
+    "6 - 052b",
+    "7 - 741f",
+    "8 - f735",
+  ].join("\n");
+  const screenshotResolved = helperCore.resolveIndexedHashes(
+    screenshotInput,
+    keyCore,
+    helperData.verifiedKeyPairs ?? [],
+  );
+  if (
+    screenshotResolved.matched !== 8 ||
+    screenshotResolved.lines.join("\n") !== screenshotExpected
+  ) {
+    errors.push("Hash çözümleyici ekran görüntüsündeki doğrulanmış run'ı çözemedi.");
+  }
+
   try {
     saveReader.parseSave(new TextEncoder().encode("not-a-save"));
     errors.push("Save okuyucu geçersiz dosyayı reddetmedi.");

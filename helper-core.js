@@ -60,16 +60,16 @@
       const encrypted = keyCore.normalizeHex(pair.encrypted, keyCore.ENCRYPTED_LENGTH);
       const decrypted = keyCore.normalizeHex(pair.decrypted, keyCore.DECRYPTED_LENGTH);
       if (index >= 1 && index <= keyCore.SLOT_COUNT && encrypted && decrypted) {
-        verified.set(index, { encrypted, decrypted });
+        verified.set(`${index}:${encrypted}`, decrypted);
       }
     }
 
     let matched = 0;
     const lines = encryptedEntries.map((entry) => {
-      const mapping = verified.get(entry.index);
-      if (mapping && mapping.encrypted === entry.encrypted) {
+      const decrypted = verified.get(`${entry.index}:${entry.encrypted}`);
+      if (decrypted) {
         matched += 1;
-        return `${entry.index} - ${mapping.decrypted}`;
+        return `${entry.index} - ${decrypted}`;
       }
       return `${entry.index} - ${missingLabel}`;
     });

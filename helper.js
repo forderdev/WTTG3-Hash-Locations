@@ -73,7 +73,7 @@
       saveMiners: "Aktif miner",
       saveKeys: "Anahtar çifti",
       saveHours: "Kalan saat",
-      resolverEyebrow: "SAVE BACKED",
+      resolverEyebrow: "DOĞRULANMIŞ EŞLEŞMELER",
       resolverTitle: "Hash çözümleyici",
       resolverInputLabel: "Şifreli hashler",
       resolverOutputLabel: "Çözülmüş parçalar",
@@ -81,7 +81,7 @@
       resolverOutputPlaceholder: "1 - 36ea\n2 - 84be",
       resolverAction: "Eşleşenleri çöz",
       resolverCopy: "Çıktıyı kopyala",
-      resolverNote: "WTTG3 değerleri her run'da değişir. Araç yalnızca yüklenen save veya düzenleyicideki doğrulanmış eşleşmeleri kullanır.",
+      resolverNote: "Bilinen doğrulanmış run'ları, düzenleyiciyi ve yüklenen save'i tarar. Yeni bir run eşleşmezse aynı run'a ait .sav dosyasını yükle.",
       resolverEmpty: "İndeksli 8 karakterlik hash bulunamadı.",
       resolverResult: "{matched} / {total} hash doğrulanmış eşleşmeyle çözüldü.",
       resolverMissing: "eşleşme yok",
@@ -148,7 +148,7 @@
       saveMiners: "Active miners",
       saveKeys: "Key pairs",
       saveHours: "Hours left",
-      resolverEyebrow: "SAVE BACKED",
+      resolverEyebrow: "VERIFIED MATCHES",
       resolverTitle: "Hash resolver",
       resolverInputLabel: "Encrypted hashes",
       resolverOutputLabel: "Decrypted fragments",
@@ -156,7 +156,7 @@
       resolverOutputPlaceholder: "1 - 36ea\n2 - 84be",
       resolverAction: "Resolve matches",
       resolverCopy: "Copy output",
-      resolverNote: "WTTG3 values change each run. This tool uses only verified matches from the loaded save or organizer.",
+      resolverNote: "Checks verified known runs, the organizer, and the loaded save. If a new run does not match, load the .sav from that same run.",
       resolverEmpty: "No indexed 8 character hashes were found.",
       resolverResult: "{matched} / {total} hashes were resolved with verified matches.",
       resolverMissing: "no match",
@@ -425,7 +425,11 @@
     const result = HELPER_CORE.resolveIndexedHashes(
       resolverInput.value,
       KEY_CORE,
-      [...organizer, ...(saveSnapshot?.keyPairs ?? [])],
+      [
+        ...(DATA.verifiedKeyPairs ?? []),
+        ...organizer,
+        ...(saveSnapshot?.keyPairs ?? []),
+      ],
       { missing: text("resolverMissing"), conflict: text("resolverConflict") },
     );
     if (!result.total) {

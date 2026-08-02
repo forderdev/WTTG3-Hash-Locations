@@ -10,8 +10,9 @@ bulunamadı. Güvenilir çözüm, aynı run'a ait `.sav` dosyasındaki
 `EncryptedKeys` ve `DecryptedKeys` dizilerini indeks sırasına göre eşlemektir.
 
 Bu nedenle Helper içindeki özellik bir kripto algoritması gibi davranmaz.
-Yüklenen save veya kullanıcının key organizer içinde zaten doğruladığı çiftler
-üzerinden tam eşleşme yapar:
+Araştırmada doğrulanan iki run'ın 16 yerleşik çifti, yüklenen save veya
+kullanıcının key organizer içinde zaten doğruladığı çiftler üzerinden tam
+eşleşme yapar:
 
 ```text
 1 - 1ef9d5b6  ->  1 - 36ea
@@ -108,7 +109,8 @@ dosyayı değiştirmez. Kullanıcı ayrıca aktar düğmesine bastığında yaln
 - Geçersiz GVAS, eski UE paketi ve farklı SaveGame sınıfı reddedilir.
 - Koleksiyon sayıları üst sınırla doğrulanır.
 - FString uzunlukları dosya sınırından taşamaz.
-- Hash resolver hem indeksin hem şifreli değerin eşleşmesini ister.
+- Hash resolver hem indeksin hem şifreli değerin eşleşmesini ister; farklı
+  run'lardaki aynı indeksler birbirinin üstüne yazılmaz.
 - Eksik veya uyuşmayan değer için çözülmüş parça uydurulmaz.
 
 ## Doğrulama

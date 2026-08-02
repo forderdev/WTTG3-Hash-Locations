@@ -11,6 +11,7 @@ Welcome to the Game III için koyu temalı TR/EN ikinci ekran yardımcısı.
 - Düşük, Hash ve Tam spoiler seviyeleri
 - Yalnızca tarayıcıda çalışan, hiçbir dosya yüklemeyen `.sav` okuyucu
 - Bilinen doğrulanmış run'ları ve yerel save'i kullanarak `1 - 8hex` girdilerini `1 - 4hex` çıktısına dönüştüren hash çözümleyici
+- Yeni run'ları save olmadan çözen, tarayıcıda yerel çalışan 2³² durumluk WebGPU/UCRT taraması
 - 8 şifreli hash ve 8 çözülmüş parçadan 32 karakterlik master key oluşturma
 - GitHub Pages ile tamamen statik çalışma
 
@@ -31,5 +32,6 @@ Araştırma notları:
 
 - [WTTG2 ve WTTG3 key mekanikleri](docs/key-organizer-research.md)
 - [WTTG3 hash çözümleme ve save import](docs/hash-decryptor-and-save-import-research.md)
+- [Save olmadan hash çözümü: binary ve PRNG araştırması](docs/hash-decryptor-save-free-research.md)
 
 Bu proje resmî değildir.

@@ -15,6 +15,7 @@
     <script src="data-en.js" defer></script>
     <script src="key-organizer-core.js" defer></script>
     <script src="helper-core.js" defer></script>
+    <script src="gpu-hash-solver.js" defer></script>
     <script src="save-reader-core.js" defer></script>
     <script src="helper-data.js" defer></script>
     <script src="app.js" defer></script>
@@ -224,10 +225,14 @@
             </div>
             <div class="helper-actions">
               <button id="resolve-hashes" class="primary-action" type="button" data-helper-i18n="resolverAction">Eşleşenleri çöz</button>
+              <button id="solve-gpu" class="quiet-action" type="button" data-helper-i18n="resolverGpuAction">Save'siz GPU ile çöz</button>
               <button id="copy-resolved" class="quiet-action" type="button" disabled data-helper-i18n="resolverCopy">Çıktıyı kopyala</button>
             </div>
+            <div id="gpu-progress" class="solver-progress" hidden aria-hidden="true">
+              <span id="gpu-progress-bar"></span>
+            </div>
             <p id="resolver-feedback" class="helper-card__note" role="status" aria-live="polite" data-helper-i18n="resolverNote">
-              WTTG3 değerleri her run'da değişir. Araç yalnızca yüklenen save veya düzenleyicideki doğrulanmış eşleşmeleri kullanır.
+              Hızlı çözüm bilinen eşleşmeleri tarar. Yeni bir run için 1. hash'i ve en az bir başka hash'i girip save'siz GPU çözümünü kullan; hesap yalnızca cihazında çalışır.
             </p>
           </article>
         </div>

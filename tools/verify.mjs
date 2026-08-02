@@ -10,6 +10,7 @@ const projectDir = path.resolve(toolsDir, "..");
 const gameDir = path.resolve(projectDir, "..");
 const keyCore = require(path.join(projectDir, "key-organizer-core.js"));
 const helperCore = require(path.join(projectDir, "helper-core.js"));
+const gpuHashSolver = require(path.join(projectDir, "gpu-hash-solver.js"));
 const saveReader = require(path.join(projectDir, "save-reader-core.js"));
 const errors = [];
 const checkedStylesheets = new Set();
@@ -46,6 +47,7 @@ for (const required of [
   "app.js",
   "helper.js",
   "helper-core.js",
+  "gpu-hash-solver.js",
   "helper-data.js",
   "key-organizer-core.js",
   "save-reader-core.js",
@@ -57,6 +59,7 @@ for (const required of [
   "previews-en",
   "docs/key-organizer-research.md",
   "docs/hash-decryptor-and-save-import-research.md",
+  "docs/hash-decryptor-save-free-research.md",
 ]) {
   if (!fs.existsSync(path.join(projectDir, required))) {
     errors.push(`Eksik dosya veya klasör: ${required}`);
@@ -308,6 +311,15 @@ function verifyHelper() {
     screenshotResolved.lines.join("\n") !== screenshotExpected
   ) {
     errors.push("Hash çözümleyici ekran görüntüsündeki doğrulanmış run'ı çözemedi.");
+  }
+
+  const simulatedRun = gpuHashSolver.simulateRun(0x509574ae);
+  const expectedRun = (helperData.verifiedKeyPairs ?? []).slice(0, 8);
+  if (JSON.stringify(simulatedRun) !== JSON.stringify(expectedRun)) {
+    errors.push("Save'siz GPU çözümünün UCRT + MD5 simülasyonu doğrulanmış Run A'yı üretemedi.");
+  }
+  if (gpuHashSolver.md5Prefix("skusaLi") !== "eaae22ab") {
+    errors.push("GPU çözümünün MD5 prefix uygulaması referans değeri üretemedi.");
   }
 
   try {

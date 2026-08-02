@@ -4,15 +4,19 @@ Tarih: 2 Ağustos 2026
 
 ## Sonuç
 
-WTTG3 için yalnızca `indeks + 8 karakterlik şifreli hash` alıp her run'da doğru
-`4 karakterlik çözülmüş parça` üreten doğrulanmış bir tarayıcı algoritması
-bulunamadı. Güvenilir çözüm, aynı run'a ait `.sav` dosyasındaki
-`EncryptedKeys` ve `DecryptedKeys` dizilerini indeks sırasına göre eşlemektir.
+İlk save araştırmasında `8hex → 4hex` doğrudan dönüşüm algoritması bulunamadı;
+güvenilir çözüm aynı run'a ait `.sav` dosyasındaki `EncryptedKeys` ve
+`DecryptedKeys` dizilerini indeks sırasına göre eşlemekti. Sonraki binary
+araştırması iki değerin ayrı rastgele metinlerden üretildiğini doğruladı ve
+2^32 UCRT state'ini tarayan save'siz WebGPU çözümü geliştirildi. Güncel teknik
+sonuç için [save olmadan çözüm araştırmasına](hash-decryptor-save-free-research.md)
+bakın.
 
-Bu nedenle Helper içindeki özellik bir kripto algoritması gibi davranmaz.
+Helper'daki hızlı eşleşme butonu bir kripto algoritması gibi davranmaz.
 Araştırmada doğrulanan iki run'ın 16 yerleşik çifti, yüklenen save veya
 kullanıcının key organizer içinde zaten doğruladığı çiftler üzerinden tam
-eşleşme yapar:
+eşleşme yapar. Yeni save'siz GPU butonu ise ayrı olarak PRNG state recovery
+uygular:
 
 ```text
 1 - 1ef9d5b6  ->  1 - 36ea

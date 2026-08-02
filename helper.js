@@ -5,6 +5,7 @@
   const HELPER_CORE = window.WTTG3_HELPER_CORE;
   const SAVE_READER = window.WTTG3_SAVE_READER;
   const KEY_CORE = window.WTTG3_KEY_ORGANIZER_CORE;
+  const GPU_SOLVER = window.WTTG3_GPU_HASH_SOLVER;
   if (!DATA || !HELPER_CORE || !SAVE_READER || !KEY_CORE) return;
 
   const LANGUAGE_KEY = "wttg3-hash-atlas-language-v1";
@@ -80,10 +81,22 @@
       resolverInputPlaceholder: "1 - 1ef9d5b6\n2 - 2f45095a",
       resolverOutputPlaceholder: "1 - 36ea\n2 - 84be",
       resolverAction: "Eşleşenleri çöz",
+      resolverGpuAction: "Save'siz GPU ile çöz",
+      resolverGpuCancel: "Taramayı durdur",
       resolverCopy: "Çıktıyı kopyala",
-      resolverNote: "Bilinen doğrulanmış run'ları, düzenleyiciyi ve yüklenen save'i tarar. Yeni bir run eşleşmezse aynı run'a ait .sav dosyasını yükle.",
+      resolverNote: "Hızlı çözüm bilinen eşleşmeleri tarar. Yeni bir run için 1. hash'i ve en az bir başka hash'i girip save'siz GPU çözümünü kullan; hesap yalnızca cihazında çalışır.",
       resolverEmpty: "İndeksli 8 karakterlik hash bulunamadı.",
       resolverResult: "{matched} / {total} hash doğrulanmış eşleşmeyle çözüldü.",
+      resolverNoMatch: "Bu run doğrulanmış eşleşmelerde yok. 1. hash'i ve en az bir başka hash'i girip save'siz GPU çözümünü kullan veya aynı run'ın .sav dosyasını yükle.",
+      resolverGpuUnsupported: "WebGPU kullanılamıyor. Güncel Chrome/Edge ile aç veya .sav dosyasını yükle.",
+      resolverGpuRunning: "2³² RNG durumu taranıyor: {percent}% · {seconds} sn",
+      resolverGpuDone: "Save olmadan çözüldü: 2³² RNG durumu {seconds} saniyede tarandı ve 8 parça doğrulandı.",
+      resolverGpuFirstRequired: "GPU çözümü için 1. hash gerekli.",
+      resolverGpuMoreRequired: "Sonucu doğrulamak için 1. hash'e ek olarak en az bir hash daha gir.",
+      resolverGpuNoSolution: "Bu hashler aynı güncel WTTG3 run'ıyla eşleşmedi. Girdileri kontrol et veya .sav kullan.",
+      resolverGpuAmbiguous: "Birden fazla run adayı kaldı. Daha fazla indeksli hash girip tekrar dene.",
+      resolverGpuCancelled: "GPU taraması durduruldu.",
+      resolverGpuError: "GPU çözümü tamamlanamadı: {message}",
       resolverMissing: "eşleşme yok",
       resolverConflict: "çakışan girdi",
       resolverCopied: "Çıktı kopyalandı.",
@@ -155,10 +168,22 @@
       resolverInputPlaceholder: "1 - 1ef9d5b6\n2 - 2f45095a",
       resolverOutputPlaceholder: "1 - 36ea\n2 - 84be",
       resolverAction: "Resolve matches",
+      resolverGpuAction: "Solve without save (GPU)",
+      resolverGpuCancel: "Stop scan",
       resolverCopy: "Copy output",
-      resolverNote: "Checks verified known runs, the organizer, and the loaded save. If a new run does not match, load the .sav from that same run.",
+      resolverNote: "Quick resolve checks known matches. For a new run, enter hash 1 plus at least one other hash and use the save-free GPU solver; all computation stays on your device.",
       resolverEmpty: "No indexed 8 character hashes were found.",
       resolverResult: "{matched} / {total} hashes were resolved with verified matches.",
+      resolverNoMatch: "This run is not in the verified matches. Enter hash 1 plus at least one other hash and use the save-free GPU solver, or load the .sav from the same run.",
+      resolverGpuUnsupported: "WebGPU is unavailable. Open the site in a current Chrome/Edge browser or load the .sav file.",
+      resolverGpuRunning: "Scanning 2³² RNG states: {percent}% · {seconds}s",
+      resolverGpuDone: "Solved without a save: 2³² RNG states were scanned in {seconds} seconds and all 8 fragments were verified.",
+      resolverGpuFirstRequired: "Hash 1 is required for the GPU solver.",
+      resolverGpuMoreRequired: "Enter hash 1 plus at least one other hash to verify the result.",
+      resolverGpuNoSolution: "These hashes did not match the current WTTG3 run generator. Check the input or use the .sav file.",
+      resolverGpuAmbiguous: "More than one run candidate remains. Add more indexed hashes and try again.",
+      resolverGpuCancelled: "GPU scan stopped.",
+      resolverGpuError: "GPU solve failed: {message}",
       resolverMissing: "no match",
       resolverConflict: "conflicting input",
       resolverCopied: "Output copied.",
@@ -176,7 +201,11 @@
   const runNotes = document.querySelector("#run-notes");
   const resolverInput = document.querySelector("#resolver-input");
   const resolverOutput = document.querySelector("#resolver-output");
+  const gpuButton = document.querySelector("#solve-gpu");
+  const gpuProgress = document.querySelector("#gpu-progress");
+  const gpuProgressBar = document.querySelector("#gpu-progress-bar");
   const saveSummary = document.querySelector("#save-summary");
+  let gpuSearch = null;
 
   applyCopy();
   applySpoilers();
@@ -184,12 +213,14 @@
   updateNotesCount();
   renderSchedule();
   renderMiners();
+  renderGpuState();
 
   window.addEventListener("wttg3:languagechange", (event) => {
     language = event.detail?.language === "en" ? "en" : "tr";
     applyCopy();
     renderSchedule();
     renderMiners();
+    renderGpuState();
     if (saveSnapshot) renderSaveSummary();
   });
 
@@ -221,6 +252,7 @@
   document.querySelector("#save-file").addEventListener("change", readSaveFile);
   document.querySelector("#import-save-keys").addEventListener("click", importSaveKeys);
   document.querySelector("#resolve-hashes").addEventListener("click", resolveHashes);
+  gpuButton.addEventListener("click", solveHashesWithGpu);
   document.querySelector("#copy-resolved").addEventListener("click", copyResolved);
 
   function applyCopy() {
@@ -443,10 +475,82 @@
     resolverOutput.value = result.lines.join("\n");
     document.querySelector("#resolver-status").textContent = `${result.matched} / ${result.total}`;
     document.querySelector("#copy-resolved").disabled = result.matched === 0;
-    document.querySelector("#resolver-feedback").textContent = format("resolverResult", {
-      matched: result.matched,
-      total: result.total,
-    });
+    document.querySelector("#resolver-feedback").textContent = result.matched === 0
+      ? text("resolverNoMatch")
+      : format("resolverResult", {
+          matched: result.matched,
+          total: result.total,
+        });
+  }
+
+  async function solveHashesWithGpu() {
+    if (gpuSearch) {
+      gpuSearch.controller.abort();
+      return;
+    }
+    if (!GPU_SOLVER?.isSupported()) {
+      document.querySelector("#resolver-feedback").textContent = text("resolverGpuUnsupported");
+      return;
+    }
+
+    const parsed = KEY_CORE.parseIndexedFragments(resolverInput.value);
+    const encrypted = parsed.entries.filter((entry) => entry.encrypted);
+    const controller = new AbortController();
+    gpuSearch = { controller, percent: 0, elapsedMs: 0 };
+    renderGpuState();
+    try {
+      const solved = await GPU_SOLVER.solve(encrypted, {
+        signal: controller.signal,
+        onProgress(progress) {
+          if (!gpuSearch) return;
+          gpuSearch.percent = progress.percent;
+          gpuSearch.elapsedMs = progress.elapsedMs;
+          renderGpuState();
+        },
+      });
+      window.WTTG3_HASH_HELPER_BRIDGE?.importKeyPairs(solved.pairs);
+      resolverOutput.value = solved.pairs
+        .map((pair) => `${pair.index} - ${pair.decrypted}`)
+        .join("\n");
+      document.querySelector("#resolver-status").textContent = "8 / 8";
+      document.querySelector("#copy-resolved").disabled = false;
+      document.querySelector("#resolver-feedback").textContent = format("resolverGpuDone", {
+        seconds: (solved.elapsedMs / 1000).toFixed(1),
+      });
+    } catch (error) {
+      const key = {
+        aborted: "resolverGpuCancelled",
+        unsupported: "resolverGpuUnsupported",
+        "first-required": "resolverGpuFirstRequired",
+        "more-required": "resolverGpuMoreRequired",
+        "no-solution": "resolverGpuNoSolution",
+        ambiguous: "resolverGpuAmbiguous",
+      }[error?.code];
+      document.querySelector("#resolver-feedback").textContent = key
+        ? text(key)
+        : format("resolverGpuError", {
+            message: error instanceof Error ? error.message : String(error),
+          });
+    } finally {
+      gpuSearch = null;
+      renderGpuState();
+    }
+  }
+
+  function renderGpuState() {
+    const supported = Boolean(GPU_SOLVER?.isSupported());
+    gpuButton.disabled = !supported;
+    gpuButton.title = supported ? "" : text("resolverGpuUnsupported");
+    gpuButton.textContent = gpuSearch ? text("resolverGpuCancel") : text("resolverGpuAction");
+    gpuProgress.hidden = !gpuSearch;
+    gpuProgress.setAttribute("aria-hidden", gpuSearch ? "false" : "true");
+    gpuProgressBar.style.setProperty("--solver-progress", String((gpuSearch?.percent ?? 0) / 100));
+    if (gpuSearch) {
+      document.querySelector("#resolver-feedback").textContent = format("resolverGpuRunning", {
+        percent: gpuSearch.percent.toFixed(1),
+        seconds: (gpuSearch.elapsedMs / 1000).toFixed(1),
+      });
+    }
   }
 
   async function copyResolved() {

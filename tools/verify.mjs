@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import { createRequire } from "node:module";
 import path from "node:path";
+import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 
 const toolsDir = path.dirname(fileURLToPath(import.meta.url));
@@ -8,6 +9,8 @@ const require = createRequire(import.meta.url);
 const projectDir = path.resolve(toolsDir, "..");
 const gameDir = path.resolve(projectDir, "..");
 const keyCore = require(path.join(projectDir, "key-organizer-core.js"));
+const helperCore = require(path.join(projectDir, "helper-core.js"));
+const saveReader = require(path.join(projectDir, "save-reader-core.js"));
 const errors = [];
 const checkedStylesheets = new Set();
 const datasets = new Map();
@@ -41,7 +44,11 @@ for (const required of [
   "index.html",
   "styles.css",
   "app.js",
+  "helper.js",
+  "helper-core.js",
+  "helper-data.js",
   "key-organizer-core.js",
+  "save-reader-core.js",
   "data.js",
   "data-en.js",
   "baslat.bat",
@@ -49,6 +56,7 @@ for (const required of [
   "previews",
   "previews-en",
   "docs/key-organizer-research.md",
+  "docs/hash-decryptor-and-save-import-research.md",
 ]) {
   if (!fs.existsSync(path.join(projectDir, required))) {
     errors.push(`Eksik dosya veya klasör: ${required}`);
@@ -56,6 +64,7 @@ for (const required of [
 }
 
 verifyKeyOrganizer();
+verifyHelper();
 
 for (const config of localeConfigs) {
   const data = readData(config);
@@ -182,6 +191,98 @@ function verifyKeyOrganizer() {
   state[7].decrypted = "";
   if (keyCore.getMasterKey(state) !== "") {
     errors.push("Organizer eksik çözülmüş parçayla master key üretti.");
+  }
+}
+
+function verifyHelper() {
+  const helperSource = fs.readFileSync(
+    path.join(projectDir, "helper-data.js"),
+    "utf8",
+  );
+  const sandbox = { window: {} };
+  vm.runInNewContext(helperSource, sandbox, { filename: "helper-data.js" });
+  const helperData = sandbox.window.WTTG3_HELPER_DATA;
+  if (!helperData) {
+    errors.push("Helper veri dosyası yüklenemedi.");
+    return;
+  }
+
+  const schedules = Object.entries(helperData.schedules);
+  if (schedules.length !== 51) {
+    errors.push(`Site saati tablosu 51 yerine ${schedules.length} site içeriyor.`);
+  }
+  const alwaysCount = schedules.filter(([, schedule]) => schedule === null).length;
+  if (alwaysCount !== 26) {
+    errors.push(`Her zaman açık site sayısı 26 yerine ${alwaysCount}.`);
+  }
+  const openAtZero = schedules.filter(([, schedule]) =>
+    helperCore.isSiteOpen(schedule, 0),
+  ).length;
+  if (openAtZero !== 37) {
+    errors.push(`:00 anında açık site sayısı 37 yerine ${openAtZero}.`);
+  }
+  if (
+    helperCore.getNextChangeDelta(
+      schedules.map(([, schedule]) => schedule),
+      0,
+    ) !== 15
+  ) {
+    errors.push("Site saati sonraki değişimi yanlış hesapladı.");
+  }
+
+  const miners = helperData.miners;
+  if (miners.length !== 30 || new Set(miners.map((miner) => miner.name)).size !== 30) {
+    errors.push("VirtMesh tablosu 30 benzersiz makine içermiyor.");
+  }
+  for (const tier of [1, 2, 3]) {
+    if (miners.filter((miner) => miner.tier === tier).length !== 10) {
+      errors.push(`VirtMesh Tier ${tier} tablosu 10 makine içermiyor.`);
+    }
+  }
+  const total = helperCore.calculateMinerTotal(
+    miners,
+    ["WebTyk", "GameDrux", "OpsHax", "Phoenix"],
+  );
+  if (Math.abs(total.total - 14.78) > 0.0001 || total.unknown !== 0) {
+    errors.push("VirtMesh toplam hız hesabı yanlış.");
+  }
+  const imported = helperCore.matchMinerNames(
+    miners,
+    ["WebTyk", "GameDrux", "OpsHax", "Phoenix"],
+  );
+  if (imported.length !== 4) {
+    errors.push("VirtMesh save makinesi eşleştirmesi başarısız.");
+  }
+
+  const mappings = [
+    { index: 1, encrypted: "1ef9d5b6", decrypted: "36ea" },
+    { index: 2, encrypted: "2f45095a", decrypted: "84be" },
+  ];
+  const resolved = helperCore.resolveIndexedHashes(
+    "1 - 1ef9d5b6\n2 - 2f45095a",
+    keyCore,
+    mappings,
+  );
+  if (
+    resolved.matched !== 2 ||
+    resolved.lines.join("\n") !== "1 - 36ea\n2 - 84be"
+  ) {
+    errors.push("Hash çözümleyici doğrulanmış çiftleri üretemedi.");
+  }
+  const mismatch = helperCore.resolveIndexedHashes(
+    "1 - aaaaaaaa",
+    keyCore,
+    mappings,
+  );
+  if (mismatch.matched !== 0 || mismatch.lines[0] !== "1 - no match") {
+    errors.push("Hash çözümleyici eşleşmeyen değeri reddetmedi.");
+  }
+
+  try {
+    saveReader.parseSave(new TextEncoder().encode("not-a-save"));
+    errors.push("Save okuyucu geçersiz dosyayı reddetmedi.");
+  } catch {
+    // Expected.
   }
 }
 

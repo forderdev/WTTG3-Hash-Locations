@@ -15,23 +15,24 @@
 
   const COPY = {
     tr: {
-      documentTitle: "WTTG III | Hash Bulma",
-      description: "hash bulma",
+      documentTitle: "WTTG3 Helper",
+      description: "Welcome to the Game III için yerel ikinci ekran yardımcısı.",
       homeAria: "Başa dön",
-      wordmark: "Hash Bulma",
+      wordmark: "Helper",
       language: "Dil",
       sectionNav: "Sayfa bölümleri",
-      keyOrganizerLink: "Anahtar düzenleyici",
-      archiveLink: "Arşive git",
-      heroTitle: "WTTG3 hash bulma işi",
-      heroLede: "hash bulun",
-      statsAria: "Veri kapsamı",
-      statsTitle: "Siteler:",
+      keyOrganizerLink: "Anahtarlar",
+      archiveLink: "Hash atlası",
+      heroEyebrow: "RUN COMPANION",
+      heroTitle: "WTTG3 Helper",
+      heroLede: "Run boyunca gereken araçlar, save verisi ve hash atlası.",
+      statsAria: "Hash atlası kapsamı",
+      statsTitle: "Hash atlası:",
       siteUnit: "site",
       pageUnit: "sayfa",
       markerUnit: "işaret",
-      legendTitle: "önemli",
-      legendIntro: "her renk farklı bir hash konumu tipini gösterir.",
+      legendTitle: "Hash atlas işaretleri",
+      legendIntro: "Her renk farklı bir hash konumu tipini gösterir.",
       keyOrganizerTitle: "Anahtar düzenleyici",
       keyOrganizerDescription:
         "Bulduğun hashleri ve ajanlardan gelen çözülmüş parçaları indeks sırasına yerleştir.",
@@ -114,24 +115,25 @@
       decoyVerbose: "sahte tıklama",
     },
     en: {
-      documentTitle: "WTTG III | Hash Finder",
+      documentTitle: "WTTG3 Helper",
       description:
-        "Find every hash location in Welcome to the Game III.",
+        "A local second-screen companion for Welcome to the Game III.",
       homeAria: "Back to top",
-      wordmark: "Hash Finder",
+      wordmark: "Helper",
       language: "Language",
       sectionNav: "Page sections",
-      keyOrganizerLink: "Key organizer",
-      archiveLink: "Browse archive",
-      heroTitle: "WTTG3 hash finder",
-      heroLede: "find every hash location",
-      statsAria: "Archive coverage",
-      statsTitle: "Archive:",
+      keyOrganizerLink: "Keys",
+      archiveLink: "Hash atlas",
+      heroEyebrow: "RUN COMPANION",
+      heroTitle: "WTTG3 Helper",
+      heroLede: "Run tools, local save data, and the complete hash atlas.",
+      statsAria: "Hash atlas coverage",
+      statsTitle: "Hash atlas:",
       siteUnit: "sites",
       pageUnit: "pages",
       markerUnit: "markers",
-      legendTitle: "important",
-      legendIntro: "each color represents a different hash location type.",
+      legendTitle: "Hash atlas markers",
+      legendIntro: "Each color represents a different hash location type.",
       keyOrganizerTitle: "Key organizer",
       keyOrganizerDescription:
         "Place found hashes and decrypted fragments from agents in index order.",
@@ -258,6 +260,19 @@
   updateKeyOrganizer();
   setupReveals();
 
+  window.WTTG3_HASH_HELPER_BRIDGE = {
+    getLanguage: () => currentLanguage,
+    getKeyState: () =>
+      keyState.map((entry, slot) => ({
+        index: slot + 1,
+        encrypted: entry.encrypted,
+        decrypted: entry.decrypted,
+        wiki: entry.wiki,
+      })),
+    importKeyPairs,
+    focusSite,
+  };
+
   searchInput.addEventListener("input", applyFilters);
   hideCheckedInput.addEventListener("change", applyFilters);
 
@@ -284,6 +299,11 @@
       renderSites();
       updateProgress();
       applyFilters();
+      window.dispatchEvent(
+        new CustomEvent("wttg3:languagechange", {
+          detail: { language: currentLanguage },
+        }),
+      );
     });
   });
 
@@ -502,6 +522,57 @@
       row.querySelector(".key-field__select").value =
         keyState[slot].wiki ?? "";
     });
+  }
+
+  function importKeyPairs(pairs) {
+    if (!Array.isArray(pairs)) return false;
+    let updated = false;
+
+    for (const pair of pairs) {
+      const slot = Number(pair.index) - 1;
+      if (!Number.isInteger(slot) || slot < 0 || slot >= KEY_CORE.SLOT_COUNT) {
+        continue;
+      }
+      const encrypted = KEY_CORE.normalizeHex(
+        pair.encrypted,
+        KEY_CORE.ENCRYPTED_LENGTH,
+      );
+      const decrypted = KEY_CORE.normalizeHex(
+        pair.decrypted,
+        KEY_CORE.DECRYPTED_LENGTH,
+      );
+      if (encrypted && keyState[slot].encrypted !== encrypted) {
+        keyState[slot].encrypted = encrypted;
+        updated = true;
+      }
+      if (decrypted && keyState[slot].decrypted !== decrypted) {
+        keyState[slot].decrypted = decrypted;
+        updated = true;
+      }
+    }
+
+    if (updated) {
+      saveKeyState();
+      syncKeyRows();
+      updateKeyOrganizer();
+    }
+    return true;
+  }
+
+  function focusSite(siteId) {
+    const card = document.querySelector(
+      `.site-card[data-site-id="${CSS.escape(String(siteId))}"]`,
+    );
+    if (!card) return false;
+    if (!card.classList.contains("is-open")) {
+      card.classList.add("is-open");
+      card.querySelector(".site-card__toggle")?.setAttribute(
+        "aria-expanded",
+        "true",
+      );
+    }
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
+    return true;
   }
 
   function updateKeyOrganizer() {

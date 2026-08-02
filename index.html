@@ -6,15 +6,19 @@
     <meta
       id="meta-description"
       name="description"
-      content="hash bulma"
+      content="Welcome to the Game III için yerel ikinci ekran yardımcısı."
     />
-    <title>WTTG III | Hash Bulma</title>
+    <title>WTTG3 Helper</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css" />
     <script src="data.js" defer></script>
     <script src="data-en.js" defer></script>
     <script src="key-organizer-core.js" defer></script>
+    <script src="helper-core.js" defer></script>
+    <script src="save-reader-core.js" defer></script>
+    <script src="helper-data.js" defer></script>
     <script src="app.js" defer></script>
+    <script src="helper.js" defer></script>
   </head>
   <body>
     <header class="masthead">
@@ -25,7 +29,7 @@
         data-i18n-aria-label="homeAria"
       >
         <strong>WTTG III</strong>
-        <span data-i18n="wordmark">Hash Bulma</span>
+        <span data-i18n="wordmark">Helper</span>
       </a>
       <div class="masthead__actions">
         <div
@@ -38,6 +42,9 @@
           <button type="button" data-language="en" aria-pressed="false">EN</button>
         </div>
         <nav class="masthead__links" aria-label="Sayfa bölümleri" data-i18n-aria-label="sectionNav">
+          <a class="masthead__link" href="#helper-title" data-helper-i18n="helperLink">
+            Araçlar
+          </a>
           <a
             class="masthead__link"
             href="#key-organizer-title"
@@ -55,9 +62,11 @@
     <main>
       <section class="hero" aria-labelledby="page-title">
         <div class="hero__copy" data-reveal>
-          <p class="eyebrow"></p>
-          <h1 id="page-title" data-i18n="heroTitle">WTTG3 hash bulma işi</h1>
-          <p class="hero__lede" data-i18n="heroLede">hash bulun</p>
+          <p class="eyebrow" data-i18n="heroEyebrow">RUN COMPANION</p>
+          <h1 id="page-title" data-i18n="heroTitle">WTTG3 Helper</h1>
+          <p class="hero__lede" data-i18n="heroLede">
+            Run boyunca ihtiyacın olan araçlar, save verisi ve hash atlası.
+          </p>
         </div>
 
         <aside
@@ -66,7 +75,7 @@
           data-i18n-aria-label="statsAria"
           data-reveal
         >
-          <p class="hero__stats-title" data-i18n="statsTitle">Siteler:</p>
+          <p class="hero__stats-title" data-i18n="statsTitle">Hash atlası:</p>
           <article>
             <strong id="site-count">0</strong>
             <span data-i18n="siteUnit">site</span>
@@ -82,51 +91,158 @@
         </aside>
       </section>
 
-      <section class="legend-panel" aria-labelledby="legend-title" data-reveal>
-        <div class="legend-panel__intro">
-          <h2 id="legend-title" data-i18n="legendTitle">önemli</h2>
-          <p data-i18n="legendIntro">
-            her renk farklı bir hash konumu tipini gösterir.
-          </p>
+      <section id="helper" class="helper" aria-labelledby="helper-title">
+        <div class="helper__head" data-reveal>
+          <div>
+            <p class="eyebrow" data-helper-i18n="helperEyebrow">HELPER TOOLKIT</p>
+            <h2 id="helper-title" data-helper-i18n="helperTitle">Run araçları</h2>
+            <p data-helper-i18n="helperDescription">
+              Saatleri, miner planını, run notlarını ve save verisini tek yerde tut.
+            </p>
+          </div>
+          <fieldset class="spoiler-control">
+            <legend data-helper-i18n="spoilerLabel">Spoiler seviyesi</legend>
+            <div role="group" aria-label="Spoiler seviyesi" data-helper-i18n-aria-label="spoilerLabel">
+              <button type="button" data-spoiler-level="low" data-helper-i18n="spoilerLow">Düşük</button>
+              <button type="button" data-spoiler-level="hash" data-helper-i18n="spoilerHash">Hash</button>
+              <button type="button" data-spoiler-level="full" data-helper-i18n="spoilerFull">Tam</button>
+            </div>
+          </fieldset>
         </div>
-        <div class="legend-list">
-          <article>
-            <span class="legend-key legend-key--direct" aria-hidden="true">P</span>
-            <div>
-              <strong data-i18n="directTitle">Görünür konum</strong>
-              <p data-i18n="directDescription">
-                Hash metninin doğrudan yazılabileceği boş alan.
-              </p>
+
+        <div class="helper-grid">
+          <article class="helper-card helper-card--schedule" data-reveal>
+            <header class="helper-card__head">
+              <div>
+                <h3 data-helper-i18n="scheduleTitle">Şimdi açık olanlar</h3>
+              </div>
+              <output id="schedule-count" class="helper-chip">0 / 51</output>
+            </header>
+            <div class="schedule-controls">
+              <label>
+                <span data-helper-i18n="gameTimeLabel">Oyun saati</span>
+                <input id="game-time" type="time" value="00:00" step="60" />
+              </label>
+              <label>
+                <span data-helper-i18n="scheduleFilterLabel">Göster</span>
+                <select id="schedule-filter">
+                  <option value="open" data-helper-i18n="scheduleOpen">Şimdi açık</option>
+                  <option value="timed" data-helper-i18n="scheduleTimed">Saatli siteler</option>
+                  <option value="always" data-helper-i18n="scheduleAlways">Her zaman açık</option>
+                  <option value="all" data-helper-i18n="scheduleAll">Tümü</option>
+                </select>
+              </label>
+              <button id="use-save-time" class="quiet-action" type="button" disabled data-helper-i18n="useSaveTime">
+                Save saatini kullan
+              </button>
             </div>
+            <p id="schedule-summary" class="helper-card__summary" aria-live="polite"></p>
+            <div id="schedule-list" class="schedule-list"></div>
           </article>
-          <article>
-            <span class="legend-key legend-key--click" aria-hidden="true">C</span>
-            <div>
-              <strong data-i18n="clickableTitle">Tıklanabilir konum</strong>
-              <p data-i18n="clickableDescription">
-                İmleç değiştiğinde hash verebilen doğru tıklama adayı.
-              </p>
+
+          <article class="helper-card helper-card--miners" data-reveal>
+            <header class="helper-card__head">
+              <div>
+                <h3 data-helper-i18n="minerTitle">Miner planlayıcı</h3>
+              </div>
+              <output id="miner-total" class="helper-chip">0.00 DOS / min</output>
+            </header>
+            <div id="miner-tabs" class="helper-tabs" role="group" aria-label="VirtMesh katmanı" data-helper-i18n-aria-label="minerTierLabel">
+              <button type="button" data-tier="1" aria-pressed="true">Tier I</button>
+              <button type="button" data-tier="2" aria-pressed="false">Tier II</button>
+              <button type="button" data-tier="3" aria-pressed="false">Tier III</button>
             </div>
+            <div class="miner-table-head" aria-hidden="true">
+              <span data-helper-i18n="minerMachine">Makine</span>
+              <span data-helper-i18n="minerHardware">Donanım</span>
+              <span data-helper-i18n="minerRate">Referans hız</span>
+            </div>
+            <div id="miner-list" class="miner-list"></div>
+            <p class="helper-card__note" data-helper-i18n="minerNote">
+              Hızlar 1.0.5 sonrası topluluk ölçümüdür. Donanım listesi güncel oyun dosyasından alınmıştır.
+            </p>
           </article>
-          <article>
-            <span class="legend-key legend-key--decoy" aria-hidden="true">F</span>
-            <div>
-              <strong data-i18n="decoyTitle">Sahte konum</strong>
-              <p data-i18n="decoyDescription">
-                Doğru adayın ipucunu taklit edebilen tuzak nokta.
-              </p>
+
+          <article class="helper-card helper-card--notes" data-reveal>
+            <header class="helper-card__head">
+              <div>
+                <h3 data-helper-i18n="notesTitle">İzi kaybetme</h3>
+              </div>
+              <span id="notes-count" class="helper-chip">0</span>
+            </header>
+            <textarea id="run-notes" rows="13" spellcheck="false" data-helper-i18n-placeholder="notesPlaceholder" placeholder="Rota, kelime, site ve hatırlatıcılarını yaz..."></textarea>
+            <div class="helper-actions">
+              <button id="export-notes" class="quiet-action" type="button" data-helper-i18n="notesExport">Metin olarak indir</button>
+              <button id="clear-notes" class="quiet-action" type="button" data-helper-i18n="notesClear">Temizle</button>
             </div>
+            <p class="helper-card__note" data-helper-i18n="notesLocal">Notlar yalnızca bu tarayıcıda otomatik kaydedilir.</p>
+          </article>
+
+          <article class="helper-card helper-card--save" data-spoiler-min="full" data-reveal>
+            <div class="spoiler-gate" hidden>
+              <p data-helper-i18n="fullSpoilerGate">Save ayrıntıları Tam spoiler seviyesinde gizlenmez.</p>
+              <button type="button" data-show-spoiler="full" data-helper-i18n="showFullSpoilers">Tam spoilerı aç</button>
+            </div>
+            <header class="helper-card__head">
+              <div>
+                <h3 data-helper-i18n="saveTitle">Save okuyucu</h3>
+              </div>
+              <span id="save-status" class="helper-chip" data-helper-i18n="saveWaiting">Bekliyor</span>
+            </header>
+            <label class="save-drop" for="save-file">
+              <strong data-helper-i18n="saveChoose">WTTGSD_SaveGame.sav seç</strong>
+              <span data-helper-i18n="savePrivacy">Dosya tarayıcıdan çıkmaz ve hiçbir yere yüklenmez.</span>
+              <input id="save-file" type="file" accept=".sav,application/octet-stream" />
+            </label>
+            <div id="save-summary" class="save-summary" hidden></div>
+            <div class="helper-actions">
+              <button id="import-save-keys" class="primary-action" type="button" disabled data-helper-i18n="saveImportKeys">8 çifti düzenleyiciye aktar</button>
+            </div>
+            <p id="save-feedback" class="helper-card__note" role="status" aria-live="polite"></p>
+          </article>
+
+          <article class="helper-card helper-card--resolver" data-spoiler-min="hash" data-reveal>
+            <div class="spoiler-gate" hidden>
+              <p data-helper-i18n="hashSpoilerGate">Hash araçları Hash spoiler seviyesinde gizlenmez.</p>
+              <button type="button" data-show-spoiler="hash" data-helper-i18n="showHashSpoilers">Hash spoilerını aç</button>
+            </div>
+            <header class="helper-card__head">
+              <div>
+                <h3 data-helper-i18n="resolverTitle">Hash çözümleyici</h3>
+              </div>
+              <span id="resolver-status" class="helper-chip">0 / 0</span>
+            </header>
+            <div class="resolver-grid">
+              <label>
+                <span data-helper-i18n="resolverInputLabel">Şifreli hashler</span>
+                <textarea id="resolver-input" rows="9" spellcheck="false" placeholder="1 - 1ef9d5b6&#10;2 - 2f45095a" data-helper-i18n-placeholder="resolverInputPlaceholder"></textarea>
+              </label>
+              <label>
+                <span data-helper-i18n="resolverOutputLabel">Çözülmüş parçalar</span>
+                <textarea id="resolver-output" rows="9" readonly placeholder="1 - 36ea&#10;2 - 84be" data-helper-i18n-placeholder="resolverOutputPlaceholder"></textarea>
+              </label>
+            </div>
+            <div class="helper-actions">
+              <button id="resolve-hashes" class="primary-action" type="button" data-helper-i18n="resolverAction">Eşleşenleri çöz</button>
+              <button id="copy-resolved" class="quiet-action" type="button" disabled data-helper-i18n="resolverCopy">Çıktıyı kopyala</button>
+            </div>
+            <p id="resolver-feedback" class="helper-card__note" role="status" aria-live="polite" data-helper-i18n="resolverNote">
+              WTTG3 değerleri her run'da değişir. Araç yalnızca yüklenen save veya düzenleyicideki doğrulanmış eşleşmeleri kullanır.
+            </p>
           </article>
         </div>
-        <p class="legend-note">
-        </p>
       </section>
 
       <section
         id="key-organizer"
         class="key-organizer"
         aria-labelledby="key-organizer-title"
+        data-spoiler-min="hash"
       >
+        <div class="spoiler-gate" hidden>
+          <p data-helper-i18n="hashSpoilerGate">Hash araçları Hash spoiler seviyesinde gizlenmez.</p>
+          <button type="button" data-show-spoiler="hash" data-helper-i18n="showHashSpoilers">Hash spoilerını aç</button>
+        </div>
         <div class="key-organizer__head" data-reveal>
           <div>
             <h2 id="key-organizer-title" data-i18n="keyOrganizerTitle">
@@ -221,7 +337,50 @@
         </div>
       </section>
 
-      <section class="atlas" aria-labelledby="atlas-title">
+      <section class="legend-panel legend-panel--atlas" aria-labelledby="legend-title" data-reveal>
+        <div class="legend-panel__intro">
+          <h2 id="legend-title" data-i18n="legendTitle">Hash atlas işaretleri</h2>
+          <p data-i18n="legendIntro">
+            Her renk farklı bir hash konumu tipini gösterir.
+          </p>
+        </div>
+        <div class="legend-list">
+          <article>
+            <span class="legend-key legend-key--direct" aria-hidden="true">P</span>
+            <div>
+              <strong data-i18n="directTitle">Görünür konum</strong>
+              <p data-i18n="directDescription">
+                Hash metninin doğrudan yazılabileceği boş alan.
+              </p>
+            </div>
+          </article>
+          <article>
+            <span class="legend-key legend-key--click" aria-hidden="true">C</span>
+            <div>
+              <strong data-i18n="clickableTitle">Tıklanabilir konum</strong>
+              <p data-i18n="clickableDescription">
+                İmleç değiştiğinde hash verebilen doğru tıklama adayı.
+              </p>
+            </div>
+          </article>
+          <article>
+            <span class="legend-key legend-key--decoy" aria-hidden="true">F</span>
+            <div>
+              <strong data-i18n="decoyTitle">Sahte konum</strong>
+              <p data-i18n="decoyDescription">
+                Doğru adayın ipucunu taklit edebilen tuzak nokta.
+              </p>
+            </div>
+          </article>
+        </div>
+        <p class="legend-note"></p>
+      </section>
+
+      <section class="atlas" aria-labelledby="atlas-title" data-spoiler-min="hash">
+        <div class="spoiler-gate" hidden>
+          <p data-helper-i18n="hashSpoilerGate">Hash araçları Hash spoiler seviyesinde gizlenmez.</p>
+          <button type="button" data-show-spoiler="hash" data-helper-i18n="showHashSpoilers">Hash spoilerını aç</button>
+        </div>
         <div class="atlas__head" data-reveal>
           <div>
             <h2 id="atlas-title" data-i18n="atlasTitle">Site ve sayfalar</h2>
